@@ -1,0 +1,25 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/g1_interface_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/g1_interface_pkg/action/detail/dds_fastrtps/herkanser__type_support.cpp.o"
+  "CMakeFiles/g1_interface_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/g1_interface_pkg/action/detail/dds_fastrtps/herkanser__type_support.cpp.o.d"
+  "CMakeFiles/g1_interface_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/g1_interface_pkg/msg/detail/dds_fastrtps/student__type_support.cpp.o"
+  "CMakeFiles/g1_interface_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/g1_interface_pkg/msg/detail/dds_fastrtps/student__type_support.cpp.o.d"
+  "CMakeFiles/g1_interface_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/g1_interface_pkg/msg/detail/dds_fastrtps/tentamen__type_support.cpp.o"
+  "CMakeFiles/g1_interface_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/g1_interface_pkg/msg/detail/dds_fastrtps/tentamen__type_support.cpp.o.d"
+  "CMakeFiles/g1_interface_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/g1_interface_pkg/srv/detail/dds_fastrtps/tentamens__type_support.cpp.o"
+  "CMakeFiles/g1_interface_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/g1_interface_pkg/srv/detail/dds_fastrtps/tentamens__type_support.cpp.o.d"
+  "libg1_interface_pkg__rosidl_typesupport_fastrtps_cpp.pdb"
+  "libg1_interface_pkg__rosidl_typesupport_fastrtps_cpp.so"
+  "rosidl_typesupport_fastrtps_cpp/g1_interface_pkg/action/detail/dds_fastrtps/herkanser__type_support.cpp"
+  "rosidl_typesupport_fastrtps_cpp/g1_interface_pkg/action/detail/herkanser__rosidl_typesupport_fastrtps_cpp.hpp"
+  "rosidl_typesupport_fastrtps_cpp/g1_interface_pkg/msg/detail/dds_fastrtps/student__type_support.cpp"
+  "rosidl_typesupport_fastrtps_cpp/g1_interface_pkg/msg/detail/dds_fastrtps/tentamen__type_support.cpp"
+  "rosidl_typesupport_fastrtps_cpp/g1_interface_pkg/msg/detail/student__rosidl_typesupport_fastrtps_cpp.hpp"
+  "rosidl_typesupport_fastrtps_cpp/g1_interface_pkg/msg/detail/tentamen__rosidl_typesupport_fastrtps_cpp.hpp"
+  "rosidl_typesupport_fastrtps_cpp/g1_interface_pkg/srv/detail/dds_fastrtps/tentamens__type_support.cpp"
+  "rosidl_typesupport_fastrtps_cpp/g1_interface_pkg/srv/detail/tentamens__rosidl_typesupport_fastrtps_cpp.hpp"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/g1_interface_pkg__rosidl_typesupport_fastrtps_cpp.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

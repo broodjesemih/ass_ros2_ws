@@ -1,0 +1,4 @@
+source;share/g1_interface_pkg/local_setup.bash
+source;share/g1_interface_pkg/local_setup.dsv
+source;share/g1_interface_pkg/local_setup.sh
+source;share/g1_interface_pkg/local_setup.zsh

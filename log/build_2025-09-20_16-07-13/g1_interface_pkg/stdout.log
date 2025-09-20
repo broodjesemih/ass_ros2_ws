@@ -1,0 +1,244 @@
+[  1%] Built target g1_interface_pkg__rosidl_generator_type_description
+[  1%] Built target ament_cmake_python_copy_g1_interface_pkg
+[  3%] Built target g1_interface_pkg__cpp
+[ 25%] Built target g1_interface_pkg__rosidl_generator_c
+[ 34%] Built target g1_interface_pkg__rosidl_typesupport_fastrtps_c
+[ 43%] Built target g1_interface_pkg__rosidl_typesupport_introspection_c
+[ 53%] Built target g1_interface_pkg__rosidl_typesupport_fastrtps_cpp
+[ 65%] Built target g1_interface_pkg__rosidl_typesupport_c
+[ 81%] Built target g1_interface_pkg__rosidl_typesupport_introspection_cpp
+[ 81%] Built target g1_interface_pkg__rosidl_typesupport_cpp
+[ 81%] Built target g1_interface_pkg
+[ 82%] Built target g1_interface_pkg__py
+[ 90%] Built target g1_interface_pkg__rosidl_generator_py
+[ 93%] Built target g1_interface_pkg_s__rosidl_typesupport_c
+[ 96%] Built target g1_interface_pkg_s__rosidl_typesupport_fastrtps_c
+[100%] Built target g1_interface_pkg_s__rosidl_typesupport_introspection_c
+running egg_info
+writing g1_interface_pkg.egg-info/PKG-INFO
+writing dependency_links to g1_interface_pkg.egg-info/dependency_links.txt
+writing top-level names to g1_interface_pkg.egg-info/top_level.txt
+reading manifest file 'g1_interface_pkg.egg-info/SOURCES.txt'
+writing manifest file 'g1_interface_pkg.egg-info/SOURCES.txt'
+[100%] Built target ament_cmake_python_build_g1_interface_pkg_egg
+-- Install configuration: ""
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/ament_index/resource_index/rosidl_interfaces/g1_interface_pkg
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/msg/Student.json
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/msg/Tentamen.json
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/srv/Tentamens.json
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/action/Herkanser.json
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__type_support.h
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__description.c
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__functions.h
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__struct.h
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__functions.c
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__type_support.c
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/herkanser.h
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__functions.h
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__type_support.c
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__struct.h
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__description.c
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__functions.c
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__type_support.h
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/tentamens.h
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/tentamen.h
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/rosidl_generator_c__visibility_control.h
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/student.h
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__description.c
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__struct.h
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__description.c
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__type_support.h
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__functions.h
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__functions.c
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__functions.c
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__type_support.c
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__functions.h
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__type_support.c
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__type_support.h
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__struct.h
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/environment/library_path.sh
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/environment/library_path.dsv
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/libg1_interface_pkg__rosidl_generator_c.so
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__rosidl_typesupport_fastrtps_c.h
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__rosidl_typesupport_fastrtps_c.h
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__rosidl_typesupport_fastrtps_c.h
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__rosidl_typesupport_fastrtps_c.h
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/libg1_interface_pkg__rosidl_typesupport_fastrtps_c.so
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__rosidl_typesupport_introspection_c.h
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__type_support.c
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__rosidl_typesupport_introspection_c.h
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__type_support.c
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/rosidl_typesupport_introspection_c__visibility_control.h
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__rosidl_typesupport_introspection_c.h
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__type_support.c
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__type_support.c
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__rosidl_typesupport_introspection_c.h
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/libg1_interface_pkg__rosidl_typesupport_introspection_c.so
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/libg1_interface_pkg__rosidl_typesupport_c.so
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/herkanser.hpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__builder.hpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__struct.hpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__type_support.hpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__traits.hpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__type_support.hpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__traits.hpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__builder.hpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__struct.hpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/tentamens.hpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/student.hpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/rosidl_generator_cpp__visibility_control.hpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/tentamen.hpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__builder.hpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__traits.hpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__type_support.hpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__traits.hpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__builder.hpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__struct.hpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__type_support.hpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__struct.hpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__rosidl_typesupport_fastrtps_cpp.hpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/dds_fastrtps
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__rosidl_typesupport_fastrtps_cpp.hpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/dds_fastrtps
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__rosidl_typesupport_fastrtps_cpp.hpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/dds_fastrtps
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__rosidl_typesupport_fastrtps_cpp.hpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/libg1_interface_pkg__rosidl_typesupport_fastrtps_cpp.so
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__type_support.cpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__rosidl_typesupport_introspection_cpp.hpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__rosidl_typesupport_introspection_cpp.hpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__type_support.cpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__type_support.cpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__rosidl_typesupport_introspection_cpp.hpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__type_support.cpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__rosidl_typesupport_introspection_cpp.hpp
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/libg1_interface_pkg__rosidl_typesupport_introspection_cpp.so
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/libg1_interface_pkg__rosidl_typesupport_cpp.so
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/environment/pythonpath.sh
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/environment/pythonpath.dsv
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg-0.1.0-py3.12.egg-info
+-- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg-0.1.0-py3.12.egg-info/top_level.txt
+-- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg-0.1.0-py3.12.egg-info/dependency_links.txt
+-- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg-0.1.0-py3.12.egg-info/SOURCES.txt
+-- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg-0.1.0-py3.12.egg-info/PKG-INFO
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/g1_interface_pkg_s__rosidl_typesupport_introspection_c.so
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/action
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/action/_herkanser_s.c
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/action/_herkanser.py
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/action/__init__.py
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/_g1_interface_pkg_s.ep.rosidl_typesupport_c.c
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/g1_interface_pkg_s__rosidl_typesupport_c.so
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/g1_interface_pkg_s__rosidl_typesupport_fastrtps_c.so
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/srv
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/srv/_tentamens_s.c
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/srv/_tentamens.py
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/srv/__init__.py
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/_g1_interface_pkg_s.ep.rosidl_typesupport_fastrtps_c.c
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/msg
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/msg/_student.py
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/msg/_tentamen_s.c
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/msg/_student_s.c
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/msg/_tentamen.py
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/msg/__init__.py
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/_g1_interface_pkg_s.ep.rosidl_typesupport_introspection_c.c
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/__init__.py
+Listing '/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg'...
+Listing '/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/action'...
+Listing '/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/msg'...
+Listing '/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/srv'...
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/g1_interface_pkg_s__rosidl_typesupport_fastrtps_c.so
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/g1_interface_pkg_s__rosidl_typesupport_introspection_c.so
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/g1_interface_pkg_s__rosidl_typesupport_c.so
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/libg1_interface_pkg__rosidl_generator_py.so
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/msg/Student.idl
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/msg/Tentamen.idl
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/srv/Tentamens.idl
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/action/Herkanser.idl
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/msg/Student.msg
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/msg/Tentamen.msg
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/srv/Tentamens.srv
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/action/Herkanser.action
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/ament_index/resource_index/package_run_dependencies/g1_interface_pkg
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/ament_index/resource_index/parent_prefix_path/g1_interface_pkg
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/environment/ament_prefix_path.sh
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/environment/path.sh
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/environment/path.dsv
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/local_setup.bash
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/local_setup.sh
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/local_setup.zsh
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/local_setup.dsv
+-- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/package.dsv
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/ament_index/resource_index/packages/g1_interface_pkg
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/export_g1_interface_pkg__rosidl_generator_cExport.cmake
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/export_g1_interface_pkg__rosidl_generator_cExport-noconfig.cmake
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/export_g1_interface_pkg__rosidl_typesupport_fastrtps_cExport.cmake
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/export_g1_interface_pkg__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/g1_interface_pkg__rosidl_typesupport_introspection_cExport.cmake
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/g1_interface_pkg__rosidl_typesupport_introspection_cExport-noconfig.cmake
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/g1_interface_pkg__rosidl_typesupport_cExport.cmake
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/g1_interface_pkg__rosidl_typesupport_cExport-noconfig.cmake
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/export_g1_interface_pkg__rosidl_generator_cppExport.cmake
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/export_g1_interface_pkg__rosidl_typesupport_fastrtps_cppExport.cmake
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/export_g1_interface_pkg__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/g1_interface_pkg__rosidl_typesupport_introspection_cppExport.cmake
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/g1_interface_pkg__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/g1_interface_pkg__rosidl_typesupport_cppExport.cmake
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/g1_interface_pkg__rosidl_typesupport_cppExport-noconfig.cmake
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/export_g1_interface_pkg__rosidl_generator_pyExport.cmake
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/export_g1_interface_pkg__rosidl_generator_pyExport-noconfig.cmake
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/rosidl_cmake-extras.cmake
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/ament_cmake_export_libraries-extras.cmake
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/ament_cmake_export_targets-extras.cmake
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/g1_interface_pkgConfig.cmake
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/g1_interface_pkgConfig-version.cmake
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/package.xml

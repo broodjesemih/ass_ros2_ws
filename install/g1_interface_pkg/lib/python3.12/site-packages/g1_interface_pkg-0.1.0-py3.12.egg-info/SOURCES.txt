@@ -1,0 +1,13 @@
+setup.py
+g1_interface_pkg/__init__.py
+g1_interface_pkg.egg-info/PKG-INFO
+g1_interface_pkg.egg-info/SOURCES.txt
+g1_interface_pkg.egg-info/dependency_links.txt
+g1_interface_pkg.egg-info/top_level.txt
+g1_interface_pkg/action/__init__.py
+g1_interface_pkg/action/_herkanser.py
+g1_interface_pkg/msg/__init__.py
+g1_interface_pkg/msg/_student.py
+g1_interface_pkg/msg/_tentamen.py
+g1_interface_pkg/srv/__init__.py
+g1_interface_pkg/srv/_tentamens.py

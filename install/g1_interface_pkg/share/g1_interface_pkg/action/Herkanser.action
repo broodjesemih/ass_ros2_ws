@@ -1,0 +1,13 @@
+# Goal definition
+string student_name
+string course_name
+
+---
+# Result definition
+int32 final_cijfer
+string message
+
+---
+# Feedback definition
+float32 progress
+string status

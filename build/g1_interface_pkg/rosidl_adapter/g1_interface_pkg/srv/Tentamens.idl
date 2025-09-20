@@ -1,0 +1,21 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from g1_interface_pkg/srv/Tentamens.srv
+// generated code does not contain a copyright notice
+
+
+module g1_interface_pkg {
+  module srv {
+    struct Tentamens_Request {
+      string student_name;
+
+      string course_name;
+
+      sequence<int32> tentamen_cijfers;
+    };
+    struct Tentamens_Response {
+      int32 final_cijfer;
+
+      string message;
+    };
+  };
+};

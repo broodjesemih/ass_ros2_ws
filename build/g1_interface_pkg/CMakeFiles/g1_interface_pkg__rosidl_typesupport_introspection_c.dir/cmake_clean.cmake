@@ -1,0 +1,25 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/g1_interface_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/g1_interface_pkg/action/detail/herkanser__type_support.c.o"
+  "CMakeFiles/g1_interface_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/g1_interface_pkg/action/detail/herkanser__type_support.c.o.d"
+  "CMakeFiles/g1_interface_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/g1_interface_pkg/msg/detail/student__type_support.c.o"
+  "CMakeFiles/g1_interface_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/g1_interface_pkg/msg/detail/student__type_support.c.o.d"
+  "CMakeFiles/g1_interface_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/g1_interface_pkg/msg/detail/tentamen__type_support.c.o"
+  "CMakeFiles/g1_interface_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/g1_interface_pkg/msg/detail/tentamen__type_support.c.o.d"
+  "CMakeFiles/g1_interface_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/g1_interface_pkg/srv/detail/tentamens__type_support.c.o"
+  "CMakeFiles/g1_interface_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/g1_interface_pkg/srv/detail/tentamens__type_support.c.o.d"
+  "libg1_interface_pkg__rosidl_typesupport_introspection_c.pdb"
+  "libg1_interface_pkg__rosidl_typesupport_introspection_c.so"
+  "rosidl_typesupport_introspection_c/g1_interface_pkg/action/detail/herkanser__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/g1_interface_pkg/action/detail/herkanser__type_support.c"
+  "rosidl_typesupport_introspection_c/g1_interface_pkg/msg/detail/student__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/g1_interface_pkg/msg/detail/student__type_support.c"
+  "rosidl_typesupport_introspection_c/g1_interface_pkg/msg/detail/tentamen__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/g1_interface_pkg/msg/detail/tentamen__type_support.c"
+  "rosidl_typesupport_introspection_c/g1_interface_pkg/srv/detail/tentamens__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/g1_interface_pkg/srv/detail/tentamens__type_support.c"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang C)
+  include(CMakeFiles/g1_interface_pkg__rosidl_typesupport_introspection_c.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

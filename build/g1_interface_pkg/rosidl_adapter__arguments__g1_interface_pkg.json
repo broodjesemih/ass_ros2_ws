@@ -1,0 +1,9 @@
+{
+  "package_name": "g1_interface_pkg",
+  "non_idl_tuples": [
+    "/home/broodjesemih/ass_ros2_ws/src/g1_interface_pkg:msg/Student.msg",
+    "/home/broodjesemih/ass_ros2_ws/src/g1_interface_pkg:msg/Tentamen.msg",
+    "/home/broodjesemih/ass_ros2_ws/src/g1_interface_pkg:srv/Tentamens.srv",
+    "/home/broodjesemih/ass_ros2_ws/src/g1_interface_pkg:action/Herkanser.action"
+  ]
+}

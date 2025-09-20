@@ -1,0 +1,362 @@
+[0.006s] Invoking command in '/home/broodjesemih/ass_ros2_ws/build/g1_interface_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/broodjesemih/ass_ros2_ws/src/g1_interface_pkg -DCMAKE_INSTALL_PREFIX=/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg
+[0.048s] -- The C compiler identification is GNU 13.3.0
+[0.089s] -- The CXX compiler identification is GNU 13.3.0
+[0.103s] -- Detecting C compiler ABI info
+[0.182s] -- Detecting C compiler ABI info - done
+[0.187s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.187s] -- Detecting C compile features
+[0.187s] -- Detecting C compile features - done
+[0.196s] -- Detecting CXX compiler ABI info
+[0.275s] -- Detecting CXX compiler ABI info - done
+[0.285s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.285s] -- Detecting CXX compile features
+[0.285s] -- Detecting CXX compile features - done
+[0.289s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.394s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.473s] -- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[0.478s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.516s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.549s] -- Found rosidl_adapter: 4.6.6 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[1.002s] -- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+[1.308s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.724s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.727s] -- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+[1.832s] -- Found PythonExtra: /usr/bin/python3  
+[2.129s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+[2.154s] -- Configuring done (2.1s)
+[2.177s] -- Generating done (0.0s)
+[2.184s] -- Build files have been written to: /home/broodjesemih/ass_ros2_ws/build/g1_interface_pkg
+[2.191s] Invoked command in '/home/broodjesemih/ass_ros2_ws/build/g1_interface_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/broodjesemih/ass_ros2_ws/src/g1_interface_pkg -DCMAKE_INSTALL_PREFIX=/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg
+[2.191s] Invoking command in '/home/broodjesemih/ass_ros2_ws/build/g1_interface_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/broodjesemih/ass_ros2_ws/build/g1_interface_pkg -- -j20 -l20
+[2.230s] [  1%] [34m[1mGenerating type hashes for ROS interfaces[0m
+[2.236s] [  1%] Built target ament_cmake_python_copy_g1_interface_pkg
+[2.360s] running egg_info
+[2.361s] creating g1_interface_pkg.egg-info
+[2.370s] writing g1_interface_pkg.egg-info/PKG-INFO
+[2.370s] writing dependency_links to g1_interface_pkg.egg-info/dependency_links.txt
+[2.370s] writing top-level names to g1_interface_pkg.egg-info/top_level.txt
+[2.371s] writing manifest file 'g1_interface_pkg.egg-info/SOURCES.txt'
+[2.379s] [  1%] Built target g1_interface_pkg__rosidl_generator_type_description
+[2.389s] [  3%] [34m[1mGenerating C code for ROS interfaces[0m
+[2.397s] [  4%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[2.398s] reading manifest file 'g1_interface_pkg.egg-info/SOURCES.txt'
+[2.398s] writing manifest file 'g1_interface_pkg.egg-info/SOURCES.txt'
+[2.418s] [  4%] Built target ament_cmake_python_build_g1_interface_pkg_egg
+[2.711s] [  4%] Built target g1_interface_pkg__cpp
+[2.755s] [  7%] [32mBuilding C object CMakeFiles/g1_interface_pkg__rosidl_generator_c.dir/rosidl_generator_c/g1_interface_pkg/msg/detail/tentamen__description.c.o[0m
+[2.755s] [  9%] [32mBuilding C object CMakeFiles/g1_interface_pkg__rosidl_generator_c.dir/rosidl_generator_c/g1_interface_pkg/msg/detail/tentamen__functions.c.o[0m
+[2.755s] [  7%] [32mBuilding C object CMakeFiles/g1_interface_pkg__rosidl_generator_c.dir/rosidl_generator_c/g1_interface_pkg/msg/detail/student__functions.c.o[0m
+[2.755s] [ 10%] [32mBuilding C object CMakeFiles/g1_interface_pkg__rosidl_generator_c.dir/rosidl_generator_c/g1_interface_pkg/srv/detail/tentamens__description.c.o[0m
+[2.756s] [ 12%] [32mBuilding C object CMakeFiles/g1_interface_pkg__rosidl_generator_c.dir/rosidl_generator_c/g1_interface_pkg/srv/detail/tentamens__type_support.c.o[0m
+[2.756s] [ 14%] [32mBuilding C object CMakeFiles/g1_interface_pkg__rosidl_generator_c.dir/rosidl_generator_c/g1_interface_pkg/action/detail/herkanser__description.c.o[0m
+[2.757s] [ 15%] [32mBuilding C object CMakeFiles/g1_interface_pkg__rosidl_generator_c.dir/rosidl_generator_c/g1_interface_pkg/msg/detail/student__description.c.o[0m
+[2.757s] [ 17%] [32mBuilding C object CMakeFiles/g1_interface_pkg__rosidl_generator_c.dir/rosidl_generator_c/g1_interface_pkg/msg/detail/student__type_support.c.o[0m
+[2.758s] [ 18%] [32mBuilding C object CMakeFiles/g1_interface_pkg__rosidl_generator_c.dir/rosidl_generator_c/g1_interface_pkg/msg/detail/tentamen__type_support.c.o[0m
+[2.758s] [ 20%] [32mBuilding C object CMakeFiles/g1_interface_pkg__rosidl_generator_c.dir/rosidl_generator_c/g1_interface_pkg/srv/detail/tentamens__functions.c.o[0m
+[2.759s] [ 23%] [32mBuilding C object CMakeFiles/g1_interface_pkg__rosidl_generator_c.dir/rosidl_generator_c/g1_interface_pkg/action/detail/herkanser__functions.c.o[0m
+[2.759s] [ 23%] [32mBuilding C object CMakeFiles/g1_interface_pkg__rosidl_generator_c.dir/rosidl_generator_c/g1_interface_pkg/action/detail/herkanser__type_support.c.o[0m
+[2.862s] [ 25%] [32m[1mLinking C shared library libg1_interface_pkg__rosidl_generator_c.so[0m
+[2.892s] [ 25%] Built target g1_interface_pkg__rosidl_generator_c
+[2.903s] [ 28%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[2.903s] [ 28%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[2.904s] [ 29%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[2.904s] [ 31%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[2.905s] [ 34%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[2.905s] [ 34%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[3.128s] [ 35%] [32mBuilding CXX object CMakeFiles/g1_interface_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/g1_interface_pkg/srv/tentamens__type_support.cpp.o[0m
+[3.129s] [ 37%] [32mBuilding CXX object CMakeFiles/g1_interface_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/g1_interface_pkg/action/herkanser__type_support.cpp.o[0m
+[3.130s] [ 40%] [32mBuilding CXX object CMakeFiles/g1_interface_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/g1_interface_pkg/msg/tentamen__type_support.cpp.o[0m
+[3.130s] [ 40%] [32mBuilding CXX object CMakeFiles/g1_interface_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/g1_interface_pkg/msg/student__type_support.cpp.o[0m
+[3.134s] [ 42%] [32mBuilding CXX object CMakeFiles/g1_interface_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/g1_interface_pkg/msg/student__type_support.cpp.o[0m
+[3.134s] [ 45%] [32mBuilding CXX object CMakeFiles/g1_interface_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/g1_interface_pkg/msg/tentamen__type_support.cpp.o[0m
+[3.134s] [ 45%] [32mBuilding CXX object CMakeFiles/g1_interface_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/g1_interface_pkg/action/herkanser__type_support.cpp.o[0m
+[3.136s] [ 46%] [32mBuilding CXX object CMakeFiles/g1_interface_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/g1_interface_pkg/srv/tentamens__type_support.cpp.o[0m
+[3.178s] [ 48%] [32mBuilding CXX object CMakeFiles/g1_interface_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/g1_interface_pkg/msg/detail/student__type_support.cpp.o[0m
+[3.179s] [ 50%] [32m[1mLinking CXX shared library libg1_interface_pkg__rosidl_typesupport_c.so[0m
+[3.179s] [ 51%] [32mBuilding CXX object CMakeFiles/g1_interface_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/g1_interface_pkg/srv/detail/tentamens__type_support.cpp.o[0m
+[3.180s] [ 53%] [32mBuilding CXX object CMakeFiles/g1_interface_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/g1_interface_pkg/msg/detail/tentamen__type_support.cpp.o[0m
+[3.180s] [ 54%] [32mBuilding CXX object CMakeFiles/g1_interface_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/g1_interface_pkg/action/detail/herkanser__type_support.cpp.o[0m
+[3.195s] [ 56%] [32mBuilding C object CMakeFiles/g1_interface_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/g1_interface_pkg/msg/detail/student__type_support.c.o[0m
+[3.196s] [ 59%] [32mBuilding C object CMakeFiles/g1_interface_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/g1_interface_pkg/srv/detail/tentamens__type_support.c.o[0m
+[3.196s] [ 59%] [32mBuilding C object CMakeFiles/g1_interface_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/g1_interface_pkg/msg/detail/tentamen__type_support.c.o[0m
+[3.196s] [ 60%] [32mBuilding C object CMakeFiles/g1_interface_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/g1_interface_pkg/action/detail/herkanser__type_support.c.o[0m
+[3.216s] [ 60%] Built target g1_interface_pkg__rosidl_typesupport_c
+[3.263s] [ 62%] [32m[1mLinking C shared library libg1_interface_pkg__rosidl_typesupport_introspection_c.so[0m
+[3.288s] [ 62%] Built target g1_interface_pkg__rosidl_typesupport_introspection_c
+[3.300s] [ 68%] [32mBuilding CXX object CMakeFiles/g1_interface_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/g1_interface_pkg/msg/detail/dds_fastrtps/student__type_support.cpp.o[0m
+[3.300s] [ 68%] [32mBuilding CXX object CMakeFiles/g1_interface_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/g1_interface_pkg/action/detail/dds_fastrtps/herkanser__type_support.cpp.o[0m
+[3.301s] [ 68%] [32mBuilding CXX object CMakeFiles/g1_interface_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/g1_interface_pkg/msg/detail/dds_fastrtps/tentamen__type_support.cpp.o[0m
+[3.301s] [ 68%] [32mBuilding CXX object CMakeFiles/g1_interface_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/g1_interface_pkg/srv/detail/dds_fastrtps/tentamens__type_support.cpp.o[0m
+[3.458s] [ 70%] [32mBuilding CXX object CMakeFiles/g1_interface_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/g1_interface_pkg/srv/detail/tentamens__type_support_c.cpp.o[0m
+[3.461s] [ 75%] [32mBuilding CXX object CMakeFiles/g1_interface_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/g1_interface_pkg/msg/detail/tentamen__type_support_c.cpp.o[0m
+[3.461s] [ 75%] [32mBuilding CXX object CMakeFiles/g1_interface_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/g1_interface_pkg/msg/detail/student__type_support_c.cpp.o[0m
+[3.461s] [ 75%] [32mBuilding CXX object CMakeFiles/g1_interface_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/g1_interface_pkg/action/detail/herkanser__type_support_c.cpp.o[0m
+[3.655s] [ 76%] [32m[1mLinking CXX shared library libg1_interface_pkg__rosidl_typesupport_introspection_cpp.so[0m
+[3.716s] [ 76%] Built target g1_interface_pkg__rosidl_typesupport_introspection_cpp
+[3.812s] [ 78%] [32m[1mLinking CXX shared library libg1_interface_pkg__rosidl_typesupport_cpp.so[0m
+[3.839s] [ 79%] [32m[1mLinking CXX shared library libg1_interface_pkg__rosidl_typesupport_fastrtps_c.so[0m
+[3.864s] [ 79%] Built target g1_interface_pkg__rosidl_typesupport_cpp
+[3.889s] [ 79%] Built target g1_interface_pkg__rosidl_typesupport_fastrtps_c
+[3.937s] [ 81%] [32m[1mLinking CXX shared library libg1_interface_pkg__rosidl_typesupport_fastrtps_cpp.so[0m
+[3.993s] [ 81%] Built target g1_interface_pkg__rosidl_typesupport_fastrtps_cpp
+[4.008s] [ 81%] Built target g1_interface_pkg
+[4.023s] [ 82%] [34m[1mGenerating Python code for ROS interfaces[0m
+[4.512s] [ 82%] Built target g1_interface_pkg__py
+[4.530s] [ 84%] [32mBuilding C object CMakeFiles/g1_interface_pkg__rosidl_generator_py.dir/rosidl_generator_py/g1_interface_pkg/msg/_student_s.c.o[0m
+[4.531s] [ 85%] [32mBuilding C object CMakeFiles/g1_interface_pkg__rosidl_generator_py.dir/rosidl_generator_py/g1_interface_pkg/msg/_tentamen_s.c.o[0m
+[4.531s] [ 87%] [32mBuilding C object CMakeFiles/g1_interface_pkg__rosidl_generator_py.dir/rosidl_generator_py/g1_interface_pkg/srv/_tentamens_s.c.o[0m
+[4.531s] [ 89%] [32mBuilding C object CMakeFiles/g1_interface_pkg__rosidl_generator_py.dir/rosidl_generator_py/g1_interface_pkg/action/_herkanser_s.c.o[0m
+[4.655s] [ 90%] [32m[1mLinking C shared library libg1_interface_pkg__rosidl_generator_py.so[0m
+[4.690s] [ 90%] Built target g1_interface_pkg__rosidl_generator_py
+[4.708s] [ 92%] [32mBuilding C object CMakeFiles/g1_interface_pkg_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/g1_interface_pkg/_g1_interface_pkg_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[4.709s] [ 93%] [32mBuilding C object CMakeFiles/g1_interface_pkg_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/g1_interface_pkg/_g1_interface_pkg_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[4.710s] [ 95%] [32mBuilding C object CMakeFiles/g1_interface_pkg_s__rosidl_typesupport_c.dir/rosidl_generator_py/g1_interface_pkg/_g1_interface_pkg_s.ep.rosidl_typesupport_c.c.o[0m
+[4.794s] [ 96%] [32m[1mLinking C shared module rosidl_generator_py/g1_interface_pkg/g1_interface_pkg_s__rosidl_typesupport_introspection_c.so[0m
+[4.795s] [ 98%] [32m[1mLinking C shared module rosidl_generator_py/g1_interface_pkg/g1_interface_pkg_s__rosidl_typesupport_c.so[0m
+[4.796s] [100%] [32m[1mLinking C shared module rosidl_generator_py/g1_interface_pkg/g1_interface_pkg_s__rosidl_typesupport_fastrtps_c.so[0m
+[4.815s] [100%] Built target g1_interface_pkg_s__rosidl_typesupport_c
+[4.816s] [100%] Built target g1_interface_pkg_s__rosidl_typesupport_introspection_c
+[4.818s] [100%] Built target g1_interface_pkg_s__rosidl_typesupport_fastrtps_c
+[4.826s] Invoked command in '/home/broodjesemih/ass_ros2_ws/build/g1_interface_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/broodjesemih/ass_ros2_ws/build/g1_interface_pkg -- -j20 -l20
+[4.832s] Invoking command in '/home/broodjesemih/ass_ros2_ws/build/g1_interface_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/broodjesemih/ass_ros2_ws/build/g1_interface_pkg
+[4.837s] -- Install configuration: ""
+[4.837s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/ament_index/resource_index/rosidl_interfaces/g1_interface_pkg
+[4.837s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/msg/Student.json
+[4.837s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/msg/Tentamen.json
+[4.837s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/srv/Tentamens.json
+[4.837s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/action/Herkanser.json
+[4.837s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg
+[4.837s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action
+[4.837s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail
+[4.837s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__type_support.h
+[4.837s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__description.c
+[4.837s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__functions.h
+[4.838s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__struct.h
+[4.838s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__functions.c
+[4.838s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__type_support.c
+[4.838s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/herkanser.h
+[4.838s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv
+[4.838s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail
+[4.838s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__functions.h
+[4.838s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__type_support.c
+[4.838s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__struct.h
+[4.838s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__description.c
+[4.838s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__functions.c
+[4.838s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__type_support.h
+[4.838s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/tentamens.h
+[4.838s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg
+[4.838s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/tentamen.h
+[4.838s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/rosidl_generator_c__visibility_control.h
+[4.838s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/student.h
+[4.838s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail
+[4.838s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__description.c
+[4.838s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__struct.h
+[4.838s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__description.c
+[4.838s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__type_support.h
+[4.838s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__functions.h
+[4.838s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__functions.c
+[4.839s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__functions.c
+[4.839s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__type_support.c
+[4.839s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__functions.h
+[4.839s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__type_support.c
+[4.839s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__type_support.h
+[4.839s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__struct.h
+[4.839s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/environment/library_path.sh
+[4.839s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/environment/library_path.dsv
+[4.839s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/libg1_interface_pkg__rosidl_generator_c.so
+[4.839s] -- Set non-toolchain portion of runtime path of "/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/libg1_interface_pkg__rosidl_generator_c.so" to ""
+[4.839s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg
+[4.839s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action
+[4.839s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail
+[4.839s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__rosidl_typesupport_fastrtps_c.h
+[4.839s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv
+[4.839s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail
+[4.839s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__rosidl_typesupport_fastrtps_c.h
+[4.839s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg
+[4.839s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail
+[4.839s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__rosidl_typesupport_fastrtps_c.h
+[4.840s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__rosidl_typesupport_fastrtps_c.h
+[4.840s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[4.840s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/libg1_interface_pkg__rosidl_typesupport_fastrtps_c.so
+[4.840s] -- Set non-toolchain portion of runtime path of "/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/libg1_interface_pkg__rosidl_typesupport_fastrtps_c.so" to ""
+[4.840s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg
+[4.840s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action
+[4.840s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail
+[4.840s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__rosidl_typesupport_introspection_c.h
+[4.840s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__type_support.c
+[4.840s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv
+[4.840s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail
+[4.841s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__rosidl_typesupport_introspection_c.h
+[4.841s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__type_support.c
+[4.841s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg
+[4.841s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[4.841s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail
+[4.841s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__rosidl_typesupport_introspection_c.h
+[4.841s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__type_support.c
+[4.841s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__type_support.c
+[4.841s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__rosidl_typesupport_introspection_c.h
+[4.841s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/libg1_interface_pkg__rosidl_typesupport_introspection_c.so
+[4.841s] -- Set non-toolchain portion of runtime path of "/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/libg1_interface_pkg__rosidl_typesupport_introspection_c.so" to ""
+[4.842s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/libg1_interface_pkg__rosidl_typesupport_c.so
+[4.842s] -- Set non-toolchain portion of runtime path of "/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/libg1_interface_pkg__rosidl_typesupport_c.so" to ""
+[4.842s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg
+[4.842s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action
+[4.842s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/herkanser.hpp
+[4.842s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail
+[4.842s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__builder.hpp
+[4.842s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__struct.hpp
+[4.842s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__type_support.hpp
+[4.842s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__traits.hpp
+[4.842s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv
+[4.843s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail
+[4.843s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__type_support.hpp
+[4.843s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__traits.hpp
+[4.843s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__builder.hpp
+[4.843s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__struct.hpp
+[4.843s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/tentamens.hpp
+[4.843s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg
+[4.843s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/student.hpp
+[4.843s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/rosidl_generator_cpp__visibility_control.hpp
+[4.843s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/tentamen.hpp
+[4.843s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail
+[4.843s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__builder.hpp
+[4.843s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__traits.hpp
+[4.844s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__type_support.hpp
+[4.844s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__traits.hpp
+[4.844s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__builder.hpp
+[4.844s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__struct.hpp
+[4.844s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__type_support.hpp
+[4.844s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__struct.hpp
+[4.844s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg
+[4.844s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action
+[4.844s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail
+[4.844s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__rosidl_typesupport_fastrtps_cpp.hpp
+[4.844s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/dds_fastrtps
+[4.844s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv
+[4.845s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail
+[4.845s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__rosidl_typesupport_fastrtps_cpp.hpp
+[4.845s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/dds_fastrtps
+[4.845s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg
+[4.845s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[4.845s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail
+[4.845s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__rosidl_typesupport_fastrtps_cpp.hpp
+[4.845s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/dds_fastrtps
+[4.845s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__rosidl_typesupport_fastrtps_cpp.hpp
+[4.845s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/libg1_interface_pkg__rosidl_typesupport_fastrtps_cpp.so
+[4.845s] -- Set non-toolchain portion of runtime path of "/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/libg1_interface_pkg__rosidl_typesupport_fastrtps_cpp.so" to ""
+[4.845s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg
+[4.845s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action
+[4.845s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail
+[4.845s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__type_support.cpp
+[4.846s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/action/detail/herkanser__rosidl_typesupport_introspection_cpp.hpp
+[4.846s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv
+[4.846s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail
+[4.846s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__rosidl_typesupport_introspection_cpp.hpp
+[4.846s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/srv/detail/tentamens__type_support.cpp
+[4.846s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg
+[4.846s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail
+[4.846s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__type_support.cpp
+[4.846s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/student__rosidl_typesupport_introspection_cpp.hpp
+[4.846s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__type_support.cpp
+[4.846s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/include/g1_interface_pkg/g1_interface_pkg/msg/detail/tentamen__rosidl_typesupport_introspection_cpp.hpp
+[4.846s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/libg1_interface_pkg__rosidl_typesupport_introspection_cpp.so
+[4.846s] -- Set non-toolchain portion of runtime path of "/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/libg1_interface_pkg__rosidl_typesupport_introspection_cpp.so" to ""
+[4.846s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/libg1_interface_pkg__rosidl_typesupport_cpp.so
+[4.846s] -- Set non-toolchain portion of runtime path of "/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/libg1_interface_pkg__rosidl_typesupport_cpp.so" to ""
+[4.846s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/environment/pythonpath.sh
+[4.846s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/environment/pythonpath.dsv
+[4.847s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg-0.1.0-py3.12.egg-info
+[4.847s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg-0.1.0-py3.12.egg-info/top_level.txt
+[4.847s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg-0.1.0-py3.12.egg-info/dependency_links.txt
+[4.847s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg-0.1.0-py3.12.egg-info/SOURCES.txt
+[4.847s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg-0.1.0-py3.12.egg-info/PKG-INFO
+[4.847s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg
+[4.847s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/g1_interface_pkg_s__rosidl_typesupport_introspection_c.so
+[4.847s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/action
+[4.847s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/action/_herkanser_s.c
+[4.847s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/action/_herkanser.py
+[4.847s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/action/__init__.py
+[4.847s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/_g1_interface_pkg_s.ep.rosidl_typesupport_c.c
+[4.847s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/g1_interface_pkg_s__rosidl_typesupport_c.so
+[4.847s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/g1_interface_pkg_s__rosidl_typesupport_fastrtps_c.so
+[4.847s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/srv
+[4.847s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/srv/_tentamens_s.c
+[4.847s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/srv/_tentamens.py
+[4.847s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/srv/__init__.py
+[4.847s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/_g1_interface_pkg_s.ep.rosidl_typesupport_fastrtps_c.c
+[4.847s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/msg
+[4.847s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/msg/_student.py
+[4.847s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/msg/_tentamen_s.c
+[4.847s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/msg/_student_s.c
+[4.847s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/msg/_tentamen.py
+[4.847s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/msg/__init__.py
+[4.847s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/_g1_interface_pkg_s.ep.rosidl_typesupport_introspection_c.c
+[4.847s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/__init__.py
+[4.878s] Listing '/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg'...
+[4.878s] Compiling '/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/__init__.py'...
+[4.878s] Listing '/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/action'...
+[4.879s] Compiling '/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/action/__init__.py'...
+[4.879s] Compiling '/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/action/_herkanser.py'...
+[4.879s] Listing '/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/msg'...
+[4.879s] Compiling '/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/msg/__init__.py'...
+[4.879s] Compiling '/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/msg/_student.py'...
+[4.879s] Compiling '/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/msg/_tentamen.py'...
+[4.879s] Listing '/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/srv'...
+[4.879s] Compiling '/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/srv/__init__.py'...
+[4.879s] Compiling '/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/srv/_tentamens.py'...
+[4.882s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/g1_interface_pkg_s__rosidl_typesupport_fastrtps_c.so
+[4.882s] -- Set non-toolchain portion of runtime path of "/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/g1_interface_pkg_s__rosidl_typesupport_fastrtps_c.so" to ""
+[4.882s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/g1_interface_pkg_s__rosidl_typesupport_introspection_c.so
+[4.882s] -- Set non-toolchain portion of runtime path of "/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/g1_interface_pkg_s__rosidl_typesupport_introspection_c.so" to ""
+[4.883s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/g1_interface_pkg_s__rosidl_typesupport_c.so
+[4.883s] -- Set non-toolchain portion of runtime path of "/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages/g1_interface_pkg/g1_interface_pkg_s__rosidl_typesupport_c.so" to ""
+[4.883s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/libg1_interface_pkg__rosidl_generator_py.so
+[4.883s] -- Set non-toolchain portion of runtime path of "/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/libg1_interface_pkg__rosidl_generator_py.so" to ""
+[4.883s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/msg/Student.idl
+[4.883s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/msg/Tentamen.idl
+[4.883s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/srv/Tentamens.idl
+[4.883s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/action/Herkanser.idl
+[4.883s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/msg/Student.msg
+[4.883s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/msg/Tentamen.msg
+[4.883s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/srv/Tentamens.srv
+[4.883s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/action/Herkanser.action
+[4.883s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/ament_index/resource_index/package_run_dependencies/g1_interface_pkg
+[4.883s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/ament_index/resource_index/parent_prefix_path/g1_interface_pkg
+[4.883s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/environment/ament_prefix_path.sh
+[4.883s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/environment/ament_prefix_path.dsv
+[4.883s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/environment/path.sh
+[4.883s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/environment/path.dsv
+[4.883s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/local_setup.bash
+[4.884s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/local_setup.sh
+[4.884s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/local_setup.zsh
+[4.884s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/local_setup.dsv
+[4.884s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/package.dsv
+[4.884s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/ament_index/resource_index/packages/g1_interface_pkg
+[4.884s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/export_g1_interface_pkg__rosidl_generator_cExport.cmake
+[4.884s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/export_g1_interface_pkg__rosidl_generator_cExport-noconfig.cmake
+[4.884s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/export_g1_interface_pkg__rosidl_typesupport_fastrtps_cExport.cmake
+[4.884s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/export_g1_interface_pkg__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[4.884s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/g1_interface_pkg__rosidl_typesupport_introspection_cExport.cmake
+[4.884s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/g1_interface_pkg__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[4.884s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/g1_interface_pkg__rosidl_typesupport_cExport.cmake
+[4.884s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/g1_interface_pkg__rosidl_typesupport_cExport-noconfig.cmake
+[4.884s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/export_g1_interface_pkg__rosidl_generator_cppExport.cmake
+[4.884s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/export_g1_interface_pkg__rosidl_typesupport_fastrtps_cppExport.cmake
+[4.884s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/export_g1_interface_pkg__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[4.884s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/g1_interface_pkg__rosidl_typesupport_introspection_cppExport.cmake
+[4.884s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/g1_interface_pkg__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[4.884s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/g1_interface_pkg__rosidl_typesupport_cppExport.cmake
+[4.884s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/g1_interface_pkg__rosidl_typesupport_cppExport-noconfig.cmake
+[4.885s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/export_g1_interface_pkg__rosidl_generator_pyExport.cmake
+[4.885s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/export_g1_interface_pkg__rosidl_generator_pyExport-noconfig.cmake
+[4.885s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/rosidl_cmake-extras.cmake
+[4.885s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/ament_cmake_export_dependencies-extras.cmake
+[4.885s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/ament_cmake_export_include_directories-extras.cmake
+[4.885s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/ament_cmake_export_libraries-extras.cmake
+[4.885s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/ament_cmake_export_targets-extras.cmake
+[4.885s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[4.885s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[4.885s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/g1_interface_pkgConfig.cmake
+[4.885s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake/g1_interface_pkgConfig-version.cmake
+[4.885s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/package.xml
+[4.887s] Invoked command in '/home/broodjesemih/ass_ros2_ws/build/g1_interface_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/broodjesemih/ass_ros2_ws/build/g1_interface_pkg

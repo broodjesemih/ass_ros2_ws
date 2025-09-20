@@ -1,0 +1,29 @@
+[ 20%] Built target cijfer_calculator
+[ 40%] Built target herkansing_cijfer_determinator
+[ 60%] Built target herkansing_scheduler
+[ 80%] Built target tentamen_result_generator
+[ 90%] [32mBuilding CXX object CMakeFiles/final_cijfer_determinator.dir/src/final_cijfer_determinator.cpp.o[0m
+[100%] [32m[1mLinking CXX executable final_cijfer_determinator[0m
+[100%] Built target final_cijfer_determinator
+-- Install configuration: ""
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/lib/g1_ass1_pkg/tentamen_result_generator
+-- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/lib/g1_ass1_pkg/final_cijfer_determinator
+-- Set non-toolchain portion of runtime path of "/home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/lib/g1_ass1_pkg/final_cijfer_determinator" to ""
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/lib/g1_ass1_pkg/cijfer_calculator
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/lib/g1_ass1_pkg/herkansing_cijfer_determinator
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/lib/g1_ass1_pkg/herkansing_scheduler
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/share/ament_index/resource_index/package_run_dependencies/g1_ass1_pkg
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/share/ament_index/resource_index/parent_prefix_path/g1_ass1_pkg
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/share/g1_ass1_pkg/environment/ament_prefix_path.sh
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/share/g1_ass1_pkg/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/share/g1_ass1_pkg/environment/path.sh
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/share/g1_ass1_pkg/environment/path.dsv
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/share/g1_ass1_pkg/local_setup.bash
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/share/g1_ass1_pkg/local_setup.sh
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/share/g1_ass1_pkg/local_setup.zsh
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/share/g1_ass1_pkg/local_setup.dsv
+-- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/share/g1_ass1_pkg/package.dsv
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/share/ament_index/resource_index/packages/g1_ass1_pkg
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/share/g1_ass1_pkg/cmake/g1_ass1_pkgConfig.cmake
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/share/g1_ass1_pkg/cmake/g1_ass1_pkgConfig-version.cmake
+-- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/share/g1_ass1_pkg/package.xml

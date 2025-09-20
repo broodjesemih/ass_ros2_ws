@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "g1_interface_pkg__py",
+		"source" : "/home/broodjesemih/ass_ros2_ws/build/g1_interface_pkg/g1_interface_pkg__py"
+	}
+}

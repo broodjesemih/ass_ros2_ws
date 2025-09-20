@@ -1,0 +1,16 @@
+{
+  "package_name": "g1_interface_pkg",
+  "output_dir": "/home/broodjesemih/ass_ros2_ws/build/g1_interface_pkg/rosidl_generator_type_description/g1_interface_pkg",
+  "idl_tuples": [
+    "/home/broodjesemih/ass_ros2_ws/build/g1_interface_pkg/rosidl_adapter/g1_interface_pkg:msg/Student.idl",
+    "/home/broodjesemih/ass_ros2_ws/build/g1_interface_pkg/rosidl_adapter/g1_interface_pkg:msg/Tentamen.idl",
+    "/home/broodjesemih/ass_ros2_ws/build/g1_interface_pkg/rosidl_adapter/g1_interface_pkg:srv/Tentamens.idl",
+    "/home/broodjesemih/ass_ros2_ws/build/g1_interface_pkg/rosidl_adapter/g1_interface_pkg:action/Herkanser.idl"
+  ],
+  "include_paths": [
+    "service_msgs:/opt/ros/jazzy/share/service_msgs",
+    "builtin_interfaces:/opt/ros/jazzy/share/builtin_interfaces",
+    "action_msgs:/opt/ros/jazzy/share/action_msgs",
+    "unique_identifier_msgs:/opt/ros/jazzy/share/unique_identifier_msgs"
+  ]
+}

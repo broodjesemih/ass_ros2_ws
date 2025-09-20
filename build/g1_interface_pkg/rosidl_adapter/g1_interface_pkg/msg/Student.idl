@@ -1,0 +1,17 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from g1_interface_pkg/msg/Student.msg
+// generated code does not contain a copyright notice
+
+#include "builtin_interfaces/msg/Time.idl"
+
+module g1_interface_pkg {
+  module msg {
+    struct Student {
+      builtin_interfaces::msg::Time stamp;
+
+      string name;
+
+      string course;
+    };
+  };
+};
