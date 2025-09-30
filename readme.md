@@ -29,7 +29,7 @@ Dit project automatiseert het cijferproces voor studenten en bestaat uit meerder
 
 - **Doel:** Genereert willekeurige tentamen cijfers voor student/course combinaties waarvoor nog geen eindcijfer bestaat.
 - **Interactie:**  
-  - Leest combinaties uit `database.csv`.
+  - Leest combinaties uit `database.sqlite`.
   - Publiceert elke 2 seconden een `Tentamen` bericht op het topic `/tentamen_results`.
 - **Interface:**  
   - Gebruikt `g1_interface_pkg/msg/Tentamen`.
@@ -43,7 +43,7 @@ Dit project automatiseert het cijferproces voor studenten en bestaat uit meerder
   - Subscribed op `/tentamen_results`.
   - Slaat cijfers op tot er er 3 zijn.
   - Vraagt via de service `/calculate_final_cijfer` het eindcijfer aan.
-  - Schrijft het resultaat naar `database.csv`.
+  - Schrijft het resultaat naar `database.sqlite`.
 - **Interface:**  
   - Gebruikt `g1_interface_pkg/msg/Tentamen` (sub).
   - Gebruikt `g1_interface_pkg/srv/Tentamens` (client).
@@ -67,7 +67,7 @@ Dit project automatiseert het cijferproces voor studenten en bestaat uit meerder
 
 - **Doel:** Zoekt regelmatig in de database naar studenten die gezakt zijn (cijfer tussen 10 en 54) en start een herkansing.
 - **Interactie:**  
-  - Leest `database.csv`.
+  - Leest `database.sqlite`.
   - Stuurt een goal naar de action server `/herkanser` voor elke herkansing.
 - **Interface:**  
   - Gebruikt `g1_interface_pkg/action/Herkanser` (action client).
@@ -81,7 +81,7 @@ Dit project automatiseert het cijferproces voor studenten en bestaat uit meerder
   - Ontvangt een goal via de action server `/herkanser`.
   - Genereert opnieuw 3 willekeurige tentamen cijfers.
   - Vraagt via de service `/calculate_final_cijfer` het nieuwe eindcijfer aan.
-  - Schrijft het nieuwe resultaat naar `database.csv` (oude resultaat blijft staan).
+  - Schrijft het nieuwe resultaat naar `database.sqlite` (oude resultaat blijft staan).
 - **Interface:**  
   - Gebruikt `g1_interface_pkg/action/Herkanser` (action server).
   - Gebruikt `g1_interface_pkg/srv/Tentamens` (client).
@@ -109,7 +109,7 @@ Dit project automatiseert het cijferproces voor studenten en bestaat uit meerder
 
 ## Database
 
-- **Bestand:** `/home/broodjesemih/ass_ros2_ws/database.csv`
+- **Bestand:** `/ass_ros2_ws/database.sqlite`
 - **Structuur:**  
   `student_name,course_name,number_of_exams,final_result,timestamp`
 
@@ -118,12 +118,14 @@ Dit project automatiseert het cijferproces voor studenten en bestaat uit meerder
 ## Gebruik
 
 1. **Build de workspace:**  
+
    ```sh
    colcon build
    source install/setup.bash
    ```
 
 2. **Start de nodes in aparte terminals:**  
+
    ```sh
    ros2 run g1_ass1_pkg tentamen_result_generator
    ros2 run g1_ass1_pkg final_cijfer_determinator

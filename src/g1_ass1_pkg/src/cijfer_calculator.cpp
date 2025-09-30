@@ -1,5 +1,6 @@
 #include <rclcpp/rclcpp.hpp>
 #include "g1_interface_pkg/srv/tentamens.hpp"
+#include "database.cpp"
 
 class CijferCalculatorNode : public rclcpp::Node {
 public:
@@ -29,6 +30,7 @@ private:
 
 int main(int argc, char **argv) {
     rclcpp::init(argc, argv);
+    RCLCPP_INFO(rclcpp::get_logger("cijfer_calculator"), "[!] Starting cijfer_calculator node");
     rclcpp::spin(std::make_shared<CijferCalculatorNode>());
     rclcpp::shutdown();
     return 0;

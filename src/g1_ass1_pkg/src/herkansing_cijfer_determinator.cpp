@@ -7,27 +7,35 @@
 #include "g1_interface_pkg/action/herkanser.hpp"
 #include "g1_interface_pkg/srv/tentamens.hpp"
 #include "rclcpp_action/rclcpp_action.hpp"
+#include "database.cpp"
 
-struct StudentCourseKey {
+struct StudentCourseKey
+{
     std::string student;
     std::string course;
-    bool operator==(const StudentCourseKey& other) const {
+    bool operator==(const StudentCourseKey &other) const
+    {
         return student == other.student && course == other.course;
     }
 };
-namespace std {
+namespace std
+{
     template <>
-    struct hash<StudentCourseKey> {
-        std::size_t operator()(const StudentCourseKey& k) const {
+    struct hash<StudentCourseKey>
+    {
+        std::size_t operator()(const StudentCourseKey &k) const
+        {
             return std::hash<std::string>()(k.student) ^ std::hash<std::string>()(k.course);
         }
     };
 }
 
-class HerkansingCijferDeterminator : public rclcpp::Node {
+class HerkansingCijferDeterminator : public rclcpp::Node
+{
 public:
     using Herkanser = g1_interface_pkg::action::Herkanser;
-    HerkansingCijferDeterminator() : Node("herkansing_cijfer_determinator") {
+    HerkansingCijferDeterminator() : Node("herkansing_cijfer_determinator")
+    {
         action_server_ = rclcpp_action::create_server<Herkanser>(
             this, "herkanser",
             std::bind(&HerkansingCijferDeterminator::handle_goal, this, std::placeholders::_1, std::placeholders::_2),
@@ -40,26 +48,31 @@ private:
     rclcpp_action::Server<Herkanser>::SharedPtr action_server_;
     rclcpp::Client<g1_interface_pkg::srv::Tentamens>::SharedPtr cijfer_client_;
 
-    rclcpp_action::GoalResponse handle_goal(const rclcpp_action::GoalUUID &, std::shared_ptr<const Herkanser::Goal> goal) {
+    rclcpp_action::GoalResponse handle_goal(const rclcpp_action::GoalUUID &, std::shared_ptr<const Herkanser::Goal> goal)
+    {
         RCLCPP_INFO(this->get_logger(), "Received herkansing goal for %s/%s", goal->student_name.c_str(), goal->course_name.c_str());
         return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE;
     }
 
-    rclcpp_action::CancelResponse handle_cancel(const std::shared_ptr<rclcpp_action::ServerGoalHandle<Herkanser>>) {
+    rclcpp_action::CancelResponse handle_cancel(const std::shared_ptr<rclcpp_action::ServerGoalHandle<Herkanser>>)
+    {
         return rclcpp_action::CancelResponse::ACCEPT;
     }
 
-    void handle_accepted(const std::shared_ptr<rclcpp_action::ServerGoalHandle<Herkanser>> goal_handle) {
+    void handle_accepted(const std::shared_ptr<rclcpp_action::ServerGoalHandle<Herkanser>> goal_handle)
+    {
         std::thread{std::bind(&HerkansingCijferDeterminator::execute, this, goal_handle)}.detach();
     }
 
-    void execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle<Herkanser>> goal_handle) {
+    void execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle<Herkanser>> goal_handle)
+    {
         auto goal = goal_handle->get_goal();
         StudentCourseKey key{goal->student_name, goal->course_name};
 
         // Simulate receiving new tentamen results (here: random generation)
         std::vector<int> cijfers;
-        for (int i = 0; i < 3; ++i) {
+        for (int i = 0; i < 3; ++i)
+        {
             cijfers.push_back(10 + (rand() % 91));
             auto feedback = std::make_shared<Herkanser::Feedback>();
             feedback->progress = (i + 1) / 3.0f;
@@ -79,9 +92,23 @@ private:
         auto response = future.get();
 
         // Add new result to database (append, don't overwrite)
-        std::ofstream db("/home/broodjesemih/ass_ros2_ws/database.csv", std::ios::app);
-        db << key.student << "," << key.course << "," << cijfers.size() << "," << response->final_cijfer << "," << std::to_string(this->now().seconds()) << "\n";
-        db.close();
+        if (!Database::open())
+        {
+            std::cerr << "Could not open database!\n";
+        }
+        // Build the record that would have been written to CSV
+        StudentRecord record;
+        record.student_name = key.student;
+        record.course = key.course;
+        record.number_of_exams = static_cast<int>(cijfers.size());
+        record.final_result = response->final_cijfer;
+        record.timestamp = this->now().seconds();
+
+        // Insert into SQLite instead of CSV
+        if (!Database::insert(record))
+        {
+            std::cerr << "Failed to insert record into database\n";
+        }
 
         auto result = std::make_shared<Herkanser::Result>();
         result->final_cijfer = response->final_cijfer;
@@ -90,8 +117,10 @@ private:
     }
 };
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv)
+{
     rclcpp::init(argc, argv);
+    RCLCPP_INFO(rclcpp::get_logger("herkansing_cijfer_determinator"), "[!] Starting herkansing_cijfer_determinator node");
     rclcpp::spin(std::make_shared<HerkansingCijferDeterminator>());
     rclcpp::shutdown();
     return 0;

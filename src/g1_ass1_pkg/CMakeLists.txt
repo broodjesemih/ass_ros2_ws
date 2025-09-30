@@ -14,22 +14,48 @@ find_package(std_msgs REQUIRED)               # gebruik maken von standaard mess
 find_package(builtin_interfaces REQUIRED)     # nodig voor Time messages
 find_package(rosidl_default_generators REQUIRED) # nodig om custom messages te gebruiken
 
+# Create a library from database.cpp
+add_library(database_lib src/database.cpp)
+target_link_libraries(database_lib sqlite3)
 
 # Executables
 add_executable(tentamen_result_generator src/tentamen_result_generator.cpp)
 ament_target_dependencies(tentamen_result_generator rclcpp g1_interface_pkg)
+target_link_libraries(tentamen_result_generator database_lib)
 
 add_executable(final_cijfer_determinator src/final_cijfer_determinator.cpp)
 ament_target_dependencies(final_cijfer_determinator rclcpp g1_interface_pkg)
+target_link_libraries(final_cijfer_determinator database_lib)
 
 add_executable(cijfer_calculator src/cijfer_calculator.cpp)
 ament_target_dependencies(cijfer_calculator rclcpp g1_interface_pkg)
+target_link_libraries(cijfer_calculator database_lib)
 
 add_executable(herkansing_cijfer_determinator src/herkansing_cijfer_determinator.cpp)
 ament_target_dependencies(herkansing_cijfer_determinator rclcpp_action rclcpp g1_interface_pkg)
+target_link_libraries(herkansing_cijfer_determinator database_lib)
 
 add_executable(herkansing_scheduler src/herkansing_scheduler.cpp)
 ament_target_dependencies(herkansing_scheduler rclcpp_action rclcpp g1_interface_pkg)
+target_link_libraries(herkansing_scheduler database_lib)
+
+
+
+# # Executables
+# add_executable(tentamen_result_generator src/tentamen_result_generator.cpp)
+# ament_target_dependencies(tentamen_result_generator rclcpp g1_interface_pkg)
+
+# add_executable(final_cijfer_determinator src/final_cijfer_determinator.cpp)
+# ament_target_dependencies(final_cijfer_determinator rclcpp g1_interface_pkg)
+
+# add_executable(cijfer_calculator src/cijfer_calculator.cpp)
+# ament_target_dependencies(cijfer_calculator rclcpp g1_interface_pkg)
+
+# add_executable(herkansing_cijfer_determinator src/herkansing_cijfer_determinator.cpp)
+# ament_target_dependencies(herkansing_cijfer_determinator rclcpp_action rclcpp g1_interface_pkg)
+
+# add_executable(herkansing_scheduler src/herkansing_scheduler.cpp)
+# ament_target_dependencies(herkansing_scheduler rclcpp_action rclcpp g1_interface_pkg)
 
 install(TARGETS
   tentamen_result_generator

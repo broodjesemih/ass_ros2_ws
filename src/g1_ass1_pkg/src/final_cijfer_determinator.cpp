@@ -6,6 +6,7 @@
 #include "g1_interface_pkg/msg/tentamen.hpp"
 #include "g1_interface_pkg/msg/student.hpp"
 #include "g1_interface_pkg/srv/tentamens.hpp"
+#include "database.cpp"
 
 struct StudentCourseKey
 {
@@ -64,16 +65,32 @@ private:
             {
                 auto response = result_future.get();
 
-                RCLCPP_INFO(this->get_logger(), "Schrijf naar database: %s,%s,%d,%d,%s",
+                RCLCPP_INFO(this->get_logger(),
+                            "Schrijf naar database: %s,%s,%zu,%d,%s",
                             key.student.c_str(),
                             key.course.c_str(),
                             tentamen_map_[key].size(),
                             response->final_cijfer,
                             std::to_string(this->now().seconds()).c_str());
 
-                std::ofstream db("/home/broodjesemih/ass_ros2_ws/database.csv", std::ios::app);
-                db << key.student << "," << key.course << "," << tentamen_map_[key].size() << "," << response->final_cijfer << "," << std::to_string(this->now().seconds()) << "\n";
-                db.close();
+                if (!Database::open())
+                {
+                    std::cerr << "Could not open database!\n";
+                }
+
+                // Prepare the record
+                StudentRecord record;
+                record.student_name = key.student;
+                record.course = key.course;
+                record.number_of_exams = static_cast<int>(tentamen_map_[key].size());
+                record.final_result = response->final_cijfer;
+                record.timestamp = this->now().seconds();
+
+                // Insert into SQLite
+                if (!Database::insert(record))
+                {
+                    std::cerr << "Failed to insert record into database\n";
+                }
 
                 RCLCPP_INFO(this->get_logger(), "Final cijfer for %s/%s: %d", key.student.c_str(), key.course.c_str(), response->final_cijfer);
 
@@ -88,6 +105,7 @@ private:
 int main(int argc, char **argv)
 {
     rclcpp::init(argc, argv);
+    RCLCPP_INFO(rclcpp::get_logger("final_cijfer_determinator"), "[!] Starting final_cijfer_determinator node");
     rclcpp::spin(std::make_shared<FinalCijferDeterminator>());
     rclcpp::shutdown();
     return 0;

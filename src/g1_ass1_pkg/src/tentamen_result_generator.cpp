@@ -5,26 +5,35 @@
 #include <unordered_set>
 #include "g1_interface_pkg/msg/tentamen.hpp"
 #include "g1_interface_pkg/msg/student.hpp"
+#include "database.cpp"
 
-struct StudentCourseKey {
+
+struct StudentCourseKey
+{
     std::string student;
     std::string course;
-    bool operator==(const StudentCourseKey& other) const {
+    bool operator==(const StudentCourseKey &other) const
+    {
         return student == other.student && course == other.course;
     }
 };
-namespace std {
+namespace std
+{
     template <>
-    struct hash<StudentCourseKey> {
-        std::size_t operator()(const StudentCourseKey& k) const {
+    struct hash<StudentCourseKey>
+    {
+        std::size_t operator()(const StudentCourseKey &k) const
+        {
             return std::hash<std::string>()(k.student) ^ std::hash<std::string>()(k.course);
         }
     };
 }
 
-class TentamenResultGenerator : public rclcpp::Node {
+class TentamenResultGenerator : public rclcpp::Node
+{
 public:
-    TentamenResultGenerator() : Node("tentamen_result_generator") {
+    TentamenResultGenerator() : Node("tentamen_result_generator")
+    {
         publisher_ = this->create_publisher<g1_interface_pkg::msg::Tentamen>("tentamen_results", 10);
         timer_ = this->create_wall_timer(
             std::chrono::seconds(2),
@@ -39,25 +48,25 @@ private:
     rclcpp::Publisher<g1_interface_pkg::msg::Tentamen>::SharedPtr publisher_;
     rclcpp::TimerBase::SharedPtr timer_;
 
-    void load_student_course_combinations() {
-        std::ifstream db("/home/broodjesemih/ass_ros2_ws/database.csv");
-        std::string line;
-        while (std::getline(db, line)) {
-            std::istringstream iss(line);
-            std::string student, course, exams, final_result, timestamp;
-            std::getline(iss, student, ',');
-            std::getline(iss, course, ',');
-            std::getline(iss, exams, ',');
-            std::getline(iss, final_result, ',');
-            std::getline(iss, timestamp, ',');
-            if (final_result.empty()) { // Only add if no final result
-                active_combinations_.insert({student, course});
-            }
+    void load_student_course_combinations()
+    {
+
+        if (!Database::open())
+        {
+            std::cerr << "Could not open database!\n";
+        }
+
+        auto records = Database::getWithoutFinalResult();
+        for (const auto &r : records)
+        {
+            active_combinations_.insert(StudentCourseKey{r.student_name, r.course});
         }
     }
 
-    void publish_random_result() {
-        if (active_combinations_.empty()) return;
+    void publish_random_result()
+    {
+        if (active_combinations_.empty())
+            return;
         auto it = active_combinations_.begin();
         std::advance(it, rand() % active_combinations_.size());
         auto key = *it;
@@ -73,8 +82,10 @@ private:
     }
 };
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv)
+{
     rclcpp::init(argc, argv);
+    RCLCPP_INFO(rclcpp::get_logger("tentamen_result_generator"), "[!] Starting tentamen_result_generator node");
     rclcpp::spin(std::make_shared<TentamenResultGenerator>());
     rclcpp::shutdown();
     return 0;
