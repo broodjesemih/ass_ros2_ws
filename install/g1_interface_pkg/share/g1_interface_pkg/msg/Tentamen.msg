@@ -1,4 +1,0 @@
-builtin_interfaces/Time stamp
-string student_name
-string course_name
-int32 tentamen_cijfer

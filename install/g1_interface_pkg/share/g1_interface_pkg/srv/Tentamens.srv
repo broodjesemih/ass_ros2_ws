@@ -1,6 +1,0 @@
-string student_name
-string course_name
-int32[] tentamen_cijfers
----
-int32 final_cijfer
-string message

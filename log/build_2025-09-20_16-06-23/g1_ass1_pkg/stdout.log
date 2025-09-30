@@ -1,5 +1,0 @@
-[ 20%] Built target tentamen_result_generator
-[ 40%] Built target herkansing_scheduler
-[ 50%] [32mBuilding CXX object CMakeFiles/final_cijfer_determinator.dir/src/final_cijfer_determinator.cpp.o[0m
-[ 70%] Built target herkansing_cijfer_determinator
-[ 90%] Built target cijfer_calculator

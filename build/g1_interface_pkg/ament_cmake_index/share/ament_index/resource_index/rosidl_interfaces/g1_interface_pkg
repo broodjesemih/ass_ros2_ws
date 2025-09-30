@@ -1,8 +1,0 @@
-action/Herkanser.action
-action/Herkanser.idl
-msg/Student.idl
-msg/Student.msg
-msg/Tentamen.idl
-msg/Tentamen.msg
-srv/Tentamens.idl
-srv/Tentamens.srv

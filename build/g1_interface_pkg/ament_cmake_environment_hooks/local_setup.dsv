@@ -1,4 +1,0 @@
-source;share/g1_interface_pkg/environment/ament_prefix_path.sh
-source;share/g1_interface_pkg/environment/library_path.sh
-source;share/g1_interface_pkg/environment/path.sh
-source;share/g1_interface_pkg/environment/pythonpath.sh
