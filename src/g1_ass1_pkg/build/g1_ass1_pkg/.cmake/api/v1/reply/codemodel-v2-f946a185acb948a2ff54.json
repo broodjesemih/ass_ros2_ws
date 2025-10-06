@@ -1,0 +1,175 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-2390e13a29df778a6f22.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						5,
+						6,
+						7,
+						8,
+						9
+					]
+				},
+				{
+					"build" : "gtest",
+					"jsonFile" : "directory-gtest-0908a8c91ddba5d6c989.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "/opt/ros/jazzy/src/gtest_vendor",
+					"targetIndexes" : 
+					[
+						3,
+						4
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "g1_ass1_pkg",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						5,
+						6,
+						7,
+						8,
+						9
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "gtest",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "cijfer_calculator::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cijfer_calculator-fbcaac907f74fe52a52f.json",
+					"name" : "cijfer_calculator",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "final_cijfer_determinator::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-final_cijfer_determinator-08e52eb8d0689515bbae.json",
+					"name" : "final_cijfer_determinator",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "g1_ass1_pkg_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-g1_ass1_pkg_uninstall-2427f791c801e179d49f.json",
+					"name" : "g1_ass1_pkg_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "gtest::@0af4add9fe94340e763e",
+					"jsonFile" : "target-gtest-e3d84c2a89bf3441ad2d.json",
+					"name" : "gtest",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "gtest_main::@0af4add9fe94340e763e",
+					"jsonFile" : "target-gtest_main-f900061d9fca1d1bc3a4.json",
+					"name" : "gtest_main",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "herkansing_cijfer_determinator::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-herkansing_cijfer_determinator-c6392062d7c07455755e.json",
+					"name" : "herkansing_cijfer_determinator",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "herkansing_scheduler::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-herkansing_scheduler-e902f8a4274b4ad53968.json",
+					"name" : "herkansing_scheduler",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "tentamen_result_generator::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-tentamen_result_generator-36b072d2914601763516.json",
+					"name" : "tentamen_result_generator",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_cijfer_calculator::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_cijfer_calculator-b5be6991db834a709a17.json",
+					"name" : "test_cijfer_calculator",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-d6a8dc3155088d3b688f.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/build/g1_ass1_pkg",
+		"source" : "/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

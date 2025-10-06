@@ -1,0 +1,18 @@
+-- run_test.py: invoking following command in '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg':
+ - /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_cijfer_calculator --gtest_output=xml:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_calculator.gtest.xml
+
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TestSuite
+[ RUN      ] TestSuite.test_example
+[       OK ] TestSuite.test_example (0 ms)
+[----------] 1 test from TestSuite (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+
+
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_calculator.gtest.xml'
+-- run_test.py: verify result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_calculator.gtest.xml'

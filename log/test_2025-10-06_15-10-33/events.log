@@ -1,0 +1,770 @@
+[0.000000] (-) TimerEvent: {}
+[0.000284] (g1_ass1_pkg) JobQueued: {'identifier': 'g1_ass1_pkg', 'dependencies': OrderedDict({'g1_interface_pkg': '/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg', 'g1_ass1_pkg': '/home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg'})}
+[0.000392] (g1_ass1_pkg) JobStarted: {'identifier': 'g1_ass1_pkg'}
+[0.018671] (g1_ass1_pkg) Command: {'cmd': ['/usr/bin/ctest', '-C', 'Release', '-D', 'ExperimentalTest', '--no-compress-output', '-V', '--force-new-ctest-process'], 'cwd': '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg', 'env': OrderedDict({'LANGUAGE': 'en_US', 'USER': 'broodjesemih', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'XDG_SEAT': 'seat0', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'GIT_ASKPASS': '/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib:/home/broodjesemih/homework_ws/install/broodje_interfaces/lib:/home/broodjesemih/ros2_ws/install/my_robot_interfaces/lib:/home/broodjesemih/les_ws-main/install/my_interfaces/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/broodjesemih', 'OLDPWD': '/home/broodjesemih/ass_ros2_ws', 'LESS': '-R', 'CHROME_DESKTOP': 'code.desktop', 'DESKTOP_SESSION': 'xubuntu', 'TERM_PROGRAM_VERSION': '1.104.2', 'ZSH': '/home/broodjesemih/.oh-my-zsh', 'LSCOLORS': 'Gxfxcxdxbxegedabagacad', 'XDG_SEAT_PATH': '/org/freedesktop/DisplayManager/Seat0', 'PAGER': 'less', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/usr/share/code/code', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', 'QT_QPA_PLATFORMTHEME': 'gtk2', 'ROS_DISTRO': 'jazzy', 'COLCON_PREFIX_PATH': '/home/broodjesemih/ass_ros2_ws/install:/home/broodjesemih/homework_ws/install:/home/broodjesemih/ros2_ws/install:/home/broodjesemih/minor_ws/install:/home/broodjesemih/les_ws-main/install', 'LOGNAME': 'broodjesemih', 'WINDOWID': '56623111', '_': '/usr/bin/colcon', 'XDG_SESSION_CLASS': 'user', 'ROS_VERSION': '2', 'USER_ZDOTDIR': '/home/broodjesemih', 'GTK_OVERLAY_SCROLLING': '0', 'XDG_SESSION_ID': 'c2', 'CLUTTER_BACKEND': 'x11', 'TERM': 'xterm-256color', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/broodjesemih/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/broodjesemih/.config/Code/User/globalStorage/github.copilot-chat/debugCommand', 'SESSION_MANAGER': 'local/xubuntu:@/tmp/.ICE-unix/1656,unix/xubuntu:/tmp/.ICE-unix/1656', 'GDM_LANG': 'en_US', 'XDG_MENU_PREFIX': 'xfce-', 'XDG_SESSION_PATH': '/org/freedesktop/DisplayManager/Session0', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':0.0', 'XDG_CURRENT_DESKTOP': 'XFCE', 'VSCODE_INJECTION': '1', 'LANG': 'en_US.UTF-8', 'XDG_SESSION_DESKTOP': 'xubuntu', 'XAUTHORITY': '/home/broodjesemih/.Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'TERM_PROGRAM': 'vscode', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-70c8134e19.sock', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'XDG_GREETER_DATA_DIR': '/var/lib/lightdm-data/broodjesemih', 'AMENT_PREFIX_PATH': '/home/broodjesemih/minor_ws/install/robot_moveit_config:/home/broodjesemih/minor_ws/install/robot_description:/home/broodjesemih/minor_ws/install/robot_commander:/home/broodjesemih/minor_ws/install/robot_bringup:/home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg:/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg:/home/broodjesemih/homework_ws/install/hw_pkg:/home/broodjesemih/homework_ws/install/broodje_interfaces:/home/broodjesemih/ros2_ws/install/templates_interfaces:/home/broodjesemih/ros2_ws/install/les_pkg:/home/broodjesemih/ros2_ws/install/my_robot_interfaces:/home/broodjesemih/les_ws-main/install/robot_moveit_config:/home/broodjesemih/les_ws-main/install/robot_description:/home/broodjesemih/les_ws-main/install/robot_commander:/home/broodjesemih/les_ws-main/install/robot_bringup:/home/broodjesemih/les_ws-main/install/les_pkg:/home/broodjesemih/les_ws-main/install/my_interfaces:/opt/ros/jazzy', 'ORIGINAL_XDG_CURRENT_DESKTOP': 'XFCE', 'SHELL': '/usr/bin/zsh', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'xubuntu', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'XDG_VTNR': '7', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'GIT_PAGER': 'cat', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg', 'LC_ALL': 'en_US.UTF-8', 'XDG_DATA_DIRS': '/usr/share/xubuntu:/usr/share/xfce4:/usr/local/share/:/usr/share/:/usr/share', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-xubuntu:/etc/xdg', 'ZDOTDIR': '/home/broodjesemih', 'PYTHONPATH': '/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages:/home/broodjesemih/homework_ws/install/broodje_interfaces/lib/python3.12/site-packages:/home/broodjesemih/ros2_ws/install/my_robot_interfaces/lib/python3.12/site-packages:/home/broodjesemih/les_ws-main/install/my_interfaces/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg:/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg:/home/broodjesemih/minor_ws/install/robot_moveit_config:/home/broodjesemih/minor_ws/install/robot_description:/home/broodjesemih/minor_ws/install/robot_commander:/home/broodjesemih/minor_ws/install/robot_bringup:/home/broodjesemih/homework_ws/install/hw_pkg:/home/broodjesemih/homework_ws/install/broodje_interfaces:/home/broodjesemih/ros2_ws/install/templates_interfaces:/home/broodjesemih/ros2_ws/install/les_pkg:/home/broodjesemih/ros2_ws/install/my_robot_interfaces:/home/broodjesemih/les_ws-main/install/robot_moveit_config:/home/broodjesemih/les_ws-main/install/robot_description:/home/broodjesemih/les_ws-main/install/robot_commander:/home/broodjesemih/les_ws-main/install/robot_bringup:/home/broodjesemih/les_ws-main/install/les_pkg:/home/broodjesemih/les_ws-main/install/my_interfaces:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor'}), 'shell': False}
+[0.025251] (g1_ass1_pkg) StdoutLine: {'line': b'UpdateCTestConfiguration  from :/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/CTestConfiguration.ini\n'}
+[0.025481] (g1_ass1_pkg) StdoutLine: {'line': b'Parse Config file:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/CTestConfiguration.ini\n'}
+[0.025621] (g1_ass1_pkg) StdoutLine: {'line': b'   Site: xubuntu\n'}
+[0.025709] (g1_ass1_pkg) StdoutLine: {'line': b'   Build name: (empty)\n'}
+[0.025835] (g1_ass1_pkg) StdoutLine: {'line': b' Add coverage exclude regular expressions.\n'}
+[0.025978] (g1_ass1_pkg) StdoutLine: {'line': b'Create new tag: 20251006-1310 - Experimental\n'}
+[0.026067] (g1_ass1_pkg) StdoutLine: {'line': b'UpdateCTestConfiguration  from :/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/CTestConfiguration.ini\n'}
+[0.026154] (g1_ass1_pkg) StdoutLine: {'line': b'Parse Config file:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/CTestConfiguration.ini\n'}
+[0.026239] (g1_ass1_pkg) StdoutLine: {'line': b'Test project /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg\n'}
+[0.026360] (g1_ass1_pkg) StdoutLine: {'line': b'Constructing a list of tests\n'}
+[0.026483] (g1_ass1_pkg) StdoutLine: {'line': b'Done constructing a list of tests\n'}
+[0.026534] (g1_ass1_pkg) StdoutLine: {'line': b'Updating test list for fixtures\n'}
+[0.026575] (g1_ass1_pkg) StdoutLine: {'line': b'Added 0 tests to meet fixture requirements\n'}
+[0.026614] (g1_ass1_pkg) StdoutLine: {'line': b'Checking test dependency graph...\n'}
+[0.026651] (g1_ass1_pkg) StdoutLine: {'line': b'Checking test dependency graph end\n'}
+[0.026687] (g1_ass1_pkg) StdoutLine: {'line': b'test 1\n'}
+[0.026724] (g1_ass1_pkg) StdoutLine: {'line': b'    Start 1: test_cijfer_calculator\n'}
+[0.026759] (g1_ass1_pkg) StdoutLine: {'line': b'\n'}
+[0.026796] (g1_ass1_pkg) StdoutLine: {'line': b'1: Test command: /usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_calculator.gtest.xml" "--package-name" "g1_ass1_pkg" "--output-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/ament_cmake_gtest/test_cijfer_calculator.txt" "--command" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_cijfer_calculator" "--gtest_output=xml:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_calculator.gtest.xml"\n'}
+[0.026839] (g1_ass1_pkg) StdoutLine: {'line': b'1: Working Directory: /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg\n'}
+[0.026881] (g1_ass1_pkg) StdoutLine: {'line': b'1: Test timeout computed to be: 60\n'}
+[0.064579] (g1_ass1_pkg) StdoutLine: {'line': b"1: -- run_test.py: invoking following command in '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg':\n"}
+[0.064710] (g1_ass1_pkg) StdoutLine: {'line': b'1:  - /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_cijfer_calculator --gtest_output=xml:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_calculator.gtest.xml\n'}
+[0.065765] (g1_ass1_pkg) StdoutLine: {'line': b'1: [==========] Running 1 test from 1 test suite.\n'}
+[0.065953] (g1_ass1_pkg) StdoutLine: {'line': b'1: [----------] Global test environment set-up.\n'}
+[0.066026] (g1_ass1_pkg) StdoutLine: {'line': b'1: [----------] 1 test from TestSuite\n'}
+[0.066067] (g1_ass1_pkg) StdoutLine: {'line': b'1: [ RUN      ] TestSuite.test_example\n'}
+[0.066104] (g1_ass1_pkg) StdoutLine: {'line': b'1: [       OK ] TestSuite.test_example (0 ms)\n'}
+[0.066140] (g1_ass1_pkg) StdoutLine: {'line': b'1: [----------] 1 test from TestSuite (0 ms total)\n'}
+[0.066173] (g1_ass1_pkg) StdoutLine: {'line': b'1: \n'}
+[0.066215] (g1_ass1_pkg) StdoutLine: {'line': b'1: [----------] Global test environment tear-down\n'}
+[0.066249] (g1_ass1_pkg) StdoutLine: {'line': b'1: [==========] 1 test from 1 test suite ran. (0 ms total)\n'}
+[0.066282] (g1_ass1_pkg) StdoutLine: {'line': b'1: [  PASSED  ] 1 test.\n'}
+[0.066321] (g1_ass1_pkg) StdoutLine: {'line': b'1: -- run_test.py: return code 0\n'}
+[0.066357] (g1_ass1_pkg) StdoutLine: {'line': b"1: -- run_test.py: inject classname prefix into gtest result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_calculator.gtest.xml'\n"}
+[0.067155] (g1_ass1_pkg) StdoutLine: {'line': b"1: -- run_test.py: verify result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_calculator.gtest.xml'\n"}
+[0.073217] (g1_ass1_pkg) StdoutLine: {'line': b'1/7 Test #1: test_cijfer_calculator ...........   Passed    0.05 sec\n'}
+[0.073364] (g1_ass1_pkg) StdoutLine: {'line': b'test 2\n'}
+[0.073410] (g1_ass1_pkg) StdoutLine: {'line': b'    Start 2: cppcheck\n'}
+[0.073451] (g1_ass1_pkg) StdoutLine: {'line': b'\n'}
+[0.073488] (g1_ass1_pkg) StdoutLine: {'line': b'2: Test command: /usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/cppcheck.xunit.xml" "--package-name" "g1_ass1_pkg" "--output-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/ament_cppcheck/cppcheck.txt" "--command" "/opt/ros/jazzy/bin/ament_cppcheck" "--xunit-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/cppcheck.xunit.xml"\n'}
+[0.073529] (g1_ass1_pkg) StdoutLine: {'line': b'2: Working Directory: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg\n'}
+[0.073563] (g1_ass1_pkg) StdoutLine: {'line': b'2: Test timeout computed to be: 300\n'}
+[0.099928] (-) TimerEvent: {}
+[0.113776] (g1_ass1_pkg) StdoutLine: {'line': b"2: -- run_test.py: invoking following command in '/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg':\n"}
+[0.113918] (g1_ass1_pkg) StdoutLine: {'line': b'2:  - /opt/ros/jazzy/bin/ament_cppcheck --xunit-file /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/cppcheck.xunit.xml\n'}
+[0.168636] (g1_ass1_pkg) StdoutLine: {'line': b'2: cppcheck 2.13.0 has known performance issues and therefore will not be used, set the AMENT_CPPCHECK_ALLOW_SLOW_VERSIONS environment variable to override this.\n'}
+[0.177472] (g1_ass1_pkg) StdoutLine: {'line': b'2: -- run_test.py: return code 0\n'}
+[0.177601] (g1_ass1_pkg) StdoutLine: {'line': b"2: -- run_test.py: verify result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/cppcheck.xunit.xml'\n"}
+[0.184400] (g1_ass1_pkg) StdoutLine: {'line': b'2/7 Test #2: cppcheck .........................   Passed    0.11 sec\n'}
+[0.184544] (g1_ass1_pkg) StdoutLine: {'line': b'test 3\n'}
+[0.184599] (g1_ass1_pkg) StdoutLine: {'line': b'    Start 3: flake8\n'}
+[0.184639] (g1_ass1_pkg) StdoutLine: {'line': b'\n'}
+[0.184679] (g1_ass1_pkg) StdoutLine: {'line': b'3: Test command: /usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/flake8.xunit.xml" "--package-name" "g1_ass1_pkg" "--output-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/ament_flake8/flake8.txt" "--command" "/opt/ros/jazzy/bin/ament_flake8" "--xunit-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/flake8.xunit.xml"\n'}
+[0.184729] (g1_ass1_pkg) StdoutLine: {'line': b'3: Working Directory: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg\n'}
+[0.184769] (g1_ass1_pkg) StdoutLine: {'line': b'3: Test timeout computed to be: 60\n'}
+[0.200041] (-) TimerEvent: {}
+[0.224131] (g1_ass1_pkg) StdoutLine: {'line': b"3: -- run_test.py: invoking following command in '/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg':\n"}
+[0.224285] (g1_ass1_pkg) StdoutLine: {'line': b'3:  - /opt/ros/jazzy/bin/ament_flake8 --xunit-file /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/flake8.xunit.xml\n'}
+[0.300231] (-) TimerEvent: {}
+[0.400547] (-) TimerEvent: {}
+[0.488082] (g1_ass1_pkg) StdoutLine: {'line': b'3: \n'}
+[0.488242] (g1_ass1_pkg) StdoutLine: {'line': b'3: 2 files checked\n'}
+[0.488293] (g1_ass1_pkg) StdoutLine: {'line': b'3: No problems found\n'}
+[0.488334] (g1_ass1_pkg) StdoutLine: {'line': b'3: \n'}
+[0.488376] (g1_ass1_pkg) StdoutLine: {'line': b'3: Checked files:\n'}
+[0.488413] (g1_ass1_pkg) StdoutLine: {'line': b'3: \n'}
+[0.488447] (g1_ass1_pkg) StdoutLine: {'line': b'3: * ./install/_local_setup_util_sh.py\n'}
+[0.488485] (g1_ass1_pkg) StdoutLine: {'line': b'3: * ./install/_local_setup_util_ps1.py\n'}
+[0.500625] (-) TimerEvent: {}
+[0.507590] (g1_ass1_pkg) StdoutLine: {'line': b'3: -- run_test.py: return code 0\n'}
+[0.507730] (g1_ass1_pkg) StdoutLine: {'line': b"3: -- run_test.py: verify result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/flake8.xunit.xml'\n"}
+[0.515080] (g1_ass1_pkg) StdoutLine: {'line': b'3/7 Test #3: flake8 ...........................   Passed    0.33 sec\n'}
+[0.515227] (g1_ass1_pkg) StdoutLine: {'line': b'test 4\n'}
+[0.515272] (g1_ass1_pkg) StdoutLine: {'line': b'    Start 4: lint_cmake\n'}
+[0.515320] (g1_ass1_pkg) StdoutLine: {'line': b'\n'}
+[0.515359] (g1_ass1_pkg) StdoutLine: {'line': b'4: Test command: /usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/lint_cmake.xunit.xml" "--package-name" "g1_ass1_pkg" "--output-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/ament_lint_cmake/lint_cmake.txt" "--command" "/opt/ros/jazzy/bin/ament_lint_cmake" "--xunit-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/lint_cmake.xunit.xml"\n'}
+[0.515403] (g1_ass1_pkg) StdoutLine: {'line': b'4: Working Directory: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg\n'}
+[0.515442] (g1_ass1_pkg) StdoutLine: {'line': b'4: Test timeout computed to be: 60\n'}
+[0.557013] (g1_ass1_pkg) StdoutLine: {'line': b"4: -- run_test.py: invoking following command in '/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg':\n"}
+[0.557145] (g1_ass1_pkg) StdoutLine: {'line': b'4:  - /opt/ros/jazzy/bin/ament_lint_cmake --xunit-file /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/lint_cmake.xunit.xml\n'}
+[0.600744] (-) TimerEvent: {}
+[0.604254] (g1_ass1_pkg) StdoutLine: {'line': b'4: CMakeLists.txt:12: Line ends in whitespace [whitespace/eol]\n'}
+[0.604358] (g1_ass1_pkg) StdoutLine: {'line': b'4: CMakeLists.txt:45: Line ends in whitespace [whitespace/eol]\n'}
+[0.604402] (g1_ass1_pkg) StdoutLine: {'line': b'4: CMakeLists.txt:49: Line ends in whitespace [whitespace/eol]\n'}
+[0.604439] (g1_ass1_pkg) StdoutLine: {'line': b'4: \n'}
+[0.604476] (g1_ass1_pkg) StdoutLine: {'line': b'4: \n'}
+[0.604509] (g1_ass1_pkg) StdoutLine: {'line': b'4: 3 errors\n'}
+[0.611683] (g1_ass1_pkg) StdoutLine: {'line': b'4: -- run_test.py: return code 1\n'}
+[0.611868] (g1_ass1_pkg) StdoutLine: {'line': b"4: -- run_test.py: verify result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/lint_cmake.xunit.xml'\n"}
+[0.617758] (g1_ass1_pkg) StdoutLine: {'line': b'4/7 Test #4: lint_cmake .......................***Failed    0.10 sec\n'}
+[0.618048] (g1_ass1_pkg) StdoutLine: {'line': b'test 5\n'}
+[0.618128] (g1_ass1_pkg) StdoutLine: {'line': b'    Start 5: pep257\n'}
+[0.618171] (g1_ass1_pkg) StdoutLine: {'line': b'\n'}
+[0.618212] (g1_ass1_pkg) StdoutLine: {'line': b'5: Test command: /usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/pep257.xunit.xml" "--package-name" "g1_ass1_pkg" "--output-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/ament_pep257/pep257.txt" "--command" "/opt/ros/jazzy/bin/ament_pep257" "--xunit-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/pep257.xunit.xml"\n'}
+[0.618256] (g1_ass1_pkg) StdoutLine: {'line': b'5: Working Directory: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg\n'}
+[0.618297] (g1_ass1_pkg) StdoutLine: {'line': b'5: Test timeout computed to be: 60\n'}
+[0.658576] (g1_ass1_pkg) StdoutLine: {'line': b"5: -- run_test.py: invoking following command in '/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg':\n"}
+[0.658696] (g1_ass1_pkg) StdoutLine: {'line': b'5:  - /opt/ros/jazzy/bin/ament_pep257 --xunit-file /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/pep257.xunit.xml\n'}
+[0.700855] (-) TimerEvent: {}
+[0.764459] (g1_ass1_pkg) StdoutLine: {'line': b'5: checking ./install/_local_setup_util_ps1.py\n'}
+[0.764593] (g1_ass1_pkg) StdoutLine: {'line': b'5: checking ./install/_local_setup_util_sh.py\n'}
+[0.764639] (g1_ass1_pkg) StdoutLine: {'line': b'5: No problems found\n'}
+[0.775748] (g1_ass1_pkg) StdoutLine: {'line': b'5: -- run_test.py: return code 0\n'}
+[0.775899] (g1_ass1_pkg) StdoutLine: {'line': b"5: -- run_test.py: verify result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/pep257.xunit.xml'\n"}
+[0.782812] (g1_ass1_pkg) StdoutLine: {'line': b'5/7 Test #5: pep257 ...........................   Passed    0.16 sec\n'}
+[0.782957] (g1_ass1_pkg) StdoutLine: {'line': b'test 6\n'}
+[0.783005] (g1_ass1_pkg) StdoutLine: {'line': b'    Start 6: uncrustify\n'}
+[0.783045] (g1_ass1_pkg) StdoutLine: {'line': b'\n'}
+[0.783085] (g1_ass1_pkg) StdoutLine: {'line': b'6: Test command: /usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/uncrustify.xunit.xml" "--package-name" "g1_ass1_pkg" "--output-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/ament_uncrustify/uncrustify.txt" "--command" "/opt/ros/jazzy/bin/ament_uncrustify" "--xunit-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/uncrustify.xunit.xml"\n'}
+[0.783129] (g1_ass1_pkg) StdoutLine: {'line': b'6: Working Directory: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg\n'}
+[0.783175] (g1_ass1_pkg) StdoutLine: {'line': b'6: Test timeout computed to be: 60\n'}
+[0.801071] (-) TimerEvent: {}
+[0.824327] (g1_ass1_pkg) StdoutLine: {'line': b"6: -- run_test.py: invoking following command in '/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg':\n"}
+[0.824455] (g1_ass1_pkg) StdoutLine: {'line': b'6:  - /opt/ros/jazzy/bin/ament_uncrustify --xunit-file /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/uncrustify.xunit.xml\n'}
+[0.901209] (-) TimerEvent: {}
+[0.904800] (g1_ass1_pkg) StdoutLine: {'line': b"6: Code style divergence in file 'src/cijfer_calculator.cpp':\n"}
+[0.904940] (g1_ass1_pkg) StdoutLine: {'line': b'6: \n'}
+[0.904987] (g1_ass1_pkg) StdoutLine: {'line': b'6: --- src/cijfer_calculator.cpp\n'}
+[0.905039] (g1_ass1_pkg) StdoutLine: {'line': b'6: +++ src/cijfer_calculator.cpp.uncrustify\n'}
+[0.905083] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -6,2 +6,4 @@\n'}
+[0.905129] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    CijferCalculatorNode() : Node("cijfer_calculator_node") {\n'}
+[0.905168] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        service_ = this->create_service<g1_interface_pkg::srv::Tentamens>(\n'}
+[0.905242] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  CijferCalculatorNode()\n'}
+[0.905291] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  : Node("cijfer_calculator_node")\n'}
+[0.905332] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  {\n'}
+[0.905372] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    service_ = this->create_service<g1_interface_pkg::srv::Tentamens>(\n'}
+[0.905409] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -9,2 +11,3 @@\n'}
+[0.905448] (g1_ass1_pkg) StdoutLine: {'line': b'6: -            std::bind(&CijferCalculatorNode::handle_request, this, std::placeholders::_1, std::placeholders::_2));\n'}
+[0.905487] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    }\n'}
+[0.905525] (g1_ass1_pkg) StdoutLine: {'line': b'6: +            std::bind(&CijferCalculatorNode::handle_request, this, std::placeholders::_1,\n'}
+[0.905719] (g1_ass1_pkg) StdoutLine: {'line': b'6: +      std::placeholders::_2));\n'}
+[0.905859] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  }\n'}
+[0.905910] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -13,5 +16,7 @@\n'}
+[0.905990] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    void handle_request(const std::shared_ptr<g1_interface_pkg::srv::Tentamens::Request> request,\n'}
+[0.906089] (g1_ass1_pkg) StdoutLine: {'line': b'6: -                        std::shared_ptr<g1_interface_pkg::srv::Tentamens::Response> response) {\n'}
+[0.906174] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        double sum = 0.0;\n'}
+[0.906221] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        for (int cijfer : request->tentamen_cijfers) sum += cijfer;\n'}
+[0.906298] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        double avg = request->tentamen_cijfers.empty() ? 0.0 : sum / request->tentamen_cijfers.size();\n'}
+[0.906339] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  void handle_request(\n'}
+[0.906378] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    const std::shared_ptr<g1_interface_pkg::srv::Tentamens::Request> request,\n'}
+[0.906420] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    std::shared_ptr<g1_interface_pkg::srv::Tentamens::Response> response)\n'}
+[0.906523] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  {\n'}
+[0.906567] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    double sum = 0.0;\n'}
+[0.906684] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    for (int cijfer : request->tentamen_cijfers) {sum += cijfer;}\n'}
+[0.907444] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    double avg = request->tentamen_cijfers.empty() ? 0.0 : sum / request->tentamen_cijfers.size();\n'}
+[0.907597] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -19,2 +24,2 @@\n'}
+[0.908145] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        if (request->student_name == "Wessel") avg += 10.0;\n'}
+[0.908199] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        avg = std::max(10.0, std::min(100.0, avg));\n'}
+[0.908252] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    if (request->student_name == "Wessel") {avg += 10.0;}\n'}
+[0.908345] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    avg = std::max(10.0, std::min(100.0, avg));\n'}
+[0.908393] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -22,4 +27,5 @@\n'}
+[0.908436] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        response->final_cijfer = static_cast<int>(avg);\n'}
+[0.908480] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        response->message = "Cijfer berekend";\n'}
+[0.908522] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        RCLCPP_INFO(this->get_logger(), "Calculated final cijfer for %s/%s: %d", request->student_name.c_str(), request->course_name.c_str(), response->final_cijfer);\n'}
+[0.908565] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    }\n'}
+[0.908609] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    response->final_cijfer = static_cast<int>(avg);\n'}
+[0.908652] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    response->message = "Cijfer berekend";\n'}
+[0.908695] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    RCLCPP_INFO(this->get_logger(), "Calculated final cijfer for %s/%s: %d",\n'}
+[0.908747] (g1_ass1_pkg) StdoutLine: {'line': b'6: +      request->student_name.c_str(), request->course_name.c_str(), response->final_cijfer);\n'}
+[0.908794] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  }\n'}
+[0.908836] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -27 +33 @@\n'}
+[0.908879] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    rclcpp::Service<g1_interface_pkg::srv::Tentamens>::SharedPtr service_;\n'}
+[0.908927] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  rclcpp::Service<g1_interface_pkg::srv::Tentamens>::SharedPtr service_;\n'}
+[0.908976] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -30,6 +36,7 @@\n'}
+[0.909026] (g1_ass1_pkg) StdoutLine: {'line': b'6: -int main(int argc, char **argv) {\n'}
+[0.909071] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    rclcpp::init(argc, argv);\n'}
+[0.909117] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    rclcpp::spin(std::make_shared<CijferCalculatorNode>());\n'}
+[0.909165] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    rclcpp::shutdown();\n'}
+[0.909212] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    return 0;\n'}
+[0.909254] (g1_ass1_pkg) StdoutLine: {'line': b'6: -}\n'}
+[0.909306] (g1_ass1_pkg) StdoutLine: {'line': b'6: +int main(int argc, char **argv)\n'}
+[0.909354] (g1_ass1_pkg) StdoutLine: {'line': b'6: +{\n'}
+[0.909399] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  rclcpp::init(argc, argv);\n'}
+[0.909445] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  rclcpp::spin(std::make_shared<CijferCalculatorNode>());\n'}
+[0.909487] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  rclcpp::shutdown();\n'}
+[0.909527] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  return 0;\n'}
+[0.909569] (g1_ass1_pkg) StdoutLine: {'line': b'6: +}\n'}
+[0.909610] (g1_ass1_pkg) StdoutLine: {'line': b'6: \n'}
+[0.909650] (g1_ass1_pkg) StdoutLine: {'line': b"6: Code style divergence in file 'src/final_cijfer_determinator.cpp':\n"}
+[0.909691] (g1_ass1_pkg) StdoutLine: {'line': b'6: \n'}
+[0.909730] (g1_ass1_pkg) StdoutLine: {'line': b'6: --- src/final_cijfer_determinator.cpp\n'}
+[0.909768] (g1_ass1_pkg) StdoutLine: {'line': b'6: +++ src/final_cijfer_determinator.cpp.uncrustify\n'}
+[0.909808] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -12,6 +12,6 @@\n'}
+[0.909845] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    std::string student;\n'}
+[0.909885] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    std::string course;\n'}
+[0.909927] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    bool operator==(const StudentCourseKey &other) const\n'}
+[0.909970] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    {\n'}
+[0.910011] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        return student == other.student && course == other.course;\n'}
+[0.910052] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    }\n'}
+[0.910092] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  std::string student;\n'}
+[0.910128] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  std::string course;\n'}
+[0.910171] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  bool operator==(const StudentCourseKey & other) const\n'}
+[0.910209] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  {\n'}
+[0.910246] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    return student == other.student && course == other.course;\n'}
+[0.910283] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  }\n'}
+[0.910322] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -21,8 +21,8 @@\n'}
+[0.910357] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    template <>\n'}
+[0.910393] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    struct hash<StudentCourseKey>\n'}
+[0.910430] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    {\n'}
+[0.910465] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        std::size_t operator()(const StudentCourseKey &k) const\n'}
+[0.910501] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        {\n'}
+[0.910537] (g1_ass1_pkg) StdoutLine: {'line': b'6: -            return std::hash<std::string>()(k.student) ^ std::hash<std::string>()(k.course);\n'}
+[0.910581] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        }\n'}
+[0.910614] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    };\n'}
+[0.910648] (g1_ass1_pkg) StdoutLine: {'line': b'6: +template<>\n'}
+[0.910685] (g1_ass1_pkg) StdoutLine: {'line': b'6: +struct hash<StudentCourseKey>\n'}
+[0.910717] (g1_ass1_pkg) StdoutLine: {'line': b'6: +{\n'}
+[0.910753] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  std::size_t operator()(const StudentCourseKey & k) const\n'}
+[0.910789] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  {\n'}
+[0.910822] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    return std::hash<std::string>()(k.student) ^ std::hash<std::string>()(k.course);\n'}
+[0.910859] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  }\n'}
+[0.910893] (g1_ass1_pkg) StdoutLine: {'line': b'6: +};\n'}
+[0.910927] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -34,7 +34,10 @@\n'}
+[0.910962] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    FinalCijferDeterminator() : Node("final_cijfer_determinator")\n'}
+[0.910998] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    {\n'}
+[0.911032] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        RCLCPP_INFO(this->get_logger(), "final_cijfer_determinator gestart!");\n'}
+[0.911069] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        tentamen_sub_ = this->create_subscription<g1_interface_pkg::msg::Tentamen>(\n'}
+[0.911104] (g1_ass1_pkg) StdoutLine: {'line': b'6: -            "tentamen_results", 10, std::bind(&FinalCijferDeterminator::tentamen_callback, this, std::placeholders::_1));\n'}
+[0.911139] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        cijfer_client_ = this->create_client<g1_interface_pkg::srv::Tentamens>("calculate_final_cijfer");\n'}
+[0.911174] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    }\n'}
+[0.911207] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  FinalCijferDeterminator()\n'}
+[0.911245] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  : Node("final_cijfer_determinator")\n'}
+[0.911277] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  {\n'}
+[0.911315] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    RCLCPP_INFO(this->get_logger(), "final_cijfer_determinator gestart!");\n'}
+[0.911352] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    tentamen_sub_ = this->create_subscription<g1_interface_pkg::msg::Tentamen>(\n'}
+[0.911388] (g1_ass1_pkg) StdoutLine: {'line': b'6: +            "tentamen_results", 10,\n'}
+[0.911421] (g1_ass1_pkg) StdoutLine: {'line': b'6: +      std::bind(&FinalCijferDeterminator::tentamen_callback, this, std::placeholders::_1));\n'}
+[0.911456] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    cijfer_client_ =\n'}
+[0.911491] (g1_ass1_pkg) StdoutLine: {'line': b'6: +      this->create_client<g1_interface_pkg::srv::Tentamens>("calculate_final_cijfer");\n'}
+[0.911526] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  }\n'}
+[0.911561] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -43,3 +46,3 @@\n'}
+[0.911597] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    std::unordered_map<StudentCourseKey, std::vector<int>> tentamen_map_;\n'}
+[0.911632] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    rclcpp::Subscription<g1_interface_pkg::msg::Tentamen>::SharedPtr tentamen_sub_;\n'}
+[0.911669] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    rclcpp::Client<g1_interface_pkg::srv::Tentamens>::SharedPtr cijfer_client_;\n'}
+[0.911705] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  std::unordered_map<StudentCourseKey, std::vector<int>> tentamen_map_;\n'}
+[0.911742] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  rclcpp::Subscription<g1_interface_pkg::msg::Tentamen>::SharedPtr tentamen_sub_;\n'}
+[0.911776] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  rclcpp::Client<g1_interface_pkg::srv::Tentamens>::SharedPtr cijfer_client_;\n'}
+[0.911812] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -47,4 +50,4 @@\n'}
+[0.911847] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    void tentamen_callback(const g1_interface_pkg::msg::Tentamen::SharedPtr msg)\n'}
+[0.911881] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    {\n'}
+[0.911913] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        StudentCourseKey key{msg->student_name, msg->course_name};\n'}
+[0.911948] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        tentamen_map_[key].push_back(msg->tentamen_cijfer);\n'}
+[0.911981] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  void tentamen_callback(const g1_interface_pkg::msg::Tentamen::SharedPtr msg)\n'}
+[0.912018] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  {\n'}
+[0.912055] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    StudentCourseKey key{msg->student_name, msg->course_name};\n'}
+[0.912088] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    tentamen_map_[key].push_back(msg->tentamen_cijfer);\n'}
+[0.912123] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -52 +55,2 @@\n'}
+[0.912157] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        RCLCPP_INFO(this->get_logger(), "Ontvangen tentamen: %s/%s %d", msg->student_name.c_str(), msg->course_name.c_str(), msg->tentamen_cijfer);\n'}
+[0.912192] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    RCLCPP_INFO(this->get_logger(), "Ontvangen tentamen: %s/%s %d", msg->student_name.c_str(),\n'}
+[0.912227] (g1_ass1_pkg) StdoutLine: {'line': b'6: +      msg->course_name.c_str(), msg->tentamen_cijfer);\n'}
+[0.912261] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -55,6 +59,5 @@\n'}
+[0.912299] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        if (tentamen_map_[key].size() >= 3)\n'}
+[0.912334] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        {\n'}
+[0.912368] (g1_ass1_pkg) StdoutLine: {'line': b'6: -            auto request = std::make_shared<g1_interface_pkg::srv::Tentamens::Request>();\n'}
+[0.912403] (g1_ass1_pkg) StdoutLine: {'line': b'6: -            request->student_name = key.student;\n'}
+[0.912438] (g1_ass1_pkg) StdoutLine: {'line': b'6: -            request->course_name = key.course;\n'}
+[0.912475] (g1_ass1_pkg) StdoutLine: {'line': b'6: -            request->tentamen_cijfers = tentamen_map_[key];\n'}
+[0.912510] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    if (tentamen_map_[key].size() >= 3) {\n'}
+[0.912544] (g1_ass1_pkg) StdoutLine: {'line': b'6: +      auto request = std::make_shared<g1_interface_pkg::srv::Tentamens::Request>();\n'}
+[0.912582] (g1_ass1_pkg) StdoutLine: {'line': b'6: +      request->student_name = key.student;\n'}
+[0.912620] (g1_ass1_pkg) StdoutLine: {'line': b'6: +      request->course_name = key.course;\n'}
+[0.912657] (g1_ass1_pkg) StdoutLine: {'line': b'6: +      request->tentamen_cijfers = tentamen_map_[key];\n'}
+[0.912692] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -63,3 +66,4 @@\n'}
+[0.912727] (g1_ass1_pkg) StdoutLine: {'line': b'6: -            auto response_callback = [this, key](rclcpp::Client<g1_interface_pkg::srv::Tentamens>::SharedFuture result_future)\n'}
+[0.912763] (g1_ass1_pkg) StdoutLine: {'line': b'6: -            {\n'}
+[0.912796] (g1_ass1_pkg) StdoutLine: {'line': b'6: -                auto response = result_future.get();\n'}
+[0.912830] (g1_ass1_pkg) StdoutLine: {'line': b'6: +      auto response_callback = [this,\n'}
+[0.912866] (g1_ass1_pkg) StdoutLine: {'line': b'6: +          key](rclcpp::Client<g1_interface_pkg::srv::Tentamens>::SharedFuture result_future)\n'}
+[0.912901] (g1_ass1_pkg) StdoutLine: {'line': b'6: +        {\n'}
+[0.912939] (g1_ass1_pkg) StdoutLine: {'line': b'6: +          auto response = result_future.get();\n'}
+[0.912973] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -67 +71 @@\n'}
+[0.913006] (g1_ass1_pkg) StdoutLine: {'line': b'6: -                RCLCPP_INFO(this->get_logger(), "Schrijf naar database: %s,%s,%ld,%d,%s",\n'}
+[0.913041] (g1_ass1_pkg) StdoutLine: {'line': b'6: +          RCLCPP_INFO(this->get_logger(), "Schrijf naar database: %s,%s,%ld,%d,%s",\n'}
+[0.913076] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -74,3 +78,4 @@\n'}
+[0.913109] (g1_ass1_pkg) StdoutLine: {'line': b'6: -                std::ofstream db("/home/broodjesemih/ass_ros2_ws/database.csv", std::ios::app);\n'}
+[0.913145] (g1_ass1_pkg) StdoutLine: {'line': b'6: -                db << key.student << "," << key.course << "," << tentamen_map_[key].size() << "," << response->final_cijfer << "," << std::to_string(this->now().seconds()) << "\\n";\n'}
+[0.913184] (g1_ass1_pkg) StdoutLine: {'line': b'6: -                db.close();\n'}
+[0.913219] (g1_ass1_pkg) StdoutLine: {'line': b'6: +          std::ofstream db("/home/broodjesemih/ass_ros2_ws/database.csv", std::ios::app);\n'}
+[0.913253] (g1_ass1_pkg) StdoutLine: {'line': b'6: +          db << key.student << "," << key.course << "," << tentamen_map_[key].size() << "," <<\n'}
+[0.913291] (g1_ass1_pkg) StdoutLine: {'line': b'6: +            response->final_cijfer << "," << std::to_string(this->now().seconds()) << "\\n";\n'}
+[0.913327] (g1_ass1_pkg) StdoutLine: {'line': b'6: +          db.close();\n'}
+[0.913361] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -78 +83,2 @@\n'}
+[0.913395] (g1_ass1_pkg) StdoutLine: {'line': b'6: -                RCLCPP_INFO(this->get_logger(), "Final cijfer for %s/%s: %d", key.student.c_str(), key.course.c_str(), response->final_cijfer);\n'}
+[0.913431] (g1_ass1_pkg) StdoutLine: {'line': b'6: +          RCLCPP_INFO(this->get_logger(), "Final cijfer for %s/%s: %d", key.student.c_str(),\n'}
+[0.913467] (g1_ass1_pkg) StdoutLine: {'line': b'6: +          key.course.c_str(), response->final_cijfer);\n'}
+[0.913501] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -80,2 +86,2 @@\n'}
+[0.913537] (g1_ass1_pkg) StdoutLine: {'line': b'6: -                tentamen_map_.erase(key);\n'}
+[0.913570] (g1_ass1_pkg) StdoutLine: {'line': b'6: -            };\n'}
+[0.913605] (g1_ass1_pkg) StdoutLine: {'line': b'6: +          tentamen_map_.erase(key);\n'}
+[0.913639] (g1_ass1_pkg) StdoutLine: {'line': b'6: +        };\n'}
+[0.913673] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -83,2 +89 @@\n'}
+[0.913708] (g1_ass1_pkg) StdoutLine: {'line': b'6: -            cijfer_client_->async_send_request(request, response_callback);\n'}
+[0.913742] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        }\n'}
+[0.913777] (g1_ass1_pkg) StdoutLine: {'line': b'6: +      cijfer_client_->async_send_request(request, response_callback);\n'}
+[0.913811] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -85,0 +91 @@\n'}
+[0.913847] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  }\n'}
+[0.913881] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -90,5 +96,5 @@\n'}
+[0.913916] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    rclcpp::init(argc, argv);\n'}
+[0.913952] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    rclcpp::spin(std::make_shared<FinalCijferDeterminator>());\n'}
+[0.913987] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    rclcpp::shutdown();\n'}
+[0.914021] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    return 0;\n'}
+[0.914055] (g1_ass1_pkg) StdoutLine: {'line': b'6: -}\n'}
+[0.914090] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  rclcpp::init(argc, argv);\n'}
+[0.914126] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  rclcpp::spin(std::make_shared<FinalCijferDeterminator>());\n'}
+[0.914161] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  rclcpp::shutdown();\n'}
+[0.914197] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  return 0;\n'}
+[0.914231] (g1_ass1_pkg) StdoutLine: {'line': b'6: +}\n'}
+[0.914265] (g1_ass1_pkg) StdoutLine: {'line': b'6: \n'}
+[0.914302] (g1_ass1_pkg) StdoutLine: {'line': b"6: Code style divergence in file 'src/herkansing_cijfer_determinator.cpp':\n"}
+[0.914337] (g1_ass1_pkg) StdoutLine: {'line': b'6: \n'}
+[0.914370] (g1_ass1_pkg) StdoutLine: {'line': b'6: --- src/herkansing_cijfer_determinator.cpp\n'}
+[0.914405] (g1_ass1_pkg) StdoutLine: {'line': b'6: +++ src/herkansing_cijfer_determinator.cpp.uncrustify\n'}
+[0.914441] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -11,6 +11,8 @@\n'}
+[0.914476] (g1_ass1_pkg) StdoutLine: {'line': b'6: -struct StudentCourseKey {\n'}
+[0.914514] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    std::string student;\n'}
+[0.914549] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    std::string course;\n'}
+[0.914584] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    bool operator==(const StudentCourseKey& other) const {\n'}
+[0.914619] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        return student == other.student && course == other.course;\n'}
+[0.914654] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    }\n'}
+[0.914689] (g1_ass1_pkg) StdoutLine: {'line': b'6: +struct StudentCourseKey\n'}
+[0.914723] (g1_ass1_pkg) StdoutLine: {'line': b'6: +{\n'}
+[0.914758] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  std::string student;\n'}
+[0.914792] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  std::string course;\n'}
+[0.914827] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  bool operator==(const StudentCourseKey & other) const\n'}
+[0.914863] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  {\n'}
+[0.914901] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    return student == other.student && course == other.course;\n'}
+[0.914935] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  }\n'}
+[0.914969] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -18,7 +20,10 @@\n'}
+[0.915004] (g1_ass1_pkg) StdoutLine: {'line': b'6: -namespace std {\n'}
+[0.915038] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    template <>\n'}
+[0.915072] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    struct hash<StudentCourseKey> {\n'}
+[0.915107] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        std::size_t operator()(const StudentCourseKey& k) const {\n'}
+[0.915141] (g1_ass1_pkg) StdoutLine: {'line': b'6: -            return std::hash<std::string>()(k.student) ^ std::hash<std::string>()(k.course);\n'}
+[0.915176] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        }\n'}
+[0.915210] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    };\n'}
+[0.915246] (g1_ass1_pkg) StdoutLine: {'line': b'6: +namespace std\n'}
+[0.915282] (g1_ass1_pkg) StdoutLine: {'line': b'6: +{\n'}
+[0.915320] (g1_ass1_pkg) StdoutLine: {'line': b'6: +template<>\n'}
+[0.915356] (g1_ass1_pkg) StdoutLine: {'line': b'6: +struct hash<StudentCourseKey>\n'}
+[0.915393] (g1_ass1_pkg) StdoutLine: {'line': b'6: +{\n'}
+[0.915429] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  std::size_t operator()(const StudentCourseKey & k) const\n'}
+[0.915465] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  {\n'}
+[0.915502] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    return std::hash<std::string>()(k.student) ^ std::hash<std::string>()(k.course);\n'}
+[0.915539] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  }\n'}
+[0.915575] (g1_ass1_pkg) StdoutLine: {'line': b'6: +};\n'}
+[0.915611] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -29,3 +34,5 @@\n'}
+[0.915646] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    using Herkanser = g1_interface_pkg::action::Herkanser;\n'}
+[0.915682] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    HerkansingCijferDeterminator() : Node("herkansing_cijfer_determinator") {\n'}
+[0.915718] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        action_server_ = rclcpp_action::create_server<Herkanser>(\n'}
+[0.915753] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  using Herkanser = g1_interface_pkg::action::Herkanser;\n'}
+[0.915788] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  HerkansingCijferDeterminator()\n'}
+[0.915824] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  : Node("herkansing_cijfer_determinator")\n'}
+[0.915858] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  {\n'}
+[0.915892] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    action_server_ = rclcpp_action::create_server<Herkanser>(\n'}
+[0.915928] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -33 +40,2 @@\n'}
+[0.915962] (g1_ass1_pkg) StdoutLine: {'line': b'6: -            std::bind(&HerkansingCijferDeterminator::handle_goal, this, std::placeholders::_1, std::placeholders::_2),\n'}
+[0.915997] (g1_ass1_pkg) StdoutLine: {'line': b'6: +            std::bind(&HerkansingCijferDeterminator::handle_goal, this, std::placeholders::_1,\n'}
+[0.916033] (g1_ass1_pkg) StdoutLine: {'line': b'6: +      std::placeholders::_2),\n'}
+[0.916070] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -36 +44,43 @@\n'}
+[0.916103] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        cijfer_client_ = this->create_client<g1_interface_pkg::srv::Tentamens>("calculate_final_cijfer");\n'}
+[0.916138] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    cijfer_client_ =\n'}
+[0.916173] (g1_ass1_pkg) StdoutLine: {'line': b'6: +      this->create_client<g1_interface_pkg::srv::Tentamens>("calculate_final_cijfer");\n'}
+[0.916209] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  }\n'}
+[0.916245] (g1_ass1_pkg) StdoutLine: {'line': b'6: +\n'}
+[0.916327] (g1_ass1_pkg) StdoutLine: {'line': b'6: +private:\n'}
+[0.916363] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  rclcpp_action::Server<Herkanser>::SharedPtr action_server_;\n'}
+[0.916457] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  rclcpp::Client<g1_interface_pkg::srv::Tentamens>::SharedPtr cijfer_client_;\n'}
+[0.916706] (g1_ass1_pkg) StdoutLine: {'line': b'6: +\n'}
+[0.916817] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  rclcpp_action::GoalResponse handle_goal(\n'}
+[0.916997] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    const rclcpp_action::GoalUUID &,\n'}
+[0.917090] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    std::shared_ptr<const Herkanser::Goal> goal)\n'}
+[0.917179] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  {\n'}
+[0.917268] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    RCLCPP_INFO(this->get_logger(), "Received herkansing goal for %s/%s",\n'}
+[0.917361] (g1_ass1_pkg) StdoutLine: {'line': b'6: +      goal->student_name.c_str(), goal->course_name.c_str());\n'}
+[0.917461] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE;\n'}
+[0.917551] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  }\n'}
+[0.917639] (g1_ass1_pkg) StdoutLine: {'line': b'6: +\n'}
+[0.917729] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  rclcpp_action::CancelResponse handle_cancel(\n'}
+[0.917819] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    const std::shared_ptr<rclcpp_action::ServerGoalHandle<Herkanser>>)\n'}
+[0.917910] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  {\n'}
+[0.917996] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    return rclcpp_action::CancelResponse::ACCEPT;\n'}
+[0.918080] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  }\n'}
+[0.918162] (g1_ass1_pkg) StdoutLine: {'line': b'6: +\n'}
+[0.918246] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  void handle_accepted(\n'}
+[0.918335] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    const std::shared_ptr<rclcpp_action::ServerGoalHandle<Herkanser>> goal_handle)\n'}
+[0.918418] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  {\n'}
+[0.918500] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    std::thread{std::bind(&HerkansingCijferDeterminator::execute, this, goal_handle)}.detach();\n'}
+[0.918582] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  }\n'}
+[0.918664] (g1_ass1_pkg) StdoutLine: {'line': b'6: +\n'}
+[0.918744] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  void execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle<Herkanser>> goal_handle)\n'}
+[0.918829] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  {\n'}
+[0.918910] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    auto goal = goal_handle->get_goal();\n'}
+[0.918990] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    StudentCourseKey key{goal->student_name, goal->course_name};\n'}
+[0.919072] (g1_ass1_pkg) StdoutLine: {'line': b'6: +\n'}
+[0.919152] (g1_ass1_pkg) StdoutLine: {'line': b'6: +        // Simulate receiving new tentamen results (here: random generation)\n'}
+[0.919236] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    std::vector<int> cijfers;\n'}
+[0.919326] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    for (int i = 0; i < 3; ++i) {\n'}
+[0.919415] (g1_ass1_pkg) StdoutLine: {'line': b'6: +      cijfers.push_back(10 + (rand() % 91));\n'}
+[0.919499] (g1_ass1_pkg) StdoutLine: {'line': b'6: +      auto feedback = std::make_shared<Herkanser::Feedback>();\n'}
+[0.919582] (g1_ass1_pkg) StdoutLine: {'line': b'6: +      feedback->progress = (i + 1) / 3.0f;\n'}
+[0.919677] (g1_ass1_pkg) StdoutLine: {'line': b'6: +      feedback->status = "Collecting tentamen results";\n'}
+[0.919775] (g1_ass1_pkg) StdoutLine: {'line': b'6: +      goal_handle->publish_feedback(feedback);\n'}
+[0.919868] (g1_ass1_pkg) StdoutLine: {'line': b'6: +      std::this_thread::sleep_for(std::chrono::seconds(1));\n'}
+[0.919954] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -39,3 +89,5 @@\n'}
+[0.920039] (g1_ass1_pkg) StdoutLine: {'line': b'6: -private:\n'}
+[0.920124] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    rclcpp_action::Server<Herkanser>::SharedPtr action_server_;\n'}
+[0.920207] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    rclcpp::Client<g1_interface_pkg::srv::Tentamens>::SharedPtr cijfer_client_;\n'}
+[0.920299] (g1_ass1_pkg) StdoutLine: {'line': b'6: +        // Calculate new final cijfer\n'}
+[0.920383] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    auto request = std::make_shared<g1_interface_pkg::srv::Tentamens::Request>();\n'}
+[0.920467] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    request->student_name = key.student;\n'}
+[0.920548] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    request->course_name = key.course;\n'}
+[0.920636] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    request->tentamen_cijfers = cijfers;\n'}
+[0.920718] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -43,37 +95,3 @@\n'}
+[0.920804] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    rclcpp_action::GoalResponse handle_goal(const rclcpp_action::GoalUUID &, std::shared_ptr<const Herkanser::Goal> goal) {\n'}
+[0.920890] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        RCLCPP_INFO(this->get_logger(), "Received herkansing goal for %s/%s", goal->student_name.c_str(), goal->course_name.c_str());\n'}
+[0.920975] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE;\n'}
+[0.921066] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    }\n'}
+[0.921160] (g1_ass1_pkg) StdoutLine: {'line': b'6: -\n'}
+[0.921252] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    rclcpp_action::CancelResponse handle_cancel(const std::shared_ptr<rclcpp_action::ServerGoalHandle<Herkanser>>) {\n'}
+[0.921346] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        return rclcpp_action::CancelResponse::ACCEPT;\n'}
+[0.921430] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    }\n'}
+[0.921530] (g1_ass1_pkg) StdoutLine: {'line': b'6: -\n'}
+[0.921624] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    void handle_accepted(const std::shared_ptr<rclcpp_action::ServerGoalHandle<Herkanser>> goal_handle) {\n'}
+[0.921710] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        std::thread{std::bind(&HerkansingCijferDeterminator::execute, this, goal_handle)}.detach();\n'}
+[0.921789] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    }\n'}
+[0.921872] (g1_ass1_pkg) StdoutLine: {'line': b'6: -\n'}
+[0.921952] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    void execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle<Herkanser>> goal_handle) {\n'}
+[0.922033] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        auto goal = goal_handle->get_goal();\n'}
+[0.922113] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        StudentCourseKey key{goal->student_name, goal->course_name};\n'}
+[0.922272] (g1_ass1_pkg) StdoutLine: {'line': b'6: -\n'}
+[0.922369] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        // Simulate receiving new tentamen results (here: random generation)\n'}
+[0.922456] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        std::vector<int> cijfers;\n'}
+[0.922537] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        for (int i = 0; i < 3; ++i) {\n'}
+[0.922617] (g1_ass1_pkg) StdoutLine: {'line': b'6: -            cijfers.push_back(10 + (rand() % 91));\n'}
+[0.922698] (g1_ass1_pkg) StdoutLine: {'line': b'6: -            auto feedback = std::make_shared<Herkanser::Feedback>();\n'}
+[0.922778] (g1_ass1_pkg) StdoutLine: {'line': b'6: -            feedback->progress = (i + 1) / 3.0f;\n'}
+[0.922858] (g1_ass1_pkg) StdoutLine: {'line': b'6: -            feedback->status = "Collecting tentamen results";\n'}
+[0.922939] (g1_ass1_pkg) StdoutLine: {'line': b'6: -            goal_handle->publish_feedback(feedback);\n'}
+[0.923018] (g1_ass1_pkg) StdoutLine: {'line': b'6: -            std::this_thread::sleep_for(std::chrono::seconds(1));\n'}
+[0.923099] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        }\n'}
+[0.923179] (g1_ass1_pkg) StdoutLine: {'line': b'6: -\n'}
+[0.923264] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        // Calculate new final cijfer\n'}
+[0.923352] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        auto request = std::make_shared<g1_interface_pkg::srv::Tentamens::Request>();\n'}
+[0.923433] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        request->student_name = key.student;\n'}
+[0.923513] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        request->course_name = key.course;\n'}
+[0.923594] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        request->tentamen_cijfers = cijfers;\n'}
+[0.923674] (g1_ass1_pkg) StdoutLine: {'line': b'6: -\n'}
+[0.923754] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        auto future = cijfer_client_->async_send_request(request);\n'}
+[0.923835] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        future.wait();\n'}
+[0.923914] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        auto response = future.get();\n'}
+[0.923995] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    auto future = cijfer_client_->async_send_request(request);\n'}
+[0.924082] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    future.wait();\n'}
+[0.924161] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    auto response = future.get();\n'}
+[0.924243] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -82,3 +100,4 @@\n'}
+[0.924327] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        std::ofstream db("/home/broodjesemih/ass_ros2_ws/database.csv", std::ios::app);\n'}
+[0.924409] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        db << key.student << "," << key.course << "," << cijfers.size() << "," << response->final_cijfer << "," << std::to_string(this->now().seconds()) << "\\n";\n'}
+[0.924497] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        db.close();\n'}
+[0.924578] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    std::ofstream db("/home/broodjesemih/ass_ros2_ws/database.csv", std::ios::app);\n'}
+[0.924657] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    db << key.student << "," << key.course << "," << cijfers.size() << "," <<\n'}
+[0.924737] (g1_ass1_pkg) StdoutLine: {'line': b'6: +      response->final_cijfer << "," << std::to_string(this->now().seconds()) << "\\n";\n'}
+[0.924818] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    db.close();\n'}
+[0.924902] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -86,5 +105,5 @@\n'}
+[0.925024] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        auto result = std::make_shared<Herkanser::Result>();\n'}
+[0.925153] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        result->final_cijfer = response->final_cijfer;\n'}
+[0.925233] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        result->message = "Nieuwe herkansing cijfer toegevoegd";\n'}
+[0.925321] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        goal_handle->succeed(result);\n'}
+[0.925402] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    }\n'}
+[0.925482] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    auto result = std::make_shared<Herkanser::Result>();\n'}
+[0.925563] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    result->final_cijfer = response->final_cijfer;\n'}
+[0.925643] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    result->message = "Nieuwe herkansing cijfer toegevoegd";\n'}
+[0.925724] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    goal_handle->succeed(result);\n'}
+[0.925804] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  }\n'}
+[0.925883] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -93,6 +112,7 @@\n'}
+[0.925963] (g1_ass1_pkg) StdoutLine: {'line': b'6: -int main(int argc, char **argv) {\n'}
+[0.926042] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    rclcpp::init(argc, argv);\n'}
+[0.926121] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    rclcpp::spin(std::make_shared<HerkansingCijferDeterminator>());\n'}
+[0.926202] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    rclcpp::shutdown();\n'}
+[0.926286] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    return 0;\n'}
+[0.926371] (g1_ass1_pkg) StdoutLine: {'line': b'6: -}\n'}
+[0.926453] (g1_ass1_pkg) StdoutLine: {'line': b'6: +int main(int argc, char **argv)\n'}
+[0.926533] (g1_ass1_pkg) StdoutLine: {'line': b'6: +{\n'}
+[0.926614] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  rclcpp::init(argc, argv);\n'}
+[0.926697] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  rclcpp::spin(std::make_shared<HerkansingCijferDeterminator>());\n'}
+[0.926781] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  rclcpp::shutdown();\n'}
+[0.926864] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  return 0;\n'}
+[0.926946] (g1_ass1_pkg) StdoutLine: {'line': b'6: +}\n'}
+[0.927032] (g1_ass1_pkg) StdoutLine: {'line': b'6: \n'}
+[0.927113] (g1_ass1_pkg) StdoutLine: {'line': b"6: Code style divergence in file 'src/herkansing_scheduler.cpp':\n"}
+[0.927196] (g1_ass1_pkg) StdoutLine: {'line': b'6: \n'}
+[0.927279] (g1_ass1_pkg) StdoutLine: {'line': b'6: --- src/herkansing_scheduler.cpp\n'}
+[0.927368] (g1_ass1_pkg) StdoutLine: {'line': b'6: +++ src/herkansing_scheduler.cpp.uncrustify\n'}
+[0.927450] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -10,4 +10,6 @@\n'}
+[0.927566] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    using Herkanser = g1_interface_pkg::action::Herkanser;\n'}
+[0.927673] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    HerkansingSchedulerNode() : Node("herkansing_scheduler") {\n'}
+[0.927765] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        action_client_ = rclcpp_action::create_client<Herkanser>(this, "herkanser");\n'}
+[0.927853] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        timer_ = this->create_wall_timer(\n'}
+[0.927937] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  using Herkanser = g1_interface_pkg::action::Herkanser;\n'}
+[0.928021] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  HerkansingSchedulerNode()\n'}
+[0.928103] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  : Node("herkansing_scheduler")\n'}
+[0.928187] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  {\n'}
+[0.928269] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    action_client_ = rclcpp_action::create_client<Herkanser>(this, "herkanser");\n'}
+[0.928358] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    timer_ = this->create_wall_timer(\n'}
+[0.928438] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -16 +18 @@\n'}
+[0.928517] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    }\n'}
+[0.928599] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  }\n'}
+[0.928683] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -19,2 +21,2 @@\n'}
+[0.928767] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    rclcpp_action::Client<Herkanser>::SharedPtr action_client_;\n'}
+[0.928848] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    rclcpp::TimerBase::SharedPtr timer_;\n'}
+[0.928929] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  rclcpp_action::Client<Herkanser>::SharedPtr action_client_;\n'}
+[0.929009] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  rclcpp::TimerBase::SharedPtr timer_;\n'}
+[0.929089] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -22,11 +24,12 @@\n'}
+[0.929169] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    void check_failed_students() {\n'}
+[0.929249] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        std::ifstream db("/home/broodjesemih/ass_ros2_ws/database.csv");\n'}
+[0.929336] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        std::string line;\n'}
+[0.929417] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        while (std::getline(db, line)) {\n'}
+[0.929497] (g1_ass1_pkg) StdoutLine: {'line': b'6: -            std::istringstream iss(line);\n'}
+[0.929577] (g1_ass1_pkg) StdoutLine: {'line': b'6: -            std::string student, course, exams, final_result, timestamp;\n'}
+[0.929659] (g1_ass1_pkg) StdoutLine: {'line': b"6: -            std::getline(iss, student, ',');\n"}
+[0.929739] (g1_ass1_pkg) StdoutLine: {'line': b"6: -            std::getline(iss, course, ',');\n"}
+[0.929820] (g1_ass1_pkg) StdoutLine: {'line': b"6: -            std::getline(iss, exams, ',');\n"}
+[0.929899] (g1_ass1_pkg) StdoutLine: {'line': b"6: -            std::getline(iss, final_result, ',');\n"}
+[0.929978] (g1_ass1_pkg) StdoutLine: {'line': b"6: -            std::getline(iss, timestamp, ',');\n"}
+[0.930057] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  void check_failed_students()\n'}
+[0.930137] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  {\n'}
+[0.930216] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    std::ifstream db("/home/broodjesemih/ass_ros2_ws/database.csv");\n'}
+[0.930301] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    std::string line;\n'}
+[0.930383] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    while (std::getline(db, line)) {\n'}
+[0.930461] (g1_ass1_pkg) StdoutLine: {'line': b'6: +      std::istringstream iss(line);\n'}
+[0.930542] (g1_ass1_pkg) StdoutLine: {'line': b'6: +      std::string student, course, exams, final_result, timestamp;\n'}
+[0.930622] (g1_ass1_pkg) StdoutLine: {'line': b"6: +      std::getline(iss, student, ',');\n"}
+[0.930701] (g1_ass1_pkg) StdoutLine: {'line': b"6: +      std::getline(iss, course, ',');\n"}
+[0.930781] (g1_ass1_pkg) StdoutLine: {'line': b"6: +      std::getline(iss, exams, ',');\n"}
+[0.930861] (g1_ass1_pkg) StdoutLine: {'line': b"6: +      std::getline(iss, final_result, ',');\n"}
+[0.930942] (g1_ass1_pkg) StdoutLine: {'line': b"6: +      std::getline(iss, timestamp, ',');\n"}
+[0.931019] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -34,9 +37,9 @@\n'}
+[0.931100] (g1_ass1_pkg) StdoutLine: {'line': b'6: -            int cijfer = final_result.empty() ? 0 : std::stoi(final_result);\n'}
+[0.931185] (g1_ass1_pkg) StdoutLine: {'line': b'6: -            if (cijfer >= 10 && cijfer <= 54) {\n'}
+[0.931266] (g1_ass1_pkg) StdoutLine: {'line': b'6: -                auto goal_msg = Herkanser::Goal();\n'}
+[0.931351] (g1_ass1_pkg) StdoutLine: {'line': b'6: -                goal_msg.student_name = student;\n'}
+[0.931432] (g1_ass1_pkg) StdoutLine: {'line': b'6: -                goal_msg.course_name = course;\n'}
+[0.931511] (g1_ass1_pkg) StdoutLine: {'line': b'6: -                action_client_->async_send_goal(goal_msg);\n'}
+[0.931590] (g1_ass1_pkg) StdoutLine: {'line': b'6: -                RCLCPP_INFO(this->get_logger(), "Requested herkansing for %s/%s", student.c_str(), course.c_str());\n'}
+[0.931673] (g1_ass1_pkg) StdoutLine: {'line': b'6: -            }\n'}
+[0.931750] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        }\n'}
+[0.931832] (g1_ass1_pkg) StdoutLine: {'line': b'6: +      int cijfer = final_result.empty() ? 0 : std::stoi(final_result);\n'}
+[0.931911] (g1_ass1_pkg) StdoutLine: {'line': b'6: +      if (cijfer >= 10 && cijfer <= 54) {\n'}
+[0.931992] (g1_ass1_pkg) StdoutLine: {'line': b'6: +        auto goal_msg = Herkanser::Goal();\n'}
+[0.932072] (g1_ass1_pkg) StdoutLine: {'line': b'6: +        goal_msg.student_name = student;\n'}
+[0.932152] (g1_ass1_pkg) StdoutLine: {'line': b'6: +        goal_msg.course_name = course;\n'}
+[0.932233] (g1_ass1_pkg) StdoutLine: {'line': b'6: +        action_client_->async_send_goal(goal_msg);\n'}
+[0.932325] (g1_ass1_pkg) StdoutLine: {'line': b'6: +        RCLCPP_INFO(this->get_logger(), "Requested herkansing for %s/%s", student.c_str(),\n'}
+[0.932408] (g1_ass1_pkg) StdoutLine: {'line': b'6: +          course.c_str());\n'}
+[0.932489] (g1_ass1_pkg) StdoutLine: {'line': b'6: +      }\n'}
+[0.932571] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -43,0 +47 @@\n'}
+[0.932652] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  }\n'}
+[0.932733] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -46,6 +50,7 @@\n'}
+[0.932811] (g1_ass1_pkg) StdoutLine: {'line': b'6: -int main(int argc, char **argv) {\n'}
+[0.932958] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    rclcpp::init(argc, argv);\n'}
+[0.933041] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    rclcpp::spin(std::make_shared<HerkansingSchedulerNode>());\n'}
+[0.933122] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    rclcpp::shutdown();\n'}
+[0.933203] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    return 0;\n'}
+[0.933286] (g1_ass1_pkg) StdoutLine: {'line': b'6: -}\n'}
+[0.933371] (g1_ass1_pkg) StdoutLine: {'line': b'6: +int main(int argc, char **argv)\n'}
+[0.933453] (g1_ass1_pkg) StdoutLine: {'line': b'6: +{\n'}
+[0.933532] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  rclcpp::init(argc, argv);\n'}
+[0.933611] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  rclcpp::spin(std::make_shared<HerkansingSchedulerNode>());\n'}
+[0.933691] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  rclcpp::shutdown();\n'}
+[0.933770] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  return 0;\n'}
+[0.933851] (g1_ass1_pkg) StdoutLine: {'line': b'6: +}\n'}
+[0.933929] (g1_ass1_pkg) StdoutLine: {'line': b'6: \n'}
+[0.934008] (g1_ass1_pkg) StdoutLine: {'line': b"6: Code style divergence in file 'src/tentamen_result_generator.cpp':\n"}
+[0.934087] (g1_ass1_pkg) StdoutLine: {'line': b'6: \n'}
+[0.934165] (g1_ass1_pkg) StdoutLine: {'line': b'6: --- src/tentamen_result_generator.cpp\n'}
+[0.934244] (g1_ass1_pkg) StdoutLine: {'line': b'6: +++ src/tentamen_result_generator.cpp.uncrustify\n'}
+[0.934329] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -9,6 +9,8 @@\n'}
+[0.934409] (g1_ass1_pkg) StdoutLine: {'line': b'6: -struct StudentCourseKey {\n'}
+[0.934489] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    std::string student;\n'}
+[0.934568] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    std::string course;\n'}
+[0.934647] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    bool operator==(const StudentCourseKey& other) const {\n'}
+[0.934729] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        return student == other.student && course == other.course;\n'}
+[0.934809] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    }\n'}
+[0.934894] (g1_ass1_pkg) StdoutLine: {'line': b'6: +struct StudentCourseKey\n'}
+[0.934974] (g1_ass1_pkg) StdoutLine: {'line': b'6: +{\n'}
+[0.935053] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  std::string student;\n'}
+[0.935135] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  std::string course;\n'}
+[0.935214] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  bool operator==(const StudentCourseKey & other) const\n'}
+[0.935298] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  {\n'}
+[0.935378] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    return student == other.student && course == other.course;\n'}
+[0.935462] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  }\n'}
+[0.935542] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -16,7 +18,10 @@\n'}
+[0.935620] (g1_ass1_pkg) StdoutLine: {'line': b'6: -namespace std {\n'}
+[0.935701] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    template <>\n'}
+[0.935779] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    struct hash<StudentCourseKey> {\n'}
+[0.935858] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        std::size_t operator()(const StudentCourseKey& k) const {\n'}
+[0.935939] (g1_ass1_pkg) StdoutLine: {'line': b'6: -            return std::hash<std::string>()(k.student) ^ std::hash<std::string>()(k.course);\n'}
+[0.936018] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        }\n'}
+[0.936097] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    };\n'}
+[0.936175] (g1_ass1_pkg) StdoutLine: {'line': b'6: +namespace std\n'}
+[0.936254] (g1_ass1_pkg) StdoutLine: {'line': b'6: +{\n'}
+[0.936340] (g1_ass1_pkg) StdoutLine: {'line': b'6: +template<>\n'}
+[0.936423] (g1_ass1_pkg) StdoutLine: {'line': b'6: +struct hash<StudentCourseKey>\n'}
+[0.936505] (g1_ass1_pkg) StdoutLine: {'line': b'6: +{\n'}
+[0.936586] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  std::size_t operator()(const StudentCourseKey & k) const\n'}
+[0.936667] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  {\n'}
+[0.936747] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    return std::hash<std::string>()(k.student) ^ std::hash<std::string>()(k.course);\n'}
+[0.936831] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  }\n'}
+[0.936911] (g1_ass1_pkg) StdoutLine: {'line': b'6: +};\n'}
+[0.936990] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -27,3 +32,5 @@\n'}
+[0.937069] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    TentamenResultGenerator() : Node("tentamen_result_generator") {\n'}
+[0.937150] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        publisher_ = this->create_publisher<g1_interface_pkg::msg::Tentamen>("tentamen_results", 10);\n'}
+[0.937231] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        timer_ = this->create_wall_timer(\n'}
+[0.937319] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  TentamenResultGenerator()\n'}
+[0.937398] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  : Node("tentamen_result_generator")\n'}
+[0.937478] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  {\n'}
+[0.937558] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    publisher_ = this->create_publisher<g1_interface_pkg::msg::Tentamen>("tentamen_results", 10);\n'}
+[0.937638] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    timer_ = this->create_wall_timer(\n'}
+[0.937719] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -32,2 +39,2 @@\n'}
+[0.937798] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        load_student_course_combinations();\n'}
+[0.937878] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    }\n'}
+[0.938022] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    load_student_course_combinations();\n'}
+[0.938107] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  }\n'}
+[0.938262] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -38,3 +45,3 @@\n'}
+[0.938353] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    std::unordered_set<StudentCourseKey> active_combinations_;\n'}
+[0.938398] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    rclcpp::Publisher<g1_interface_pkg::msg::Tentamen>::SharedPtr publisher_;\n'}
+[0.938438] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    rclcpp::TimerBase::SharedPtr timer_;\n'}
+[0.938477] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  std::unordered_set<StudentCourseKey> active_combinations_;\n'}
+[0.938515] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  rclcpp::Publisher<g1_interface_pkg::msg::Tentamen>::SharedPtr publisher_;\n'}
+[0.938563] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  rclcpp::TimerBase::SharedPtr timer_;\n'}
+[0.938600] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -42,15 +49,15 @@\n'}
+[0.938636] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    void load_student_course_combinations() {\n'}
+[0.938671] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        std::ifstream db("/home/broodjesemih/ass_ros2_ws/database.csv");\n'}
+[0.938706] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        std::string line;\n'}
+[0.938742] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        while (std::getline(db, line)) {\n'}
+[0.938778] (g1_ass1_pkg) StdoutLine: {'line': b'6: -            std::istringstream iss(line);\n'}
+[0.938816] (g1_ass1_pkg) StdoutLine: {'line': b'6: -            std::string student, course, exams, final_result, timestamp;\n'}
+[0.938852] (g1_ass1_pkg) StdoutLine: {'line': b"6: -            std::getline(iss, student, ',');\n"}
+[0.938888] (g1_ass1_pkg) StdoutLine: {'line': b"6: -            std::getline(iss, course, ',');\n"}
+[0.938926] (g1_ass1_pkg) StdoutLine: {'line': b"6: -            std::getline(iss, exams, ',');\n"}
+[0.938962] (g1_ass1_pkg) StdoutLine: {'line': b"6: -            std::getline(iss, final_result, ',');\n"}
+[0.938999] (g1_ass1_pkg) StdoutLine: {'line': b"6: -            std::getline(iss, timestamp, ',');\n"}
+[0.939035] (g1_ass1_pkg) StdoutLine: {'line': b'6: -            if (final_result.empty()) { // Only add if no final result\n'}
+[0.939071] (g1_ass1_pkg) StdoutLine: {'line': b'6: -                active_combinations_.insert({student, course});\n'}
+[0.939107] (g1_ass1_pkg) StdoutLine: {'line': b'6: -            }\n'}
+[0.939143] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        }\n'}
+[0.939180] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  void load_student_course_combinations()\n'}
+[0.939217] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  {\n'}
+[0.939252] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    std::ifstream db("/home/broodjesemih/ass_ros2_ws/database.csv");\n'}
+[0.939286] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    std::string line;\n'}
+[0.939327] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    while (std::getline(db, line)) {\n'}
+[0.939363] (g1_ass1_pkg) StdoutLine: {'line': b'6: +      std::istringstream iss(line);\n'}
+[0.939400] (g1_ass1_pkg) StdoutLine: {'line': b'6: +      std::string student, course, exams, final_result, timestamp;\n'}
+[0.939435] (g1_ass1_pkg) StdoutLine: {'line': b"6: +      std::getline(iss, student, ',');\n"}
+[0.939470] (g1_ass1_pkg) StdoutLine: {'line': b"6: +      std::getline(iss, course, ',');\n"}
+[0.939506] (g1_ass1_pkg) StdoutLine: {'line': b"6: +      std::getline(iss, exams, ',');\n"}
+[0.939541] (g1_ass1_pkg) StdoutLine: {'line': b"6: +      std::getline(iss, final_result, ',');\n"}
+[0.939576] (g1_ass1_pkg) StdoutLine: {'line': b"6: +      std::getline(iss, timestamp, ',');\n"}
+[0.939615] (g1_ass1_pkg) StdoutLine: {'line': b'6: +      if (final_result.empty()) {       // Only add if no final result\n'}
+[0.939651] (g1_ass1_pkg) StdoutLine: {'line': b'6: +        active_combinations_.insert({student, course});\n'}
+[0.939687] (g1_ass1_pkg) StdoutLine: {'line': b'6: +      }\n'}
+[0.939723] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -57,0 +65 @@\n'}
+[0.939762] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  }\n'}
+[0.939801] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -59,5 +67,6 @@\n'}
+[0.939841] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    void publish_random_result() {\n'}
+[0.939880] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        if (active_combinations_.empty()) return;\n'}
+[0.939921] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        auto it = active_combinations_.begin();\n'}
+[0.939960] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        std::advance(it, rand() % active_combinations_.size());\n'}
+[0.940000] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        auto key = *it;\n'}
+[0.940041] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  void publish_random_result()\n'}
+[0.940078] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  {\n'}
+[0.940121] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    if (active_combinations_.empty()) {return;}\n'}
+[0.940161] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    auto it = active_combinations_.begin();\n'}
+[0.940198] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    std::advance(it, rand() % active_combinations_.size());\n'}
+[0.940235] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    auto key = *it;\n'}
+[0.940272] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -65,5 +74,5 @@\n'}
+[0.940313] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        g1_interface_pkg::msg::Tentamen msg;\n'}
+[0.940349] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        msg.stamp = this->now();\n'}
+[0.940386] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        msg.student_name = key.student;\n'}
+[0.940422] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        msg.course_name = key.course;\n'}
+[0.940459] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        msg.tentamen_cijfer = 10 + (rand() % 91); // 10-100\n'}
+[0.940497] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    g1_interface_pkg::msg::Tentamen msg;\n'}
+[0.940537] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    msg.stamp = this->now();\n'}
+[0.940576] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    msg.student_name = key.student;\n'}
+[0.940616] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    msg.course_name = key.course;\n'}
+[0.940656] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    msg.tentamen_cijfer = 10 + (rand() % 91);     // 10-100\n'}
+[0.940694] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -71,3 +80,4 @@\n'}
+[0.940733] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        publisher_->publish(msg);\n'}
+[0.940770] (g1_ass1_pkg) StdoutLine: {'line': b'6: -        RCLCPP_INFO(this->get_logger(), "Published tentamen for %s/%s: %d", key.student.c_str(), key.course.c_str(), msg.tentamen_cijfer);\n'}
+[0.940812] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    }\n'}
+[0.940852] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    publisher_->publish(msg);\n'}
+[0.940891] (g1_ass1_pkg) StdoutLine: {'line': b'6: +    RCLCPP_INFO(this->get_logger(), "Published tentamen for %s/%s: %d", key.student.c_str(),\n'}
+[0.940930] (g1_ass1_pkg) StdoutLine: {'line': b'6: +      key.course.c_str(), msg.tentamen_cijfer);\n'}
+[0.940969] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  }\n'}
+[0.941010] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -76,6 +86,7 @@\n'}
+[0.941050] (g1_ass1_pkg) StdoutLine: {'line': b'6: -int main(int argc, char **argv) {\n'}
+[0.941088] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    rclcpp::init(argc, argv);\n'}
+[0.941127] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    rclcpp::spin(std::make_shared<TentamenResultGenerator>());\n'}
+[0.941166] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    rclcpp::shutdown();\n'}
+[0.941206] (g1_ass1_pkg) StdoutLine: {'line': b'6: -    return 0;\n'}
+[0.941245] (g1_ass1_pkg) StdoutLine: {'line': b'6: -}\n'}
+[0.941283] (g1_ass1_pkg) StdoutLine: {'line': b'6: +int main(int argc, char **argv)\n'}
+[0.941329] (g1_ass1_pkg) StdoutLine: {'line': b'6: +{\n'}
+[0.941371] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  rclcpp::init(argc, argv);\n'}
+[0.941411] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  rclcpp::spin(std::make_shared<TentamenResultGenerator>());\n'}
+[0.941449] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  rclcpp::shutdown();\n'}
+[0.941489] (g1_ass1_pkg) StdoutLine: {'line': b'6: +  return 0;\n'}
+[0.941529] (g1_ass1_pkg) StdoutLine: {'line': b'6: +}\n'}
+[0.941568] (g1_ass1_pkg) StdoutLine: {'line': b'6: \n'}
+[0.941607] (g1_ass1_pkg) StdoutLine: {'line': b"6: Code style divergence in file 'test/test_cijfer_calculator.cpp':\n"}
+[0.941648] (g1_ass1_pkg) StdoutLine: {'line': b'6: \n'}
+[0.941687] (g1_ass1_pkg) StdoutLine: {'line': b'6: --- test/test_cijfer_calculator.cpp\n'}
+[0.941724] (g1_ass1_pkg) StdoutLine: {'line': b'6: +++ test/test_cijfer_calculator.cpp.uncrustify\n'}
+[0.941762] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -8 +8,2 @@\n'}
+[0.941801] (g1_ass1_pkg) StdoutLine: {'line': b'6: -int main(int argc, char** argv) {\n'}
+[0.941840] (g1_ass1_pkg) StdoutLine: {'line': b'6: +int main(int argc, char ** argv)\n'}
+[0.941881] (g1_ass1_pkg) StdoutLine: {'line': b'6: +{\n'}
+[0.941921] (g1_ass1_pkg) StdoutLine: {'line': b'6: @@ -11 +12 @@\n'}
+[0.941963] (g1_ass1_pkg) StdoutLine: {'line': b'6: -}\n'}
+[0.942004] (g1_ass1_pkg) StdoutLine: {'line': b'6: +}\n'}
+[0.942042] (g1_ass1_pkg) StdoutLine: {'line': b'6: \n'}
+[0.942078] (g1_ass1_pkg) StdoutLine: {'line': b'6: 6 files with code style divergence\n'}
+[0.942117] (g1_ass1_pkg) StdoutLine: {'line': b'6: -- run_test.py: return code 1\n'}
+[0.942154] (g1_ass1_pkg) StdoutLine: {'line': b"6: -- run_test.py: verify result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/uncrustify.xunit.xml'\n"}
+[0.942192] (g1_ass1_pkg) StdoutLine: {'line': b'6/7 Test #6: uncrustify .......................***Failed    0.14 sec\n'}
+[0.942231] (g1_ass1_pkg) StdoutLine: {'line': b'test 7\n'}
+[0.942269] (g1_ass1_pkg) StdoutLine: {'line': b'    Start 7: xmllint\n'}
+[0.942317] (g1_ass1_pkg) StdoutLine: {'line': b'\n'}
+[0.942358] (g1_ass1_pkg) StdoutLine: {'line': b'7: Test command: /usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/xmllint.xunit.xml" "--package-name" "g1_ass1_pkg" "--output-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/ament_xmllint/xmllint.txt" "--command" "/opt/ros/jazzy/bin/ament_xmllint" "--xunit-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/xmllint.xunit.xml"\n'}
+[0.942404] (g1_ass1_pkg) StdoutLine: {'line': b'7: Working Directory: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg\n'}
+[0.942442] (g1_ass1_pkg) StdoutLine: {'line': b'7: Test timeout computed to be: 60\n'}
+[0.967421] (g1_ass1_pkg) StdoutLine: {'line': b"7: -- run_test.py: invoking following command in '/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg':\n"}
+[0.967566] (g1_ass1_pkg) StdoutLine: {'line': b'7:  - /opt/ros/jazzy/bin/ament_xmllint --xunit-file /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/xmllint.xunit.xml\n'}
+[1.001503] (-) TimerEvent: {}
+[1.023375] (g1_ass1_pkg) StdoutLine: {'line': b"7: File 'package.xml' is valid\n"}
+[1.023504] (g1_ass1_pkg) StdoutLine: {'line': b'7: \n'}
+[1.023547] (g1_ass1_pkg) StdoutLine: {'line': b"7: File 'install/g1_ass1_pkg/share/g1_ass1_pkg/package.xml' is valid\n"}
+[1.023585] (g1_ass1_pkg) StdoutLine: {'line': b'7: \n'}
+[1.023619] (g1_ass1_pkg) StdoutLine: {'line': b'7: No problems found\n'}
+[1.033032] (g1_ass1_pkg) StdoutLine: {'line': b'7: -- run_test.py: return code 0\n'}
+[1.033180] (g1_ass1_pkg) StdoutLine: {'line': b"7: -- run_test.py: verify result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/xmllint.xunit.xml'\n"}
+[1.039436] (g1_ass1_pkg) StdoutLine: {'line': b'7/7 Test #7: xmllint ..........................   Passed    0.11 sec\n'}
+[1.039741] (g1_ass1_pkg) StdoutLine: {'line': b'\n'}
+[1.039796] (g1_ass1_pkg) StdoutLine: {'line': b'71% tests passed\x1b[0;0m, \x1b[0;31m2 tests failed\x1b[0;0m out of 7\n'}
+[1.039837] (g1_ass1_pkg) StdoutLine: {'line': b'\n'}
+[1.039874] (g1_ass1_pkg) StdoutLine: {'line': b'Label Time Summary:\n'}
+[1.039914] (g1_ass1_pkg) StdoutLine: {'line': b'cppcheck      =   0.11 sec*proc (1 test)\n'}
+[1.039951] (g1_ass1_pkg) StdoutLine: {'line': b'flake8        =   0.33 sec*proc (1 test)\n'}
+[1.039993] (g1_ass1_pkg) StdoutLine: {'line': b'gtest         =   0.05 sec*proc (1 test)\n'}
+[1.040032] (g1_ass1_pkg) StdoutLine: {'line': b'lint_cmake    =   0.10 sec*proc (1 test)\n'}
+[1.040072] (g1_ass1_pkg) StdoutLine: {'line': b'linter        =   0.97 sec*proc (6 tests)\n'}
+[1.040110] (g1_ass1_pkg) StdoutLine: {'line': b'pep257        =   0.16 sec*proc (1 test)\n'}
+[1.040147] (g1_ass1_pkg) StdoutLine: {'line': b'uncrustify    =   0.14 sec*proc (1 test)\n'}
+[1.040187] (g1_ass1_pkg) StdoutLine: {'line': b'xmllint       =   0.11 sec*proc (1 test)\n'}
+[1.040221] (g1_ass1_pkg) StdoutLine: {'line': b'\n'}
+[1.040258] (g1_ass1_pkg) StdoutLine: {'line': b'Total Test time (real) =   1.01 sec\n'}
+[1.040301] (g1_ass1_pkg) StdoutLine: {'line': b'\n'}
+[1.040338] (g1_ass1_pkg) StdoutLine: {'line': b'The following tests FAILED:\n'}
+[1.040376] (g1_ass1_pkg) StdoutLine: {'line': b'\t\x1b[0;31m  4 - lint_cmake (Failed)\x1b[0;0m\n'}
+[1.040415] (g1_ass1_pkg) StdoutLine: {'line': b'\t\x1b[0;31m  6 - uncrustify (Failed)\x1b[0;0m\n'}
+[1.043008] (g1_ass1_pkg) StderrLine: {'line': b'Errors while running CTest\n'}
+[1.043130] (g1_ass1_pkg) StderrLine: {'line': b'Output from these tests are in: /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/Testing/Temporary/LastTest.log\n'}
+[1.043179] (g1_ass1_pkg) StderrLine: {'line': b'Use "--rerun-failed --output-on-failure" to re-run the failed cases verbosely.\n'}
+[1.044512] (g1_ass1_pkg) CommandEnded: {'returncode': 8}
+[1.044734] (g1_ass1_pkg) TestFailure: {'identifier': 'g1_ass1_pkg'}
+[1.044751] (g1_ass1_pkg) JobEnded: {'identifier': 'g1_ass1_pkg', 'rc': 0}
+[1.045266] (-) EventReactorShutdown: {}

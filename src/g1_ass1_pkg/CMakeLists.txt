@@ -9,7 +9,7 @@ endif()
 find_package(g1_interface_pkg REQUIRED)
 find_package(ament_cmake REQUIRED)            # cmake package
 find_package(rclcpp REQUIRED)                 # nodig voor alle nodes
-find_package(rclcpp_action REQUIRED)          # nodig als er een actionserver node wordt gemaakt 
+find_package(rclcpp_action REQUIRED)          # nodig als er een actionserver node wordt gemaakt
 find_package(std_msgs REQUIRED)               # gebruik maken von standaard messages
 find_package(builtin_interfaces REQUIRED)     # nodig voor Time messages
 find_package(rosidl_default_generators REQUIRED) # nodig om custom messages te gebruiken
@@ -41,13 +41,24 @@ install(TARGETS
 )
 
 if(BUILD_TESTING)
+  find_package(ament_cmake_gtest REQUIRED)
+
+  # Unit tests voor alle nodes
+  ament_add_gtest(test_cijfer_calculator test/test_cijfer_calculator.cpp)
+  ament_target_dependencies(test_cijfer_calculator rclcpp g1_interface_pkg)
+
+  ament_add_gtest(test_cijfer_service test/test_cijfer_service.cpp)
+  ament_target_dependencies(test_cijfer_service rclcpp g1_interface_pkg)
+
+  ament_add_gtest(test_tentamen_publisher test/test_tentamen_publisher.cpp)
+  ament_target_dependencies(test_tentamen_publisher rclcpp g1_interface_pkg)
+
+  ament_add_gtest(test_final_cijfer_determinator test/test_final_cijfer_determinator.cpp)
+  ament_target_dependencies(test_final_cijfer_determinator rclcpp g1_interface_pkg)
+
+  # Linter tests
   find_package(ament_lint_auto REQUIRED)
-  # the following line skips the linter which checks for copyrights
-  # comment the line when a copyright and license is added to all source files
   set(ament_cmake_copyright_FOUND TRUE)
-  # the following line skips cpplint (only works in a git repo)
-  # comment the line when this package is in a git repo and when
-  # a copyright and license is added to all source files
   set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
 endif()

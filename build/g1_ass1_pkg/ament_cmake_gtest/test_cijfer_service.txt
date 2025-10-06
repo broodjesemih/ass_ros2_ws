@@ -1,0 +1,26 @@
+-- run_test.py: invoking following command in '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg':
+ - /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_cijfer_service --gtest_output=xml:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_service.gtest.xml
+
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from TestCijferService
+[ RUN      ] TestCijferService.test_average_calculation
+[       OK ] TestCijferService.test_average_calculation (532 ms)
+[ RUN      ] TestCijferService.test_wessel_bonus
+[       OK ] TestCijferService.test_wessel_bonus (197 ms)
+[ RUN      ] TestCijferService.test_max_clamp
+[       OK ] TestCijferService.test_max_clamp (115 ms)
+[ RUN      ] TestCijferService.test_min_clamp
+[       OK ] TestCijferService.test_min_clamp (201 ms)
+[ RUN      ] TestCijferService.test_empty_cijfers
+[       OK ] TestCijferService.test_empty_cijfers (455 ms)
+[----------] 5 tests from TestCijferService (1502 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test suite ran. (1507 ms total)
+[  PASSED  ] 5 tests.
+
+
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_service.gtest.xml'
+-- run_test.py: verify result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_service.gtest.xml'

@@ -1,0 +1,20 @@
+-- run_test.py: invoking following command in '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg':
+ - /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_tentamen_publisher --gtest_output=xml:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_tentamen_publisher.gtest.xml
+
+[==========] Running 2 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 2 tests from TestTentamenPublisher
+[ RUN      ] TestTentamenPublisher.test_tentamen_published
+[       OK ] TestTentamenPublisher.test_tentamen_published (615 ms)
+[ RUN      ] TestTentamenPublisher.test_multiple_messages
+[       OK ] TestTentamenPublisher.test_multiple_messages (5025 ms)
+[----------] 2 tests from TestTentamenPublisher (5640 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test suite ran. (5644 ms total)
+[  PASSED  ] 2 tests.
+
+
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_tentamen_publisher.gtest.xml'
+-- run_test.py: verify result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_tentamen_publisher.gtest.xml'

@@ -1,0 +1,8 @@
+[ 12%] Built target gtest_main
+[ 25%] Built target tentamen_result_generator
+[ 37%] Built target gtest
+[ 50%] Built target herkansing_scheduler
+[ 62%] Built target herkansing_cijfer_determinator
+[ 75%] Built target final_cijfer_determinator
+[ 87%] Built target cijfer_calculator
+[ 93%] [32m[1mLinking CXX executable test_cijfer_calculator[0m

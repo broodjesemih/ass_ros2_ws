@@ -1,0 +1,33 @@
+[0.009s] Invoking command in '/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/build/g1_ass1_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/build/g1_ass1_pkg -- -j20 -l20
+[0.061s] [ 20%] Built target cijfer_calculator
+[0.062s] [ 40%] Built target tentamen_result_generator
+[0.063s] [ 60%] Built target herkansing_cijfer_determinator
+[0.064s] [ 70%] [32mBuilding CXX object CMakeFiles/final_cijfer_determinator.dir/src/final_cijfer_determinator.cpp.o[0m
+[0.069s] [ 90%] Built target herkansing_scheduler
+[4.758s] [100%] [32m[1mLinking CXX executable final_cijfer_determinator[0m
+[4.930s] [100%] Built target final_cijfer_determinator
+[4.941s] Invoked command in '/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/build/g1_ass1_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/build/g1_ass1_pkg -- -j20 -l20
+[4.948s] Invoking command in '/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/build/g1_ass1_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/build/g1_ass1_pkg
+[4.955s] -- Install configuration: ""
+[4.955s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/install/g1_ass1_pkg/lib/g1_ass1_pkg/tentamen_result_generator
+[4.955s] -- Installing: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/install/g1_ass1_pkg/lib/g1_ass1_pkg/final_cijfer_determinator
+[4.958s] -- Set non-toolchain portion of runtime path of "/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/install/g1_ass1_pkg/lib/g1_ass1_pkg/final_cijfer_determinator" to ""
+[4.958s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/install/g1_ass1_pkg/lib/g1_ass1_pkg/cijfer_calculator
+[4.958s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/install/g1_ass1_pkg/lib/g1_ass1_pkg/herkansing_cijfer_determinator
+[4.958s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/install/g1_ass1_pkg/lib/g1_ass1_pkg/herkansing_scheduler
+[4.958s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/install/g1_ass1_pkg/share/ament_index/resource_index/package_run_dependencies/g1_ass1_pkg
+[4.958s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/install/g1_ass1_pkg/share/ament_index/resource_index/parent_prefix_path/g1_ass1_pkg
+[4.958s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/install/g1_ass1_pkg/share/g1_ass1_pkg/environment/ament_prefix_path.sh
+[4.958s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/install/g1_ass1_pkg/share/g1_ass1_pkg/environment/ament_prefix_path.dsv
+[4.958s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/install/g1_ass1_pkg/share/g1_ass1_pkg/environment/path.sh
+[4.959s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/install/g1_ass1_pkg/share/g1_ass1_pkg/environment/path.dsv
+[4.959s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/install/g1_ass1_pkg/share/g1_ass1_pkg/local_setup.bash
+[4.959s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/install/g1_ass1_pkg/share/g1_ass1_pkg/local_setup.sh
+[4.959s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/install/g1_ass1_pkg/share/g1_ass1_pkg/local_setup.zsh
+[4.959s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/install/g1_ass1_pkg/share/g1_ass1_pkg/local_setup.dsv
+[4.959s] -- Installing: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/install/g1_ass1_pkg/share/g1_ass1_pkg/package.dsv
+[4.959s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/install/g1_ass1_pkg/share/ament_index/resource_index/packages/g1_ass1_pkg
+[4.959s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/install/g1_ass1_pkg/share/g1_ass1_pkg/cmake/g1_ass1_pkgConfig.cmake
+[4.959s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/install/g1_ass1_pkg/share/g1_ass1_pkg/cmake/g1_ass1_pkgConfig-version.cmake
+[4.959s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/install/g1_ass1_pkg/share/g1_ass1_pkg/package.xml
+[4.960s] Invoked command in '/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/build/g1_ass1_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/build/g1_ass1_pkg

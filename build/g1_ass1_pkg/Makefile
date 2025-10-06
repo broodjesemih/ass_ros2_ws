@@ -262,6 +262,84 @@ herkansing_scheduler/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/herkansing_scheduler.dir/build.make CMakeFiles/herkansing_scheduler.dir/build
 .PHONY : herkansing_scheduler/fast
 
+#=============================================================================
+# Target rules for targets named test_cijfer_calculator
+
+# Build rule for target.
+test_cijfer_calculator: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_cijfer_calculator
+.PHONY : test_cijfer_calculator
+
+# fast build rule for target.
+test_cijfer_calculator/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_cijfer_calculator.dir/build.make CMakeFiles/test_cijfer_calculator.dir/build
+.PHONY : test_cijfer_calculator/fast
+
+#=============================================================================
+# Target rules for targets named test_cijfer_service
+
+# Build rule for target.
+test_cijfer_service: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_cijfer_service
+.PHONY : test_cijfer_service
+
+# fast build rule for target.
+test_cijfer_service/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_cijfer_service.dir/build.make CMakeFiles/test_cijfer_service.dir/build
+.PHONY : test_cijfer_service/fast
+
+#=============================================================================
+# Target rules for targets named test_tentamen_publisher
+
+# Build rule for target.
+test_tentamen_publisher: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_tentamen_publisher
+.PHONY : test_tentamen_publisher
+
+# fast build rule for target.
+test_tentamen_publisher/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tentamen_publisher.dir/build.make CMakeFiles/test_tentamen_publisher.dir/build
+.PHONY : test_tentamen_publisher/fast
+
+#=============================================================================
+# Target rules for targets named test_final_cijfer_determinator
+
+# Build rule for target.
+test_final_cijfer_determinator: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_final_cijfer_determinator
+.PHONY : test_final_cijfer_determinator
+
+# fast build rule for target.
+test_final_cijfer_determinator/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_final_cijfer_determinator.dir/build.make CMakeFiles/test_final_cijfer_determinator.dir/build
+.PHONY : test_final_cijfer_determinator/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
 src/cijfer_calculator.o: src/cijfer_calculator.cpp.o
 .PHONY : src/cijfer_calculator.o
 
@@ -382,6 +460,102 @@ src/tentamen_result_generator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tentamen_result_generator.dir/build.make CMakeFiles/tentamen_result_generator.dir/src/tentamen_result_generator.cpp.s
 .PHONY : src/tentamen_result_generator.cpp.s
 
+test/test_cijfer_calculator.o: test/test_cijfer_calculator.cpp.o
+.PHONY : test/test_cijfer_calculator.o
+
+# target to build an object file
+test/test_cijfer_calculator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_cijfer_calculator.dir/build.make CMakeFiles/test_cijfer_calculator.dir/test/test_cijfer_calculator.cpp.o
+.PHONY : test/test_cijfer_calculator.cpp.o
+
+test/test_cijfer_calculator.i: test/test_cijfer_calculator.cpp.i
+.PHONY : test/test_cijfer_calculator.i
+
+# target to preprocess a source file
+test/test_cijfer_calculator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_cijfer_calculator.dir/build.make CMakeFiles/test_cijfer_calculator.dir/test/test_cijfer_calculator.cpp.i
+.PHONY : test/test_cijfer_calculator.cpp.i
+
+test/test_cijfer_calculator.s: test/test_cijfer_calculator.cpp.s
+.PHONY : test/test_cijfer_calculator.s
+
+# target to generate assembly for a file
+test/test_cijfer_calculator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_cijfer_calculator.dir/build.make CMakeFiles/test_cijfer_calculator.dir/test/test_cijfer_calculator.cpp.s
+.PHONY : test/test_cijfer_calculator.cpp.s
+
+test/test_cijfer_service.o: test/test_cijfer_service.cpp.o
+.PHONY : test/test_cijfer_service.o
+
+# target to build an object file
+test/test_cijfer_service.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_cijfer_service.dir/build.make CMakeFiles/test_cijfer_service.dir/test/test_cijfer_service.cpp.o
+.PHONY : test/test_cijfer_service.cpp.o
+
+test/test_cijfer_service.i: test/test_cijfer_service.cpp.i
+.PHONY : test/test_cijfer_service.i
+
+# target to preprocess a source file
+test/test_cijfer_service.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_cijfer_service.dir/build.make CMakeFiles/test_cijfer_service.dir/test/test_cijfer_service.cpp.i
+.PHONY : test/test_cijfer_service.cpp.i
+
+test/test_cijfer_service.s: test/test_cijfer_service.cpp.s
+.PHONY : test/test_cijfer_service.s
+
+# target to generate assembly for a file
+test/test_cijfer_service.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_cijfer_service.dir/build.make CMakeFiles/test_cijfer_service.dir/test/test_cijfer_service.cpp.s
+.PHONY : test/test_cijfer_service.cpp.s
+
+test/test_final_cijfer_determinator.o: test/test_final_cijfer_determinator.cpp.o
+.PHONY : test/test_final_cijfer_determinator.o
+
+# target to build an object file
+test/test_final_cijfer_determinator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_final_cijfer_determinator.dir/build.make CMakeFiles/test_final_cijfer_determinator.dir/test/test_final_cijfer_determinator.cpp.o
+.PHONY : test/test_final_cijfer_determinator.cpp.o
+
+test/test_final_cijfer_determinator.i: test/test_final_cijfer_determinator.cpp.i
+.PHONY : test/test_final_cijfer_determinator.i
+
+# target to preprocess a source file
+test/test_final_cijfer_determinator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_final_cijfer_determinator.dir/build.make CMakeFiles/test_final_cijfer_determinator.dir/test/test_final_cijfer_determinator.cpp.i
+.PHONY : test/test_final_cijfer_determinator.cpp.i
+
+test/test_final_cijfer_determinator.s: test/test_final_cijfer_determinator.cpp.s
+.PHONY : test/test_final_cijfer_determinator.s
+
+# target to generate assembly for a file
+test/test_final_cijfer_determinator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_final_cijfer_determinator.dir/build.make CMakeFiles/test_final_cijfer_determinator.dir/test/test_final_cijfer_determinator.cpp.s
+.PHONY : test/test_final_cijfer_determinator.cpp.s
+
+test/test_tentamen_publisher.o: test/test_tentamen_publisher.cpp.o
+.PHONY : test/test_tentamen_publisher.o
+
+# target to build an object file
+test/test_tentamen_publisher.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tentamen_publisher.dir/build.make CMakeFiles/test_tentamen_publisher.dir/test/test_tentamen_publisher.cpp.o
+.PHONY : test/test_tentamen_publisher.cpp.o
+
+test/test_tentamen_publisher.i: test/test_tentamen_publisher.cpp.i
+.PHONY : test/test_tentamen_publisher.i
+
+# target to preprocess a source file
+test/test_tentamen_publisher.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tentamen_publisher.dir/build.make CMakeFiles/test_tentamen_publisher.dir/test/test_tentamen_publisher.cpp.i
+.PHONY : test/test_tentamen_publisher.cpp.i
+
+test/test_tentamen_publisher.s: test/test_tentamen_publisher.cpp.s
+.PHONY : test/test_tentamen_publisher.s
+
+# target to generate assembly for a file
+test/test_tentamen_publisher.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tentamen_publisher.dir/build.make CMakeFiles/test_tentamen_publisher.dir/test/test_tentamen_publisher.cpp.s
+.PHONY : test/test_tentamen_publisher.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -399,9 +573,15 @@ help:
 	@echo "... uninstall"
 	@echo "... cijfer_calculator"
 	@echo "... final_cijfer_determinator"
+	@echo "... gtest"
+	@echo "... gtest_main"
 	@echo "... herkansing_cijfer_determinator"
 	@echo "... herkansing_scheduler"
 	@echo "... tentamen_result_generator"
+	@echo "... test_cijfer_calculator"
+	@echo "... test_cijfer_service"
+	@echo "... test_final_cijfer_determinator"
+	@echo "... test_tentamen_publisher"
 	@echo "... src/cijfer_calculator.o"
 	@echo "... src/cijfer_calculator.i"
 	@echo "... src/cijfer_calculator.s"
@@ -417,6 +597,18 @@ help:
 	@echo "... src/tentamen_result_generator.o"
 	@echo "... src/tentamen_result_generator.i"
 	@echo "... src/tentamen_result_generator.s"
+	@echo "... test/test_cijfer_calculator.o"
+	@echo "... test/test_cijfer_calculator.i"
+	@echo "... test/test_cijfer_calculator.s"
+	@echo "... test/test_cijfer_service.o"
+	@echo "... test/test_cijfer_service.i"
+	@echo "... test/test_cijfer_service.s"
+	@echo "... test/test_final_cijfer_determinator.o"
+	@echo "... test/test_final_cijfer_determinator.i"
+	@echo "... test/test_final_cijfer_determinator.s"
+	@echo "... test/test_tentamen_publisher.o"
+	@echo "... test/test_tentamen_publisher.i"
+	@echo "... test/test_tentamen_publisher.s"
 .PHONY : help
 
 

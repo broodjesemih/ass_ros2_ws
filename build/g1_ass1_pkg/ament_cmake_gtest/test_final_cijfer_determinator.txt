@@ -1,0 +1,22 @@
+-- run_test.py: invoking following command in '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg':
+ - /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_final_cijfer_determinator --gtest_output=xml:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_final_cijfer_determinator.gtest.xml
+
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from TestFinalCijferDeterminator
+[ RUN      ] TestFinalCijferDeterminator.test_subscription_active
+[       OK ] TestFinalCijferDeterminator.test_subscription_active (512 ms)
+[ RUN      ] TestFinalCijferDeterminator.test_tentamen_reception
+[       OK ] TestFinalCijferDeterminator.test_tentamen_reception (2612 ms)
+[ RUN      ] TestFinalCijferDeterminator.test_three_tentamen_threshold
+[       OK ] TestFinalCijferDeterminator.test_three_tentamen_threshold (1710 ms)
+[----------] 3 tests from TestFinalCijferDeterminator (4835 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (4842 ms total)
+[  PASSED  ] 3 tests.
+
+
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_final_cijfer_determinator.gtest.xml'
+-- run_test.py: verify result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_final_cijfer_determinator.gtest.xml'

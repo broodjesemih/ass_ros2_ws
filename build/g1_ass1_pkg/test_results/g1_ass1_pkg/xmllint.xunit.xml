@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite
+  name="g1_ass1_pkg.xmllint"
+  tests="2"
+  errors="0"
+  failures="0"
+  time="0.005"
+>
+  <testcase
+    name="package.xml"
+    classname="g1_ass1_pkg.xmllint"/>
+  <testcase
+    name="install/g1_ass1_pkg/share/g1_ass1_pkg/package.xml"
+    classname="g1_ass1_pkg.xmllint"/>
+  <system-out>Checked files:
+* package.xml
+* install/g1_ass1_pkg/share/g1_ass1_pkg/package.xml</system-out>
+</testsuite>

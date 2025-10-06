@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="2" failures="0" disabled="0" errors="0" time="5.644" timestamp="2025-10-06T15:31:07.488" name="AllTests">
+  <testsuite name="TestTentamenPublisher" tests="2" failures="0" disabled="0" skipped="0" errors="0" time="5.64" timestamp="2025-10-06T15:31:07.492">
+    <testcase name="test_tentamen_published" file="/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/test/test_tentamen_publisher.cpp" line="21" status="run" result="completed" time="0.615" timestamp="2025-10-06T15:31:07.492" classname="g1_ass1_pkg.TestTentamenPublisher" />
+    <testcase name="test_multiple_messages" file="/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/test/test_tentamen_publisher.cpp" line="48" status="run" result="completed" time="5.025" timestamp="2025-10-06T15:31:08.108" classname="g1_ass1_pkg.TestTentamenPublisher" />
+  </testsuite>
+</testsuites>

@@ -1,0 +1,50 @@
+-- Found g1_interface_pkg: 0.1.0 (/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake)
+-- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rclcpp: 28.1.12 (/opt/ros/jazzy/share/rclcpp/cmake)
+-- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found rclcpp_action: 28.1.12 (/opt/ros/jazzy/share/rclcpp_action/cmake)
+-- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+-- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+-- Found rosidl_adapter: 4.6.6 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+-- Found ament_cmake_gtest: 2.5.4 (/opt/ros/jazzy/share/ament_cmake_gtest/cmake)
+-- Found gtest sources under '/opt/ros/jazzy/src/gtest_vendor': C++ tests using 'Google Test' will be built
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: 
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'flake8' to check Python code syntax and style conventions
+-- Configured 'flake8' exclude dirs and/or files: 
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done (0.6s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/build/g1_ass1_pkg
+[ 12%] [32mBuilding CXX object gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o[0m
+[ 12%] [32mBuilding CXX object gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o[0m
+[ 43%] Built target final_cijfer_determinator
+[ 50%] Built target herkansing_scheduler
+[ 50%] Built target cijfer_calculator
+[ 62%] Built target tentamen_result_generator
+[ 75%] Built target herkansing_cijfer_determinator
+[ 81%] [32m[1mLinking CXX static library libgtest_main.a[0m
+[ 81%] Built target gtest_main
+[ 87%] [32m[1mLinking CXX static library libgtest.a[0m
+[ 87%] Built target gtest
+[ 93%] [32mBuilding CXX object CMakeFiles/test_cijfer_calculator.dir/test/test_cijfer_calculator.cpp.o[0m
+[100%] [32m[1mLinking CXX executable test_cijfer_calculator[0m
+/usr/bin/ld: cannot find -lg1_ass1_pkg: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/test_cijfer_calculator.dir/build.make:187: test_cijfer_calculator] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:296: CMakeFiles/test_cijfer_calculator.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

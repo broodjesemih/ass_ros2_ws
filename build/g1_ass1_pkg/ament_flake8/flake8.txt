@@ -1,0 +1,15 @@
+-- run_test.py: invoking following command in '/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg':
+ - /opt/ros/jazzy/bin/ament_flake8 --xunit-file /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/flake8.xunit.xml
+
+
+2 files checked
+No problems found
+
+Checked files:
+
+* ./install/_local_setup_util_sh.py
+* ./install/_local_setup_util_ps1.py
+
+
+-- run_test.py: return code 0
+-- run_test.py: verify result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/flake8.xunit.xml'

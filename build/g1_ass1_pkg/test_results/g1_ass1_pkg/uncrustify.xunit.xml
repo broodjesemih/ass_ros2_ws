@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite
+  name="g1_ass1_pkg.uncrustify"
+  tests="9"
+  failures="0"
+  errors="0"
+  time="0.017"
+>
+  <testcase
+    name="src/cijfer_calculator.cpp"
+    classname="g1_ass1_pkg.uncrustify"/>
+  <testcase
+    name="src/final_cijfer_determinator.cpp"
+    classname="g1_ass1_pkg.uncrustify"/>
+  <testcase
+    name="src/herkansing_cijfer_determinator.cpp"
+    classname="g1_ass1_pkg.uncrustify"/>
+  <testcase
+    name="src/herkansing_scheduler.cpp"
+    classname="g1_ass1_pkg.uncrustify"/>
+  <testcase
+    name="src/tentamen_result_generator.cpp"
+    classname="g1_ass1_pkg.uncrustify"/>
+  <testcase
+    name="test/test_cijfer_calculator.cpp"
+    classname="g1_ass1_pkg.uncrustify"/>
+  <testcase
+    name="test/test_cijfer_service.cpp"
+    classname="g1_ass1_pkg.uncrustify"/>
+  <testcase
+    name="test/test_final_cijfer_determinator.cpp"
+    classname="g1_ass1_pkg.uncrustify"/>
+  <testcase
+    name="test/test_tentamen_publisher.cpp"
+    classname="g1_ass1_pkg.uncrustify"/>
+  <system-out>Checked files:
+* src/cijfer_calculator.cpp
+* src/final_cijfer_determinator.cpp
+* src/herkansing_cijfer_determinator.cpp
+* src/herkansing_scheduler.cpp
+* src/tentamen_result_generator.cpp
+* test/test_cijfer_calculator.cpp
+* test/test_cijfer_service.cpp
+* test/test_final_cijfer_determinator.cpp
+* test/test_tentamen_publisher.cpp</system-out>
+</testsuite>

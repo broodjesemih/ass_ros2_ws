@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="3" failures="0" disabled="0" errors="0" time="4.842" timestamp="2025-10-06T15:31:13.298" name="AllTests">
+  <testsuite name="TestFinalCijferDeterminator" tests="3" failures="0" disabled="0" skipped="0" errors="0" time="4.835" timestamp="2025-10-06T15:31:13.305">
+    <testcase name="test_subscription_active" file="/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/test/test_final_cijfer_determinator.cpp" line="22" status="run" result="completed" time="0.512" timestamp="2025-10-06T15:31:13.305" classname="g1_ass1_pkg.TestFinalCijferDeterminator" />
+    <testcase name="test_tentamen_reception" file="/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/test/test_final_cijfer_determinator.cpp" line="33" status="run" result="completed" time="2.612" timestamp="2025-10-06T15:31:13.817" classname="g1_ass1_pkg.TestFinalCijferDeterminator" />
+    <testcase name="test_three_tentamen_threshold" file="/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/test/test_final_cijfer_determinator.cpp" line="73" status="run" result="completed" time="1.71" timestamp="2025-10-06T15:31:16.430" classname="g1_ass1_pkg.TestFinalCijferDeterminator" />
+  </testsuite>
+</testsuites>

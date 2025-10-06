@@ -1,0 +1,11 @@
+test_cijfer_calculator 8 0.00571962
+cppcheck 5 0.0216608
+flake8 5 0.0520638
+lint_cmake 2 0.052654
+pep257 5 0.0317185
+uncrustify 2 0.0640726
+xmllint 5 0.0205543
+test_cijfer_service 2 0.833458
+test_tentamen_publisher 2 2.90383
+test_final_cijfer_determinator 1 5.00836
+---

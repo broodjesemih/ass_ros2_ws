@@ -1,0 +1,197 @@
+[0.015s] Invoking command in '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg': CMAKE_PREFIX_PATH=/home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg:/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg:/home/broodjesemih/minor_ws/install/robot_moveit_config:/home/broodjesemih/minor_ws/install/robot_description:/home/broodjesemih/minor_ws/install/robot_commander:/home/broodjesemih/minor_ws/install/robot_bringup:/home/broodjesemih/homework_ws/install/hw_pkg:/home/broodjesemih/homework_ws/install/broodje_interfaces:/home/broodjesemih/ros2_ws/install/templates_interfaces:/home/broodjesemih/ros2_ws/install/les_pkg:/home/broodjesemih/ros2_ws/install/my_robot_interfaces:/home/broodjesemih/les_ws-main/install/robot_moveit_config:/home/broodjesemih/les_ws-main/install/robot_description:/home/broodjesemih/les_ws-main/install/robot_commander:/home/broodjesemih/les_ws-main/install/robot_bringup:/home/broodjesemih/les_ws-main/install/les_pkg:/home/broodjesemih/les_ws-main/install/my_interfaces:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/ctest -C Release -D ExperimentalTest --no-compress-output -V --force-new-ctest-process
+[0.021s] UpdateCTestConfiguration  from :/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/CTestConfiguration.ini
+[0.021s] Parse Config file:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/CTestConfiguration.ini
+[0.021s]    Site: xubuntu
+[0.021s]    Build name: (empty)
+[0.021s]  Add coverage exclude regular expressions.
+[0.021s] Create new tag: 20251006-1325 - Experimental
+[0.021s] UpdateCTestConfiguration  from :/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/CTestConfiguration.ini
+[0.021s] Parse Config file:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/CTestConfiguration.ini
+[0.021s] Test project /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg
+[0.021s] Constructing a list of tests
+[0.021s] Done constructing a list of tests
+[0.021s] Updating test list for fixtures
+[0.021s] Added 0 tests to meet fixture requirements
+[0.021s] Checking test dependency graph...
+[0.021s] Checking test dependency graph end
+[0.021s] test 1
+[0.021s]     Start 1: test_cijfer_calculator
+[0.022s] 
+[0.022s] 1: Test command: /usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_calculator.gtest.xml" "--package-name" "g1_ass1_pkg" "--output-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/ament_cmake_gtest/test_cijfer_calculator.txt" "--command" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_cijfer_calculator" "--gtest_output=xml:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_calculator.gtest.xml"
+[0.022s] 1: Working Directory: /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg
+[0.022s] 1: Test timeout computed to be: 60
+[0.059s] 1: -- run_test.py: invoking following command in '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg':
+[0.059s] 1:  - /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_cijfer_calculator --gtest_output=xml:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_calculator.gtest.xml
+[0.061s] 1: [==========] Running 1 test from 1 test suite.
+[0.061s] 1: [----------] Global test environment set-up.
+[0.061s] 1: [----------] 1 test from TestSuite
+[0.061s] 1: [ RUN      ] TestSuite.test_example
+[0.061s] 1: [       OK ] TestSuite.test_example (0 ms)
+[0.061s] 1: [----------] 1 test from TestSuite (0 ms total)
+[0.061s] 1: 
+[0.061s] 1: [----------] Global test environment tear-down
+[0.061s] 1: [==========] 1 test from 1 test suite ran. (0 ms total)
+[0.061s] 1: [  PASSED  ] 1 test.
+[0.061s] 1: -- run_test.py: return code 0
+[0.061s] 1: -- run_test.py: inject classname prefix into gtest result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_calculator.gtest.xml'
+[0.061s] 1: -- run_test.py: verify result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_calculator.gtest.xml'
+[0.068s] 1/4 Test #1: test_cijfer_calculator ...........   Passed    0.05 sec
+[0.068s] test 2
+[0.068s]     Start 2: test_cijfer_service
+[0.068s] 
+[0.068s] 2: Test command: /usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_service.gtest.xml" "--package-name" "g1_ass1_pkg" "--output-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/ament_cmake_gtest/test_cijfer_service.txt" "--command" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_cijfer_service" "--gtest_output=xml:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_service.gtest.xml"
+[0.068s] 2: Working Directory: /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg
+[0.068s] 2: Test timeout computed to be: 60
+[0.106s] 2: -- run_test.py: invoking following command in '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg':
+[0.106s] 2:  - /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_cijfer_service --gtest_output=xml:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_service.gtest.xml
+[0.112s] 2: [==========] Running 5 tests from 1 test suite.
+[0.112s] 2: [----------] Global test environment set-up.
+[0.112s] 2: [----------] 5 tests from TestCijferService
+[0.116s] 2: [ RUN      ] TestCijferService.test_average_calculation
+[5.124s] 2: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/test/test_cijfer_service.cpp:23: Failure
+[5.124s] 2: Value of: client->wait_for_service(5s)
+[5.124s] 2:   Actual: false
+[5.124s] 2: Expected: true
+[5.124s] 2: 
+[5.126s] 2: [  FAILED  ] TestCijferService.test_average_calculation (5009 ms)
+[5.126s] 2: [ RUN      ] TestCijferService.test_wessel_bonus
+[10.131s] 2: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/test/test_cijfer_service.cpp:45: Failure
+[10.131s] 2: Value of: client->wait_for_service(5s)
+[10.131s] 2:   Actual: false
+[10.131s] 2: Expected: true
+[10.131s] 2: 
+[10.133s] 2: [  FAILED  ] TestCijferService.test_wessel_bonus (5006 ms)
+[10.133s] 2: [ RUN      ] TestCijferService.test_max_clamp
+[15.137s] 2: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/test/test_cijfer_service.cpp:66: Failure
+[15.137s] 2: Value of: client->wait_for_service(5s)
+[15.137s] 2:   Actual: false
+[15.137s] 2: Expected: true
+[15.137s] 2: 
+[15.141s] 2: [  FAILED  ] TestCijferService.test_max_clamp (5008 ms)
+[15.141s] 2: [ RUN      ] TestCijferService.test_min_clamp
+[20.148s] 2: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/test/test_cijfer_service.cpp:87: Failure
+[20.148s] 2: Value of: client->wait_for_service(5s)
+[20.148s] 2:   Actual: false
+[20.148s] 2: Expected: true
+[20.148s] 2: 
+[20.151s] 2: [  FAILED  ] TestCijferService.test_min_clamp (5009 ms)
+[20.151s] 2: [ RUN      ] TestCijferService.test_empty_cijfers
+[25.156s] 2: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/test/test_cijfer_service.cpp:108: Failure
+[25.157s] 2: Value of: client->wait_for_service(5s)
+[25.157s] 2:   Actual: false
+[25.157s] 2: Expected: true
+[25.157s] 2: 
+[25.159s] 2: [  FAILED  ] TestCijferService.test_empty_cijfers (5008 ms)
+[25.159s] 2: [----------] 5 tests from TestCijferService (25042 ms total)
+[25.160s] 2: 
+[25.160s] 2: [----------] Global test environment tear-down
+[25.160s] 2: [==========] 5 tests from 1 test suite ran. (25047 ms total)
+[25.160s] 2: [  PASSED  ] 0 tests.
+[25.160s] 2: [  FAILED  ] 5 tests, listed below:
+[25.160s] 2: [  FAILED  ] TestCijferService.test_average_calculation
+[25.160s] 2: [  FAILED  ] TestCijferService.test_wessel_bonus
+[25.160s] 2: [  FAILED  ] TestCijferService.test_max_clamp
+[25.160s] 2: [  FAILED  ] TestCijferService.test_min_clamp
+[25.160s] 2: [  FAILED  ] TestCijferService.test_empty_cijfers
+[25.160s] 2: 
+[25.160s] 2:  5 FAILED TESTS
+[25.266s] 2: -- run_test.py: return code 1
+[25.266s] 2: -- run_test.py: inject classname prefix into gtest result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_service.gtest.xml'
+[25.266s] 2: -- run_test.py: verify result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_service.gtest.xml'
+[25.278s] 2/4 Test #2: test_cijfer_service ..............***Failed   25.21 sec
+[25.278s] test 3
+[25.278s]     Start 3: test_tentamen_publisher
+[25.278s] 
+[25.278s] 3: Test command: /usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_tentamen_publisher.gtest.xml" "--package-name" "g1_ass1_pkg" "--output-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/ament_cmake_gtest/test_tentamen_publisher.txt" "--command" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_tentamen_publisher" "--gtest_output=xml:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_tentamen_publisher.gtest.xml"
+[25.278s] 3: Working Directory: /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg
+[25.278s] 3: Test timeout computed to be: 60
+[25.323s] 3: -- run_test.py: invoking following command in '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg':
+[25.323s] 3:  - /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_tentamen_publisher --gtest_output=xml:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_tentamen_publisher.gtest.xml
+[25.330s] 3: [==========] Running 2 tests from 1 test suite.
+[25.331s] 3: [----------] Global test environment set-up.
+[25.331s] 3: [----------] 2 tests from TestTentamenPublisher
+[25.336s] 3: [ RUN      ] TestTentamenPublisher.test_tentamen_published
+[35.375s] 3: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/test/test_tentamen_publisher.cpp:39: Failure
+[35.375s] 3: Value of: received
+[35.375s] 3:   Actual: false
+[35.375s] 3: Expected: true
+[35.375s] 3: No tentamen message received within timeout
+[35.375s] 3: 
+[35.379s] 3: [  FAILED  ] TestTentamenPublisher.test_tentamen_published (10042 ms)
+[35.379s] 3: [ RUN      ] TestTentamenPublisher.test_multiple_messages
+[40.400s] 3: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/test/test_tentamen_publisher.cpp:64: Failure
+[40.400s] 3: Expected: (count) >= (1), actual: 0 vs 1
+[40.401s] 3: Should receive at least 1 message in 5 seconds
+[40.401s] 3: 
+[40.403s] 3: [  FAILED  ] TestTentamenPublisher.test_multiple_messages (5024 ms)
+[40.403s] 3: [----------] 2 tests from TestTentamenPublisher (15066 ms total)
+[40.403s] 3: 
+[40.403s] 3: [----------] Global test environment tear-down
+[40.403s] 3: [==========] 2 tests from 1 test suite ran. (15072 ms total)
+[40.403s] 3: [  PASSED  ] 0 tests.
+[40.404s] 3: [  FAILED  ] 2 tests, listed below:
+[40.404s] 3: [  FAILED  ] TestTentamenPublisher.test_tentamen_published
+[40.404s] 3: [  FAILED  ] TestTentamenPublisher.test_multiple_messages
+[40.404s] 3: 
+[40.404s] 3:  2 FAILED TESTS
+[40.509s] 3: -- run_test.py: return code 1
+[40.509s] 3: -- run_test.py: inject classname prefix into gtest result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_tentamen_publisher.gtest.xml'
+[40.509s] 3: -- run_test.py: verify result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_tentamen_publisher.gtest.xml'
+[40.520s] 3/4 Test #3: test_tentamen_publisher ..........***Failed   15.24 sec
+[40.520s] test 4
+[40.520s]     Start 4: test_final_cijfer_determinator
+[40.520s] 
+[40.520s] 4: Test command: /usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_final_cijfer_determinator.gtest.xml" "--package-name" "g1_ass1_pkg" "--output-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/ament_cmake_gtest/test_final_cijfer_determinator.txt" "--command" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_final_cijfer_determinator" "--gtest_output=xml:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_final_cijfer_determinator.gtest.xml"
+[40.520s] 4: Working Directory: /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg
+[40.520s] 4: Test timeout computed to be: 60
+[40.564s] 4: -- run_test.py: invoking following command in '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg':
+[40.564s] 4:  - /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_final_cijfer_determinator --gtest_output=xml:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_final_cijfer_determinator.gtest.xml
+[40.571s] 4: [==========] Running 3 tests from 1 test suite.
+[40.571s] 4: [----------] Global test environment set-up.
+[40.571s] 4: [----------] 3 tests from TestFinalCijferDeterminator
+[40.575s] 4: [ RUN      ] TestFinalCijferDeterminator.test_subscription_active
+[41.083s] 4: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/test/test_final_cijfer_determinator.cpp:27: Failure
+[41.083s] 4: Expected: (publisher->get_subscription_count()) >= (1), actual: 0 vs 1
+[41.083s] 4: final_cijfer_determinator should be subscribed
+[41.083s] 4: 
+[41.086s] 4: [  FAILED  ] TestFinalCijferDeterminator.test_subscription_active (510 ms)
+[41.086s] 4: [ RUN      ] TestFinalCijferDeterminator.test_tentamen_reception
+[43.692s] 4: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/test/test_final_cijfer_determinator.cpp:66: Failure
+[43.692s] 4: Value of: found
+[43.693s] 4:   Actual: false
+[43.693s] 4: Expected: true
+[43.693s] 4: Database should contain entry for TestStudent/TestCourse
+[43.693s] 4: 
+[43.695s] 4: [  FAILED  ] TestFinalCijferDeterminator.test_tentamen_reception (2609 ms)
+[43.696s] 4: [ RUN      ] TestFinalCijferDeterminator.test_three_tentamen_threshold
+[45.407s] 4: [       OK ] TestFinalCijferDeterminator.test_three_tentamen_threshold (1711 ms)
+[45.407s] 4: [----------] 3 tests from TestFinalCijferDeterminator (4831 ms total)
+[45.408s] 4: 
+[45.408s] 4: [----------] Global test environment tear-down
+[45.408s] 4: [==========] 3 tests from 1 test suite ran. (4835 ms total)
+[45.408s] 4: [  PASSED  ] 1 test.
+[45.408s] 4: [  FAILED  ] 2 tests, listed below:
+[45.408s] 4: [  FAILED  ] TestFinalCijferDeterminator.test_subscription_active
+[45.409s] 4: [  FAILED  ] TestFinalCijferDeterminator.test_tentamen_reception
+[45.409s] 4: 
+[45.409s] 4:  2 FAILED TESTS
+[45.514s] 4: -- run_test.py: return code 1
+[45.514s] 4: -- run_test.py: inject classname prefix into gtest result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_final_cijfer_determinator.gtest.xml'
+[45.514s] 4: -- run_test.py: verify result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_final_cijfer_determinator.gtest.xml'
+[45.524s] 4/4 Test #4: test_final_cijfer_determinator ...***Failed    5.00 sec
+[45.524s] 
+[45.524s] 25% tests passed[0;0m, [0;31m3 tests failed[0;0m out of 4
+[45.524s] 
+[45.524s] Label Time Summary:
+[45.525s] gtest    =  45.50 sec*proc (4 tests)
+[45.525s] 
+[45.525s] Total Test time (real) =  45.50 sec
+[45.525s] 
+[45.525s] The following tests FAILED:
+[45.525s] 	[0;31m  2 - test_cijfer_service (Failed)[0;0m
+[45.525s] 	[0;31m  3 - test_tentamen_publisher (Failed)[0;0m
+[45.525s] 	[0;31m  4 - test_final_cijfer_determinator (Failed)[0;0m
+[45.527s] Errors while running CTest
+[45.527s] Output from these tests are in: /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/Testing/Temporary/LastTest.log
+[45.527s] Use "--rerun-failed --output-on-failure" to re-run the failed cases verbosely.
+[45.529s] Invoked command in '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg' returned '8': CMAKE_PREFIX_PATH=/home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg:/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg:/home/broodjesemih/minor_ws/install/robot_moveit_config:/home/broodjesemih/minor_ws/install/robot_description:/home/broodjesemih/minor_ws/install/robot_commander:/home/broodjesemih/minor_ws/install/robot_bringup:/home/broodjesemih/homework_ws/install/hw_pkg:/home/broodjesemih/homework_ws/install/broodje_interfaces:/home/broodjesemih/ros2_ws/install/templates_interfaces:/home/broodjesemih/ros2_ws/install/les_pkg:/home/broodjesemih/ros2_ws/install/my_robot_interfaces:/home/broodjesemih/les_ws-main/install/robot_moveit_config:/home/broodjesemih/les_ws-main/install/robot_description:/home/broodjesemih/les_ws-main/install/robot_commander:/home/broodjesemih/les_ws-main/install/robot_bringup:/home/broodjesemih/les_ws-main/install/les_pkg:/home/broodjesemih/les_ws-main/install/my_interfaces:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/ctest -C Release -D ExperimentalTest --no-compress-output -V --force-new-ctest-process

@@ -1,0 +1,749 @@
+UpdateCTestConfiguration  from :/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/CTestConfiguration.ini
+Parse Config file:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/CTestConfiguration.ini
+   Site: xubuntu
+   Build name: (empty)
+ Add coverage exclude regular expressions.
+Create new tag: 20251006-1310 - Experimental
+UpdateCTestConfiguration  from :/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/CTestConfiguration.ini
+Parse Config file:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/CTestConfiguration.ini
+Test project /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+    Start 1: test_cijfer_calculator
+
+1: Test command: /usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_calculator.gtest.xml" "--package-name" "g1_ass1_pkg" "--output-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/ament_cmake_gtest/test_cijfer_calculator.txt" "--command" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_cijfer_calculator" "--gtest_output=xml:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_calculator.gtest.xml"
+1: Working Directory: /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg
+1: Test timeout computed to be: 60
+1: -- run_test.py: invoking following command in '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg':
+1:  - /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_cijfer_calculator --gtest_output=xml:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_calculator.gtest.xml
+1: [==========] Running 1 test from 1 test suite.
+1: [----------] Global test environment set-up.
+1: [----------] 1 test from TestSuite
+1: [ RUN      ] TestSuite.test_example
+1: [       OK ] TestSuite.test_example (0 ms)
+1: [----------] 1 test from TestSuite (0 ms total)
+1: 
+1: [----------] Global test environment tear-down
+1: [==========] 1 test from 1 test suite ran. (0 ms total)
+1: [  PASSED  ] 1 test.
+1: -- run_test.py: return code 0
+1: -- run_test.py: inject classname prefix into gtest result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_calculator.gtest.xml'
+1: -- run_test.py: verify result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_calculator.gtest.xml'
+1/7 Test #1: test_cijfer_calculator ...........   Passed    0.05 sec
+test 2
+    Start 2: cppcheck
+
+2: Test command: /usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/cppcheck.xunit.xml" "--package-name" "g1_ass1_pkg" "--output-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/ament_cppcheck/cppcheck.txt" "--command" "/opt/ros/jazzy/bin/ament_cppcheck" "--xunit-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/cppcheck.xunit.xml"
+2: Working Directory: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg
+2: Test timeout computed to be: 300
+2: -- run_test.py: invoking following command in '/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg':
+2:  - /opt/ros/jazzy/bin/ament_cppcheck --xunit-file /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/cppcheck.xunit.xml
+2: cppcheck 2.13.0 has known performance issues and therefore will not be used, set the AMENT_CPPCHECK_ALLOW_SLOW_VERSIONS environment variable to override this.
+2: -- run_test.py: return code 0
+2: -- run_test.py: verify result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/cppcheck.xunit.xml'
+2/7 Test #2: cppcheck .........................   Passed    0.11 sec
+test 3
+    Start 3: flake8
+
+3: Test command: /usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/flake8.xunit.xml" "--package-name" "g1_ass1_pkg" "--output-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/ament_flake8/flake8.txt" "--command" "/opt/ros/jazzy/bin/ament_flake8" "--xunit-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/flake8.xunit.xml"
+3: Working Directory: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg
+3: Test timeout computed to be: 60
+3: -- run_test.py: invoking following command in '/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg':
+3:  - /opt/ros/jazzy/bin/ament_flake8 --xunit-file /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/flake8.xunit.xml
+3: 
+3: 2 files checked
+3: No problems found
+3: 
+3: Checked files:
+3: 
+3: * ./install/_local_setup_util_sh.py
+3: * ./install/_local_setup_util_ps1.py
+3: -- run_test.py: return code 0
+3: -- run_test.py: verify result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/flake8.xunit.xml'
+3/7 Test #3: flake8 ...........................   Passed    0.33 sec
+test 4
+    Start 4: lint_cmake
+
+4: Test command: /usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/lint_cmake.xunit.xml" "--package-name" "g1_ass1_pkg" "--output-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/ament_lint_cmake/lint_cmake.txt" "--command" "/opt/ros/jazzy/bin/ament_lint_cmake" "--xunit-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/lint_cmake.xunit.xml"
+4: Working Directory: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg
+4: Test timeout computed to be: 60
+4: -- run_test.py: invoking following command in '/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg':
+4:  - /opt/ros/jazzy/bin/ament_lint_cmake --xunit-file /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/lint_cmake.xunit.xml
+4: CMakeLists.txt:12: Line ends in whitespace [whitespace/eol]
+4: CMakeLists.txt:45: Line ends in whitespace [whitespace/eol]
+4: CMakeLists.txt:49: Line ends in whitespace [whitespace/eol]
+4: 
+4: 
+4: 3 errors
+4: -- run_test.py: return code 1
+4: -- run_test.py: verify result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/lint_cmake.xunit.xml'
+4/7 Test #4: lint_cmake .......................***Failed    0.10 sec
+test 5
+    Start 5: pep257
+
+5: Test command: /usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/pep257.xunit.xml" "--package-name" "g1_ass1_pkg" "--output-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/ament_pep257/pep257.txt" "--command" "/opt/ros/jazzy/bin/ament_pep257" "--xunit-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/pep257.xunit.xml"
+5: Working Directory: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg
+5: Test timeout computed to be: 60
+5: -- run_test.py: invoking following command in '/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg':
+5:  - /opt/ros/jazzy/bin/ament_pep257 --xunit-file /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/pep257.xunit.xml
+5: checking ./install/_local_setup_util_ps1.py
+5: checking ./install/_local_setup_util_sh.py
+5: No problems found
+5: -- run_test.py: return code 0
+5: -- run_test.py: verify result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/pep257.xunit.xml'
+5/7 Test #5: pep257 ...........................   Passed    0.16 sec
+test 6
+    Start 6: uncrustify
+
+6: Test command: /usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/uncrustify.xunit.xml" "--package-name" "g1_ass1_pkg" "--output-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/ament_uncrustify/uncrustify.txt" "--command" "/opt/ros/jazzy/bin/ament_uncrustify" "--xunit-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/uncrustify.xunit.xml"
+6: Working Directory: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg
+6: Test timeout computed to be: 60
+6: -- run_test.py: invoking following command in '/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg':
+6:  - /opt/ros/jazzy/bin/ament_uncrustify --xunit-file /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/uncrustify.xunit.xml
+6: Code style divergence in file 'src/cijfer_calculator.cpp':
+6: 
+6: --- src/cijfer_calculator.cpp
+6: +++ src/cijfer_calculator.cpp.uncrustify
+6: @@ -6,2 +6,4 @@
+6: -    CijferCalculatorNode() : Node("cijfer_calculator_node") {
+6: -        service_ = this->create_service<g1_interface_pkg::srv::Tentamens>(
+6: +  CijferCalculatorNode()
+6: +  : Node("cijfer_calculator_node")
+6: +  {
+6: +    service_ = this->create_service<g1_interface_pkg::srv::Tentamens>(
+6: @@ -9,2 +11,3 @@
+6: -            std::bind(&CijferCalculatorNode::handle_request, this, std::placeholders::_1, std::placeholders::_2));
+6: -    }
+6: +            std::bind(&CijferCalculatorNode::handle_request, this, std::placeholders::_1,
+6: +      std::placeholders::_2));
+6: +  }
+6: @@ -13,5 +16,7 @@
+6: -    void handle_request(const std::shared_ptr<g1_interface_pkg::srv::Tentamens::Request> request,
+6: -                        std::shared_ptr<g1_interface_pkg::srv::Tentamens::Response> response) {
+6: -        double sum = 0.0;
+6: -        for (int cijfer : request->tentamen_cijfers) sum += cijfer;
+6: -        double avg = request->tentamen_cijfers.empty() ? 0.0 : sum / request->tentamen_cijfers.size();
+6: +  void handle_request(
+6: +    const std::shared_ptr<g1_interface_pkg::srv::Tentamens::Request> request,
+6: +    std::shared_ptr<g1_interface_pkg::srv::Tentamens::Response> response)
+6: +  {
+6: +    double sum = 0.0;
+6: +    for (int cijfer : request->tentamen_cijfers) {sum += cijfer;}
+6: +    double avg = request->tentamen_cijfers.empty() ? 0.0 : sum / request->tentamen_cijfers.size();
+6: @@ -19,2 +24,2 @@
+6: -        if (request->student_name == "Wessel") avg += 10.0;
+6: -        avg = std::max(10.0, std::min(100.0, avg));
+6: +    if (request->student_name == "Wessel") {avg += 10.0;}
+6: +    avg = std::max(10.0, std::min(100.0, avg));
+6: @@ -22,4 +27,5 @@
+6: -        response->final_cijfer = static_cast<int>(avg);
+6: -        response->message = "Cijfer berekend";
+6: -        RCLCPP_INFO(this->get_logger(), "Calculated final cijfer for %s/%s: %d", request->student_name.c_str(), request->course_name.c_str(), response->final_cijfer);
+6: -    }
+6: +    response->final_cijfer = static_cast<int>(avg);
+6: +    response->message = "Cijfer berekend";
+6: +    RCLCPP_INFO(this->get_logger(), "Calculated final cijfer for %s/%s: %d",
+6: +      request->student_name.c_str(), request->course_name.c_str(), response->final_cijfer);
+6: +  }
+6: @@ -27 +33 @@
+6: -    rclcpp::Service<g1_interface_pkg::srv::Tentamens>::SharedPtr service_;
+6: +  rclcpp::Service<g1_interface_pkg::srv::Tentamens>::SharedPtr service_;
+6: @@ -30,6 +36,7 @@
+6: -int main(int argc, char **argv) {
+6: -    rclcpp::init(argc, argv);
+6: -    rclcpp::spin(std::make_shared<CijferCalculatorNode>());
+6: -    rclcpp::shutdown();
+6: -    return 0;
+6: -}
+6: +int main(int argc, char **argv)
+6: +{
+6: +  rclcpp::init(argc, argv);
+6: +  rclcpp::spin(std::make_shared<CijferCalculatorNode>());
+6: +  rclcpp::shutdown();
+6: +  return 0;
+6: +}
+6: 
+6: Code style divergence in file 'src/final_cijfer_determinator.cpp':
+6: 
+6: --- src/final_cijfer_determinator.cpp
+6: +++ src/final_cijfer_determinator.cpp.uncrustify
+6: @@ -12,6 +12,6 @@
+6: -    std::string student;
+6: -    std::string course;
+6: -    bool operator==(const StudentCourseKey &other) const
+6: -    {
+6: -        return student == other.student && course == other.course;
+6: -    }
+6: +  std::string student;
+6: +  std::string course;
+6: +  bool operator==(const StudentCourseKey & other) const
+6: +  {
+6: +    return student == other.student && course == other.course;
+6: +  }
+6: @@ -21,8 +21,8 @@
+6: -    template <>
+6: -    struct hash<StudentCourseKey>
+6: -    {
+6: -        std::size_t operator()(const StudentCourseKey &k) const
+6: -        {
+6: -            return std::hash<std::string>()(k.student) ^ std::hash<std::string>()(k.course);
+6: -        }
+6: -    };
+6: +template<>
+6: +struct hash<StudentCourseKey>
+6: +{
+6: +  std::size_t operator()(const StudentCourseKey & k) const
+6: +  {
+6: +    return std::hash<std::string>()(k.student) ^ std::hash<std::string>()(k.course);
+6: +  }
+6: +};
+6: @@ -34,7 +34,10 @@
+6: -    FinalCijferDeterminator() : Node("final_cijfer_determinator")
+6: -    {
+6: -        RCLCPP_INFO(this->get_logger(), "final_cijfer_determinator gestart!");
+6: -        tentamen_sub_ = this->create_subscription<g1_interface_pkg::msg::Tentamen>(
+6: -            "tentamen_results", 10, std::bind(&FinalCijferDeterminator::tentamen_callback, this, std::placeholders::_1));
+6: -        cijfer_client_ = this->create_client<g1_interface_pkg::srv::Tentamens>("calculate_final_cijfer");
+6: -    }
+6: +  FinalCijferDeterminator()
+6: +  : Node("final_cijfer_determinator")
+6: +  {
+6: +    RCLCPP_INFO(this->get_logger(), "final_cijfer_determinator gestart!");
+6: +    tentamen_sub_ = this->create_subscription<g1_interface_pkg::msg::Tentamen>(
+6: +            "tentamen_results", 10,
+6: +      std::bind(&FinalCijferDeterminator::tentamen_callback, this, std::placeholders::_1));
+6: +    cijfer_client_ =
+6: +      this->create_client<g1_interface_pkg::srv::Tentamens>("calculate_final_cijfer");
+6: +  }
+6: @@ -43,3 +46,3 @@
+6: -    std::unordered_map<StudentCourseKey, std::vector<int>> tentamen_map_;
+6: -    rclcpp::Subscription<g1_interface_pkg::msg::Tentamen>::SharedPtr tentamen_sub_;
+6: -    rclcpp::Client<g1_interface_pkg::srv::Tentamens>::SharedPtr cijfer_client_;
+6: +  std::unordered_map<StudentCourseKey, std::vector<int>> tentamen_map_;
+6: +  rclcpp::Subscription<g1_interface_pkg::msg::Tentamen>::SharedPtr tentamen_sub_;
+6: +  rclcpp::Client<g1_interface_pkg::srv::Tentamens>::SharedPtr cijfer_client_;
+6: @@ -47,4 +50,4 @@
+6: -    void tentamen_callback(const g1_interface_pkg::msg::Tentamen::SharedPtr msg)
+6: -    {
+6: -        StudentCourseKey key{msg->student_name, msg->course_name};
+6: -        tentamen_map_[key].push_back(msg->tentamen_cijfer);
+6: +  void tentamen_callback(const g1_interface_pkg::msg::Tentamen::SharedPtr msg)
+6: +  {
+6: +    StudentCourseKey key{msg->student_name, msg->course_name};
+6: +    tentamen_map_[key].push_back(msg->tentamen_cijfer);
+6: @@ -52 +55,2 @@
+6: -        RCLCPP_INFO(this->get_logger(), "Ontvangen tentamen: %s/%s %d", msg->student_name.c_str(), msg->course_name.c_str(), msg->tentamen_cijfer);
+6: +    RCLCPP_INFO(this->get_logger(), "Ontvangen tentamen: %s/%s %d", msg->student_name.c_str(),
+6: +      msg->course_name.c_str(), msg->tentamen_cijfer);
+6: @@ -55,6 +59,5 @@
+6: -        if (tentamen_map_[key].size() >= 3)
+6: -        {
+6: -            auto request = std::make_shared<g1_interface_pkg::srv::Tentamens::Request>();
+6: -            request->student_name = key.student;
+6: -            request->course_name = key.course;
+6: -            request->tentamen_cijfers = tentamen_map_[key];
+6: +    if (tentamen_map_[key].size() >= 3) {
+6: +      auto request = std::make_shared<g1_interface_pkg::srv::Tentamens::Request>();
+6: +      request->student_name = key.student;
+6: +      request->course_name = key.course;
+6: +      request->tentamen_cijfers = tentamen_map_[key];
+6: @@ -63,3 +66,4 @@
+6: -            auto response_callback = [this, key](rclcpp::Client<g1_interface_pkg::srv::Tentamens>::SharedFuture result_future)
+6: -            {
+6: -                auto response = result_future.get();
+6: +      auto response_callback = [this,
+6: +          key](rclcpp::Client<g1_interface_pkg::srv::Tentamens>::SharedFuture result_future)
+6: +        {
+6: +          auto response = result_future.get();
+6: @@ -67 +71 @@
+6: -                RCLCPP_INFO(this->get_logger(), "Schrijf naar database: %s,%s,%ld,%d,%s",
+6: +          RCLCPP_INFO(this->get_logger(), "Schrijf naar database: %s,%s,%ld,%d,%s",
+6: @@ -74,3 +78,4 @@
+6: -                std::ofstream db("/home/broodjesemih/ass_ros2_ws/database.csv", std::ios::app);
+6: -                db << key.student << "," << key.course << "," << tentamen_map_[key].size() << "," << response->final_cijfer << "," << std::to_string(this->now().seconds()) << "\n";
+6: -                db.close();
+6: +          std::ofstream db("/home/broodjesemih/ass_ros2_ws/database.csv", std::ios::app);
+6: +          db << key.student << "," << key.course << "," << tentamen_map_[key].size() << "," <<
+6: +            response->final_cijfer << "," << std::to_string(this->now().seconds()) << "\n";
+6: +          db.close();
+6: @@ -78 +83,2 @@
+6: -                RCLCPP_INFO(this->get_logger(), "Final cijfer for %s/%s: %d", key.student.c_str(), key.course.c_str(), response->final_cijfer);
+6: +          RCLCPP_INFO(this->get_logger(), "Final cijfer for %s/%s: %d", key.student.c_str(),
+6: +          key.course.c_str(), response->final_cijfer);
+6: @@ -80,2 +86,2 @@
+6: -                tentamen_map_.erase(key);
+6: -            };
+6: +          tentamen_map_.erase(key);
+6: +        };
+6: @@ -83,2 +89 @@
+6: -            cijfer_client_->async_send_request(request, response_callback);
+6: -        }
+6: +      cijfer_client_->async_send_request(request, response_callback);
+6: @@ -85,0 +91 @@
+6: +  }
+6: @@ -90,5 +96,5 @@
+6: -    rclcpp::init(argc, argv);
+6: -    rclcpp::spin(std::make_shared<FinalCijferDeterminator>());
+6: -    rclcpp::shutdown();
+6: -    return 0;
+6: -}
+6: +  rclcpp::init(argc, argv);
+6: +  rclcpp::spin(std::make_shared<FinalCijferDeterminator>());
+6: +  rclcpp::shutdown();
+6: +  return 0;
+6: +}
+6: 
+6: Code style divergence in file 'src/herkansing_cijfer_determinator.cpp':
+6: 
+6: --- src/herkansing_cijfer_determinator.cpp
+6: +++ src/herkansing_cijfer_determinator.cpp.uncrustify
+6: @@ -11,6 +11,8 @@
+6: -struct StudentCourseKey {
+6: -    std::string student;
+6: -    std::string course;
+6: -    bool operator==(const StudentCourseKey& other) const {
+6: -        return student == other.student && course == other.course;
+6: -    }
+6: +struct StudentCourseKey
+6: +{
+6: +  std::string student;
+6: +  std::string course;
+6: +  bool operator==(const StudentCourseKey & other) const
+6: +  {
+6: +    return student == other.student && course == other.course;
+6: +  }
+6: @@ -18,7 +20,10 @@
+6: -namespace std {
+6: -    template <>
+6: -    struct hash<StudentCourseKey> {
+6: -        std::size_t operator()(const StudentCourseKey& k) const {
+6: -            return std::hash<std::string>()(k.student) ^ std::hash<std::string>()(k.course);
+6: -        }
+6: -    };
+6: +namespace std
+6: +{
+6: +template<>
+6: +struct hash<StudentCourseKey>
+6: +{
+6: +  std::size_t operator()(const StudentCourseKey & k) const
+6: +  {
+6: +    return std::hash<std::string>()(k.student) ^ std::hash<std::string>()(k.course);
+6: +  }
+6: +};
+6: @@ -29,3 +34,5 @@
+6: -    using Herkanser = g1_interface_pkg::action::Herkanser;
+6: -    HerkansingCijferDeterminator() : Node("herkansing_cijfer_determinator") {
+6: -        action_server_ = rclcpp_action::create_server<Herkanser>(
+6: +  using Herkanser = g1_interface_pkg::action::Herkanser;
+6: +  HerkansingCijferDeterminator()
+6: +  : Node("herkansing_cijfer_determinator")
+6: +  {
+6: +    action_server_ = rclcpp_action::create_server<Herkanser>(
+6: @@ -33 +40,2 @@
+6: -            std::bind(&HerkansingCijferDeterminator::handle_goal, this, std::placeholders::_1, std::placeholders::_2),
+6: +            std::bind(&HerkansingCijferDeterminator::handle_goal, this, std::placeholders::_1,
+6: +      std::placeholders::_2),
+6: @@ -36 +44,43 @@
+6: -        cijfer_client_ = this->create_client<g1_interface_pkg::srv::Tentamens>("calculate_final_cijfer");
+6: +    cijfer_client_ =
+6: +      this->create_client<g1_interface_pkg::srv::Tentamens>("calculate_final_cijfer");
+6: +  }
+6: +
+6: +private:
+6: +  rclcpp_action::Server<Herkanser>::SharedPtr action_server_;
+6: +  rclcpp::Client<g1_interface_pkg::srv::Tentamens>::SharedPtr cijfer_client_;
+6: +
+6: +  rclcpp_action::GoalResponse handle_goal(
+6: +    const rclcpp_action::GoalUUID &,
+6: +    std::shared_ptr<const Herkanser::Goal> goal)
+6: +  {
+6: +    RCLCPP_INFO(this->get_logger(), "Received herkansing goal for %s/%s",
+6: +      goal->student_name.c_str(), goal->course_name.c_str());
+6: +    return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE;
+6: +  }
+6: +
+6: +  rclcpp_action::CancelResponse handle_cancel(
+6: +    const std::shared_ptr<rclcpp_action::ServerGoalHandle<Herkanser>>)
+6: +  {
+6: +    return rclcpp_action::CancelResponse::ACCEPT;
+6: +  }
+6: +
+6: +  void handle_accepted(
+6: +    const std::shared_ptr<rclcpp_action::ServerGoalHandle<Herkanser>> goal_handle)
+6: +  {
+6: +    std::thread{std::bind(&HerkansingCijferDeterminator::execute, this, goal_handle)}.detach();
+6: +  }
+6: +
+6: +  void execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle<Herkanser>> goal_handle)
+6: +  {
+6: +    auto goal = goal_handle->get_goal();
+6: +    StudentCourseKey key{goal->student_name, goal->course_name};
+6: +
+6: +        // Simulate receiving new tentamen results (here: random generation)
+6: +    std::vector<int> cijfers;
+6: +    for (int i = 0; i < 3; ++i) {
+6: +      cijfers.push_back(10 + (rand() % 91));
+6: +      auto feedback = std::make_shared<Herkanser::Feedback>();
+6: +      feedback->progress = (i + 1) / 3.0f;
+6: +      feedback->status = "Collecting tentamen results";
+6: +      goal_handle->publish_feedback(feedback);
+6: +      std::this_thread::sleep_for(std::chrono::seconds(1));
+6: @@ -39,3 +89,5 @@
+6: -private:
+6: -    rclcpp_action::Server<Herkanser>::SharedPtr action_server_;
+6: -    rclcpp::Client<g1_interface_pkg::srv::Tentamens>::SharedPtr cijfer_client_;
+6: +        // Calculate new final cijfer
+6: +    auto request = std::make_shared<g1_interface_pkg::srv::Tentamens::Request>();
+6: +    request->student_name = key.student;
+6: +    request->course_name = key.course;
+6: +    request->tentamen_cijfers = cijfers;
+6: @@ -43,37 +95,3 @@
+6: -    rclcpp_action::GoalResponse handle_goal(const rclcpp_action::GoalUUID &, std::shared_ptr<const Herkanser::Goal> goal) {
+6: -        RCLCPP_INFO(this->get_logger(), "Received herkansing goal for %s/%s", goal->student_name.c_str(), goal->course_name.c_str());
+6: -        return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE;
+6: -    }
+6: -
+6: -    rclcpp_action::CancelResponse handle_cancel(const std::shared_ptr<rclcpp_action::ServerGoalHandle<Herkanser>>) {
+6: -        return rclcpp_action::CancelResponse::ACCEPT;
+6: -    }
+6: -
+6: -    void handle_accepted(const std::shared_ptr<rclcpp_action::ServerGoalHandle<Herkanser>> goal_handle) {
+6: -        std::thread{std::bind(&HerkansingCijferDeterminator::execute, this, goal_handle)}.detach();
+6: -    }
+6: -
+6: -    void execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle<Herkanser>> goal_handle) {
+6: -        auto goal = goal_handle->get_goal();
+6: -        StudentCourseKey key{goal->student_name, goal->course_name};
+6: -
+6: -        // Simulate receiving new tentamen results (here: random generation)
+6: -        std::vector<int> cijfers;
+6: -        for (int i = 0; i < 3; ++i) {
+6: -            cijfers.push_back(10 + (rand() % 91));
+6: -            auto feedback = std::make_shared<Herkanser::Feedback>();
+6: -            feedback->progress = (i + 1) / 3.0f;
+6: -            feedback->status = "Collecting tentamen results";
+6: -            goal_handle->publish_feedback(feedback);
+6: -            std::this_thread::sleep_for(std::chrono::seconds(1));
+6: -        }
+6: -
+6: -        // Calculate new final cijfer
+6: -        auto request = std::make_shared<g1_interface_pkg::srv::Tentamens::Request>();
+6: -        request->student_name = key.student;
+6: -        request->course_name = key.course;
+6: -        request->tentamen_cijfers = cijfers;
+6: -
+6: -        auto future = cijfer_client_->async_send_request(request);
+6: -        future.wait();
+6: -        auto response = future.get();
+6: +    auto future = cijfer_client_->async_send_request(request);
+6: +    future.wait();
+6: +    auto response = future.get();
+6: @@ -82,3 +100,4 @@
+6: -        std::ofstream db("/home/broodjesemih/ass_ros2_ws/database.csv", std::ios::app);
+6: -        db << key.student << "," << key.course << "," << cijfers.size() << "," << response->final_cijfer << "," << std::to_string(this->now().seconds()) << "\n";
+6: -        db.close();
+6: +    std::ofstream db("/home/broodjesemih/ass_ros2_ws/database.csv", std::ios::app);
+6: +    db << key.student << "," << key.course << "," << cijfers.size() << "," <<
+6: +      response->final_cijfer << "," << std::to_string(this->now().seconds()) << "\n";
+6: +    db.close();
+6: @@ -86,5 +105,5 @@
+6: -        auto result = std::make_shared<Herkanser::Result>();
+6: -        result->final_cijfer = response->final_cijfer;
+6: -        result->message = "Nieuwe herkansing cijfer toegevoegd";
+6: -        goal_handle->succeed(result);
+6: -    }
+6: +    auto result = std::make_shared<Herkanser::Result>();
+6: +    result->final_cijfer = response->final_cijfer;
+6: +    result->message = "Nieuwe herkansing cijfer toegevoegd";
+6: +    goal_handle->succeed(result);
+6: +  }
+6: @@ -93,6 +112,7 @@
+6: -int main(int argc, char **argv) {
+6: -    rclcpp::init(argc, argv);
+6: -    rclcpp::spin(std::make_shared<HerkansingCijferDeterminator>());
+6: -    rclcpp::shutdown();
+6: -    return 0;
+6: -}
+6: +int main(int argc, char **argv)
+6: +{
+6: +  rclcpp::init(argc, argv);
+6: +  rclcpp::spin(std::make_shared<HerkansingCijferDeterminator>());
+6: +  rclcpp::shutdown();
+6: +  return 0;
+6: +}
+6: 
+6: Code style divergence in file 'src/herkansing_scheduler.cpp':
+6: 
+6: --- src/herkansing_scheduler.cpp
+6: +++ src/herkansing_scheduler.cpp.uncrustify
+6: @@ -10,4 +10,6 @@
+6: -    using Herkanser = g1_interface_pkg::action::Herkanser;
+6: -    HerkansingSchedulerNode() : Node("herkansing_scheduler") {
+6: -        action_client_ = rclcpp_action::create_client<Herkanser>(this, "herkanser");
+6: -        timer_ = this->create_wall_timer(
+6: +  using Herkanser = g1_interface_pkg::action::Herkanser;
+6: +  HerkansingSchedulerNode()
+6: +  : Node("herkansing_scheduler")
+6: +  {
+6: +    action_client_ = rclcpp_action::create_client<Herkanser>(this, "herkanser");
+6: +    timer_ = this->create_wall_timer(
+6: @@ -16 +18 @@
+6: -    }
+6: +  }
+6: @@ -19,2 +21,2 @@
+6: -    rclcpp_action::Client<Herkanser>::SharedPtr action_client_;
+6: -    rclcpp::TimerBase::SharedPtr timer_;
+6: +  rclcpp_action::Client<Herkanser>::SharedPtr action_client_;
+6: +  rclcpp::TimerBase::SharedPtr timer_;
+6: @@ -22,11 +24,12 @@
+6: -    void check_failed_students() {
+6: -        std::ifstream db("/home/broodjesemih/ass_ros2_ws/database.csv");
+6: -        std::string line;
+6: -        while (std::getline(db, line)) {
+6: -            std::istringstream iss(line);
+6: -            std::string student, course, exams, final_result, timestamp;
+6: -            std::getline(iss, student, ',');
+6: -            std::getline(iss, course, ',');
+6: -            std::getline(iss, exams, ',');
+6: -            std::getline(iss, final_result, ',');
+6: -            std::getline(iss, timestamp, ',');
+6: +  void check_failed_students()
+6: +  {
+6: +    std::ifstream db("/home/broodjesemih/ass_ros2_ws/database.csv");
+6: +    std::string line;
+6: +    while (std::getline(db, line)) {
+6: +      std::istringstream iss(line);
+6: +      std::string student, course, exams, final_result, timestamp;
+6: +      std::getline(iss, student, ',');
+6: +      std::getline(iss, course, ',');
+6: +      std::getline(iss, exams, ',');
+6: +      std::getline(iss, final_result, ',');
+6: +      std::getline(iss, timestamp, ',');
+6: @@ -34,9 +37,9 @@
+6: -            int cijfer = final_result.empty() ? 0 : std::stoi(final_result);
+6: -            if (cijfer >= 10 && cijfer <= 54) {
+6: -                auto goal_msg = Herkanser::Goal();
+6: -                goal_msg.student_name = student;
+6: -                goal_msg.course_name = course;
+6: -                action_client_->async_send_goal(goal_msg);
+6: -                RCLCPP_INFO(this->get_logger(), "Requested herkansing for %s/%s", student.c_str(), course.c_str());
+6: -            }
+6: -        }
+6: +      int cijfer = final_result.empty() ? 0 : std::stoi(final_result);
+6: +      if (cijfer >= 10 && cijfer <= 54) {
+6: +        auto goal_msg = Herkanser::Goal();
+6: +        goal_msg.student_name = student;
+6: +        goal_msg.course_name = course;
+6: +        action_client_->async_send_goal(goal_msg);
+6: +        RCLCPP_INFO(this->get_logger(), "Requested herkansing for %s/%s", student.c_str(),
+6: +          course.c_str());
+6: +      }
+6: @@ -43,0 +47 @@
+6: +  }
+6: @@ -46,6 +50,7 @@
+6: -int main(int argc, char **argv) {
+6: -    rclcpp::init(argc, argv);
+6: -    rclcpp::spin(std::make_shared<HerkansingSchedulerNode>());
+6: -    rclcpp::shutdown();
+6: -    return 0;
+6: -}
+6: +int main(int argc, char **argv)
+6: +{
+6: +  rclcpp::init(argc, argv);
+6: +  rclcpp::spin(std::make_shared<HerkansingSchedulerNode>());
+6: +  rclcpp::shutdown();
+6: +  return 0;
+6: +}
+6: 
+6: Code style divergence in file 'src/tentamen_result_generator.cpp':
+6: 
+6: --- src/tentamen_result_generator.cpp
+6: +++ src/tentamen_result_generator.cpp.uncrustify
+6: @@ -9,6 +9,8 @@
+6: -struct StudentCourseKey {
+6: -    std::string student;
+6: -    std::string course;
+6: -    bool operator==(const StudentCourseKey& other) const {
+6: -        return student == other.student && course == other.course;
+6: -    }
+6: +struct StudentCourseKey
+6: +{
+6: +  std::string student;
+6: +  std::string course;
+6: +  bool operator==(const StudentCourseKey & other) const
+6: +  {
+6: +    return student == other.student && course == other.course;
+6: +  }
+6: @@ -16,7 +18,10 @@
+6: -namespace std {
+6: -    template <>
+6: -    struct hash<StudentCourseKey> {
+6: -        std::size_t operator()(const StudentCourseKey& k) const {
+6: -            return std::hash<std::string>()(k.student) ^ std::hash<std::string>()(k.course);
+6: -        }
+6: -    };
+6: +namespace std
+6: +{
+6: +template<>
+6: +struct hash<StudentCourseKey>
+6: +{
+6: +  std::size_t operator()(const StudentCourseKey & k) const
+6: +  {
+6: +    return std::hash<std::string>()(k.student) ^ std::hash<std::string>()(k.course);
+6: +  }
+6: +};
+6: @@ -27,3 +32,5 @@
+6: -    TentamenResultGenerator() : Node("tentamen_result_generator") {
+6: -        publisher_ = this->create_publisher<g1_interface_pkg::msg::Tentamen>("tentamen_results", 10);
+6: -        timer_ = this->create_wall_timer(
+6: +  TentamenResultGenerator()
+6: +  : Node("tentamen_result_generator")
+6: +  {
+6: +    publisher_ = this->create_publisher<g1_interface_pkg::msg::Tentamen>("tentamen_results", 10);
+6: +    timer_ = this->create_wall_timer(
+6: @@ -32,2 +39,2 @@
+6: -        load_student_course_combinations();
+6: -    }
+6: +    load_student_course_combinations();
+6: +  }
+6: @@ -38,3 +45,3 @@
+6: -    std::unordered_set<StudentCourseKey> active_combinations_;
+6: -    rclcpp::Publisher<g1_interface_pkg::msg::Tentamen>::SharedPtr publisher_;
+6: -    rclcpp::TimerBase::SharedPtr timer_;
+6: +  std::unordered_set<StudentCourseKey> active_combinations_;
+6: +  rclcpp::Publisher<g1_interface_pkg::msg::Tentamen>::SharedPtr publisher_;
+6: +  rclcpp::TimerBase::SharedPtr timer_;
+6: @@ -42,15 +49,15 @@
+6: -    void load_student_course_combinations() {
+6: -        std::ifstream db("/home/broodjesemih/ass_ros2_ws/database.csv");
+6: -        std::string line;
+6: -        while (std::getline(db, line)) {
+6: -            std::istringstream iss(line);
+6: -            std::string student, course, exams, final_result, timestamp;
+6: -            std::getline(iss, student, ',');
+6: -            std::getline(iss, course, ',');
+6: -            std::getline(iss, exams, ',');
+6: -            std::getline(iss, final_result, ',');
+6: -            std::getline(iss, timestamp, ',');
+6: -            if (final_result.empty()) { // Only add if no final result
+6: -                active_combinations_.insert({student, course});
+6: -            }
+6: -        }
+6: +  void load_student_course_combinations()
+6: +  {
+6: +    std::ifstream db("/home/broodjesemih/ass_ros2_ws/database.csv");
+6: +    std::string line;
+6: +    while (std::getline(db, line)) {
+6: +      std::istringstream iss(line);
+6: +      std::string student, course, exams, final_result, timestamp;
+6: +      std::getline(iss, student, ',');
+6: +      std::getline(iss, course, ',');
+6: +      std::getline(iss, exams, ',');
+6: +      std::getline(iss, final_result, ',');
+6: +      std::getline(iss, timestamp, ',');
+6: +      if (final_result.empty()) {       // Only add if no final result
+6: +        active_combinations_.insert({student, course});
+6: +      }
+6: @@ -57,0 +65 @@
+6: +  }
+6: @@ -59,5 +67,6 @@
+6: -    void publish_random_result() {
+6: -        if (active_combinations_.empty()) return;
+6: -        auto it = active_combinations_.begin();
+6: -        std::advance(it, rand() % active_combinations_.size());
+6: -        auto key = *it;
+6: +  void publish_random_result()
+6: +  {
+6: +    if (active_combinations_.empty()) {return;}
+6: +    auto it = active_combinations_.begin();
+6: +    std::advance(it, rand() % active_combinations_.size());
+6: +    auto key = *it;
+6: @@ -65,5 +74,5 @@
+6: -        g1_interface_pkg::msg::Tentamen msg;
+6: -        msg.stamp = this->now();
+6: -        msg.student_name = key.student;
+6: -        msg.course_name = key.course;
+6: -        msg.tentamen_cijfer = 10 + (rand() % 91); // 10-100
+6: +    g1_interface_pkg::msg::Tentamen msg;
+6: +    msg.stamp = this->now();
+6: +    msg.student_name = key.student;
+6: +    msg.course_name = key.course;
+6: +    msg.tentamen_cijfer = 10 + (rand() % 91);     // 10-100
+6: @@ -71,3 +80,4 @@
+6: -        publisher_->publish(msg);
+6: -        RCLCPP_INFO(this->get_logger(), "Published tentamen for %s/%s: %d", key.student.c_str(), key.course.c_str(), msg.tentamen_cijfer);
+6: -    }
+6: +    publisher_->publish(msg);
+6: +    RCLCPP_INFO(this->get_logger(), "Published tentamen for %s/%s: %d", key.student.c_str(),
+6: +      key.course.c_str(), msg.tentamen_cijfer);
+6: +  }
+6: @@ -76,6 +86,7 @@
+6: -int main(int argc, char **argv) {
+6: -    rclcpp::init(argc, argv);
+6: -    rclcpp::spin(std::make_shared<TentamenResultGenerator>());
+6: -    rclcpp::shutdown();
+6: -    return 0;
+6: -}
+6: +int main(int argc, char **argv)
+6: +{
+6: +  rclcpp::init(argc, argv);
+6: +  rclcpp::spin(std::make_shared<TentamenResultGenerator>());
+6: +  rclcpp::shutdown();
+6: +  return 0;
+6: +}
+6: 
+6: Code style divergence in file 'test/test_cijfer_calculator.cpp':
+6: 
+6: --- test/test_cijfer_calculator.cpp
+6: +++ test/test_cijfer_calculator.cpp.uncrustify
+6: @@ -8 +8,2 @@
+6: -int main(int argc, char** argv) {
+6: +int main(int argc, char ** argv)
+6: +{
+6: @@ -11 +12 @@
+6: -}
+6: +}
+6: 
+6: 6 files with code style divergence
+6: -- run_test.py: return code 1
+6: -- run_test.py: verify result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/uncrustify.xunit.xml'
+6/7 Test #6: uncrustify .......................***Failed    0.14 sec
+test 7
+    Start 7: xmllint
+
+7: Test command: /usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/xmllint.xunit.xml" "--package-name" "g1_ass1_pkg" "--output-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/ament_xmllint/xmllint.txt" "--command" "/opt/ros/jazzy/bin/ament_xmllint" "--xunit-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/xmllint.xunit.xml"
+7: Working Directory: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg
+7: Test timeout computed to be: 60
+7: -- run_test.py: invoking following command in '/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg':
+7:  - /opt/ros/jazzy/bin/ament_xmllint --xunit-file /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/xmllint.xunit.xml
+7: File 'package.xml' is valid
+7: 
+7: File 'install/g1_ass1_pkg/share/g1_ass1_pkg/package.xml' is valid
+7: 
+7: No problems found
+7: -- run_test.py: return code 0
+7: -- run_test.py: verify result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/xmllint.xunit.xml'
+7/7 Test #7: xmllint ..........................   Passed    0.11 sec
+
+71% tests passed[0;0m, [0;31m2 tests failed[0;0m out of 7
+
+Label Time Summary:
+cppcheck      =   0.11 sec*proc (1 test)
+flake8        =   0.33 sec*proc (1 test)
+gtest         =   0.05 sec*proc (1 test)
+lint_cmake    =   0.10 sec*proc (1 test)
+linter        =   0.97 sec*proc (6 tests)
+pep257        =   0.16 sec*proc (1 test)
+uncrustify    =   0.14 sec*proc (1 test)
+xmllint       =   0.11 sec*proc (1 test)
+
+Total Test time (real) =   1.01 sec
+
+The following tests FAILED:
+	[0;31m  4 - lint_cmake (Failed)[0;0m
+	[0;31m  6 - uncrustify (Failed)[0;0m

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="5" failures="0" disabled="0" errors="0" time="1.507" timestamp="2025-10-06T15:31:05.821" name="AllTests">
+  <testsuite name="TestCijferService" tests="5" failures="0" disabled="0" skipped="0" errors="0" time="1.502" timestamp="2025-10-06T15:31:05.825">
+    <testcase name="test_average_calculation" file="/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/test/test_cijfer_service.cpp" line="21" status="run" result="completed" time="0.532" timestamp="2025-10-06T15:31:05.825" classname="g1_ass1_pkg.TestCijferService" />
+    <testcase name="test_wessel_bonus" file="/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/test/test_cijfer_service.cpp" line="43" status="run" result="completed" time="0.197" timestamp="2025-10-06T15:31:06.358" classname="g1_ass1_pkg.TestCijferService" />
+    <testcase name="test_max_clamp" file="/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/test/test_cijfer_service.cpp" line="64" status="run" result="completed" time="0.115" timestamp="2025-10-06T15:31:06.556" classname="g1_ass1_pkg.TestCijferService" />
+    <testcase name="test_min_clamp" file="/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/test/test_cijfer_service.cpp" line="85" status="run" result="completed" time="0.201" timestamp="2025-10-06T15:31:06.672" classname="g1_ass1_pkg.TestCijferService" />
+    <testcase name="test_empty_cijfers" file="/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/test/test_cijfer_service.cpp" line="106" status="run" result="completed" time="0.455" timestamp="2025-10-06T15:31:06.873" classname="g1_ass1_pkg.TestCijferService" />
+  </testsuite>
+</testsuites>

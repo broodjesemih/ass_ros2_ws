@@ -1,0 +1,88 @@
+[0.011s] Invoking command in '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg': CMAKE_PREFIX_PATH=/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg:/home/broodjesemih/minor_ws/install/robot_moveit_config:/home/broodjesemih/minor_ws/install/robot_description:/home/broodjesemih/minor_ws/install/robot_commander:/home/broodjesemih/minor_ws/install/robot_bringup:/home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg:/home/broodjesemih/homework_ws/install/hw_pkg:/home/broodjesemih/homework_ws/install/broodje_interfaces:/home/broodjesemih/ros2_ws/install/templates_interfaces:/home/broodjesemih/ros2_ws/install/les_pkg:/home/broodjesemih/ros2_ws/install/my_robot_interfaces:/home/broodjesemih/les_ws-main/install/robot_moveit_config:/home/broodjesemih/les_ws-main/install/robot_description:/home/broodjesemih/les_ws-main/install/robot_commander:/home/broodjesemih/les_ws-main/install/robot_bringup:/home/broodjesemih/les_ws-main/install/les_pkg:/home/broodjesemih/les_ws-main/install/my_interfaces:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg -- -j20 -l20
+[0.033s] -- Found g1_interface_pkg: 0.1.0 (/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/share/g1_interface_pkg/cmake)
+[0.197s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.203s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.210s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.220s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.269s] -- Found rclcpp: 28.1.12 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.291s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.292s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.337s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.376s] -- Found rclcpp_action: 28.1.12 (/opt/ros/jazzy/share/rclcpp_action/cmake)
+[0.382s] -- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+[0.390s] -- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[0.395s] -- Found rosidl_adapter: 4.6.6 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[0.400s] -- Found ament_cmake_gtest: 2.5.4 (/opt/ros/jazzy/share/ament_cmake_gtest/cmake)
+[0.401s] -- Found gtest sources under '/opt/ros/jazzy/src/gtest_vendor': C++ tests using 'Google Test' will be built
+[0.410s] -- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[0.480s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.480s] -- Configured cppcheck include dirs: 
+[0.481s] -- Configured cppcheck exclude dirs and/or files: 
+[0.482s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.482s] -- Configured 'flake8' exclude dirs and/or files: 
+[0.484s] -- Added test 'lint_cmake' to check CMake code style
+[0.485s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.492s] -- Added test 'uncrustify' to check C / C++ code style
+[0.492s] -- Configured uncrustify additional arguments: 
+[0.493s] -- Added test 'xmllint' to check XML markup files
+[0.494s] -- Configuring done (0.5s)
+[0.521s] -- Generating done (0.0s)
+[0.530s] -- Build files have been written to: /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg
+[0.558s] [ 18%] Built target gtest
+[0.559s] [ 18%] Built target gtest_main
+[0.561s] [ 22%] [32mBuilding CXX object CMakeFiles/final_cijfer_determinator.dir/src/final_cijfer_determinator.cpp.o[0m
+[0.563s] [ 27%] [32mBuilding CXX object CMakeFiles/cijfer_calculator.dir/src/cijfer_calculator.cpp.o[0m
+[0.567s] [ 31%] [32mBuilding CXX object CMakeFiles/tentamen_result_generator.dir/src/tentamen_result_generator.cpp.o[0m
+[0.568s] [ 36%] [32mBuilding CXX object CMakeFiles/herkansing_cijfer_determinator.dir/src/herkansing_cijfer_determinator.cpp.o[0m
+[0.570s] [ 40%] [32mBuilding CXX object CMakeFiles/herkansing_scheduler.dir/src/herkansing_scheduler.cpp.o[0m
+[0.575s] [ 45%] [32mBuilding CXX object CMakeFiles/test_cijfer_calculator.dir/test/test_cijfer_calculator.cpp.o[0m
+[0.580s] [ 50%] [32mBuilding CXX object CMakeFiles/test_tentamen_publisher.dir/test/test_tentamen_publisher.cpp.o[0m
+[0.583s] [ 54%] [32mBuilding CXX object CMakeFiles/test_final_cijfer_determinator.dir/test/test_final_cijfer_determinator.cpp.o[0m
+[0.585s] [ 59%] [32mBuilding CXX object CMakeFiles/test_cijfer_service.dir/test/test_cijfer_service.cpp.o[0m
+[1.698s] [ 63%] [32m[1mLinking CXX executable test_cijfer_calculator[0m
+[1.885s] [ 63%] Built target test_cijfer_calculator
+[3.038s] [ 68%] [32m[1mLinking CXX executable cijfer_calculator[0m
+[3.160s] [ 68%] Built target cijfer_calculator
+[3.437s] [ 72%] [32m[1mLinking CXX executable test_cijfer_service[0m
+[3.595s] [ 72%] Built target test_cijfer_service
+[3.614s] [ 77%] [32m[1mLinking CXX executable tentamen_result_generator[0m
+[3.740s] [ 77%] Built target tentamen_result_generator
+[4.269s] [ 81%] [32m[1mLinking CXX executable test_final_cijfer_determinator[0m
+[4.437s] [ 81%] Built target test_final_cijfer_determinator
+[4.454s] [ 86%] [32m[1mLinking CXX executable herkansing_scheduler[0m
+[4.566s] [ 86%] Built target herkansing_scheduler
+[5.006s] [ 90%] [32m[1mLinking CXX executable herkansing_cijfer_determinator[0m
+[5.128s] [ 90%] Built target herkansing_cijfer_determinator
+[5.664s] [ 95%] [32m[1mLinking CXX executable test_tentamen_publisher[0m
+[5.884s] [ 95%] Built target test_tentamen_publisher
+[5.910s] [100%] [32m[1mLinking CXX executable final_cijfer_determinator[0m
+[6.088s] [100%] Built target final_cijfer_determinator
+[6.098s] Invoked command in '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg' returned '0': CMAKE_PREFIX_PATH=/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg:/home/broodjesemih/minor_ws/install/robot_moveit_config:/home/broodjesemih/minor_ws/install/robot_description:/home/broodjesemih/minor_ws/install/robot_commander:/home/broodjesemih/minor_ws/install/robot_bringup:/home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg:/home/broodjesemih/homework_ws/install/hw_pkg:/home/broodjesemih/homework_ws/install/broodje_interfaces:/home/broodjesemih/ros2_ws/install/templates_interfaces:/home/broodjesemih/ros2_ws/install/les_pkg:/home/broodjesemih/ros2_ws/install/my_robot_interfaces:/home/broodjesemih/les_ws-main/install/robot_moveit_config:/home/broodjesemih/les_ws-main/install/robot_description:/home/broodjesemih/les_ws-main/install/robot_commander:/home/broodjesemih/les_ws-main/install/robot_bringup:/home/broodjesemih/les_ws-main/install/les_pkg:/home/broodjesemih/les_ws-main/install/my_interfaces:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg -- -j20 -l20
+[6.106s] Invoking command in '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg': CMAKE_PREFIX_PATH=/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg:/home/broodjesemih/minor_ws/install/robot_moveit_config:/home/broodjesemih/minor_ws/install/robot_description:/home/broodjesemih/minor_ws/install/robot_commander:/home/broodjesemih/minor_ws/install/robot_bringup:/home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg:/home/broodjesemih/homework_ws/install/hw_pkg:/home/broodjesemih/homework_ws/install/broodje_interfaces:/home/broodjesemih/ros2_ws/install/templates_interfaces:/home/broodjesemih/ros2_ws/install/les_pkg:/home/broodjesemih/ros2_ws/install/my_robot_interfaces:/home/broodjesemih/les_ws-main/install/robot_moveit_config:/home/broodjesemih/les_ws-main/install/robot_description:/home/broodjesemih/les_ws-main/install/robot_commander:/home/broodjesemih/les_ws-main/install/robot_bringup:/home/broodjesemih/les_ws-main/install/les_pkg:/home/broodjesemih/les_ws-main/install/my_interfaces:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg
+[6.111s] -- Install configuration: ""
+[6.111s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/lib/g1_ass1_pkg/tentamen_result_generator
+[6.112s] -- Set non-toolchain portion of runtime path of "/home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/lib/g1_ass1_pkg/tentamen_result_generator" to ""
+[6.112s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/lib/g1_ass1_pkg/final_cijfer_determinator
+[6.114s] -- Set non-toolchain portion of runtime path of "/home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/lib/g1_ass1_pkg/final_cijfer_determinator" to ""
+[6.114s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/lib/g1_ass1_pkg/cijfer_calculator
+[6.115s] -- Set non-toolchain portion of runtime path of "/home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/lib/g1_ass1_pkg/cijfer_calculator" to ""
+[6.115s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/lib/g1_ass1_pkg/herkansing_cijfer_determinator
+[6.116s] -- Set non-toolchain portion of runtime path of "/home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/lib/g1_ass1_pkg/herkansing_cijfer_determinator" to ""
+[6.116s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/lib/g1_ass1_pkg/herkansing_scheduler
+[6.117s] -- Set non-toolchain portion of runtime path of "/home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/lib/g1_ass1_pkg/herkansing_scheduler" to ""
+[6.117s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/share/ament_index/resource_index/package_run_dependencies/g1_ass1_pkg
+[6.117s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/share/ament_index/resource_index/parent_prefix_path/g1_ass1_pkg
+[6.117s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/share/g1_ass1_pkg/environment/ament_prefix_path.sh
+[6.117s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/share/g1_ass1_pkg/environment/ament_prefix_path.dsv
+[6.117s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/share/g1_ass1_pkg/environment/path.sh
+[6.117s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/share/g1_ass1_pkg/environment/path.dsv
+[6.117s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/share/g1_ass1_pkg/local_setup.bash
+[6.117s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/share/g1_ass1_pkg/local_setup.sh
+[6.117s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/share/g1_ass1_pkg/local_setup.zsh
+[6.117s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/share/g1_ass1_pkg/local_setup.dsv
+[6.117s] -- Installing: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/share/g1_ass1_pkg/package.dsv
+[6.117s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/share/ament_index/resource_index/packages/g1_ass1_pkg
+[6.117s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/share/g1_ass1_pkg/cmake/g1_ass1_pkgConfig.cmake
+[6.117s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/share/g1_ass1_pkg/cmake/g1_ass1_pkgConfig-version.cmake
+[6.117s] -- Up-to-date: /home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg/share/g1_ass1_pkg/package.xml
+[6.118s] Invoked command in '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg' returned '0': CMAKE_PREFIX_PATH=/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg:/home/broodjesemih/minor_ws/install/robot_moveit_config:/home/broodjesemih/minor_ws/install/robot_description:/home/broodjesemih/minor_ws/install/robot_commander:/home/broodjesemih/minor_ws/install/robot_bringup:/home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg:/home/broodjesemih/homework_ws/install/hw_pkg:/home/broodjesemih/homework_ws/install/broodje_interfaces:/home/broodjesemih/ros2_ws/install/templates_interfaces:/home/broodjesemih/ros2_ws/install/les_pkg:/home/broodjesemih/ros2_ws/install/my_robot_interfaces:/home/broodjesemih/les_ws-main/install/robot_moveit_config:/home/broodjesemih/les_ws-main/install/robot_description:/home/broodjesemih/les_ws-main/install/robot_commander:/home/broodjesemih/les_ws-main/install/robot_bringup:/home/broodjesemih/les_ws-main/install/les_pkg:/home/broodjesemih/les_ws-main/install/my_interfaces:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg

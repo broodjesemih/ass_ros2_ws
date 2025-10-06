@@ -1,0 +1,70 @@
+Start testing: Oct 06 15:16 CEST
+----------------------------------------------------------
+1/10 Testing: test_cijfer_calculator
+1/10 Test: test_cijfer_calculator
+Command: "/usr/bin/python3" "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_calculator.gtest.xml" "--package-name" "g1_ass1_pkg" "--output-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/ament_cmake_gtest/test_cijfer_calculator.txt" "--command" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_cijfer_calculator" "--gtest_output=xml:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_calculator.gtest.xml"
+Directory: /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg
+"test_cijfer_calculator" start time: Oct 06 15:16 CEST
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg':
+ - /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_cijfer_calculator --gtest_output=xml:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_calculator.gtest.xml
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TestSuite
+[ RUN      ] TestSuite.test_example
+[       OK ] TestSuite.test_example (0 ms)
+[----------] 1 test from TestSuite (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_calculator.gtest.xml'
+-- run_test.py: verify result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_calculator.gtest.xml'
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"test_cijfer_calculator" end time: Oct 06 15:16 CEST
+"test_cijfer_calculator" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/10 Testing: test_cijfer_service
+2/10 Test: test_cijfer_service
+Command: "/usr/bin/python3" "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_service.gtest.xml" "--package-name" "g1_ass1_pkg" "--output-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/ament_cmake_gtest/test_cijfer_service.txt" "--command" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_cijfer_service" "--gtest_output=xml:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_service.gtest.xml"
+Directory: /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg
+"test_cijfer_service" start time: Oct 06 15:16 CEST
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg':
+ - /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_cijfer_service --gtest_output=xml:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_service.gtest.xml
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from TestCijferService
+[ RUN      ] TestCijferService.test_average_calculation
+[       OK ] TestCijferService.test_average_calculation (201 ms)
+[ RUN      ] TestCijferService.test_wessel_bonus
+[       OK ] TestCijferService.test_wessel_bonus (198 ms)
+[ RUN      ] TestCijferService.test_max_clamp
+[       OK ] TestCijferService.test_max_clamp (188 ms)
+[ RUN      ] TestCijferService.test_min_clamp
+[       OK ] TestCijferService.test_min_clamp (200 ms)
+[ RUN      ] TestCijferService.test_empty_cijfers
+[       OK ] TestCijferService.test_empty_cijfers (201 ms)
+[----------] 5 tests from TestCijferService (990 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test suite ran. (995 ms total)
+[  PASSED  ] 5 tests.
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_service.gtest.xml'
+-- run_test.py: verify result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_service.gtest.xml'
+<end of output>
+Test time =   1.16 sec
+----------------------------------------------------------
+Test Passed.
+"test_cijfer_service" end time: Oct 06 15:16 CEST
+"test_cijfer_service" time elapsed: 00:00:01
+----------------------------------------------------------
+

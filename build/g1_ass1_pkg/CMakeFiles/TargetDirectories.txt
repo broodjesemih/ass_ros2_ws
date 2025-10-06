@@ -5,6 +5,10 @@
 /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/CMakeFiles/cijfer_calculator.dir
 /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/CMakeFiles/herkansing_cijfer_determinator.dir
 /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/CMakeFiles/herkansing_scheduler.dir
+/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/CMakeFiles/test_cijfer_calculator.dir
+/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/CMakeFiles/test_cijfer_service.dir
+/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/CMakeFiles/test_tentamen_publisher.dir
+/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/CMakeFiles/test_final_cijfer_determinator.dir
 /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/CMakeFiles/test.dir
 /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/CMakeFiles/edit_cache.dir
 /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/CMakeFiles/rebuild_cache.dir
@@ -12,3 +16,12 @@
 /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/CMakeFiles/install.dir
 /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/CMakeFiles/install/local.dir
 /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/CMakeFiles/install/strip.dir
+/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/gtest/CMakeFiles/gtest.dir
+/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/gtest/CMakeFiles/gtest_main.dir
+/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/gtest/CMakeFiles/test.dir
+/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/gtest/CMakeFiles/edit_cache.dir
+/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/gtest/CMakeFiles/rebuild_cache.dir
+/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/gtest/CMakeFiles/list_install_components.dir
+/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/gtest/CMakeFiles/install.dir
+/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/gtest/CMakeFiles/install/local.dir
+/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/gtest/CMakeFiles/install/strip.dir

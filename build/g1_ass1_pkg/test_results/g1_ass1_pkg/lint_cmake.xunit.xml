@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite
+  name="g1_ass1_pkg.lint_cmake"
+  tests="3"
+  errors="0"
+  failures="0"
+  time="0.001"
+>
+  <testcase
+    name="CMakeLists.txt"
+    classname="g1_ass1_pkg.lint_cmake"/>
+  <testcase
+    name="install/g1_ass1_pkg/share/g1_ass1_pkg/cmake/g1_ass1_pkgConfig-version.cmake"
+    classname="g1_ass1_pkg.lint_cmake"/>
+  <testcase
+    name="install/g1_ass1_pkg/share/g1_ass1_pkg/cmake/g1_ass1_pkgConfig.cmake"
+    classname="g1_ass1_pkg.lint_cmake"/>
+  <system-out>Checked files:
+* CMakeLists.txt
+* install/g1_ass1_pkg/share/g1_ass1_pkg/cmake/g1_ass1_pkgConfig-version.cmake
+* install/g1_ass1_pkg/share/g1_ass1_pkg/cmake/g1_ass1_pkgConfig.cmake</system-out>
+</testsuite>

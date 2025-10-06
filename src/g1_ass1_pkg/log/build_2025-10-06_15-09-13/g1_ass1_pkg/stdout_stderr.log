@@ -1,0 +1,13 @@
+[ 12%] Built target gtest
+[ 25%] Built target final_cijfer_determinator
+[ 37%] Built target cijfer_calculator
+[ 50%] Built target gtest_main
+[ 62%] Built target tentamen_result_generator
+[ 75%] Built target herkansing_scheduler
+[ 87%] Built target herkansing_cijfer_determinator
+[ 93%] [32m[1mLinking CXX executable test_cijfer_calculator[0m
+/usr/bin/ld: cannot find -lg1_ass1_pkg: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/test_cijfer_calculator.dir/build.make:187: test_cijfer_calculator] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:296: CMakeFiles/test_cijfer_calculator.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

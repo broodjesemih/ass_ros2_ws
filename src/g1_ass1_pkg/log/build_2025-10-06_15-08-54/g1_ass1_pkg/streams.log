@@ -1,0 +1,15 @@
+[0.009s] Invoking command in '/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/build/g1_ass1_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/build/g1_ass1_pkg -- -j20 -l20
+[0.051s] [ 12%] Built target gtest_main
+[0.051s] [ 25%] Built target tentamen_result_generator
+[0.053s] [ 37%] Built target gtest
+[0.053s] [ 50%] Built target herkansing_scheduler
+[0.054s] [ 62%] Built target herkansing_cijfer_determinator
+[0.054s] [ 75%] Built target final_cijfer_determinator
+[0.057s] [ 87%] Built target cijfer_calculator
+[0.071s] [ 93%] [32m[1mLinking CXX executable test_cijfer_calculator[0m
+[0.091s] /usr/bin/ld: cannot find -lg1_ass1_pkg: No such file or directory
+[0.121s] collect2: error: ld returned 1 exit status
+[0.122s] gmake[2]: *** [CMakeFiles/test_cijfer_calculator.dir/build.make:187: test_cijfer_calculator] Error 1
+[0.123s] gmake[1]: *** [CMakeFiles/Makefile2:296: CMakeFiles/test_cijfer_calculator.dir/all] Error 2
+[0.123s] gmake: *** [Makefile:146: all] Error 2
+[0.125s] Invoked command in '/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/build/g1_ass1_pkg' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/build/g1_ass1_pkg -- -j20 -l20

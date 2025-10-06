@@ -1,0 +1,11 @@
+-- run_test.py: invoking following command in '/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg':
+ - /opt/ros/jazzy/bin/ament_lint_cmake --xunit-file /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/build/g1_ass1_pkg/test_results/g1_ass1_pkg/lint_cmake.xunit.xml
+
+CMakeLists.txt:12: Line ends in whitespace [whitespace/eol]
+
+
+1 errors
+
+
+-- run_test.py: return code 1
+-- run_test.py: verify result file '/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/build/g1_ass1_pkg/test_results/g1_ass1_pkg/lint_cmake.xunit.xml'

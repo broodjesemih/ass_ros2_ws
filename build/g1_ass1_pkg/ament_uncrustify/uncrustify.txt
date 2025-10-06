@@ -1,0 +1,26 @@
+-- run_test.py: invoking following command in '/home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg':
+ - /opt/ros/jazzy/bin/ament_uncrustify --xunit-file /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/uncrustify.xunit.xml
+
+No code style divergence in file 'src/cijfer_calculator.cpp'
+
+No code style divergence in file 'src/final_cijfer_determinator.cpp'
+
+No code style divergence in file 'src/herkansing_cijfer_determinator.cpp'
+
+No code style divergence in file 'src/herkansing_scheduler.cpp'
+
+No code style divergence in file 'src/tentamen_result_generator.cpp'
+
+No code style divergence in file 'test/test_cijfer_calculator.cpp'
+
+No code style divergence in file 'test/test_cijfer_service.cpp'
+
+No code style divergence in file 'test/test_final_cijfer_determinator.cpp'
+
+No code style divergence in file 'test/test_tentamen_publisher.cpp'
+
+No problems found
+
+
+-- run_test.py: return code 0
+-- run_test.py: verify result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/uncrustify.xunit.xml'

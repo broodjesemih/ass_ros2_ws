@@ -1,0 +1,659 @@
+[0.000000] (-) TimerEvent: {}
+[0.000291] (g1_interface_pkg) JobQueued: {'identifier': 'g1_interface_pkg', 'dependencies': OrderedDict({'g1_interface_pkg': '/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg'})}
+[0.000536] (g1_ass1_pkg) JobQueued: {'identifier': 'g1_ass1_pkg', 'dependencies': OrderedDict({'g1_interface_pkg': '/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg', 'g1_ass1_pkg': '/home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg'})}
+[0.000594] (g1_interface_pkg) JobStarted: {'identifier': 'g1_interface_pkg'}
+[0.016448] (g1_interface_pkg) JobEnded: {'identifier': 'g1_interface_pkg', 'rc': 0}
+[0.016787] (g1_ass1_pkg) JobStarted: {'identifier': 'g1_ass1_pkg'}
+[0.031118] (g1_ass1_pkg) Command: {'cmd': ['/usr/bin/ctest', '-C', 'Release', '-D', 'ExperimentalTest', '--no-compress-output', '-V', '--force-new-ctest-process'], 'cwd': '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg', 'env': OrderedDict({'LANGUAGE': 'en_US', 'USER': 'broodjesemih', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'XDG_SEAT': 'seat0', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'GIT_ASKPASS': '/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib:/home/broodjesemih/homework_ws/install/broodje_interfaces/lib:/home/broodjesemih/ros2_ws/install/my_robot_interfaces/lib:/home/broodjesemih/les_ws-main/install/my_interfaces/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/broodjesemih', 'OLDPWD': '/home/broodjesemih/ass_ros2_ws', 'LESS': '-R', 'CHROME_DESKTOP': 'code.desktop', 'DESKTOP_SESSION': 'xubuntu', 'TERM_PROGRAM_VERSION': '1.104.2', 'ZSH': '/home/broodjesemih/.oh-my-zsh', 'LSCOLORS': 'Gxfxcxdxbxegedabagacad', 'XDG_SEAT_PATH': '/org/freedesktop/DisplayManager/Seat0', 'PAGER': 'less', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/usr/share/code/code', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', 'QT_QPA_PLATFORMTHEME': 'gtk2', 'ROS_DISTRO': 'jazzy', 'COLCON_PREFIX_PATH': '/home/broodjesemih/ass_ros2_ws/install:/home/broodjesemih/homework_ws/install:/home/broodjesemih/ros2_ws/install:/home/broodjesemih/minor_ws/install:/home/broodjesemih/les_ws-main/install', 'LOGNAME': 'broodjesemih', 'WINDOWID': '56623111', '_': '/usr/bin/colcon', 'XDG_SESSION_CLASS': 'user', 'ROS_VERSION': '2', 'USER_ZDOTDIR': '/home/broodjesemih', 'GTK_OVERLAY_SCROLLING': '0', 'XDG_SESSION_ID': 'c2', 'CLUTTER_BACKEND': 'x11', 'TERM': 'xterm-256color', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/broodjesemih/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/broodjesemih/.config/Code/User/globalStorage/github.copilot-chat/debugCommand', 'SESSION_MANAGER': 'local/xubuntu:@/tmp/.ICE-unix/1656,unix/xubuntu:/tmp/.ICE-unix/1656', 'GDM_LANG': 'en_US', 'XDG_MENU_PREFIX': 'xfce-', 'XDG_SESSION_PATH': '/org/freedesktop/DisplayManager/Session0', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':0.0', 'XDG_CURRENT_DESKTOP': 'XFCE', 'VSCODE_INJECTION': '1', 'LANG': 'en_US.UTF-8', 'XDG_SESSION_DESKTOP': 'xubuntu', 'XAUTHORITY': '/home/broodjesemih/.Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'TERM_PROGRAM': 'vscode', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-70c8134e19.sock', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'XDG_GREETER_DATA_DIR': '/var/lib/lightdm-data/broodjesemih', 'AMENT_PREFIX_PATH': '/home/broodjesemih/minor_ws/install/robot_moveit_config:/home/broodjesemih/minor_ws/install/robot_description:/home/broodjesemih/minor_ws/install/robot_commander:/home/broodjesemih/minor_ws/install/robot_bringup:/home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg:/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg:/home/broodjesemih/homework_ws/install/hw_pkg:/home/broodjesemih/homework_ws/install/broodje_interfaces:/home/broodjesemih/ros2_ws/install/templates_interfaces:/home/broodjesemih/ros2_ws/install/les_pkg:/home/broodjesemih/ros2_ws/install/my_robot_interfaces:/home/broodjesemih/les_ws-main/install/robot_moveit_config:/home/broodjesemih/les_ws-main/install/robot_description:/home/broodjesemih/les_ws-main/install/robot_commander:/home/broodjesemih/les_ws-main/install/robot_bringup:/home/broodjesemih/les_ws-main/install/les_pkg:/home/broodjesemih/les_ws-main/install/my_interfaces:/opt/ros/jazzy', 'ORIGINAL_XDG_CURRENT_DESKTOP': 'XFCE', 'SHELL': '/usr/bin/zsh', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'xubuntu', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'XDG_VTNR': '7', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'GIT_PAGER': 'cat', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg', 'LC_ALL': 'en_US.UTF-8', 'XDG_DATA_DIRS': '/usr/share/xubuntu:/usr/share/xfce4:/usr/local/share/:/usr/share/:/usr/share', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-xubuntu:/etc/xdg', 'ZDOTDIR': '/home/broodjesemih', 'PYTHONPATH': '/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg/lib/python3.12/site-packages:/home/broodjesemih/homework_ws/install/broodje_interfaces/lib/python3.12/site-packages:/home/broodjesemih/ros2_ws/install/my_robot_interfaces/lib/python3.12/site-packages:/home/broodjesemih/les_ws-main/install/my_interfaces/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/broodjesemih/ass_ros2_ws/install/g1_ass1_pkg:/home/broodjesemih/ass_ros2_ws/install/g1_interface_pkg:/home/broodjesemih/minor_ws/install/robot_moveit_config:/home/broodjesemih/minor_ws/install/robot_description:/home/broodjesemih/minor_ws/install/robot_commander:/home/broodjesemih/minor_ws/install/robot_bringup:/home/broodjesemih/homework_ws/install/hw_pkg:/home/broodjesemih/homework_ws/install/broodje_interfaces:/home/broodjesemih/ros2_ws/install/templates_interfaces:/home/broodjesemih/ros2_ws/install/les_pkg:/home/broodjesemih/ros2_ws/install/my_robot_interfaces:/home/broodjesemih/les_ws-main/install/robot_moveit_config:/home/broodjesemih/les_ws-main/install/robot_description:/home/broodjesemih/les_ws-main/install/robot_commander:/home/broodjesemih/les_ws-main/install/robot_bringup:/home/broodjesemih/les_ws-main/install/les_pkg:/home/broodjesemih/les_ws-main/install/my_interfaces:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor'}), 'shell': False}
+[0.037496] (g1_ass1_pkg) StdoutLine: {'line': b'UpdateCTestConfiguration  from :/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/CTestConfiguration.ini\n'}
+[0.037639] (g1_ass1_pkg) StdoutLine: {'line': b'Parse Config file:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/CTestConfiguration.ini\n'}
+[0.037688] (g1_ass1_pkg) StdoutLine: {'line': b'   Site: xubuntu\n'}
+[0.037727] (g1_ass1_pkg) StdoutLine: {'line': b'   Build name: (empty)\n'}
+[0.037764] (g1_ass1_pkg) StdoutLine: {'line': b' Add coverage exclude regular expressions.\n'}
+[0.037801] (g1_ass1_pkg) StdoutLine: {'line': b'Create new tag: 20251006-1325 - Experimental\n'}
+[0.037836] (g1_ass1_pkg) StdoutLine: {'line': b'UpdateCTestConfiguration  from :/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/CTestConfiguration.ini\n'}
+[0.037873] (g1_ass1_pkg) StdoutLine: {'line': b'Parse Config file:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/CTestConfiguration.ini\n'}
+[0.037950] (g1_ass1_pkg) StdoutLine: {'line': b'Test project /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg\n'}
+[0.037985] (g1_ass1_pkg) StdoutLine: {'line': b'Constructing a list of tests\n'}
+[0.038021] (g1_ass1_pkg) StdoutLine: {'line': b'Done constructing a list of tests\n'}
+[0.038057] (g1_ass1_pkg) StdoutLine: {'line': b'Updating test list for fixtures\n'}
+[0.038094] (g1_ass1_pkg) StdoutLine: {'line': b'Added 0 tests to meet fixture requirements\n'}
+[0.038128] (g1_ass1_pkg) StdoutLine: {'line': b'Checking test dependency graph...\n'}
+[0.038162] (g1_ass1_pkg) StdoutLine: {'line': b'Checking test dependency graph end\n'}
+[0.038218] (g1_ass1_pkg) StdoutLine: {'line': b'test 1\n'}
+[0.038254] (g1_ass1_pkg) StdoutLine: {'line': b'    Start 1: test_cijfer_calculator\n'}
+[0.038287] (g1_ass1_pkg) StdoutLine: {'line': b'\n'}
+[0.038322] (g1_ass1_pkg) StdoutLine: {'line': b'1: Test command: /usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_calculator.gtest.xml" "--package-name" "g1_ass1_pkg" "--output-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/ament_cmake_gtest/test_cijfer_calculator.txt" "--command" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_cijfer_calculator" "--gtest_output=xml:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_calculator.gtest.xml"\n'}
+[0.038363] (g1_ass1_pkg) StdoutLine: {'line': b'1: Working Directory: /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg\n'}
+[0.038397] (g1_ass1_pkg) StdoutLine: {'line': b'1: Test timeout computed to be: 60\n'}
+[0.075734] (g1_ass1_pkg) StdoutLine: {'line': b"1: -- run_test.py: invoking following command in '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg':\n"}
+[0.075849] (g1_ass1_pkg) StdoutLine: {'line': b'1:  - /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_cijfer_calculator --gtest_output=xml:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_calculator.gtest.xml\n'}
+[0.077533] (g1_ass1_pkg) StdoutLine: {'line': b'1: [==========] Running 1 test from 1 test suite.\n'}
+[0.077614] (g1_ass1_pkg) StdoutLine: {'line': b'1: [----------] Global test environment set-up.\n'}
+[0.077660] (g1_ass1_pkg) StdoutLine: {'line': b'1: [----------] 1 test from TestSuite\n'}
+[0.077697] (g1_ass1_pkg) StdoutLine: {'line': b'1: [ RUN      ] TestSuite.test_example\n'}
+[0.077731] (g1_ass1_pkg) StdoutLine: {'line': b'1: [       OK ] TestSuite.test_example (0 ms)\n'}
+[0.077766] (g1_ass1_pkg) StdoutLine: {'line': b'1: [----------] 1 test from TestSuite (0 ms total)\n'}
+[0.077801] (g1_ass1_pkg) StdoutLine: {'line': b'1: \n'}
+[0.077995] (g1_ass1_pkg) StdoutLine: {'line': b'1: [----------] Global test environment tear-down\n'}
+[0.078037] (g1_ass1_pkg) StdoutLine: {'line': b'1: [==========] 1 test from 1 test suite ran. (0 ms total)\n'}
+[0.078070] (g1_ass1_pkg) StdoutLine: {'line': b'1: [  PASSED  ] 1 test.\n'}
+[0.078103] (g1_ass1_pkg) StdoutLine: {'line': b'1: -- run_test.py: return code 0\n'}
+[0.078136] (g1_ass1_pkg) StdoutLine: {'line': b"1: -- run_test.py: inject classname prefix into gtest result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_calculator.gtest.xml'\n"}
+[0.078171] (g1_ass1_pkg) StdoutLine: {'line': b"1: -- run_test.py: verify result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_calculator.gtest.xml'\n"}
+[0.084337] (g1_ass1_pkg) StdoutLine: {'line': b'1/4 Test #1: test_cijfer_calculator ...........   Passed    0.05 sec\n'}
+[0.084490] (g1_ass1_pkg) StdoutLine: {'line': b'test 2\n'}
+[0.084553] (g1_ass1_pkg) StdoutLine: {'line': b'    Start 2: test_cijfer_service\n'}
+[0.084611] (g1_ass1_pkg) StdoutLine: {'line': b'\n'}
+[0.084664] (g1_ass1_pkg) StdoutLine: {'line': b'2: Test command: /usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_service.gtest.xml" "--package-name" "g1_ass1_pkg" "--output-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/ament_cmake_gtest/test_cijfer_service.txt" "--command" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_cijfer_service" "--gtest_output=xml:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_service.gtest.xml"\n'}
+[0.084726] (g1_ass1_pkg) StdoutLine: {'line': b'2: Working Directory: /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg\n'}
+[0.084782] (g1_ass1_pkg) StdoutLine: {'line': b'2: Test timeout computed to be: 60\n'}
+[0.099960] (-) TimerEvent: {}
+[0.122440] (g1_ass1_pkg) StdoutLine: {'line': b"2: -- run_test.py: invoking following command in '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg':\n"}
+[0.122545] (g1_ass1_pkg) StdoutLine: {'line': b'2:  - /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_cijfer_service --gtest_output=xml:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_service.gtest.xml\n'}
+[0.129067] (g1_ass1_pkg) StdoutLine: {'line': b'2: [==========] Running 5 tests from 1 test suite.\n'}
+[0.129182] (g1_ass1_pkg) StdoutLine: {'line': b'2: [----------] Global test environment set-up.\n'}
+[0.129231] (g1_ass1_pkg) StdoutLine: {'line': b'2: [----------] 5 tests from TestCijferService\n'}
+[0.133143] (g1_ass1_pkg) StdoutLine: {'line': b'2: [ RUN      ] TestCijferService.test_average_calculation\n'}
+[0.200120] (-) TimerEvent: {}
+[0.300599] (-) TimerEvent: {}
+[0.400915] (-) TimerEvent: {}
+[0.501180] (-) TimerEvent: {}
+[0.601578] (-) TimerEvent: {}
+[0.701807] (-) TimerEvent: {}
+[0.802120] (-) TimerEvent: {}
+[0.902557] (-) TimerEvent: {}
+[1.002963] (-) TimerEvent: {}
+[1.103370] (-) TimerEvent: {}
+[1.203936] (-) TimerEvent: {}
+[1.304379] (-) TimerEvent: {}
+[1.404713] (-) TimerEvent: {}
+[1.505089] (-) TimerEvent: {}
+[1.605442] (-) TimerEvent: {}
+[1.705867] (-) TimerEvent: {}
+[1.806434] (-) TimerEvent: {}
+[1.906873] (-) TimerEvent: {}
+[2.007207] (-) TimerEvent: {}
+[2.107727] (-) TimerEvent: {}
+[2.208260] (-) TimerEvent: {}
+[2.308673] (-) TimerEvent: {}
+[2.409144] (-) TimerEvent: {}
+[2.509682] (-) TimerEvent: {}
+[2.610158] (-) TimerEvent: {}
+[2.710586] (-) TimerEvent: {}
+[2.810949] (-) TimerEvent: {}
+[2.911282] (-) TimerEvent: {}
+[3.011724] (-) TimerEvent: {}
+[3.112175] (-) TimerEvent: {}
+[3.212512] (-) TimerEvent: {}
+[3.312744] (-) TimerEvent: {}
+[3.412999] (-) TimerEvent: {}
+[3.513285] (-) TimerEvent: {}
+[3.613752] (-) TimerEvent: {}
+[3.714052] (-) TimerEvent: {}
+[3.814331] (-) TimerEvent: {}
+[3.914689] (-) TimerEvent: {}
+[4.014998] (-) TimerEvent: {}
+[4.115361] (-) TimerEvent: {}
+[4.215720] (-) TimerEvent: {}
+[4.316036] (-) TimerEvent: {}
+[4.416442] (-) TimerEvent: {}
+[4.516780] (-) TimerEvent: {}
+[4.617210] (-) TimerEvent: {}
+[4.717653] (-) TimerEvent: {}
+[4.818102] (-) TimerEvent: {}
+[4.918549] (-) TimerEvent: {}
+[5.018991] (-) TimerEvent: {}
+[5.119493] (-) TimerEvent: {}
+[5.140120] (g1_ass1_pkg) StdoutLine: {'line': b'2: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/test/test_cijfer_service.cpp:23: Failure\n'}
+[5.140449] (g1_ass1_pkg) StdoutLine: {'line': b'2: Value of: client->wait_for_service(5s)\n'}
+[5.140652] (g1_ass1_pkg) StdoutLine: {'line': b'2:   Actual: false\n'}
+[5.140742] (g1_ass1_pkg) StdoutLine: {'line': b'2: Expected: true\n'}
+[5.140810] (g1_ass1_pkg) StdoutLine: {'line': b'2: \n'}
+[5.143048] (g1_ass1_pkg) StdoutLine: {'line': b'2: [  FAILED  ] TestCijferService.test_average_calculation (5009 ms)\n'}
+[5.143201] (g1_ass1_pkg) StdoutLine: {'line': b'2: [ RUN      ] TestCijferService.test_wessel_bonus\n'}
+[5.219646] (-) TimerEvent: {}
+[5.320132] (-) TimerEvent: {}
+[5.420468] (-) TimerEvent: {}
+[5.520854] (-) TimerEvent: {}
+[5.621360] (-) TimerEvent: {}
+[5.721885] (-) TimerEvent: {}
+[5.822350] (-) TimerEvent: {}
+[5.922817] (-) TimerEvent: {}
+[6.023257] (-) TimerEvent: {}
+[6.123736] (-) TimerEvent: {}
+[6.224092] (-) TimerEvent: {}
+[6.324477] (-) TimerEvent: {}
+[6.424915] (-) TimerEvent: {}
+[6.525223] (-) TimerEvent: {}
+[6.625583] (-) TimerEvent: {}
+[6.726052] (-) TimerEvent: {}
+[6.826450] (-) TimerEvent: {}
+[6.926799] (-) TimerEvent: {}
+[7.027081] (-) TimerEvent: {}
+[7.127400] (-) TimerEvent: {}
+[7.227771] (-) TimerEvent: {}
+[7.328116] (-) TimerEvent: {}
+[7.428526] (-) TimerEvent: {}
+[7.528813] (-) TimerEvent: {}
+[7.629113] (-) TimerEvent: {}
+[7.729544] (-) TimerEvent: {}
+[7.829841] (-) TimerEvent: {}
+[7.930262] (-) TimerEvent: {}
+[8.030803] (-) TimerEvent: {}
+[8.131108] (-) TimerEvent: {}
+[8.231524] (-) TimerEvent: {}
+[8.332017] (-) TimerEvent: {}
+[8.432501] (-) TimerEvent: {}
+[8.532986] (-) TimerEvent: {}
+[8.633641] (-) TimerEvent: {}
+[8.734143] (-) TimerEvent: {}
+[8.834422] (-) TimerEvent: {}
+[8.934666] (-) TimerEvent: {}
+[9.035043] (-) TimerEvent: {}
+[9.135348] (-) TimerEvent: {}
+[9.235733] (-) TimerEvent: {}
+[9.336172] (-) TimerEvent: {}
+[9.436593] (-) TimerEvent: {}
+[9.537038] (-) TimerEvent: {}
+[9.637478] (-) TimerEvent: {}
+[9.737884] (-) TimerEvent: {}
+[9.838205] (-) TimerEvent: {}
+[9.938532] (-) TimerEvent: {}
+[10.038924] (-) TimerEvent: {}
+[10.139282] (-) TimerEvent: {}
+[10.147613] (g1_ass1_pkg) StdoutLine: {'line': b'2: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/test/test_cijfer_service.cpp:45: Failure\n'}
+[10.147773] (g1_ass1_pkg) StdoutLine: {'line': b'2: Value of: client->wait_for_service(5s)\n'}
+[10.147846] (g1_ass1_pkg) StdoutLine: {'line': b'2:   Actual: false\n'}
+[10.147904] (g1_ass1_pkg) StdoutLine: {'line': b'2: Expected: true\n'}
+[10.147961] (g1_ass1_pkg) StdoutLine: {'line': b'2: \n'}
+[10.149726] (g1_ass1_pkg) StdoutLine: {'line': b'2: [  FAILED  ] TestCijferService.test_wessel_bonus (5006 ms)\n'}
+[10.149857] (g1_ass1_pkg) StdoutLine: {'line': b'2: [ RUN      ] TestCijferService.test_max_clamp\n'}
+[10.239510] (-) TimerEvent: {}
+[10.339786] (-) TimerEvent: {}
+[10.440134] (-) TimerEvent: {}
+[10.540475] (-) TimerEvent: {}
+[10.640735] (-) TimerEvent: {}
+[10.741031] (-) TimerEvent: {}
+[10.841389] (-) TimerEvent: {}
+[10.941682] (-) TimerEvent: {}
+[11.042098] (-) TimerEvent: {}
+[11.142508] (-) TimerEvent: {}
+[11.242920] (-) TimerEvent: {}
+[11.343359] (-) TimerEvent: {}
+[11.443707] (-) TimerEvent: {}
+[11.544101] (-) TimerEvent: {}
+[11.644516] (-) TimerEvent: {}
+[11.745022] (-) TimerEvent: {}
+[11.845562] (-) TimerEvent: {}
+[11.946028] (-) TimerEvent: {}
+[12.046470] (-) TimerEvent: {}
+[12.146758] (-) TimerEvent: {}
+[12.247132] (-) TimerEvent: {}
+[12.347552] (-) TimerEvent: {}
+[12.447935] (-) TimerEvent: {}
+[12.548371] (-) TimerEvent: {}
+[12.648780] (-) TimerEvent: {}
+[12.749202] (-) TimerEvent: {}
+[12.849567] (-) TimerEvent: {}
+[12.949999] (-) TimerEvent: {}
+[13.050291] (-) TimerEvent: {}
+[13.150481] (-) TimerEvent: {}
+[13.250786] (-) TimerEvent: {}
+[13.351085] (-) TimerEvent: {}
+[13.451497] (-) TimerEvent: {}
+[13.551701] (-) TimerEvent: {}
+[13.651960] (-) TimerEvent: {}
+[13.752376] (-) TimerEvent: {}
+[13.852572] (-) TimerEvent: {}
+[13.952816] (-) TimerEvent: {}
+[14.053141] (-) TimerEvent: {}
+[14.153522] (-) TimerEvent: {}
+[14.253873] (-) TimerEvent: {}
+[14.354155] (-) TimerEvent: {}
+[14.454541] (-) TimerEvent: {}
+[14.554778] (-) TimerEvent: {}
+[14.655165] (-) TimerEvent: {}
+[14.755550] (-) TimerEvent: {}
+[14.855780] (-) TimerEvent: {}
+[14.956108] (-) TimerEvent: {}
+[15.056514] (-) TimerEvent: {}
+[15.153440] (g1_ass1_pkg) StdoutLine: {'line': b'2: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/test/test_cijfer_service.cpp:66: Failure\n'}
+[15.153657] (g1_ass1_pkg) StdoutLine: {'line': b'2: Value of: client->wait_for_service(5s)\n'}
+[15.153736] (g1_ass1_pkg) StdoutLine: {'line': b'2:   Actual: false\n'}
+[15.153811] (g1_ass1_pkg) StdoutLine: {'line': b'2: Expected: true\n'}
+[15.153879] (g1_ass1_pkg) StdoutLine: {'line': b'2: \n'}
+[15.156734] (-) TimerEvent: {}
+[15.157924] (g1_ass1_pkg) StdoutLine: {'line': b'2: [  FAILED  ] TestCijferService.test_max_clamp (5008 ms)\n'}
+[15.158157] (g1_ass1_pkg) StdoutLine: {'line': b'2: [ RUN      ] TestCijferService.test_min_clamp\n'}
+[15.256855] (-) TimerEvent: {}
+[15.357313] (-) TimerEvent: {}
+[15.457882] (-) TimerEvent: {}
+[15.558356] (-) TimerEvent: {}
+[15.658781] (-) TimerEvent: {}
+[15.759316] (-) TimerEvent: {}
+[15.859821] (-) TimerEvent: {}
+[15.960221] (-) TimerEvent: {}
+[16.060676] (-) TimerEvent: {}
+[16.161083] (-) TimerEvent: {}
+[16.261509] (-) TimerEvent: {}
+[16.361862] (-) TimerEvent: {}
+[16.462186] (-) TimerEvent: {}
+[16.562595] (-) TimerEvent: {}
+[16.662894] (-) TimerEvent: {}
+[16.763167] (-) TimerEvent: {}
+[16.863647] (-) TimerEvent: {}
+[16.964093] (-) TimerEvent: {}
+[17.064485] (-) TimerEvent: {}
+[17.164919] (-) TimerEvent: {}
+[17.265351] (-) TimerEvent: {}
+[17.365772] (-) TimerEvent: {}
+[17.466107] (-) TimerEvent: {}
+[17.566501] (-) TimerEvent: {}
+[17.666739] (-) TimerEvent: {}
+[17.767098] (-) TimerEvent: {}
+[17.867487] (-) TimerEvent: {}
+[17.967757] (-) TimerEvent: {}
+[18.068110] (-) TimerEvent: {}
+[18.168596] (-) TimerEvent: {}
+[18.268989] (-) TimerEvent: {}
+[18.369391] (-) TimerEvent: {}
+[18.469726] (-) TimerEvent: {}
+[18.570110] (-) TimerEvent: {}
+[18.670589] (-) TimerEvent: {}
+[18.771114] (-) TimerEvent: {}
+[18.871575] (-) TimerEvent: {}
+[18.972016] (-) TimerEvent: {}
+[19.072485] (-) TimerEvent: {}
+[19.172849] (-) TimerEvent: {}
+[19.273257] (-) TimerEvent: {}
+[19.373570] (-) TimerEvent: {}
+[19.474105] (-) TimerEvent: {}
+[19.574580] (-) TimerEvent: {}
+[19.674922] (-) TimerEvent: {}
+[19.775435] (-) TimerEvent: {}
+[19.875968] (-) TimerEvent: {}
+[19.976397] (-) TimerEvent: {}
+[20.076859] (-) TimerEvent: {}
+[20.164448] (g1_ass1_pkg) StdoutLine: {'line': b'2: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/test/test_cijfer_service.cpp:87: Failure\n'}
+[20.164694] (g1_ass1_pkg) StdoutLine: {'line': b'2: Value of: client->wait_for_service(5s)\n'}
+[20.164789] (g1_ass1_pkg) StdoutLine: {'line': b'2:   Actual: false\n'}
+[20.164876] (g1_ass1_pkg) StdoutLine: {'line': b'2: Expected: true\n'}
+[20.164960] (g1_ass1_pkg) StdoutLine: {'line': b'2: \n'}
+[20.167834] (g1_ass1_pkg) StdoutLine: {'line': b'2: [  FAILED  ] TestCijferService.test_min_clamp (5009 ms)\n'}
+[20.168040] (g1_ass1_pkg) StdoutLine: {'line': b'2: [ RUN      ] TestCijferService.test_empty_cijfers\n'}
+[20.176950] (-) TimerEvent: {}
+[20.277190] (-) TimerEvent: {}
+[20.377544] (-) TimerEvent: {}
+[20.477978] (-) TimerEvent: {}
+[20.578440] (-) TimerEvent: {}
+[20.678757] (-) TimerEvent: {}
+[20.779112] (-) TimerEvent: {}
+[20.879477] (-) TimerEvent: {}
+[20.979895] (-) TimerEvent: {}
+[21.080162] (-) TimerEvent: {}
+[21.180530] (-) TimerEvent: {}
+[21.280905] (-) TimerEvent: {}
+[21.381326] (-) TimerEvent: {}
+[21.481747] (-) TimerEvent: {}
+[21.582134] (-) TimerEvent: {}
+[21.682496] (-) TimerEvent: {}
+[21.782931] (-) TimerEvent: {}
+[21.883319] (-) TimerEvent: {}
+[21.983738] (-) TimerEvent: {}
+[22.084092] (-) TimerEvent: {}
+[22.184520] (-) TimerEvent: {}
+[22.284971] (-) TimerEvent: {}
+[22.385352] (-) TimerEvent: {}
+[22.485664] (-) TimerEvent: {}
+[22.586104] (-) TimerEvent: {}
+[22.686515] (-) TimerEvent: {}
+[22.786898] (-) TimerEvent: {}
+[22.887373] (-) TimerEvent: {}
+[22.987942] (-) TimerEvent: {}
+[23.088371] (-) TimerEvent: {}
+[23.188827] (-) TimerEvent: {}
+[23.289334] (-) TimerEvent: {}
+[23.389850] (-) TimerEvent: {}
+[23.490330] (-) TimerEvent: {}
+[23.590875] (-) TimerEvent: {}
+[23.691348] (-) TimerEvent: {}
+[23.791609] (-) TimerEvent: {}
+[23.892045] (-) TimerEvent: {}
+[23.992361] (-) TimerEvent: {}
+[24.092686] (-) TimerEvent: {}
+[24.193009] (-) TimerEvent: {}
+[24.293452] (-) TimerEvent: {}
+[24.393881] (-) TimerEvent: {}
+[24.494310] (-) TimerEvent: {}
+[24.594622] (-) TimerEvent: {}
+[24.694964] (-) TimerEvent: {}
+[24.795260] (-) TimerEvent: {}
+[24.895519] (-) TimerEvent: {}
+[24.995762] (-) TimerEvent: {}
+[25.096059] (-) TimerEvent: {}
+[25.172975] (g1_ass1_pkg) StdoutLine: {'line': b'2: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/test/test_cijfer_service.cpp:108: Failure\n'}
+[25.173326] (g1_ass1_pkg) StdoutLine: {'line': b'2: Value of: client->wait_for_service(5s)\n'}
+[25.173736] (g1_ass1_pkg) StdoutLine: {'line': b'2:   Actual: false\n'}
+[25.173939] (g1_ass1_pkg) StdoutLine: {'line': b'2: Expected: true\n'}
+[25.174019] (g1_ass1_pkg) StdoutLine: {'line': b'2: \n'}
+[25.175941] (g1_ass1_pkg) StdoutLine: {'line': b'2: [  FAILED  ] TestCijferService.test_empty_cijfers (5008 ms)\n'}
+[25.176208] (g1_ass1_pkg) StdoutLine: {'line': b'2: [----------] 5 tests from TestCijferService (25042 ms total)\n'}
+[25.176323] (g1_ass1_pkg) StdoutLine: {'line': b'2: \n'}
+[25.176669] (g1_ass1_pkg) StdoutLine: {'line': b'2: [----------] Global test environment tear-down\n'}
+[25.176748] (g1_ass1_pkg) StdoutLine: {'line': b'2: [==========] 5 tests from 1 test suite ran. (25047 ms total)\n'}
+[25.176799] (g1_ass1_pkg) StdoutLine: {'line': b'2: [  PASSED  ] 0 tests.\n'}
+[25.176848] (g1_ass1_pkg) StdoutLine: {'line': b'2: [  FAILED  ] 5 tests, listed below:\n'}
+[25.176897] (g1_ass1_pkg) StdoutLine: {'line': b'2: [  FAILED  ] TestCijferService.test_average_calculation\n'}
+[25.176946] (g1_ass1_pkg) StdoutLine: {'line': b'2: [  FAILED  ] TestCijferService.test_wessel_bonus\n'}
+[25.176988] (g1_ass1_pkg) StdoutLine: {'line': b'2: [  FAILED  ] TestCijferService.test_max_clamp\n'}
+[25.177035] (g1_ass1_pkg) StdoutLine: {'line': b'2: [  FAILED  ] TestCijferService.test_min_clamp\n'}
+[25.177075] (g1_ass1_pkg) StdoutLine: {'line': b'2: [  FAILED  ] TestCijferService.test_empty_cijfers\n'}
+[25.177115] (g1_ass1_pkg) StdoutLine: {'line': b'2: \n'}
+[25.177155] (g1_ass1_pkg) StdoutLine: {'line': b'2:  5 FAILED TESTS\n'}
+[25.196272] (-) TimerEvent: {}
+[25.282106] (g1_ass1_pkg) StdoutLine: {'line': b'2: -- run_test.py: return code 1\n'}
+[25.282449] (g1_ass1_pkg) StdoutLine: {'line': b"2: -- run_test.py: inject classname prefix into gtest result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_service.gtest.xml'\n"}
+[25.282961] (g1_ass1_pkg) StdoutLine: {'line': b"2: -- run_test.py: verify result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_cijfer_service.gtest.xml'\n"}
+[25.294563] (g1_ass1_pkg) StdoutLine: {'line': b'2/4 Test #2: test_cijfer_service ..............***Failed   25.21 sec\n'}
+[25.294703] (g1_ass1_pkg) StdoutLine: {'line': b'test 3\n'}
+[25.294754] (g1_ass1_pkg) StdoutLine: {'line': b'    Start 3: test_tentamen_publisher\n'}
+[25.294801] (g1_ass1_pkg) StdoutLine: {'line': b'\n'}
+[25.294845] (g1_ass1_pkg) StdoutLine: {'line': b'3: Test command: /usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_tentamen_publisher.gtest.xml" "--package-name" "g1_ass1_pkg" "--output-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/ament_cmake_gtest/test_tentamen_publisher.txt" "--command" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_tentamen_publisher" "--gtest_output=xml:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_tentamen_publisher.gtest.xml"\n'}
+[25.294892] (g1_ass1_pkg) StdoutLine: {'line': b'3: Working Directory: /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg\n'}
+[25.294939] (g1_ass1_pkg) StdoutLine: {'line': b'3: Test timeout computed to be: 60\n'}
+[25.296450] (-) TimerEvent: {}
+[25.339714] (g1_ass1_pkg) StdoutLine: {'line': b"3: -- run_test.py: invoking following command in '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg':\n"}
+[25.339836] (g1_ass1_pkg) StdoutLine: {'line': b'3:  - /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_tentamen_publisher --gtest_output=xml:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_tentamen_publisher.gtest.xml\n'}
+[25.347164] (g1_ass1_pkg) StdoutLine: {'line': b'3: [==========] Running 2 tests from 1 test suite.\n'}
+[25.347289] (g1_ass1_pkg) StdoutLine: {'line': b'3: [----------] Global test environment set-up.\n'}
+[25.347331] (g1_ass1_pkg) StdoutLine: {'line': b'3: [----------] 2 tests from TestTentamenPublisher\n'}
+[25.352638] (g1_ass1_pkg) StdoutLine: {'line': b'3: [ RUN      ] TestTentamenPublisher.test_tentamen_published\n'}
+[25.396546] (-) TimerEvent: {}
+[25.496900] (-) TimerEvent: {}
+[25.597308] (-) TimerEvent: {}
+[25.697763] (-) TimerEvent: {}
+[25.798127] (-) TimerEvent: {}
+[25.898525] (-) TimerEvent: {}
+[25.998912] (-) TimerEvent: {}
+[26.099443] (-) TimerEvent: {}
+[26.199955] (-) TimerEvent: {}
+[26.300376] (-) TimerEvent: {}
+[26.400890] (-) TimerEvent: {}
+[26.501363] (-) TimerEvent: {}
+[26.601754] (-) TimerEvent: {}
+[26.702231] (-) TimerEvent: {}
+[26.802606] (-) TimerEvent: {}
+[26.902959] (-) TimerEvent: {}
+[27.003481] (-) TimerEvent: {}
+[27.103812] (-) TimerEvent: {}
+[27.204154] (-) TimerEvent: {}
+[27.304568] (-) TimerEvent: {}
+[27.404974] (-) TimerEvent: {}
+[27.505453] (-) TimerEvent: {}
+[27.605902] (-) TimerEvent: {}
+[27.706310] (-) TimerEvent: {}
+[27.806595] (-) TimerEvent: {}
+[27.907032] (-) TimerEvent: {}
+[28.007484] (-) TimerEvent: {}
+[28.107853] (-) TimerEvent: {}
+[28.208159] (-) TimerEvent: {}
+[28.308575] (-) TimerEvent: {}
+[28.408843] (-) TimerEvent: {}
+[28.509241] (-) TimerEvent: {}
+[28.609550] (-) TimerEvent: {}
+[28.709818] (-) TimerEvent: {}
+[28.810234] (-) TimerEvent: {}
+[28.910501] (-) TimerEvent: {}
+[29.010948] (-) TimerEvent: {}
+[29.111356] (-) TimerEvent: {}
+[29.211794] (-) TimerEvent: {}
+[29.312254] (-) TimerEvent: {}
+[29.412793] (-) TimerEvent: {}
+[29.513180] (-) TimerEvent: {}
+[29.613666] (-) TimerEvent: {}
+[29.714155] (-) TimerEvent: {}
+[29.814648] (-) TimerEvent: {}
+[29.915109] (-) TimerEvent: {}
+[30.015609] (-) TimerEvent: {}
+[30.115922] (-) TimerEvent: {}
+[30.216220] (-) TimerEvent: {}
+[30.316592] (-) TimerEvent: {}
+[30.416965] (-) TimerEvent: {}
+[30.517336] (-) TimerEvent: {}
+[30.617676] (-) TimerEvent: {}
+[30.718003] (-) TimerEvent: {}
+[30.818447] (-) TimerEvent: {}
+[30.918883] (-) TimerEvent: {}
+[31.019280] (-) TimerEvent: {}
+[31.119616] (-) TimerEvent: {}
+[31.219954] (-) TimerEvent: {}
+[31.320388] (-) TimerEvent: {}
+[31.420704] (-) TimerEvent: {}
+[31.520934] (-) TimerEvent: {}
+[31.621201] (-) TimerEvent: {}
+[31.721625] (-) TimerEvent: {}
+[31.821854] (-) TimerEvent: {}
+[31.922249] (-) TimerEvent: {}
+[32.022461] (-) TimerEvent: {}
+[32.122733] (-) TimerEvent: {}
+[32.223100] (-) TimerEvent: {}
+[32.323438] (-) TimerEvent: {}
+[32.423748] (-) TimerEvent: {}
+[32.524175] (-) TimerEvent: {}
+[32.624622] (-) TimerEvent: {}
+[32.725042] (-) TimerEvent: {}
+[32.825467] (-) TimerEvent: {}
+[32.925810] (-) TimerEvent: {}
+[33.026180] (-) TimerEvent: {}
+[33.126587] (-) TimerEvent: {}
+[33.227145] (-) TimerEvent: {}
+[33.327613] (-) TimerEvent: {}
+[33.427981] (-) TimerEvent: {}
+[33.528385] (-) TimerEvent: {}
+[33.628795] (-) TimerEvent: {}
+[33.729276] (-) TimerEvent: {}
+[33.829770] (-) TimerEvent: {}
+[33.930189] (-) TimerEvent: {}
+[34.030648] (-) TimerEvent: {}
+[34.131117] (-) TimerEvent: {}
+[34.231526] (-) TimerEvent: {}
+[34.331908] (-) TimerEvent: {}
+[34.432305] (-) TimerEvent: {}
+[34.532883] (-) TimerEvent: {}
+[34.633265] (-) TimerEvent: {}
+[34.733646] (-) TimerEvent: {}
+[34.834096] (-) TimerEvent: {}
+[34.934540] (-) TimerEvent: {}
+[35.034957] (-) TimerEvent: {}
+[35.135381] (-) TimerEvent: {}
+[35.235740] (-) TimerEvent: {}
+[35.336019] (-) TimerEvent: {}
+[35.391370] (g1_ass1_pkg) StdoutLine: {'line': b'3: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/test/test_tentamen_publisher.cpp:39: Failure\n'}
+[35.391712] (g1_ass1_pkg) StdoutLine: {'line': b'3: Value of: received\n'}
+[35.391834] (g1_ass1_pkg) StdoutLine: {'line': b'3:   Actual: false\n'}
+[35.391945] (g1_ass1_pkg) StdoutLine: {'line': b'3: Expected: true\n'}
+[35.392056] (g1_ass1_pkg) StdoutLine: {'line': b'3: No tentamen message received within timeout\n'}
+[35.392163] (g1_ass1_pkg) StdoutLine: {'line': b'3: \n'}
+[35.395153] (g1_ass1_pkg) StdoutLine: {'line': b'3: [  FAILED  ] TestTentamenPublisher.test_tentamen_published (10042 ms)\n'}
+[35.395366] (g1_ass1_pkg) StdoutLine: {'line': b'3: [ RUN      ] TestTentamenPublisher.test_multiple_messages\n'}
+[35.436223] (-) TimerEvent: {}
+[35.536648] (-) TimerEvent: {}
+[35.636932] (-) TimerEvent: {}
+[35.737286] (-) TimerEvent: {}
+[35.837738] (-) TimerEvent: {}
+[35.938048] (-) TimerEvent: {}
+[36.038470] (-) TimerEvent: {}
+[36.138913] (-) TimerEvent: {}
+[36.239313] (-) TimerEvent: {}
+[36.339611] (-) TimerEvent: {}
+[36.439966] (-) TimerEvent: {}
+[36.540329] (-) TimerEvent: {}
+[36.640870] (-) TimerEvent: {}
+[36.741357] (-) TimerEvent: {}
+[36.841730] (-) TimerEvent: {}
+[36.942281] (-) TimerEvent: {}
+[37.042822] (-) TimerEvent: {}
+[37.143314] (-) TimerEvent: {}
+[37.243877] (-) TimerEvent: {}
+[37.344265] (-) TimerEvent: {}
+[37.444636] (-) TimerEvent: {}
+[37.545130] (-) TimerEvent: {}
+[37.645584] (-) TimerEvent: {}
+[37.746017] (-) TimerEvent: {}
+[37.846340] (-) TimerEvent: {}
+[37.946668] (-) TimerEvent: {}
+[38.047095] (-) TimerEvent: {}
+[38.147583] (-) TimerEvent: {}
+[38.247909] (-) TimerEvent: {}
+[38.348187] (-) TimerEvent: {}
+[38.448597] (-) TimerEvent: {}
+[38.549055] (-) TimerEvent: {}
+[38.649368] (-) TimerEvent: {}
+[38.749733] (-) TimerEvent: {}
+[38.850072] (-) TimerEvent: {}
+[38.950455] (-) TimerEvent: {}
+[39.050836] (-) TimerEvent: {}
+[39.151130] (-) TimerEvent: {}
+[39.251347] (-) TimerEvent: {}
+[39.351737] (-) TimerEvent: {}
+[39.452149] (-) TimerEvent: {}
+[39.552544] (-) TimerEvent: {}
+[39.652951] (-) TimerEvent: {}
+[39.753375] (-) TimerEvent: {}
+[39.853829] (-) TimerEvent: {}
+[39.954276] (-) TimerEvent: {}
+[40.054747] (-) TimerEvent: {}
+[40.155223] (-) TimerEvent: {}
+[40.255752] (-) TimerEvent: {}
+[40.356217] (-) TimerEvent: {}
+[40.416716] (g1_ass1_pkg) StdoutLine: {'line': b'3: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/test/test_tentamen_publisher.cpp:64: Failure\n'}
+[40.417069] (g1_ass1_pkg) StdoutLine: {'line': b'3: Expected: (count) >= (1), actual: 0 vs 1\n'}
+[40.417273] (g1_ass1_pkg) StdoutLine: {'line': b'3: Should receive at least 1 message in 5 seconds\n'}
+[40.417447] (g1_ass1_pkg) StdoutLine: {'line': b'3: \n'}
+[40.419212] (g1_ass1_pkg) StdoutLine: {'line': b'3: [  FAILED  ] TestTentamenPublisher.test_multiple_messages (5024 ms)\n'}
+[40.419455] (g1_ass1_pkg) StdoutLine: {'line': b'3: [----------] 2 tests from TestTentamenPublisher (15066 ms total)\n'}
+[40.419617] (g1_ass1_pkg) StdoutLine: {'line': b'3: \n'}
+[40.419808] (g1_ass1_pkg) StdoutLine: {'line': b'3: [----------] Global test environment tear-down\n'}
+[40.419953] (g1_ass1_pkg) StdoutLine: {'line': b'3: [==========] 2 tests from 1 test suite ran. (15072 ms total)\n'}
+[40.420110] (g1_ass1_pkg) StdoutLine: {'line': b'3: [  PASSED  ] 0 tests.\n'}
+[40.420243] (g1_ass1_pkg) StdoutLine: {'line': b'3: [  FAILED  ] 2 tests, listed below:\n'}
+[40.420371] (g1_ass1_pkg) StdoutLine: {'line': b'3: [  FAILED  ] TestTentamenPublisher.test_tentamen_published\n'}
+[40.420507] (g1_ass1_pkg) StdoutLine: {'line': b'3: [  FAILED  ] TestTentamenPublisher.test_multiple_messages\n'}
+[40.420631] (g1_ass1_pkg) StdoutLine: {'line': b'3: \n'}
+[40.420755] (g1_ass1_pkg) StdoutLine: {'line': b'3:  2 FAILED TESTS\n'}
+[40.456397] (-) TimerEvent: {}
+[40.525041] (g1_ass1_pkg) StdoutLine: {'line': b'3: -- run_test.py: return code 1\n'}
+[40.525470] (g1_ass1_pkg) StdoutLine: {'line': b"3: -- run_test.py: inject classname prefix into gtest result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_tentamen_publisher.gtest.xml'\n"}
+[40.525886] (g1_ass1_pkg) StdoutLine: {'line': b"3: -- run_test.py: verify result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_tentamen_publisher.gtest.xml'\n"}
+[40.536663] (g1_ass1_pkg) StdoutLine: {'line': b'3/4 Test #3: test_tentamen_publisher ..........***Failed   15.24 sec\n'}
+[40.537011] (g1_ass1_pkg) StdoutLine: {'line': b'test 4\n'}
+[40.537062] (g1_ass1_pkg) StdoutLine: {'line': b'    Start 4: test_final_cijfer_determinator\n'}
+[40.537103] (g1_ass1_pkg) StdoutLine: {'line': b'\n'}
+[40.537139] (g1_ass1_pkg) StdoutLine: {'line': b'4: Test command: /usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_final_cijfer_determinator.gtest.xml" "--package-name" "g1_ass1_pkg" "--output-file" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/ament_cmake_gtest/test_final_cijfer_determinator.txt" "--command" "/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_final_cijfer_determinator" "--gtest_output=xml:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_final_cijfer_determinator.gtest.xml"\n'}
+[40.537185] (g1_ass1_pkg) StdoutLine: {'line': b'4: Working Directory: /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg\n'}
+[40.537221] (g1_ass1_pkg) StdoutLine: {'line': b'4: Test timeout computed to be: 60\n'}
+[40.556546] (-) TimerEvent: {}
+[40.581080] (g1_ass1_pkg) StdoutLine: {'line': b"4: -- run_test.py: invoking following command in '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg':\n"}
+[40.581196] (g1_ass1_pkg) StdoutLine: {'line': b'4:  - /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_final_cijfer_determinator --gtest_output=xml:/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_final_cijfer_determinator.gtest.xml\n'}
+[40.587606] (g1_ass1_pkg) StdoutLine: {'line': b'4: [==========] Running 3 tests from 1 test suite.\n'}
+[40.587706] (g1_ass1_pkg) StdoutLine: {'line': b'4: [----------] Global test environment set-up.\n'}
+[40.587746] (g1_ass1_pkg) StdoutLine: {'line': b'4: [----------] 3 tests from TestFinalCijferDeterminator\n'}
+[40.591596] (g1_ass1_pkg) StdoutLine: {'line': b'4: [ RUN      ] TestFinalCijferDeterminator.test_subscription_active\n'}
+[40.656642] (-) TimerEvent: {}
+[40.757022] (-) TimerEvent: {}
+[40.857472] (-) TimerEvent: {}
+[40.957746] (-) TimerEvent: {}
+[41.058137] (-) TimerEvent: {}
+[41.099475] (g1_ass1_pkg) StdoutLine: {'line': b'4: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/test/test_final_cijfer_determinator.cpp:27: Failure\n'}
+[41.099717] (g1_ass1_pkg) StdoutLine: {'line': b'4: Expected: (publisher->get_subscription_count()) >= (1), actual: 0 vs 1\n'}
+[41.099801] (g1_ass1_pkg) StdoutLine: {'line': b'4: final_cijfer_determinator should be subscribed\n'}
+[41.099877] (g1_ass1_pkg) StdoutLine: {'line': b'4: \n'}
+[41.102598] (g1_ass1_pkg) StdoutLine: {'line': b'4: [  FAILED  ] TestFinalCijferDeterminator.test_subscription_active (510 ms)\n'}
+[41.102787] (g1_ass1_pkg) StdoutLine: {'line': b'4: [ RUN      ] TestFinalCijferDeterminator.test_tentamen_reception\n'}
+[41.158348] (-) TimerEvent: {}
+[41.258584] (-) TimerEvent: {}
+[41.358816] (-) TimerEvent: {}
+[41.459128] (-) TimerEvent: {}
+[41.559491] (-) TimerEvent: {}
+[41.659812] (-) TimerEvent: {}
+[41.760151] (-) TimerEvent: {}
+[41.860503] (-) TimerEvent: {}
+[41.960796] (-) TimerEvent: {}
+[42.061140] (-) TimerEvent: {}
+[42.161520] (-) TimerEvent: {}
+[42.261917] (-) TimerEvent: {}
+[42.362203] (-) TimerEvent: {}
+[42.462601] (-) TimerEvent: {}
+[42.562991] (-) TimerEvent: {}
+[42.663356] (-) TimerEvent: {}
+[42.763631] (-) TimerEvent: {}
+[42.863944] (-) TimerEvent: {}
+[42.964333] (-) TimerEvent: {}
+[43.064889] (-) TimerEvent: {}
+[43.165235] (-) TimerEvent: {}
+[43.265755] (-) TimerEvent: {}
+[43.366112] (-) TimerEvent: {}
+[43.466552] (-) TimerEvent: {}
+[43.566965] (-) TimerEvent: {}
+[43.667492] (-) TimerEvent: {}
+[43.708714] (g1_ass1_pkg) StdoutLine: {'line': b'4: /home/broodjesemih/ass_ros2_ws/src/g1_ass1_pkg/test/test_final_cijfer_determinator.cpp:66: Failure\n'}
+[43.709071] (g1_ass1_pkg) StdoutLine: {'line': b'4: Value of: found\n'}
+[43.709262] (g1_ass1_pkg) StdoutLine: {'line': b'4:   Actual: false\n'}
+[43.709454] (g1_ass1_pkg) StdoutLine: {'line': b'4: Expected: true\n'}
+[43.709636] (g1_ass1_pkg) StdoutLine: {'line': b'4: Database should contain entry for TestStudent/TestCourse\n'}
+[43.709808] (g1_ass1_pkg) StdoutLine: {'line': b'4: \n'}
+[43.712039] (g1_ass1_pkg) StdoutLine: {'line': b'4: [  FAILED  ] TestFinalCijferDeterminator.test_tentamen_reception (2609 ms)\n'}
+[43.712304] (g1_ass1_pkg) StdoutLine: {'line': b'4: [ RUN      ] TestFinalCijferDeterminator.test_three_tentamen_threshold\n'}
+[43.767602] (-) TimerEvent: {}
+[43.868176] (-) TimerEvent: {}
+[43.968759] (-) TimerEvent: {}
+[44.069236] (-) TimerEvent: {}
+[44.169666] (-) TimerEvent: {}
+[44.270095] (-) TimerEvent: {}
+[44.370542] (-) TimerEvent: {}
+[44.470937] (-) TimerEvent: {}
+[44.571367] (-) TimerEvent: {}
+[44.671822] (-) TimerEvent: {}
+[44.772217] (-) TimerEvent: {}
+[44.872621] (-) TimerEvent: {}
+[44.972996] (-) TimerEvent: {}
+[45.073343] (-) TimerEvent: {}
+[45.173783] (-) TimerEvent: {}
+[45.274214] (-) TimerEvent: {}
+[45.374602] (-) TimerEvent: {}
+[45.423482] (g1_ass1_pkg) StdoutLine: {'line': b'4: [       OK ] TestFinalCijferDeterminator.test_three_tentamen_threshold (1711 ms)\n'}
+[45.423870] (g1_ass1_pkg) StdoutLine: {'line': b'4: [----------] 3 tests from TestFinalCijferDeterminator (4831 ms total)\n'}
+[45.424102] (g1_ass1_pkg) StdoutLine: {'line': b'4: \n'}
+[45.424385] (g1_ass1_pkg) StdoutLine: {'line': b'4: [----------] Global test environment tear-down\n'}
+[45.424579] (g1_ass1_pkg) StdoutLine: {'line': b'4: [==========] 3 tests from 1 test suite ran. (4835 ms total)\n'}
+[45.424760] (g1_ass1_pkg) StdoutLine: {'line': b'4: [  PASSED  ] 1 test.\n'}
+[45.424939] (g1_ass1_pkg) StdoutLine: {'line': b'4: [  FAILED  ] 2 tests, listed below:\n'}
+[45.425117] (g1_ass1_pkg) StdoutLine: {'line': b'4: [  FAILED  ] TestFinalCijferDeterminator.test_subscription_active\n'}
+[45.425296] (g1_ass1_pkg) StdoutLine: {'line': b'4: [  FAILED  ] TestFinalCijferDeterminator.test_tentamen_reception\n'}
+[45.425481] (g1_ass1_pkg) StdoutLine: {'line': b'4: \n'}
+[45.425658] (g1_ass1_pkg) StdoutLine: {'line': b'4:  2 FAILED TESTS\n'}
+[45.474692] (-) TimerEvent: {}
+[45.530171] (g1_ass1_pkg) StdoutLine: {'line': b'4: -- run_test.py: return code 1\n'}
+[45.530635] (g1_ass1_pkg) StdoutLine: {'line': b"4: -- run_test.py: inject classname prefix into gtest result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_final_cijfer_determinator.gtest.xml'\n"}
+[45.530754] (g1_ass1_pkg) StdoutLine: {'line': b"4: -- run_test.py: verify result file '/home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/test_results/g1_ass1_pkg/test_final_cijfer_determinator.gtest.xml'\n"}
+[45.540911] (g1_ass1_pkg) StdoutLine: {'line': b'4/4 Test #4: test_final_cijfer_determinator ...***Failed    5.00 sec\n'}
+[45.541135] (g1_ass1_pkg) StdoutLine: {'line': b'\n'}
+[45.541180] (g1_ass1_pkg) StdoutLine: {'line': b'25% tests passed\x1b[0;0m, \x1b[0;31m3 tests failed\x1b[0;0m out of 4\n'}
+[45.541220] (g1_ass1_pkg) StdoutLine: {'line': b'\n'}
+[45.541255] (g1_ass1_pkg) StdoutLine: {'line': b'Label Time Summary:\n'}
+[45.541291] (g1_ass1_pkg) StdoutLine: {'line': b'gtest    =  45.50 sec*proc (4 tests)\n'}
+[45.541326] (g1_ass1_pkg) StdoutLine: {'line': b'\n'}
+[45.541359] (g1_ass1_pkg) StdoutLine: {'line': b'Total Test time (real) =  45.50 sec\n'}
+[45.541392] (g1_ass1_pkg) StdoutLine: {'line': b'\n'}
+[45.541436] (g1_ass1_pkg) StdoutLine: {'line': b'The following tests FAILED:\n'}
+[45.541498] (g1_ass1_pkg) StdoutLine: {'line': b'\t\x1b[0;31m  2 - test_cijfer_service (Failed)\x1b[0;0m\n'}
+[45.541540] (g1_ass1_pkg) StdoutLine: {'line': b'\t\x1b[0;31m  3 - test_tentamen_publisher (Failed)\x1b[0;0m\n'}
+[45.541571] (g1_ass1_pkg) StdoutLine: {'line': b'\t\x1b[0;31m  4 - test_final_cijfer_determinator (Failed)\x1b[0;0m\n'}
+[45.544070] (g1_ass1_pkg) StderrLine: {'line': b'Errors while running CTest\n'}
+[45.544129] (g1_ass1_pkg) StderrLine: {'line': b'Output from these tests are in: /home/broodjesemih/ass_ros2_ws/build/g1_ass1_pkg/Testing/Temporary/LastTest.log\n'}
+[45.544167] (g1_ass1_pkg) StderrLine: {'line': b'Use "--rerun-failed --output-on-failure" to re-run the failed cases verbosely.\n'}
+[45.545746] (g1_ass1_pkg) CommandEnded: {'returncode': 8}
+[45.546012] (g1_ass1_pkg) TestFailure: {'identifier': 'g1_ass1_pkg'}
+[45.546028] (g1_ass1_pkg) JobEnded: {'identifier': 'g1_ass1_pkg', 'rc': 0}
+[45.546706] (-) EventReactorShutdown: {}
