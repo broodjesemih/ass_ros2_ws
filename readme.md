@@ -131,7 +131,7 @@ echo "source $(pwd)/install/setup.bash" >> ~/.bashrc
 ros2 launch g1_ass1_pkg system.launch.xml
 ```
 
-# of, run het via 5 individuele terminals, waarvoor de dependancy tmux nodig is
+of, run het via 5 individuele terminals, waarvoor de dependancy tmux nodig is
 ```bash
 sudo apt install tmux
 ./run.sh
