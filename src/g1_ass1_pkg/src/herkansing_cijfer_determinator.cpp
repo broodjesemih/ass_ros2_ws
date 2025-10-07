@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <sstream>
 #include "g1_interface_pkg/msg/tentamen.hpp"
+#include "g1_interface_pkg/msg/student.hpp"
 #include "g1_interface_pkg/action/herkanser.hpp"
 #include "g1_interface_pkg/srv/tentamens.hpp"
 #include "rclcpp_action/rclcpp_action.hpp"
@@ -42,11 +43,13 @@ public:
             std::bind(&HerkansingCijferDeterminator::handle_cancel, this, std::placeholders::_1),
             std::bind(&HerkansingCijferDeterminator::handle_accepted, this, std::placeholders::_1));
         cijfer_client_ = this->create_client<g1_interface_pkg::srv::Tentamens>("calculate_final_cijfer");
+        student_control_pub_ = this->create_publisher<g1_interface_pkg::msg::Student>("student_control", 10);
     }
 
 private:
     rclcpp_action::Server<Herkanser>::SharedPtr action_server_;
     rclcpp::Client<g1_interface_pkg::srv::Tentamens>::SharedPtr cijfer_client_;
+    rclcpp::Publisher<g1_interface_pkg::msg::Student>::SharedPtr student_control_pub_;
 
     rclcpp_action::GoalResponse handle_goal(const rclcpp_action::GoalUUID &, std::shared_ptr<const Herkanser::Goal> goal)
     {
@@ -68,6 +71,15 @@ private:
     {
         auto goal = goal_handle->get_goal();
         StudentCourseKey key{goal->student_name, goal->course_name};
+
+        // Reactivate random generation
+        g1_interface_pkg::msg::Student start_msg;
+        start_msg.stamp = this->now();
+        start_msg.name = key.student;
+        start_msg.course = key.course;
+        start_msg.command = "again";
+        student_control_pub_->publish(start_msg);
+        RCLCPP_INFO(this->get_logger(), "Sent 'again' command for %s/%s", key.student.c_str(), key.course.c_str());
 
         // Simulate receiving new tentamen results (here: random generation)
         std::vector<int> cijfers;
@@ -96,7 +108,7 @@ private:
         {
             std::cerr << "Could not open database!\n";
         }
-        // Build the record that would have been written to CSV
+
         StudentRecord record;
         record.student_name = key.student;
         record.course = key.course;
@@ -104,7 +116,6 @@ private:
         record.final_result = response->final_cijfer;
         record.timestamp = this->now().seconds();
 
-        // Insert into SQLite instead of CSV
         if (!Database::insert(record))
         {
             std::cerr << "Failed to insert record into database\n";
