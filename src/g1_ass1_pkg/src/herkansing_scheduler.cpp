@@ -28,6 +28,7 @@ private:
         if (!Database::open())
         {
             std::cerr << "Could not open database!\n";
+            return; // prevents crash when pointer is empty
         }
         // Get all rows from the database
         auto records = Database::getAll();
