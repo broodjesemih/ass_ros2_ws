@@ -6,7 +6,6 @@
 #include "rclcpp_action/rclcpp_action.hpp"
 #include "database.h"
 
-
 class HerkansingSchedulerNode : public rclcpp::Node
 {
 public:
@@ -25,12 +24,14 @@ private:
 
     void check_failed_students()
     {
-        if (!Database::connect())
+        Database db;
+
+        if (!db.connect())
         {
             std::cerr << "Could not open database!\n";
         }
         // Get all rows from the database
-        auto records = Database::getAll();
+        auto records = db.getAll();
 
         for (const auto &r : records)
         {

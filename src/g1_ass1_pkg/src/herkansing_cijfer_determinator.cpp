@@ -91,8 +91,10 @@ private:
         future.wait();
         auto response = future.get();
 
+        Database db;
+
         // Add new result to database (append, don't overwrite)
-        if (!Database::connect())
+        if (!db.connect())
         {
             std::cerr << "Could not open database!\n";
         }
@@ -105,7 +107,7 @@ private:
         record.timestamp = this->now().seconds();
 
         // Insert into SQLite instead of CSV
-        if (!Database::insert(record))
+        if (!db.insert(record))
         {
             std::cerr << "Failed to insert record into database\n";
         }

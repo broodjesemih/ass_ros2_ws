@@ -17,11 +17,13 @@ struct StudentRecord
 class Database
 {
 public:
-    static bool connect();
-    static void disconnect();
-    static bool saveFinalResult(const std::string& student_name, const std::string& course, int final_result);
-    static bool saveHerkansingsResult(const std::string& student_name, const std::string& course, int final_result);
-    static std::vector<StudentRecord> getFailedStudents();
-    static std::vector<StudentRecord> getStudentsWithoutExams(); // New function
-    static void printAllResults();
+    Database();
+    ~Database();
+    bool connect();
+    void disconnect();
+    bool saveFinalResult(const std::string &student_name, const std::string &course, int final_result);
+    bool saveHerkansingsResult(const std::string &student_name, const std::string &course, int final_result);
+    std::vector<StudentRecord> getFailedStudents();
+    std::vector<StudentRecord> getStudentsWithoutExams(); // New function
+    void printAllResults();
 };

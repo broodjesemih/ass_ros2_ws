@@ -55,6 +55,8 @@ private:
         // Check if we have enough results (simulate: 3 tentamens per course)
         if (tentamen_map_[key].size() >= 3)
         {
+            Database db;
+
             auto request = std::make_shared<g1_interface_pkg::srv::Tentamens::Request>();
             request->student_name = key.student;
             request->course_name = key.course;
@@ -73,7 +75,7 @@ private:
                             response->final_cijfer,
                             std::to_string(this->now().seconds()).c_str());
 
-                if (!Database::connect())
+                if (!db.connect())
                 {
                     std::cerr << "Could not open database!\n";
                 }
@@ -88,7 +90,7 @@ private:
 
                 // Insert into PostgreSQL
                 std::cout << "🔄 Attempting to save: " << record.student_name << "/" << record.course << " = " << record.final_result << std::endl;
-                if (!Database::saveFinalResult(record.student_name, record.course, record.final_result))
+                if (!db.saveFinalResult(record.student_name, record.course, record.final_result))
                 {
                     std::cerr << "❌ Failed to save record to database\n";
                 }

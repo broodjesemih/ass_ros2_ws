@@ -7,7 +7,6 @@
 #include "g1_interface_pkg/msg/student.hpp"
 #include "database.h"
 
-
 struct StudentCourseKey
 {
     std::string student;
@@ -51,12 +50,13 @@ private:
     void load_student_course_combinations()
     {
 
-        if (!Database::connect())
+        Database db;
+        if (!db.connect())
         {
             std::cerr << "Could not open database!\n";
         }
 
-        auto records = Database::getStudentsWithoutExams();
+        auto records = db.getStudentsWithoutExams();
         for (const auto &r : records)
         {
             active_combinations_.insert(StudentCourseKey{r.student_name, r.course});

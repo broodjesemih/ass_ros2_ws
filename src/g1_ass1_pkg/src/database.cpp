@@ -4,24 +4,34 @@
 #include <iomanip>
 #include "database.h"
 
-// Static member definition
-static PGconn *conn = nullptr;
-    
-bool Database::connect()
+class Database
+{
+public:
+    Database()
+    {
+        conn_ = PQconnectdb(conninfo.c_str());
+    }
+    ~Database()
+    {
+        if (conn_)
+            PQfinish(conn_);
+    }
+
+    bool connect()
     {
         // Connection parameters - can be configured via environment variables
-        const char* host = std::getenv("POSTGRES_HOST") ? std::getenv("POSTGRES_HOST") : "localhost";
-        const char* port = std::getenv("POSTGRES_PORT") ? std::getenv("POSTGRES_PORT") : "5432";
-        const char* dbname = std::getenv("POSTGRES_DB") ? std::getenv("POSTGRES_DB") : "cijfer_generator";
-        const char* user = std::getenv("POSTGRES_USER") ? std::getenv("POSTGRES_USER") : "postgres";
-        const char* password = std::getenv("POSTGRES_PASSWORD") ? std::getenv("POSTGRES_PASSWORD") : "password";
+        const char *host = std::getenv("POSTGRES_HOST") ? std::getenv("POSTGRES_HOST") : "localhost";
+        const char *port = std::getenv("POSTGRES_PORT") ? std::getenv("POSTGRES_PORT") : "5432";
+        const char *dbname = std::getenv("POSTGRES_DB") ? std::getenv("POSTGRES_DB") : "cijfer_generator";
+        const char *user = std::getenv("POSTGRES_USER") ? std::getenv("POSTGRES_USER") : "postgres";
+        const char *password = std::getenv("POSTGRES_PASSWORD") ? std::getenv("POSTGRES_PASSWORD") : "password";
 
         // Build connection string
         std::string conninfo = "host=" + std::string(host) +
-                              " port=" + std::string(port) +
-                              " dbname=" + std::string(dbname) +
-                              " user=" + std::string(user) +
-                              " password=" + std::string(password);
+                               " port=" + std::string(port) +
+                               " dbname=" + std::string(dbname) +
+                               " user=" + std::string(user) +
+                               " password=" + std::string(password);
 
         // Connect to database
         conn = PQconnectdb(conninfo.c_str());
@@ -73,7 +83,7 @@ bool Database::connect()
         if (count == 0)
         {
             std::cout << "Database is empty, inserting initial student/course combinations..." << std::endl;
-            
+
             std::vector<std::pair<std::string, std::string>> initial_data = {
                 {"Alice", "Mathematics"},
                 {"Bob", "Physics"},
@@ -85,14 +95,14 @@ bool Database::connect()
                 {"Henry", "Chemistry"},
                 {"Ivy", "Biology"},
                 {"Jack", "Computer Science"},
-                {"Wessel", "Advanced Mathematics"}  // Special student with bonus
+                {"Wessel", "Advanced Mathematics"} // Special student with bonus
             };
 
-            for (const auto& [student, course] : initial_data)
+            for (const auto &[student, course] : initial_data)
             {
-                std::string insertSQL = "INSERT INTO student_results (student_name, course, number_of_exams, final_result, timestamp) VALUES ('" + 
-                                       student + "', '" + course + "', 0, 0, " + std::to_string(time(nullptr)) + ");";
-                
+                std::string insertSQL = "INSERT INTO student_results (student_name, course, number_of_exams, final_result, timestamp) VALUES ('" +
+                                        student + "', '" + course + "', 0, 0, " + std::to_string(time(nullptr)) + ");";
+
                 PGresult *insert_res = PQexec(conn, insertSQL.c_str());
                 if (PQresultStatus(insert_res) != PGRES_COMMAND_OK)
                 {
@@ -105,7 +115,7 @@ bool Database::connect()
         return true;
     }
 
-void Database::disconnect()
+    void disconnect()
     {
         if (conn)
         {
@@ -118,11 +128,12 @@ void Database::disconnect()
     std::vector<std::pair<std::string, std::string>> getUnfinishedCombinations()
     {
         std::vector<std::pair<std::string, std::string>> combinations;
-        
-        if (!conn) return combinations;
+
+        if (!conn)
+            return combinations;
 
         const char *sql = "SELECT student_name, course FROM student_results WHERE number_of_exams < 3;";
-        
+
         PGresult *res = PQexec(conn, sql);
         if (PQresultStatus(res) != PGRES_TUPLES_OK)
         {
@@ -143,33 +154,37 @@ void Database::disconnect()
         return combinations;
     }
 
-bool Database::saveFinalResult(const std::string &student_name, const std::string &course, int final_result)
+    bool saveFinalResult(const std::string &student_name, const std::string &course, int final_result)
     {
-        if (!conn) return false;
+        if (!conn)
+            return false;
 
         // Escape single quotes in student names and courses
         std::string escaped_student = student_name;
         std::string escaped_course = course;
-        
+
         // Simple escape - replace ' with ''
         size_t pos = 0;
-        while ((pos = escaped_student.find("'", pos)) != std::string::npos) {
+        while ((pos = escaped_student.find("'", pos)) != std::string::npos)
+        {
             escaped_student.replace(pos, 1, "''");
             pos += 2;
         }
         pos = 0;
-        while ((pos = escaped_course.find("'", pos)) != std::string::npos) {
+        while ((pos = escaped_course.find("'", pos)) != std::string::npos)
+        {
             escaped_course.replace(pos, 1, "''");
             pos += 2;
         }
 
-        std::string sql = "UPDATE student_results SET number_of_exams = 3, final_result = " + 
-                         std::to_string(final_result) + ", timestamp = " + std::to_string(time(nullptr)) + 
-                         " WHERE student_name = '" + escaped_student + "' AND course = '" + escaped_course + "';";
+        std::string sql = "UPDATE student_results SET number_of_exams = 3, final_result = " +
+                          std::to_string(final_result) + ", timestamp = " + std::to_string(time(nullptr)) +
+                          " WHERE student_name = '" + escaped_student + "' AND course = '" + escaped_course + "';";
 
         PGresult *res = PQexec(conn, sql.c_str());
+
         bool success = (PQresultStatus(res) == PGRES_COMMAND_OK);
-        
+
         if (!success)
         {
             std::cerr << "❌ UPDATE failed: " << PQerrorMessage(conn) << std::endl;
@@ -184,14 +199,15 @@ bool Database::saveFinalResult(const std::string &student_name, const std::strin
         return success;
     }
 
-std::vector<StudentRecord> Database::getFailedStudents()
+    std::vector<StudentRecord> getFailedStudents()
     {
         std::vector<StudentRecord> failed_students;
-        
-        if (!conn) return failed_students;
+
+        if (!conn)
+            return failed_students;
 
         const char *sql = "SELECT student_name, course, number_of_exams, final_result, timestamp FROM student_results WHERE final_result > 0 AND final_result < 55;";
-        
+
         PGresult *res = PQexec(conn, sql);
         if (PQresultStatus(res) != PGRES_TUPLES_OK)
         {
@@ -216,14 +232,15 @@ std::vector<StudentRecord> Database::getFailedStudents()
         return failed_students;
     }
 
-std::vector<StudentRecord> Database::getStudentsWithoutExams()
+    std::vector<StudentRecord> getStudentsWithoutExams()
     {
         std::vector<StudentRecord> students_without_exams;
-        
-        if (!conn) return students_without_exams;
+
+        if (!conn)
+            return students_without_exams;
 
         const char *sql = "SELECT student_name, course, number_of_exams, final_result, timestamp FROM student_results WHERE number_of_exams = 0;";
-        
+
         PGresult *res = PQexec(conn, sql);
         if (PQresultStatus(res) != PGRES_TUPLES_OK)
         {
@@ -248,33 +265,36 @@ std::vector<StudentRecord> Database::getStudentsWithoutExams()
         return students_without_exams;
     }
 
-bool Database::saveHerkansingsResult(const std::string &student_name, const std::string &course, int final_result)
+    bool saveHerkansingsResult(const std::string &student_name, const std::string &course, int final_result)
     {
-        if (!conn) return false;
+        if (!conn)
+            return false;
 
         // Escape single quotes
         std::string escaped_student = student_name;
         std::string escaped_course = course;
-        
+
         size_t pos = 0;
-        while ((pos = escaped_student.find("'", pos)) != std::string::npos) {
+        while ((pos = escaped_student.find("'", pos)) != std::string::npos)
+        {
             escaped_student.replace(pos, 1, "''");
             pos += 2;
         }
         pos = 0;
-        while ((pos = escaped_course.find("'", pos)) != std::string::npos) {
+        while ((pos = escaped_course.find("'", pos)) != std::string::npos)
+        {
             escaped_course.replace(pos, 1, "''");
             pos += 2;
         }
 
         // Insert new herkansing result (keep old result for history)
-        std::string sql = "INSERT INTO student_results (student_name, course, number_of_exams, final_result, timestamp) VALUES ('" + 
-                         escaped_student + "', '" + escaped_course + "', 3, " + std::to_string(final_result) + 
-                         ", " + std::to_string(time(nullptr)) + ");";
+        std::string sql = "INSERT INTO student_results (student_name, course, number_of_exams, final_result, timestamp) VALUES ('" +
+                          escaped_student + "', '" + escaped_course + "', 3, " + std::to_string(final_result) +
+                          ", " + std::to_string(time(nullptr)) + ");";
 
         PGresult *res = PQexec(conn, sql.c_str());
         bool success = (PQresultStatus(res) == PGRES_COMMAND_OK);
-        
+
         if (!success)
         {
             std::cerr << "INSERT herkansing failed: " << PQerrorMessage(conn) << std::endl;
@@ -288,12 +308,13 @@ bool Database::saveHerkansingsResult(const std::string &student_name, const std:
         return success;
     }
 
-void Database::printAllResults()
+    void printAllResults()
     {
-        if (!conn) return;
+        if (!conn)
+            return;
 
         const char *sql = "SELECT student_name, course, number_of_exams, final_result, timestamp FROM student_results ORDER BY timestamp DESC;";
-        
+
         PGresult *res = PQexec(conn, sql);
         if (PQresultStatus(res) != PGRES_TUPLES_OK)
         {
@@ -303,8 +324,8 @@ void Database::printAllResults()
         }
 
         std::cout << "\n=== All Student Results ===" << std::endl;
-        std::cout << std::left << std::setw(15) << "Student" << std::setw(20) << "Course" 
-                  << std::setw(10) << "Exams" << std::setw(12) << "Final Grade" 
+        std::cout << std::left << std::setw(15) << "Student" << std::setw(20) << "Course"
+                  << std::setw(10) << "Exams" << std::setw(12) << "Final Grade"
                   << std::setw(15) << "Timestamp" << std::endl;
         std::cout << std::string(75, '-') << std::endl;
 
@@ -319,22 +340,28 @@ void Database::printAllResults()
         }
 
         PQclear(res);
-        std::cout << "========================\n" << std::endl;
+        std::cout << "========================\n"
+                  << std::endl;
     }
 
     // Test database connection
     bool testConnection()
     {
-        if (!conn) return false;
-        
+        if (!conn)
+            return false;
+
         PGresult *res = PQexec(conn, "SELECT version();");
         bool success = (PQresultStatus(res) == PGRES_TUPLES_OK);
-        
+
         if (success)
         {
             std::cout << "PostgreSQL version: " << PQgetvalue(res, 0, 0) << std::endl;
         }
-        
+
         PQclear(res);
         return success;
     }
+
+private:
+    PGconn *conn_;
+};
