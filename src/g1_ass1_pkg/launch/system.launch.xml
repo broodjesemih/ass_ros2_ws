@@ -1,0 +1,28 @@
+<launch>
+
+  <!-- Tentamen result generator -->
+  <node pkg="g1_ass1_pkg"
+        exec="tentamen_result_generator"
+        output="screen" />
+
+  <!-- Cijfer calculator -->
+  <node pkg="g1_ass1_pkg"
+        exec="cijfer_calculator"
+        output="screen" />
+
+  <!-- Final cijfer determinator -->
+  <node pkg="g1_ass1_pkg"
+        exec="final_cijfer_determinator"
+        output="screen" />
+
+  <!-- Herkansing scheduler -->
+  <node pkg="g1_ass1_pkg"
+        exec="herkansing_scheduler"
+        output="screen" />
+
+  <!-- Herkansing cijfer determinator -->
+  <node pkg="g1_ass1_pkg"
+        exec="herkansing_cijfer_determinator"
+        output="screen" />
+
+</launch>

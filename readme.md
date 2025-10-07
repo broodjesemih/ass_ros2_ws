@@ -7,6 +7,7 @@ Een geautomatiseerd cijfersysteem gebouwd met ROS2 dat tentamenresultaten genere
 - [📦 Installatie voor Beginners](#-installatie-voor-beginners)
 - [⚙️ Project Opzetten](#️-project-opzetten)
 - [🏃‍♂️ Het Systeem Draaien](#️-het-systeem-draaien)
+- [👁️ Individuele Nodes Bekijken en Draaien](#️-individuele-nodes-bekijken-en-draaien)
 - [🔍 Wat Doet Dit Project?](#-wat-doet-dit-project)
 - [📁 Project Structuur](#-project-structuur)
 - [🧩 ROS2 Nodes Uitleg](#-ros2-nodes-uitleg)
@@ -31,11 +32,13 @@ colcon build
 # 3. Source de workspace
 source install/setup.bash
 
-# 4. Run alles tegelijk (Linux/Mac)
+# 4. Run alles via de launchfile
+ros2 launch g1_ass1_pkg system.launch.xml
+
+# of, run het via 5 individuele terminals, waarvoor de dependancy tmux nodig is
+sudo apt install tmux
 ./run.sh
 ```
-
-
 
 ---
 
@@ -123,243 +126,111 @@ echo "source $(pwd)/install/setup.bash" >> ~/.bashrc
 
 ## 🏃‍♂️ Het Systeem Draaien
 
-### Optie A: Automatisch met Script
+### Start het volledige systeem met één commando:
 ```bash
-# Maak het script uitvoerbaar
-chmod +x run.sh
-
-# Start alle nodes in een tmux sessie
-./run.sh
+ros2 launch g1_ass1_pkg system.launch.xml
 ```
 
-### Optie B: Handmatig
+Dit start automatisch alle nodes:
+- `tentamen_result_generator`
+- `cijfer_calculator`
+- `final_cijfer_determinator`
+- `herkansing_scheduler`
+- `herkansing_cijfer_determinator`
 
-Open **5 aparte terminals** en voer in elke terminal uit:
+### Stoppen:
+Gebruik **Ctrl + C** om alles tegelijk af te sluiten.
 
-#### Terminal 1: Tentamen Result Generator
+---
+
+## 👁️ Individuele Nodes Bekijken en Draaien
+
+### 1. Alle beschikbare nodes bekijken
+```bash
+ros2 node list
+```
+
+### 2. Individuele node starten
+Bijvoorbeeld om alleen de `tentamen_result_generator` te draaien:
 ```bash
 cd ~/g1_assessment1_ros2
 source install/setup.bash
 ros2 run g1_ass1_pkg tentamen_result_generator
 ```
 
-#### Terminal 2: Cijfer Calculator
+### 3. Node-info bekijken
 ```bash
-cd ~/g1_assessment1_ros2
-source install/setup.bash
-ros2 run g1_ass1_pkg cijfer_calculator
+ros2 node info /tentamen_result_generator
 ```
 
-#### Terminal 3: Final Cijfer Determinator
+### 4. Actieve topics bekijken
 ```bash
-cd ~/g1_assessment1_ros2
-source install/setup.bash
-ros2 run g1_ass1_pkg final_cijfer_determinator
+ros2 topic list
 ```
 
-#### Terminal 4: Herkansing Scheduler
+### 5. Data van een topic inspecteren
 ```bash
-cd ~/g1_assessment1_ros2
-source install/setup.bash
-ros2 run g1_ass1_pkg herkansing_scheduler
+ros2 topic echo /tentamen_results
 ```
 
-#### Terminal 5: Herkansing Cijfer Determinator
+### 6. Services bekijken
 ```bash
-cd ~/g1_assessment1_ros2
-source install/setup.bash
-ros2 run g1_ass1_pkg herkansing_cijfer_determinator
+ros2 service list
 ```
 
-
-
----
-
-## 🔍 Wat Doet Dit Project?
-
-Dit systeem simuleert een automatisch cijfersysteem voor een school:
-
-1. **Tentamen Generatie**: Genereert willekeurige tentamencijfers voor studenten
-2. **Cijfer Berekening**: Berekent eindcijfers op basis van 3 tentamens
-3. **Herkansing Systeem**: Plant automatisch herkansingen voor gezakte studenten
-4. **Database Opslag**: Slaat alle resultaten op in een SQLite database
-
-### Flow van het Systeem:
-```
-Tentamen Generator → Publiceert cijfers → Final Cijfer Determinator
-                                                    ↓
-Database ← Cijfer Calculator ← Service Request ←────┘
-    ↑                                               
-    └── Herkansing Cijfer Determinator ← Action ← Herkansing Scheduler
+### 7. Services aanroepen
+Bijvoorbeeld:
+```bash
+ros2 service call /calculate_cijfer g1_interface_pkg/srv/CalculateCijfer "{student_id: 1}"
 ```
 
----
 
 ## 📁 Project Structuur
 
 ```
 g1_assessment1_ros2/
-├── readme.md                    # Dit bestand
-├── run.sh                      # Automatisch start script
-├── database.sqlite             # Database (wordt automatisch aangemaakt)
-└── src/
-    ├── g1_interface_pkg/       # ROS2 Interfaces (msg, srv, action)
-    │   ├── msg/
-    │   │   ├── Student.msg
-    │   │   └── Tentamen.msg
-    │   ├── srv/
-    │   │   └── Tentamens.srv
-    │   ├── action/
-    │   │   └── Herkanser.action
-    │   ├── CMakeLists.txt
-    │   └── package.xml
-    └── g1_ass1_pkg/           # Alle node implementaties
-        ├── src/
-        │   ├── tentamen_result_generator.cpp
-        │   ├── final_cijfer_determinator.cpp
-        │   ├── cijfer_calculator.cpp
-        │   ├── herkansing_scheduler.cpp
-        │   ├── herkansing_cijfer_determinator.cpp
-        │   └── database.cpp
-        ├── CMakeLists.txt
-        └── package.xml
-```
-
----
-
-## 🧩 ROS2 Nodes Uitleg
-
-### 1. 🎯 tentamen_result_generator.cpp
-- **Functie**: Genereert willekeurige tentamencijfers (10-100) voor student/course combinaties
-- **Timing**: Publiceert elke 2 seconden een nieuw tentamenresultaat
-- **ROS2 Interface**: Publisher op topic `/tentamen_results`
-- **Database Interactie**: Leest student/course combinaties uit database
-
-### 2. 📊 final_cijfer_determinator.cpp  
-- **Functie**: Verzamelt 3 tentamencijfers per student en vraagt eindcijfer aan
-- **ROS2 Interface**: 
-  - Subscriber op `/tentamen_results`
-  - Service client voor `/calculate_final_cijfer`
-- **Database Interactie**: Schrijft eindresultaten naar database
-
-### 3. 🧮 cijfer_calculator.cpp
-- **Functie**: Berekent eindcijfer op basis van tentamencijfers
-- **Berekening**: Gemiddelde van 3 cijfers + speciale bonus voor "Wessel" (+10 punten)
-- **ROS2 Interface**: Service server `/calculate_final_cijfer`
-- **Range**: Cijfers worden begrensd tussen 10-100
-
-### 4. 📅 herkansing_scheduler.cpp
-- **Functie**: Zoekt gezakte studenten (cijfer 10-54) en plant herkansingen
-- **Timing**: Controleert elke X seconden de database
-- **ROS2 Interface**: Action client voor `/herkanser`
-- **Database Interactie**: Leest eindresultaten uit database
-
-### 5. 🔄 herkansing_cijfer_determinator.cpp
-- **Functie**: Voert herkansing uit door nieuwe cijfers te genereren
-- **ROS2 Interface**: 
-  - Action server `/herkanser`
-  - Service client voor `/calculate_final_cijfer`
-- **Database Interactie**: Schrijft nieuwe herkansingsresultaten
-
----
-
-## 🔌 ROS2 Interfaces
-
-### Messages (msg/)
-
-#### Student.msg
-```
-string student_name
-string course_name
-builtin_interfaces/Time timestamp
-```
-
-#### Tentamen.msg
-```
-string student_name
-string course_name
-int32 cijfer
-builtin_interfaces/Time timestamp
-```
-
-### Services (srv/)
-
-#### Tentamens.srv
-```
-# Request
-string student_name
-string course_name
-int32[] cijfers
-
----
-# Response
-int32 eindcijfer
-string bericht
-```
-
-### Actions (action/)
-
-#### Herkanser.action
-```
-# Goal
-string student_name
-string course_name
-
----
-# Result
-int32 eindcijfer
-string bericht
-
----
-# Feedback
-string voortgang
-string status
+├── README.md
+├── database.sqlite
+├── src/
+│   ├── g1_interface_pkg/
+│   │   ├── msg/
+│   │   ├── srv/
+│   │   ├── action/
+│   ├── g1_ass1_pkg/
+│   │   ├── src/
+│   │   ├── launch/
+│   │   │   └── system.launch.xml
+│   │   ├── CMakeLists.txt
+│   │   └── package.xml
 ```
 
 ---
 
 ## 💾 Database
 
-### Database Bestand
-- **Locatie**: `g1_assessment1_ros2/database.sqlite`
-- **Type**: SQLite database
-- **Auto-creatie**: Wordt automatisch aangemaakt als het niet bestaat
-
-### Database Schema
-```sql
-CREATE TABLE results (
-    student_name TEXT,
-    course_name TEXT,
-    number_of_exams INTEGER,
-    final_result INTEGER,
-    timestamp TEXT
-);
-```
-
-### Database Inhoud Bekijken
+### Bekijken
 ```bash
 # Installeer sqlite3 als je het nog niet hebt
 sudo apt install sqlite3
 
 # Open de database
 sqlite3 database.sqlite
-
-# Bekijk alle resultaten
-.mode column
 .headers on
-SELECT * FROM results;
-
-# Verlaat sqlite3
-.quit
+.mode column
+SELECT * FROM student_results;
 ```
 
 ---
 
 ## 🐛 Troubleshooting
 
-### Veel Voorkomende Problemen
+#### ❌ "file 'system.launch.xml' was not found"
+Controleer of het bestand zich bevindt in:
+```
+src/g1_ass1_pkg/launch/system.launch.xml
+```
 
-#### ❌ "Package not found" Error
+#### ❌ "Package not found"
 ```bash
 # Oplossing: Source je workspace opnieuw
 source install/setup.bash
@@ -387,7 +258,6 @@ chmod 666 database.sqlite  # Als het al bestaat
 
 #### ❌ Nodes starten niet
 ```bash
-# Check of alle dependencies geïnstalleerd zijn
 rosdep install --from-paths src --ignore-src -r -y
 
 # Rebuild het project
@@ -479,9 +349,4 @@ Dit project valt onder de MIT License.
 
 ## 👨‍💻 Auteurs
 
-**[Nout Mulder](https://github.com/noutmulder) | [Semih Can Karakoc](https://github.com/broodjesemih) | [Tycho Mallee](https://github.com/tyrhaton)** 
-
-
----
-
-*Voor vragen of problemen, open een issue op GitHub of neem contact op via een van de auteurs!*
+**Nout Mulder**, **Semih Can Karakoc**, **Tycho Mallee**
