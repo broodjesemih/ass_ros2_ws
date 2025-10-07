@@ -1,13 +1,25 @@
 #include <libpq-fe.h>
+#include <string>
+#include <vector>
+#include <iostream>
 #include <cstdlib>
 #include <sstream>
 #include <iomanip>
-#include "database.h"
 
-// Static member definition
-static PGconn *conn = nullptr;
+struct StudentRecord
+{
+    std::string student_name;
+    std::string course;
+    int number_of_exams;
+    double final_result;
+    long timestamp;
+};
+
+namespace Database
+{
+    PGconn *conn = nullptr;
     
-bool Database::connect()
+    bool open()
     {
         // Connection parameters - can be configured via environment variables
         const char* host = std::getenv("POSTGRES_HOST") ? std::getenv("POSTGRES_HOST") : "localhost";
@@ -34,7 +46,7 @@ bool Database::connect()
             return false;
         }
 
-        std::cout << "✅ Connected to PostgreSQL database: " << dbname << std::endl;
+        std::cout << "Connected to PostgreSQL database: " << dbname << std::endl;
 
         // Create table if it doesn't exist
         const char *createSQL = R"(
@@ -105,7 +117,7 @@ bool Database::connect()
         return true;
     }
 
-void Database::disconnect()
+    void close()
     {
         if (conn)
         {
@@ -143,7 +155,7 @@ void Database::disconnect()
         return combinations;
     }
 
-bool Database::saveFinalResult(const std::string &student_name, const std::string &course, int final_result)
+    bool saveFinalResult(const std::string &student_name, const std::string &course, int final_result)
     {
         if (!conn) return false;
 
@@ -172,19 +184,18 @@ bool Database::saveFinalResult(const std::string &student_name, const std::strin
         
         if (!success)
         {
-            std::cerr << "❌ UPDATE failed: " << PQerrorMessage(conn) << std::endl;
-            std::cerr << "SQL was: " << sql << std::endl;
+            std::cerr << "UPDATE failed: " << PQerrorMessage(conn) << std::endl;
         }
         else
         {
-            std::cout << "✅ SAVED final result for " << student_name << " in " << course << ": " << final_result << std::endl;
+            std::cout << "Saved final result for " << student_name << " in " << course << ": " << final_result << std::endl;
         }
 
         PQclear(res);
         return success;
     }
 
-std::vector<StudentRecord> Database::getFailedStudents()
+    std::vector<StudentRecord> getFailedStudents()
     {
         std::vector<StudentRecord> failed_students;
         
@@ -192,7 +203,7 @@ std::vector<StudentRecord> Database::getFailedStudents()
 
         const char *sql = "SELECT student_name, course, number_of_exams, final_result, timestamp FROM student_results WHERE final_result > 0 AND final_result < 55;";
         
-        PGresult *res = PQexec(conn, sql);
+        PGresult *res = PQexec(conn, sql.c_str());
         if (PQresultStatus(res) != PGRES_TUPLES_OK)
         {
             std::cerr << "SELECT failed: " << PQerrorMessage(conn) << std::endl;
@@ -216,39 +227,7 @@ std::vector<StudentRecord> Database::getFailedStudents()
         return failed_students;
     }
 
-std::vector<StudentRecord> Database::getStudentsWithoutExams()
-    {
-        std::vector<StudentRecord> students_without_exams;
-        
-        if (!conn) return students_without_exams;
-
-        const char *sql = "SELECT student_name, course, number_of_exams, final_result, timestamp FROM student_results WHERE number_of_exams = 0;";
-        
-        PGresult *res = PQexec(conn, sql);
-        if (PQresultStatus(res) != PGRES_TUPLES_OK)
-        {
-            std::cerr << "SELECT students without exams failed: " << PQerrorMessage(conn) << std::endl;
-            PQclear(res);
-            return students_without_exams;
-        }
-
-        int rows = PQntuples(res);
-        for (int i = 0; i < rows; i++)
-        {
-            StudentRecord record;
-            record.student_name = PQgetvalue(res, i, 0);
-            record.course = PQgetvalue(res, i, 1);
-            record.number_of_exams = std::atoi(PQgetvalue(res, i, 2));
-            record.final_result = std::atof(PQgetvalue(res, i, 3));
-            record.timestamp = std::atol(PQgetvalue(res, i, 4));
-            students_without_exams.push_back(record);
-        }
-
-        PQclear(res);
-        return students_without_exams;
-    }
-
-bool Database::saveHerkansingsResult(const std::string &student_name, const std::string &course, int final_result)
+    bool saveHerkansingsResult(const std::string &student_name, const std::string &course, int final_result)
     {
         if (!conn) return false;
 
@@ -288,13 +267,13 @@ bool Database::saveHerkansingsResult(const std::string &student_name, const std:
         return success;
     }
 
-void Database::printAllResults()
+    void printAllResults()
     {
         if (!conn) return;
 
         const char *sql = "SELECT student_name, course, number_of_exams, final_result, timestamp FROM student_results ORDER BY timestamp DESC;";
         
-        PGresult *res = PQexec(conn, sql);
+        PGresult *res = PQexec(conn, sql.c_str());
         if (PQresultStatus(res) != PGRES_TUPLES_OK)
         {
             std::cerr << "SELECT failed: " << PQerrorMessage(conn) << std::endl;
@@ -338,3 +317,4 @@ void Database::printAllResults()
         PQclear(res);
         return success;
     }
+}

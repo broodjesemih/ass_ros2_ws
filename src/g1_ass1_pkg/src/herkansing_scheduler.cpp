@@ -4,7 +4,7 @@
 #include <string>
 #include "g1_interface_pkg/action/herkanser.hpp"
 #include "rclcpp_action/rclcpp_action.hpp"
-#include "database.cpp"
+#include "database.h"
 
 
 class HerkansingSchedulerNode : public rclcpp::Node
@@ -25,7 +25,7 @@ private:
 
     void check_failed_students()
     {
-        if (!Database::open())
+        if (!Database::connect())
         {
             std::cerr << "Could not open database!\n";
         }

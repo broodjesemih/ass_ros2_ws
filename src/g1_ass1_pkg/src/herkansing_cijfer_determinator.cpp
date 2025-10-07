@@ -7,7 +7,7 @@
 #include "g1_interface_pkg/action/herkanser.hpp"
 #include "g1_interface_pkg/srv/tentamens.hpp"
 #include "rclcpp_action/rclcpp_action.hpp"
-#include "database.cpp"
+#include "database.h"
 
 struct StudentCourseKey
 {
@@ -92,7 +92,7 @@ private:
         auto response = future.get();
 
         // Add new result to database (append, don't overwrite)
-        if (!Database::open())
+        if (!Database::connect())
         {
             std::cerr << "Could not open database!\n";
         }

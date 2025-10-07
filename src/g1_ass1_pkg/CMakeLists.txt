@@ -14,9 +14,15 @@ find_package(std_msgs REQUIRED)               # gebruik maken von standaard mess
 find_package(builtin_interfaces REQUIRED)     # nodig voor Time messages
 find_package(rosidl_default_generators REQUIRED) # nodig om custom messages te gebruiken
 
+# Find PostgreSQL
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(POSTGRESQL REQUIRED libpq)
+
 # Create a library from database.cpp
 add_library(database_lib src/database.cpp)
-target_link_libraries(database_lib sqlite3)
+target_link_libraries(database_lib ${POSTGRESQL_LIBRARIES})
+target_include_directories(database_lib PRIVATE ${POSTGRESQL_INCLUDE_DIRS})
+target_compile_options(database_lib PRIVATE ${POSTGRESQL_CFLAGS_OTHER})
 
 # Executables
 add_executable(tentamen_result_generator src/tentamen_result_generator.cpp)
@@ -39,31 +45,18 @@ add_executable(herkansing_scheduler src/herkansing_scheduler.cpp)
 ament_target_dependencies(herkansing_scheduler rclcpp_action rclcpp g1_interface_pkg)
 target_link_libraries(herkansing_scheduler database_lib)
 
-
-
-# # Executables
-# add_executable(tentamen_result_generator src/tentamen_result_generator.cpp)
-# ament_target_dependencies(tentamen_result_generator rclcpp g1_interface_pkg)
-
-# add_executable(final_cijfer_determinator src/final_cijfer_determinator.cpp)
-# ament_target_dependencies(final_cijfer_determinator rclcpp g1_interface_pkg)
-
-# add_executable(cijfer_calculator src/cijfer_calculator.cpp)
-# ament_target_dependencies(cijfer_calculator rclcpp g1_interface_pkg)
-
-# add_executable(herkansing_cijfer_determinator src/herkansing_cijfer_determinator.cpp)
-# ament_target_dependencies(herkansing_cijfer_determinator rclcpp_action rclcpp g1_interface_pkg)
-
-# add_executable(herkansing_scheduler src/herkansing_scheduler.cpp)
-# ament_target_dependencies(herkansing_scheduler rclcpp_action rclcpp g1_interface_pkg)
-
 install(TARGETS
   tentamen_result_generator
-  final_cijfer_determinator
   cijfer_calculator
+  final_cijfer_determinator
   herkansing_cijfer_determinator
   herkansing_scheduler
   DESTINATION lib/${PROJECT_NAME}
+)
+
+# Install launch files
+install(DIRECTORY launch/
+  DESTINATION share/${PROJECT_NAME}/launch
 )
 
 if(BUILD_TESTING)

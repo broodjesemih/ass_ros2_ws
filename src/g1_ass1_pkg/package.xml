@@ -8,7 +8,14 @@
 
   <buildtool_depend>ament_cmake</buildtool_depend>
   <depend>rclcpp</depend>
+  <depend>rclcpp_action</depend>
   <depend>g1_interface_pkg</depend>
+  <depend>std_msgs</depend>
+  <depend>builtin_interfaces</depend>
+  
+  <!-- PostgreSQL dependencies -->
+  <build_depend>libpq-dev</build_depend>
+  <exec_depend>libpq-dev</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

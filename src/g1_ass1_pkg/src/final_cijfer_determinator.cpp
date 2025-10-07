@@ -6,7 +6,7 @@
 #include "g1_interface_pkg/msg/tentamen.hpp"
 #include "g1_interface_pkg/msg/student.hpp"
 #include "g1_interface_pkg/srv/tentamens.hpp"
-#include "database.cpp"
+#include "database.h"
 
 struct StudentCourseKey
 {
@@ -73,7 +73,7 @@ private:
                             response->final_cijfer,
                             std::to_string(this->now().seconds()).c_str());
 
-                if (!Database::open())
+                if (!Database::connect())
                 {
                     std::cerr << "Could not open database!\n";
                 }
@@ -86,10 +86,15 @@ private:
                 record.final_result = response->final_cijfer;
                 record.timestamp = this->now().seconds();
 
-                // Insert into SQLite
-                if (!Database::insert(record))
+                // Insert into PostgreSQL
+                std::cout << "🔄 Attempting to save: " << record.student_name << "/" << record.course << " = " << record.final_result << std::endl;
+                if (!Database::saveFinalResult(record.student_name, record.course, record.final_result))
                 {
-                    std::cerr << "Failed to insert record into database\n";
+                    std::cerr << "❌ Failed to save record to database\n";
+                }
+                else
+                {
+                    std::cout << "✅ Successfully saved to database!\n";
                 }
 
                 RCLCPP_INFO(this->get_logger(), "Final cijfer for %s/%s: %d", key.student.c_str(), key.course.c_str(), response->final_cijfer);

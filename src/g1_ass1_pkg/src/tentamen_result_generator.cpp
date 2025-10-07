@@ -5,7 +5,7 @@
 #include <unordered_set>
 #include "g1_interface_pkg/msg/tentamen.hpp"
 #include "g1_interface_pkg/msg/student.hpp"
-#include "database.cpp"
+#include "database.h"
 
 
 struct StudentCourseKey
@@ -51,12 +51,12 @@ private:
     void load_student_course_combinations()
     {
 
-        if (!Database::open())
+        if (!Database::connect())
         {
             std::cerr << "Could not open database!\n";
         }
 
-        auto records = Database::getWithoutFinalResult();
+        auto records = Database::getStudentsWithoutExams();
         for (const auto &r : records)
         {
             active_combinations_.insert(StudentCourseKey{r.student_name, r.course});

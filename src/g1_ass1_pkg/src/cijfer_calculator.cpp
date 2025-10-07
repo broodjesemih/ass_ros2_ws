@@ -1,6 +1,6 @@
 #include <rclcpp/rclcpp.hpp>
 #include "g1_interface_pkg/srv/tentamens.hpp"
-#include "database.cpp"
+#include "database.h"
 
 class CijferCalculatorNode : public rclcpp::Node {
 public:
