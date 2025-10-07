@@ -38,12 +38,14 @@ public:
         tentamen_sub_ = this->create_subscription<g1_interface_pkg::msg::Tentamen>(
             "tentamen_results", 10, std::bind(&FinalCijferDeterminator::tentamen_callback, this, std::placeholders::_1));
         cijfer_client_ = this->create_client<g1_interface_pkg::srv::Tentamens>("calculate_final_cijfer");
+        student_control_pub_ = this->create_publisher<g1_interface_pkg::msg::Student>("student_control", 10);
     }
 
 private:
     std::unordered_map<StudentCourseKey, std::vector<int>> tentamen_map_;
     rclcpp::Subscription<g1_interface_pkg::msg::Tentamen>::SharedPtr tentamen_sub_;
     rclcpp::Client<g1_interface_pkg::srv::Tentamens>::SharedPtr cijfer_client_;
+    rclcpp::Publisher<g1_interface_pkg::msg::Student>::SharedPtr student_control_pub_;
 
     void tentamen_callback(const g1_interface_pkg::msg::Tentamen::SharedPtr msg)
     {
@@ -95,6 +97,16 @@ private:
                 RCLCPP_INFO(this->get_logger(), "Final cijfer for %s/%s: %d", key.student.c_str(), key.course.c_str(), response->final_cijfer);
 
                 tentamen_map_.erase(key);
+
+                // Notify generator to stop generating for this student/course
+                g1_interface_pkg::msg::Student stop_msg;
+                stop_msg.stamp = this->now();
+                stop_msg.name = key.student;
+                stop_msg.course = key.course;
+                stop_msg.command = "stop";
+
+                student_control_pub_->publish(stop_msg);
+                RCLCPP_INFO(this->get_logger(), "Sent stop command for %s/%s", key.student.c_str(), key.course.c_str());
             };
 
             cijfer_client_->async_send_request(request, response_callback);
