@@ -9,7 +9,7 @@ endif()
 find_package(g1_interface_pkg REQUIRED)
 find_package(ament_cmake REQUIRED)            # cmake package
 find_package(rclcpp REQUIRED)                 # nodig voor alle nodes
-find_package(rclcpp_action REQUIRED)          # nodig als er een actionserver node wordt gemaakt 
+find_package(rclcpp_action REQUIRED)          # nodig als er een actionserver node wordt gemaakt
 find_package(std_msgs REQUIRED)               # gebruik maken von standaard messages
 find_package(builtin_interfaces REQUIRED)     # nodig voor Time messages
 find_package(rosidl_default_generators REQUIRED) # nodig om custom messages te gebruiken
