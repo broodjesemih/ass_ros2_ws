@@ -135,14 +135,14 @@ colcon build --symlink-install
 # Clear build cache if needed
 rm -rf build/ install/ log/
 ```
-## 💾 Database Info
+## Database Info
 
 - **Database**: `student_grades` 
 - **User**: `postgres`
 - **Password**: `password`
 - **Host**: `localhost:5432`
 
-## � Troubleshooting
+## Troubleshooting
 
 Problems? Run `./complete_setup.sh` again - het lost de meeste problemen automatisch op.
 
@@ -187,5 +187,10 @@ CREATE TABLE student_results (
 
 ---
 
-**Created for TI Minor Grade Generator System**  
-Advanced ROS2 architecture with real-time database integration and comprehensive error handling.
+**TI Minor Grade Generator System**  
+Authors: 
+- Semih Can Karakoc;
+- Nout Mulder; 
+- Tycho Mallee
+
+*Advanced ROS2 architecture with real-time database integration and comprehensive error handling.*
