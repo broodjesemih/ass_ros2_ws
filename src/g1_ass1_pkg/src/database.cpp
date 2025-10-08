@@ -30,19 +30,23 @@ namespace Database
             std::string current_user = getenv("USER") ? getenv("USER") : "postgres";
             
             // Try different connection methods in order of preference
+            // Include both common PostgreSQL ports (5432 standard, 5433 alternative)
             std::vector<std::string> connection_attempts = {
-                "host=localhost port=5432 dbname=student_grades user=postgres password=password sslmode=disable",  // TCP with password
-                "dbname=student_grades user=" + current_user,  // Current system user
+                "host=localhost port=5432 dbname=student_grades user=postgres password=password sslmode=disable",  // TCP with password (standard port)
+                "host=localhost port=5433 dbname=student_grades user=postgres password=password sslmode=disable",  // TCP with password (alternative port)
+                "dbname=student_grades user=" + current_user,  // Current system user (auto-detect port)
                 "host=/var/run/postgresql dbname=student_grades user=" + current_user,  // Socket with current user
                 "host=/tmp dbname=student_grades user=" + current_user,  // Alternative socket with current user  
                 "host=/run/postgresql dbname=student_grades user=" + current_user,  // Another common socket location
-                "postgresql://" + current_user + "@localhost/student_grades",  // URI with current user
+                "postgresql://" + current_user + "@localhost:5432/student_grades",  // URI with current user (port 5432)
+                "postgresql://" + current_user + "@localhost:5433/student_grades",  // URI with current user (port 5433)
                 "host=/var/run/postgresql dbname=student_grades user=postgres",  // Socket with postgres user
                 "host=/tmp dbname=student_grades user=postgres",  // Alternative socket with postgres user
                 "host=/run/postgresql dbname=student_grades user=postgres",  // Another socket with postgres user
-                "postgresql://postgres:password@localhost:5432/student_grades?sslmode=disable",  // TCP fallback
-                "dbname=student_grades",  // Simple connection (uses system default user)
-                "postgresql:///student_grades"  // Simple URI format
+                "postgresql://postgres:password@localhost:5432/student_grades?sslmode=disable",  // TCP fallback (port 5432)
+                "postgresql://postgres:password@localhost:5433/student_grades?sslmode=disable",  // TCP fallback (port 5433)
+                "dbname=student_grades",  // Simple connection (uses system default user and port)
+                "postgresql:///student_grades"  // Simple URI format (auto-detect port)
             };
             
             bool connected = false;
