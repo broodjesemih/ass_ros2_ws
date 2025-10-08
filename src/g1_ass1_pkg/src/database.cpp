@@ -28,32 +28,51 @@ namespace Database
             
             // Try different connection methods in order of preference
             std::vector<std::string> connection_attempts = {
-                "postgresql://postgres:password@localhost/student_grades",  // Original attempt
-                "postgresql:///student_grades",  // Use local Unix socket with current user
-                "postgresql://localhost/student_grades",  // No password, peer authentication
-                "dbname=student_grades"  // Simple local connection
+                "postgresql://postgres:password@localhost:5432/student_grades",  // TCP with explicit port
+                "host=localhost port=5432 dbname=student_grades user=postgres password=password",  // libpq format
+                "host=/var/run/postgresql dbname=student_grades user=postgres",  // Unix socket with user
+                "host=/tmp dbname=student_grades user=postgres",  // Alternative socket location
+                "dbname=student_grades",  // Simple local connection (current user)
+                "postgresql:///student_grades"  // URI format with current user
             };
             
             bool connected = false;
-            for (const auto& conn_str : connection_attempts) {
+            for (size_t i = 0; i < connection_attempts.size(); i++) {
                 try {
-                    connection_string = conn_str;
-                    std::cout << "[Database] Attempting connection: " << connection_string << std::endl;
+                    connection_string = connection_attempts[i];
+                    std::cout << "[Database] Attempt " << (i+1) << "/" << connection_attempts.size() 
+                              << ": " << connection_string << std::endl;
+                    
                     db = std::make_unique<pqxx::connection>(connection_string);
                     
                     if (db->is_open()) {
-                        std::cout << "[Database] Connected successfully!" << std::endl;
+                        std::cout << "[Database] ✅ Connected successfully using method " << (i+1) << "!" << std::endl;
                         connected = true;
                         break;
                     }
                 } catch (const std::exception& e) {
-                    std::cout << "[Database] Connection failed: " << e.what() << std::endl;
+                    std::cout << "[Database] ❌ Method " << (i+1) << " failed: " << e.what() << std::endl;
                     db = nullptr;
+                    
+                    // Add specific hints for common errors
+                    std::string error_msg = e.what();
+                    if (error_msg.find("No such file or directory") != std::string::npos) {
+                        std::cout << "[Database] 💡 Hint: PostgreSQL socket file not found. Is PostgreSQL running?" << std::endl;
+                    } else if (error_msg.find("Connection refused") != std::string::npos) {
+                        std::cout << "[Database] 💡 Hint: PostgreSQL server not accepting connections. Check if it's running on the correct port." << std::endl;
+                    } else if (error_msg.find("authentication failed") != std::string::npos) {
+                        std::cout << "[Database] 💡 Hint: Authentication failed. Check username/password or pg_hba.conf." << std::endl;
+                    }
                 }
             }
             
             if (!connected) {
-                std::cerr << "[Database] All connection attempts failed!" << std::endl;
+                std::cerr << "[Database] ❌ All connection attempts failed!" << std::endl;
+                std::cerr << "[Database] 🔧 Troubleshooting steps:" << std::endl;
+                std::cerr << "[Database]    1. Check if PostgreSQL is running: sudo systemctl status postgresql" << std::endl;
+                std::cerr << "[Database]    2. Start PostgreSQL: sudo systemctl start postgresql" << std::endl;
+                std::cerr << "[Database]    3. Run setup script: ./setup_postgresql.sh" << std::endl;
+                std::cerr << "[Database]    4. Check debug info: ./debug_postgres.sh" << std::endl;
                 return false;
             }
 

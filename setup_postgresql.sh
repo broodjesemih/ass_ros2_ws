@@ -27,6 +27,24 @@ echo "Starting PostgreSQL service..."
 sudo systemctl start postgresql
 sudo systemctl enable postgresql
 
+# Wait a moment for PostgreSQL to fully start
+echo "Waiting for PostgreSQL to start..."
+sleep 3
+
+# Check if PostgreSQL is actually running
+if ! sudo systemctl is-active --quiet postgresql; then
+    echo "❌ PostgreSQL failed to start. Checking logs..."
+    sudo journalctl -u postgresql --no-pager -n 10
+    echo "Attempting alternative start methods..."
+    
+    # Try to start with specific version
+    PG_VERSION=$(sudo -u postgres psql --version 2>/dev/null | grep -oE '[0-9]+\.[0-9]+' | head -1)
+    if [ -n "$PG_VERSION" ]; then
+        echo "Trying to start PostgreSQL $PG_VERSION..."
+        sudo systemctl start postgresql@$PG_VERSION-main 2>/dev/null || true
+    fi
+fi
+
 # Create database and user
 echo "Setting up database..."
 
