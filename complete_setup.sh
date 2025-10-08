@@ -325,31 +325,177 @@ fi
 log_success "Project built successfully"
 
 # =============================================================================
-# 7. TEST SYSTEM
+# 7. TEST SYSTEM & FIX DATABASE ISSUES
 # =============================================================================
-log_info "Testing system..."
+log_info "Testing system and fixing potential database issues..."
 
-# Test database connection
+# Test database connection with comprehensive troubleshooting
 log_info "Testing database connections..."
 
 DB_TESTS=(
-    "postgresql://postgres:password@localhost:5432/student_grades"
-    "host=localhost port=5432 dbname=student_grades user=postgres password=password"
-    "dbname=student_grades"
+    "PGPASSWORD=password psql -h localhost -p 5432 -U postgres -d student_grades -c 'SELECT 1;'"
+    "psql -d student_grades -c 'SELECT 1;'"
+    "sudo -u postgres psql -d student_grades -c 'SELECT 1;'"
 )
 
 DB_WORKING=false
-for conn_str in "${DB_TESTS[@]}"; do
-    if echo "SELECT 1;" | psql "$conn_str" >/dev/null 2>&1; then
-        log_success "Database connection working: $conn_str"
+for i in "${!DB_TESTS[@]}"; do
+    log_info "Testing connection method $((i+1))/3..."
+    if eval "${DB_TESTS[$i]}" >/dev/null 2>&1; then
+        log_success "Database connection working with method $((i+1))"
         DB_WORKING=true
         break
+    else
+        log_warning "Method $((i+1)) failed"
     fi
 done
 
 if [ "$DB_WORKING" = false ]; then
-    log_warning "Database connection tests failed, but this might be normal"
-    log_info "The application will try multiple connection methods automatically"
+    log_error "All database connection tests failed! Attempting fixes..."
+    
+    # Fix attempt 1: Restart PostgreSQL
+    log_info "Fix 1/4: Restarting PostgreSQL service..."
+    sudo systemctl restart postgresql
+    sleep 5
+    
+    if sudo systemctl is-active --quiet postgresql; then
+        log_success "PostgreSQL restarted successfully"
+        
+        # Test again after restart
+        if PGPASSWORD=password psql -h localhost -U postgres -d student_grades -c "SELECT 1;" >/dev/null 2>&1; then
+            log_success "Database connection now working after restart!"
+            DB_WORKING=true
+        fi
+    else
+        log_error "PostgreSQL failed to restart"
+    fi
+    
+    # Fix attempt 2: Check and fix socket permissions
+    if [ "$DB_WORKING" = false ]; then
+        log_info "Fix 2/4: Checking socket files and permissions..."
+        
+        SOCKET_DIRS=("/var/run/postgresql" "/tmp" "/run/postgresql")
+        SOCKET_FOUND=false
+        
+        for dir in "${SOCKET_DIRS[@]}"; do
+            if [ -d "$dir" ] && ls "$dir"/.s.PGSQL.* >/dev/null 2>&1; then
+                log_success "Found PostgreSQL socket in $dir"
+                sudo chmod 755 "$dir" 2>/dev/null || true
+                SOCKET_FOUND=true
+                break
+            fi
+        done
+        
+        if [ "$SOCKET_FOUND" = false ]; then
+            log_warning "No PostgreSQL socket files found"
+            log_info "Attempting to recreate socket directory..."
+            sudo mkdir -p /var/run/postgresql
+            sudo chown postgres:postgres /var/run/postgresql
+            sudo systemctl restart postgresql
+            sleep 3
+        fi
+        
+        # Test connection after socket fix
+        if sudo -u postgres psql -d student_grades -c "SELECT 1;" >/dev/null 2>&1; then
+            log_success "Database connection now working after socket fix!"
+            DB_WORKING=true
+        fi
+    fi
+    
+    # Fix attempt 3: Recreate database and user
+    if [ "$DB_WORKING" = false ]; then
+        log_info "Fix 3/4: Recreating database and users..."
+        
+        # Try to connect as postgres system user and recreate everything
+        sudo -u postgres psql << 'EOFFIX' || log_warning "Could not execute database recreation"
+-- Drop and recreate database
+DROP DATABASE IF EXISTS student_grades;
+CREATE DATABASE student_grades;
+
+-- Ensure postgres user exists with correct permissions
+DROP USER IF EXISTS postgres;
+CREATE USER postgres WITH SUPERUSER CREATEDB CREATEROLE LOGIN PASSWORD 'password';
+
+-- Grant all privileges
+GRANT ALL PRIVILEGES ON DATABASE student_grades TO postgres;
+
+-- Also create current system user
+\echo 'Database and users recreated'
+EOFFIX
+        
+        # Create current user
+        CURRENT_USER=$(whoami)
+        sudo -u postgres createuser "$CURRENT_USER" --superuser 2>/dev/null || true
+        sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE student_grades TO \"$CURRENT_USER\";" 2>/dev/null || true
+        
+        # Test after recreation
+        if PGPASSWORD=password psql -h localhost -U postgres -d student_grades -c "SELECT 1;" >/dev/null 2>&1; then
+            log_success "Database connection now working after recreation!"
+            DB_WORKING=true
+        fi
+    fi
+    
+    # Fix attempt 4: Alternative PostgreSQL configuration
+    if [ "$DB_WORKING" = false ]; then
+        log_info "Fix 4/4: Trying alternative PostgreSQL configuration..."
+        
+        # Find and update pg_hba.conf to be more permissive
+        PG_CONF_DIRS=(
+            "/etc/postgresql/$PG_VERSION/main"
+            "/var/lib/pgsql/data"
+            "/var/lib/postgres/data"
+            "/etc/postgresql"
+        )
+        
+        for dir in "${PG_CONF_DIRS[@]}"; do
+            if [ -f "$dir/pg_hba.conf" ]; then
+                log_info "Updating PostgreSQL config in $dir"
+                
+                # Backup original
+                sudo cp "$dir/pg_hba.conf" "$dir/pg_hba.conf.backup.$(date +%Y%m%d)" 2>/dev/null || true
+                
+                # Create more permissive configuration
+                sudo bash -c "cat > $dir/pg_hba.conf.new << 'EOFHBA'
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
+local   all             postgres                                trust
+local   all             all                                     trust
+host    all             all             127.0.0.1/32            md5
+host    all             all             ::1/128                 md5
+host    all             all             localhost               trust
+EOFHBA"
+                
+                sudo mv "$dir/pg_hba.conf.new" "$dir/pg_hba.conf"
+                sudo systemctl reload postgresql
+                sleep 2
+                break
+            fi
+        done
+        
+        # Final test
+        if psql -h localhost -U postgres -d student_grades -c "SELECT 1;" >/dev/null 2>&1; then
+            log_success "Database connection now working after config update!"
+            DB_WORKING=true
+        fi
+    fi
+    
+    # If still not working, provide manual instructions
+    if [ "$DB_WORKING" = false ]; then
+        log_error "❌ Could not automatically fix database connection issues"
+        echo ""
+        echo "🔧 MANUAL FIX INSTRUCTIONS:"
+        echo "1. Check PostgreSQL status: sudo systemctl status postgresql"
+        echo "2. Check PostgreSQL logs: sudo journalctl -u postgresql -n 50"
+        echo "3. Try manual connection: sudo -u postgres psql"
+        echo "4. If needed, reinstall PostgreSQL:"
+        echo "   sudo apt remove --purge postgresql* && sudo apt install postgresql postgresql-contrib"
+        echo "5. Re-run this script: ./complete_setup.sh"
+        echo ""
+        log_warning "Continuing setup - the application has built-in connection fallbacks"
+    else
+        log_success "✅ Database connection issues resolved!"
+    fi
+else
+    log_success "✅ Database connection working perfectly!"
 fi
 
 # Source workspace
@@ -368,40 +514,278 @@ fi
 # =============================================================================
 log_info "Creating convenience scripts..."
 
-# Create simple run script
+# Create intelligent run script with database checks
 cat > run_system.sh << 'EOF'
 #!/bin/bash
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m'
+
+log_info() { echo -e "${BLUE}[INFO]${NC} $1"; }
+log_success() { echo -e "${GREEN}[SUCCESS]${NC} $1"; }
+log_warning() { echo -e "${YELLOW}[WARNING]${NC} $1"; }
+log_error() { echo -e "${RED}[ERROR]${NC} $1"; }
+
 cd "$(dirname "$0")"
-source /opt/ros/*/setup.bash 2>/dev/null
-source install/setup.bash 2>/dev/null
+
 echo "🚀 Starting ROS2 Grade Calculator System..."
+echo ""
+
+# Check PostgreSQL service
+log_info "Checking PostgreSQL service..."
+if ! sudo systemctl is-active --quiet postgresql; then
+    log_warning "PostgreSQL is not running. Starting it..."
+    sudo systemctl start postgresql
+    sleep 3
+    
+    if ! sudo systemctl is-active --quiet postgresql; then
+        log_error "Failed to start PostgreSQL!"
+        log_info "Try running: ./complete_setup.sh"
+        exit 1
+    else
+        log_success "PostgreSQL started successfully"
+    fi
+else
+    log_success "PostgreSQL is running"
+fi
+
+# Quick database connectivity test
+log_info "Testing database connection..."
+DB_TESTS=(
+    "PGPASSWORD=password psql -h localhost -U postgres -d student_grades -c 'SELECT 1;'"
+    "psql -d student_grades -c 'SELECT 1;'"
+    "sudo -u postgres psql -d student_grades -c 'SELECT 1;'"
+)
+
+DB_OK=false
+for test in "${DB_TESTS[@]}"; do
+    if eval "$test" >/dev/null 2>&1; then
+        log_success "Database connection verified"
+        DB_OK=true
+        break
+    fi
+done
+
+if [ "$DB_OK" = false ]; then
+    log_warning "Database connection issues detected"
+    log_info "The application will try multiple connection methods automatically"
+    log_info "If problems persist, run: ./complete_setup.sh"
+fi
+
+# Source ROS2 environment
+log_info "Setting up ROS2 environment..."
+if [ -f "/opt/ros/jazzy/setup.bash" ]; then
+    source /opt/ros/jazzy/setup.bash
+elif [ -f "/opt/ros/humble/setup.bash" ]; then
+    source /opt/ros/humble/setup.bash
+else
+    log_error "Cannot find ROS2 setup file!"
+    exit 1
+fi
+
+# Source workspace
+if [ -f "install/setup.bash" ]; then
+    source install/setup.bash
+else
+    log_error "Workspace not built! Run: colcon build --packages-select g1_ass1_pkg"
+    exit 1
+fi
+
+echo ""
+log_success "Environment ready! Launching system..."
+echo ""
+echo "� Starting all nodes:"
+echo "  - tentamen_result_generator"
+echo "  - cijfer_calculator"
+echo "  - final_cijfer_determinator" 
+echo "  - herkansing_scheduler"
+echo "  - herkansing_cijfer_determinator"
+echo ""
+echo "Press Ctrl+C to stop all nodes"
+echo ""
+
+# Launch the system
 ros2 launch g1_ass1_pkg system.launch.xml
+
+echo ""
+log_info "System stopped."
 EOF
 
 chmod +x run_system.sh
 
-# Create database test script
+# Create comprehensive database test script
 cat > test_database.sh << 'EOF'
 #!/bin/bash
-echo "Testing database connections..."
 
-TESTS=(
-    "psql -h localhost -U postgres -d student_grades -c 'SELECT version();'"
-    "psql -d student_grades -c 'SELECT version();'"
-    "sudo -u postgres psql -d student_grades -c 'SELECT version();'"
-)
+# Colors
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m'
 
-for i in "${!TESTS[@]}"; do
-    echo "Test $((i+1)): ${TESTS[$i]}"
-    if eval "PGPASSWORD=password ${TESTS[$i]}" >/dev/null 2>&1; then
-        echo "✅ Success"
-    else
-        echo "❌ Failed"
+echo "=========================================="
+echo "🔍 Database Diagnostic Tool"
+echo "=========================================="
+echo ""
+
+# 1. Check PostgreSQL service
+echo "1️⃣  Checking PostgreSQL service..."
+if systemctl is-active --quiet postgresql; then
+    echo -e "${GREEN}✅ PostgreSQL service is running${NC}"
+else
+    echo -e "${RED}❌ PostgreSQL service is not running${NC}"
+    echo -e "${YELLOW}💡 Try: sudo systemctl start postgresql${NC}"
+fi
+echo ""
+
+# 2. Check socket files
+echo "2️⃣  Checking socket files..."
+SOCKET_DIRS=("/var/run/postgresql" "/tmp" "/run/postgresql")
+SOCKET_FOUND=false
+
+for dir in "${SOCKET_DIRS[@]}"; do
+    if [ -d "$dir" ] && ls "$dir"/.s.PGSQL.* >/dev/null 2>&1; then
+        echo -e "${GREEN}✅ Found PostgreSQL socket in $dir${NC}"
+        ls -la "$dir"/.s.PGSQL.*
+        SOCKET_FOUND=true
     fi
 done
+
+if [ "$SOCKET_FOUND" = false ]; then
+    echo -e "${RED}❌ No PostgreSQL socket files found${NC}"
+    echo -e "${YELLOW}💡 Try: sudo systemctl restart postgresql${NC}"
+fi
+echo ""
+
+# 3. Check database existence
+echo "3️⃣  Checking database existence..."
+if sudo -u postgres psql -lqt | cut -d \| -f 1 | grep -qw student_grades; then
+    echo -e "${GREEN}✅ Database 'student_grades' exists${NC}"
+else
+    echo -e "${RED}❌ Database 'student_grades' not found${NC}"
+    echo -e "${YELLOW}💡 Try: sudo -u postgres createdb student_grades${NC}"
+fi
+echo ""
+
+# 4. Test connections
+echo "4️⃣  Testing database connections..."
+
+TESTS=(
+    "PGPASSWORD=password psql -h localhost -U postgres -d student_grades -c 'SELECT version();'|TCP with password"
+    "psql -d student_grades -c 'SELECT version();'|Current user socket"
+    "sudo -u postgres psql -d student_grades -c 'SELECT version();'|Postgres user socket"
+    "psql -h localhost -d student_grades -c 'SELECT version();'|TCP without auth"
+)
+
+SUCCESS_COUNT=0
+for test_line in "${TESTS[@]}"; do
+    IFS='|' read -r cmd desc <<< "$test_line"
+    echo -n "Testing $desc: "
+    if eval "$cmd" >/dev/null 2>&1; then
+        echo -e "${GREEN}✅ Success${NC}"
+        ((SUCCESS_COUNT++))
+    else
+        echo -e "${RED}❌ Failed${NC}"
+    fi
+done
+echo ""
+
+# 5. Application connection test
+echo "5️⃣  Testing application connection methods..."
+echo "The C++ application will try these in order:"
+echo "  1. postgresql://postgres:password@localhost:5432/student_grades"
+echo "  2. host=localhost port=5432 dbname=student_grades user=postgres password=password"  
+echo "  3. host=/var/run/postgresql dbname=student_grades user=postgres"
+echo "  4. host=/tmp dbname=student_grades user=postgres"
+echo "  5. dbname=student_grades"
+echo "  6. postgresql:///student_grades"
+echo ""
+
+# 6. Summary and recommendations
+echo "📋 Summary:"
+if [ "$SUCCESS_COUNT" -gt 0 ]; then
+    echo -e "${GREEN}✅ $SUCCESS_COUNT connection method(s) working${NC}"
+    echo -e "${GREEN}✅ The application should be able to connect to the database${NC}"
+else
+    echo -e "${RED}❌ No connection methods working${NC}"
+    echo ""
+    echo -e "${YELLOW}🔧 Recommended fixes:${NC}"
+    echo "1. sudo systemctl restart postgresql"
+    echo "2. ./complete_setup.sh"
+    echo "3. Check logs: sudo journalctl -u postgresql"
+fi
+
+echo ""
+echo "=========================================="
 EOF
 
 chmod +x test_database.sh
+
+# Create emergency database fix script
+cat > fix_database_emergency.sh << 'EOF'
+#!/bin/bash
+
+echo "🚨 Emergency Database Fix Script"
+echo "================================"
+echo ""
+
+# Stop PostgreSQL
+echo "1. Stopping PostgreSQL..."
+sudo systemctl stop postgresql
+
+# Remove lock files
+echo "2. Cleaning lock files..."
+sudo rm -f /var/lib/postgresql/*/main/postmaster.pid 2>/dev/null
+sudo rm -f /tmp/.s.PGSQL.* 2>/dev/null
+sudo rm -f /var/run/postgresql/.s.PGSQL.* 2>/dev/null
+
+# Fix permissions
+echo "3. Fixing permissions..."
+sudo chown -R postgres:postgres /var/lib/postgresql/ 2>/dev/null
+sudo mkdir -p /var/run/postgresql
+sudo chown postgres:postgres /var/run/postgresql
+sudo chmod 755 /var/run/postgresql
+
+# Start PostgreSQL
+echo "4. Starting PostgreSQL..."
+sudo systemctl start postgresql
+
+# Wait for startup
+sleep 5
+
+# Check if running
+if sudo systemctl is-active --quiet postgresql; then
+    echo "✅ PostgreSQL started successfully"
+    
+    # Recreate database as fallback
+    echo "5. Ensuring database exists..."
+    sudo -u postgres createdb student_grades 2>/dev/null || echo "Database may already exist"
+    sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'password';" 2>/dev/null || echo "Password may already be set"
+    
+    # Test connection
+    if PGPASSWORD=password psql -h localhost -U postgres -d student_grades -c "SELECT 1;" >/dev/null 2>&1; then
+        echo "✅ Database connection working!"
+        echo ""
+        echo "You can now run:"
+        echo "  ./run_system.sh"
+    else
+        echo "❌ Connection still failing"
+        echo "Manual intervention required:"
+        echo "  sudo -u postgres psql"
+        echo "  Then create database and user manually"
+    fi
+else
+    echo "❌ PostgreSQL failed to start"
+    echo "Check logs: sudo journalctl -u postgresql"
+fi
+EOF
+
+chmod +x fix_database_emergency.sh
 
 # =============================================================================
 # 9. FINAL SETUP COMPLETE
@@ -424,10 +808,14 @@ echo ""
 echo "🔧 To test database connection:"
 echo "   ./test_database.sh"
 echo ""
-echo "🐛 If you encounter issues:"
+echo "� If database issues occur:"
+echo "   ./fix_database_emergency.sh"
+echo ""
+echo "�🐛 If you encounter other issues:"
 echo "   - Check PostgreSQL: sudo systemctl status postgresql"
 echo "   - Check logs: sudo journalctl -u postgresql"
 echo "   - Rebuild project: colcon build --packages-select $PROJECT_NAME"
+echo "   - Re-run full setup: ./complete_setup.sh"
 echo ""
 echo "📁 Project files:"
 echo "   - Workspace: $SCRIPT_DIR"
