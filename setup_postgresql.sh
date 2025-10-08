@@ -78,19 +78,44 @@ echo "Port: 5432 (default)"
 
 echo ""
 echo "Testing database connection..."
+
+# Test multiple connection methods
+CURRENT_USER=$(whoami)
+
+echo "Method 1: Testing postgres user connection..."
 if sudo -u postgres psql -d student_grades -c "SELECT 1;" >/dev/null 2>&1; then
-    echo "✓ Database connection successful!"
-    echo "You can test the connection with:"
-    echo "psql -h localhost -U postgres -d student_grades"
+    echo "✓ Method 1 successful: postgres user works"
+    echo "Connection string: postgresql://postgres:password@localhost/student_grades"
 else
-    echo "⚠ Database connection test failed. Trying alternative setup..."
+    echo "✗ Method 1 failed: postgres user connection failed"
     
-    # Alternative: use the system user that installed PostgreSQL
-    CURRENT_USER=$(whoami)
-    sudo -u postgres createuser "$CURRENT_USER" --superuser 2>/dev/null || true
+    echo "Method 2: Creating and testing current user ($CURRENT_USER)..."
+    # Create current user as PostgreSQL user
+    sudo -u postgres createuser "$CURRENT_USER" --superuser 2>/dev/null || echo "User $CURRENT_USER may already exist"
+    sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE student_grades TO \"$CURRENT_USER\";" 2>/dev/null || true
     
-    echo "Alternative connection method:"
-    echo "psql -d student_grades"
-    echo "or"  
-    echo "sudo -u postgres psql -d student_grades"
+    if psql -d student_grades -c "SELECT 1;" >/dev/null 2>&1; then
+        echo "✓ Method 2 successful: current user ($CURRENT_USER) works"
+        echo "Connection string: postgresql:///$CURRENT_USER"
+    else
+        echo "✗ Method 2 failed"
+        
+        echo "Method 3: Testing peer authentication..."
+        if sudo -u postgres psql -d student_grades -c "SELECT 1;" >/dev/null 2>&1; then
+            echo "✓ Method 3 successful: peer authentication works"
+            echo "Connection string: postgresql://localhost/student_grades"
+        else
+            echo "✗ Method 3 failed"
+            echo "⚠ All connection methods failed. Manual intervention required."
+        fi
+    fi
 fi
+
+echo ""
+echo "=== Connection Test Results ==="
+echo "Try these connection methods in order:"
+echo "1. psql -h localhost -U postgres -d student_grades"
+echo "2. psql -d student_grades"
+echo "3. sudo -u postgres psql -d student_grades"
+echo ""
+echo "The C++ application will automatically try these methods."

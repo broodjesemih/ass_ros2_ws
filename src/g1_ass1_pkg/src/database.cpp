@@ -23,17 +23,37 @@ namespace Database
     {
         try 
         {
-            // Connect to PostgreSQL database
-            // Default connection: postgresql://username:password@localhost/dbname
-            // You may need to adjust these connection parameters
-            std::string connection_string = "postgresql://postgres:password@localhost/student_grades";
+            // Connect to PostgreSQL database with fallback options
+            std::string connection_string;
             
-            db = std::make_unique<pqxx::connection>(connection_string);
+            // Try different connection methods in order of preference
+            std::vector<std::string> connection_attempts = {
+                "postgresql://postgres:password@localhost/student_grades",  // Original attempt
+                "postgresql:///student_grades",  // Use local Unix socket with current user
+                "postgresql://localhost/student_grades",  // No password, peer authentication
+                "dbname=student_grades"  // Simple local connection
+            };
             
-            if (!db->is_open()) 
-            {
-                std::cerr << "Can't open database connection" << std::endl;
-                db = nullptr;
+            bool connected = false;
+            for (const auto& conn_str : connection_attempts) {
+                try {
+                    connection_string = conn_str;
+                    std::cout << "[Database] Attempting connection: " << connection_string << std::endl;
+                    db = std::make_unique<pqxx::connection>(connection_string);
+                    
+                    if (db->is_open()) {
+                        std::cout << "[Database] Connected successfully!" << std::endl;
+                        connected = true;
+                        break;
+                    }
+                } catch (const std::exception& e) {
+                    std::cout << "[Database] Connection failed: " << e.what() << std::endl;
+                    db = nullptr;
+                }
+            }
+            
+            if (!connected) {
+                std::cerr << "[Database] All connection attempts failed!" << std::endl;
                 return false;
             }
 
