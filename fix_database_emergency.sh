@@ -30,7 +30,7 @@ sleep 5
 
 # Check if running
 if sudo systemctl is-active --quiet postgresql; then
-    echo "✅ PostgreSQL started successfully"
+    echo "  PostgreSQL started successfully"
     
     # Recreate database as fallback
     echo "5. Ensuring database exists..."
@@ -39,7 +39,7 @@ if sudo systemctl is-active --quiet postgresql; then
     
     # Test connection
     if PGPASSWORD=password psql -h localhost -U postgres -d student_grades -c "SELECT 1;" >/dev/null 2>&1; then
-        echo "✅ Database connection working!"
+        echo "  Database connection working!"
         echo ""
         echo "You can now run:"
         echo "  ./run_system.sh"

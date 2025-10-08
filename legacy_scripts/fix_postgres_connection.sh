@@ -11,13 +11,13 @@ fi
 
 echo "🔧 Checking PostgreSQL service status..."
 if sudo systemctl is-active --quiet postgresql; then
-    echo "✅ PostgreSQL is running"
+    echo "  PostgreSQL is running"
 else
     echo "❌ PostgreSQL is not running. Starting it..."
     sudo systemctl start postgresql
     
     if sudo systemctl is-active --quiet postgresql; then
-        echo "✅ PostgreSQL started successfully"
+        echo "  PostgreSQL started successfully"
     else
         echo "❌ Failed to start PostgreSQL. Checking for issues..."
         
@@ -59,7 +59,7 @@ SOCKET_LOCATIONS=(
 SOCKET_FOUND=false
 for location in "${SOCKET_LOCATIONS[@]}"; do
     if ls "$location"/.s.PGSQL.* >/dev/null 2>&1; then
-        echo "✅ Found PostgreSQL socket in $location"
+        echo "  Found PostgreSQL socket in $location"
         ls -la "$location"/.s.PGSQL.*
         SOCKET_FOUND=true
     fi
@@ -85,7 +85,7 @@ echo "🔧 Testing database connections..."
 # Test 1: TCP connection
 echo "Test 1: TCP connection (localhost:5432)"
 if PGPASSWORD=password psql -h localhost -p 5432 -U postgres -d postgres -c "SELECT 1;" >/dev/null 2>&1; then
-    echo "✅ TCP connection works"
+    echo "  TCP connection works"
 else
     echo "❌ TCP connection failed"
 fi
@@ -93,7 +93,7 @@ fi
 # Test 2: Unix socket with postgres user
 echo "Test 2: Unix socket with postgres user"
 if sudo -u postgres psql -d postgres -c "SELECT 1;" >/dev/null 2>&1; then
-    echo "✅ Unix socket with postgres user works"
+    echo "  Unix socket with postgres user works"
 else
     echo "❌ Unix socket with postgres user failed"
 fi
@@ -101,7 +101,7 @@ fi
 # Test 3: Current user
 echo "Test 3: Current user connection"
 if psql -d postgres -c "SELECT 1;" >/dev/null 2>&1; then
-    echo "✅ Current user connection works"
+    echo "  Current user connection works"
 else
     echo "❌ Current user connection failed"
     
@@ -114,12 +114,12 @@ fi
 echo ""
 echo "🔧 Checking database existence..."
 if sudo -u postgres psql -lqt | cut -d \| -f 1 | grep -qw student_grades; then
-    echo "✅ Database 'student_grades' exists"
+    echo "  Database 'student_grades' exists"
 else
     echo "❌ Database 'student_grades' not found. Creating it..."
     sudo -u postgres createdb student_grades
     if [ $? -eq 0 ]; then
-        echo "✅ Database 'student_grades' created"
+        echo "  Database 'student_grades' created"
     else
         echo "❌ Failed to create database"
     fi
@@ -128,7 +128,7 @@ fi
 echo ""
 echo "🚀 Final connection test..."
 if PGPASSWORD=password psql -h localhost -U postgres -d student_grades -c "SELECT version();" >/dev/null 2>&1; then
-    echo "✅ Everything looks good! The database connection should work now."
+    echo "  Everything looks good! The database connection should work now."
     echo ""
     echo "You can now run:"
     echo "  ./start_system.sh"

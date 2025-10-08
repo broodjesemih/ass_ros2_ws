@@ -127,7 +127,7 @@ private:
                     RCLCPP_WARN(this->get_logger(), "Failed to insert herkansing result: %s/%s = %d", 
                                key.student.c_str(), key.course.c_str(), response->final_cijfer);
                 } else {
-                    RCLCPP_INFO(this->get_logger(), "✅ Successfully saved herkansing result: %s/%s = %d", 
+                    RCLCPP_INFO(this->get_logger(), "Successfully saved herkansing result: %s/%s = %d", 
                                key.student.c_str(), key.course.c_str(), response->final_cijfer);
                 }
             }

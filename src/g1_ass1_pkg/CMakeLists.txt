@@ -113,7 +113,7 @@ if(BUILD_TESTING)
   # STANDAARD: Alleen standalone tests (database + topic communication)
   # Voor alle tests: colcon build -DBUILD_ALL_TESTS=ON
 
-  # ✅ STANDALONE TESTS (always enabled) - These should always pass
+  # STANDALONE TESTS (always enabled) - These should always pass
 
   # Database Tests (standalone, no ROS2 system required)
   ament_add_gtest(test_database test/test_database.cpp)

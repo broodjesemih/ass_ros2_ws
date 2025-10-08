@@ -24,7 +24,7 @@ In plaats van deze 4-5 verschillende scripts te gebruiken:
 Gebruik nu gewoon:
 
 ```bash
-# ✅ Nieuwe manier  
+#   Nieuwe manier  
 ./complete_setup.sh   # Doet alles in één keer
 ./run_system.sh       # Start het systeem
 ```

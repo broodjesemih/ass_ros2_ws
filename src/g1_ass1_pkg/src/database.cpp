@@ -50,7 +50,7 @@ namespace Database
             };
             
             bool connected = false;
-            std::cout << "[Database] 🔍 Searching for PostgreSQL connection..." << std::endl;
+            std::cout << "[Database] Searching for PostgreSQL connection..." << std::endl;
             
             for (size_t i = 0; i < connection_attempts.size(); i++) {
                 try {
@@ -59,8 +59,8 @@ namespace Database
                     db = std::make_unique<pqxx::connection>(connection_string);
                     
                     if (db->is_open()) {
-                        std::cout << "[Database] ✅ Connected successfully!" << std::endl;
-                        std::cout << "[Database] 📡 Using: " << connection_string << std::endl;
+                        std::cout << "[Database] Connected successfully!" << std::endl;
+                        std::cout << "[Database] Using: " << connection_string << std::endl;
                         connected = true;
                         break;
                     }
@@ -70,17 +70,17 @@ namespace Database
                     if (i < 3) {
                         std::string error_msg = e.what();
                         if (error_msg.find("Connection refused") != std::string::npos) {
-                            std::cout << "[Database] ⚠️  Port " << (i == 0 ? "5432" : "5433") << " not available, trying alternatives..." << std::endl;
+                            std::cout << "[Database]  Port " << (i == 0 ? "5432" : "5433") << " not available, trying alternatives..." << std::endl;
                         } else if (error_msg.find("authentication failed") != std::string::npos) {
-                            std::cout << "[Database] ⚠️  Password auth failed on port " << (i == 0 ? "5432" : "5433") << ", trying socket connections..." << std::endl;
+                            std::cout << "[Database]  Password auth failed on port " << (i == 0 ? "5432" : "5433") << ", trying socket connections..." << std::endl;
                         }
                     }
                 }
             }
             
             if (!connected) {
-                std::cerr << "[Database] ❌ Could not establish database connection!" << std::endl;
-                std::cerr << "[Database] 🔧 Quick fixes:" << std::endl;
+                std::cerr << "[Database]  Could not establish database connection!" << std::endl;
+                std::cerr << "[Database]  Quick fixes:" << std::endl;
                 std::cerr << "[Database]    • Check PostgreSQL: sudo systemctl status postgresql" << std::endl;
                 std::cerr << "[Database]    • Start PostgreSQL: sudo systemctl start postgresql" << std::endl;
                 std::cerr << "[Database]    • Run auto-setup: ./complete_setup.sh" << std::endl;
