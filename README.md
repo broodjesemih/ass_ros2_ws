@@ -1,6 +1,6 @@
 # ROS2 Grade Calculator System
 
-Complete ROS2-based grade calculator with PostgreSQL database backend for automated student assessme### Quick Fix:
+Complete ROS2-based grade calculator with PostgreSQL database backend for automated student assessment Quick Fix:
 Most issues can be resolved by running the setup script again:
 ```bash
 ./complete_setup.sh
