@@ -313,12 +313,20 @@ fi
 log_info "Installing ROS2 dependencies..."
 rosdep install --from-paths src --ignore-src -r -y
 
-# Build the project
-log_info "Building project with colcon..."
+# Build the project in correct dependency order
+log_info "Building interface package first..."
+colcon build --packages-select g1_interface_pkg
+
+if [ $? -ne 0 ]; then
+    log_error "Interface package build failed!"
+    exit 1
+fi
+
+log_info "Building main project..."
 colcon build --packages-select $PROJECT_NAME
 
 if [ $? -ne 0 ]; then
-    log_error "Build failed!"
+    log_error "Main project build failed!"
     exit 1
 fi
 
@@ -591,7 +599,7 @@ fi
 if [ -f "install/setup.bash" ]; then
     source install/setup.bash
 else
-    log_error "Workspace not built! Run: colcon build --packages-select g1_ass1_pkg"
+    log_error "Workspace not built! Run: colcon build --packages-select g1_interface_pkg g1_ass1_pkg"
     exit 1
 fi
 
@@ -814,7 +822,7 @@ echo ""
 echo "�🐛 If you encounter other issues:"
 echo "   - Check PostgreSQL: sudo systemctl status postgresql"
 echo "   - Check logs: sudo journalctl -u postgresql"
-echo "   - Rebuild project: colcon build --packages-select $PROJECT_NAME"
+echo "   - Rebuild project: colcon build --packages-select g1_interface_pkg $PROJECT_NAME"
 echo "   - Re-run full setup: ./complete_setup.sh"
 echo ""
 echo "📁 Project files:"
