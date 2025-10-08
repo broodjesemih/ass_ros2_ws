@@ -73,7 +73,9 @@ END \$\$;
 -- Grant privileges
 GRANT ALL PRIVILEGES ON DATABASE student_grades TO postgres;
 GRANT ALL PRIVILEGES ON DATABASE student_grades TO "$CURRENT_USER";
-EOFFIX    # Test after fix 1
+EOFFIX
+    
+    # Test after fix 1
     if PGPASSWORD=password psql -h localhost -U postgres -d student_grades -c "SELECT 1;" >/dev/null 2>&1; then
         log_success "Auto-fix 1 successful!"
         DB_OK=true
