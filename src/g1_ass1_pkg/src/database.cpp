@@ -84,6 +84,9 @@ namespace Database
                 std::cerr << "[Database]    • Check PostgreSQL: sudo systemctl status postgresql" << std::endl;
                 std::cerr << "[Database]    • Start PostgreSQL: sudo systemctl start postgresql" << std::endl;
                 std::cerr << "[Database]    • Run auto-setup: ./complete_setup.sh" << std::endl;
+                
+                // Set db to null to prevent segfaults
+                db = nullptr;
                 return false;
             }
 
