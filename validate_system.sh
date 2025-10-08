@@ -332,6 +332,11 @@ fi
 # Test grade calculation logic
 echo -e "${CYAN}Testing grade calculation logic...${NC}"
 
+# Restart system for service tests (previous test killed it)
+ros2 launch g1_ass1_pkg system.launch.xml >/dev/null 2>&1 &
+GRADE_TEST_PID=$!
+sleep 5  # Wait for services to be ready
+
 # Test Wessel bonus (should get +10 points)
 if response=$(ros2 service call /calculate_final_cijfer g1_interface_pkg/srv/Tentamens '{"student_name": "Wessel", "course_name": "Test", "tentamen_cijfers": [50, 50, 50]}' 2>/dev/null); then
     if echo "$response" | grep -q "final_cijfer.*60"; then
@@ -353,6 +358,10 @@ if response=$(ros2 service call /calculate_final_cijfer g1_interface_pkg/srv/Ten
 else
     test_result "Grade Boundaries" "FAIL" "Cannot test grade boundaries"
 fi
+
+# Stop the grade test system
+kill $GRADE_TEST_PID 2>/dev/null
+wait $GRADE_TEST_PID 2>/dev/null
 
 echo ""
 

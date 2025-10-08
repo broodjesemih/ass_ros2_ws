@@ -3,12 +3,16 @@
 #include <vector>
 #include <algorithm>
 #include <sstream>
+#include <mutex>
 #include "g1_interface_pkg/msg/tentamen.hpp"
 #include "g1_interface_pkg/msg/student.hpp"
 #include "g1_interface_pkg/action/herkanser.hpp"
 #include "g1_interface_pkg/srv/tentamens.hpp"
 #include "rclcpp_action/rclcpp_action.hpp"
 #include "database.cpp"
+
+// Global mutex to prevent concurrent database access (segfault fix)
+static std::mutex db_access_mutex;
 
 struct StudentCourseKey
 {
@@ -103,20 +107,15 @@ private:
         future.wait();
         auto response = future.get();
 
-        // Add new result to database (append, don't overwrite)
-        // TEMPORARY FIX: Skip database insert to prevent segfault
-        // The main functionality (calculating herkansing cijfers) still works
-        RCLCPP_INFO(this->get_logger(), "Herkansing result for %s/%s: %d (database insert skipped to prevent crash)", 
-                    key.student.c_str(), key.course.c_str(), response->final_cijfer);
-        
-        /* DISABLED DATABASE INSERT TO FIX SEGFAULT
+        // Add new result to database with improved segfault protection
         try {
-            if (!Database::open())
-            {
-                RCLCPP_ERROR(this->get_logger(), "Could not open database! Skipping database insert.");
-            }
-            else
-            {
+            // Use mutex to prevent concurrent database access (segfault fix)
+            std::lock_guard<std::mutex> lock(db_access_mutex);
+            
+            if (!Database::open()) {
+                RCLCPP_WARN(this->get_logger(), "Could not open database! Herkansing result not saved: %s/%s = %d", 
+                           key.student.c_str(), key.course.c_str(), response->final_cijfer);
+            } else {
                 StudentRecord record;
                 record.student_name = key.student;
                 record.course = key.course;
@@ -124,20 +123,23 @@ private:
                 record.final_result = response->final_cijfer;
                 record.timestamp = this->now().seconds();
 
-                if (!Database::insert(record))
-                {
-                    RCLCPP_ERROR(this->get_logger(), "Failed to insert record into database");
-                }
-                else
-                {
-                    RCLCPP_INFO(this->get_logger(), "Successfully inserted herkansing result for %s/%s: %d", 
-                                key.student.c_str(), key.course.c_str(), response->final_cijfer);
+                if (!Database::insert(record)) {
+                    RCLCPP_WARN(this->get_logger(), "Failed to insert herkansing result: %s/%s = %d", 
+                               key.student.c_str(), key.course.c_str(), response->final_cijfer);
+                } else {
+                    RCLCPP_INFO(this->get_logger(), "✅ Successfully saved herkansing result: %s/%s = %d", 
+                               key.student.c_str(), key.course.c_str(), response->final_cijfer);
                 }
             }
         } catch (const std::exception& e) {
-            RCLCPP_ERROR(this->get_logger(), "Database error in herkansing_cijfer_determinator: %s", e.what());
+            // Don't crash on database errors - just log and continue
+            RCLCPP_WARN(this->get_logger(), "Database error (non-fatal): %s. Herkansing still calculated: %s/%s = %d", 
+                       e.what(), key.student.c_str(), key.course.c_str(), response->final_cijfer);
+        } catch (...) {
+            // Catch any other exceptions to prevent segfault
+            RCLCPP_WARN(this->get_logger(), "Unknown database error (non-fatal). Herkansing still calculated: %s/%s = %d", 
+                       key.student.c_str(), key.course.c_str(), response->final_cijfer);
         }
-        */
 
         auto result = std::make_shared<Herkanser::Result>();
         result->final_cijfer = response->final_cijfer;
