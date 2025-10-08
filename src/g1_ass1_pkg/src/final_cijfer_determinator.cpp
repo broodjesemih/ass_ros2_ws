@@ -34,7 +34,7 @@ class FinalCijferDeterminator : public rclcpp::Node
 public:
     FinalCijferDeterminator() : Node("final_cijfer_determinator")
     {
-        RCLCPP_INFO(this->get_logger(), "final_cijfer_determinator gestart!");
+        RCLCPP_INFO(this->get_logger(), "final_cijfer_determinator started!");
         tentamen_sub_ = this->create_subscription<g1_interface_pkg::msg::Tentamen>(
             "tentamen_results", 10, std::bind(&FinalCijferDeterminator::tentamen_callback, this, std::placeholders::_1));
         cijfer_client_ = this->create_client<g1_interface_pkg::srv::Tentamens>("calculate_final_cijfer");
@@ -52,7 +52,7 @@ private:
         StudentCourseKey key{msg->student_name, msg->course_name};
         tentamen_map_[key].push_back(msg->tentamen_cijfer);
 
-        RCLCPP_INFO(this->get_logger(), "Ontvangen tentamen: %s/%s %d", msg->student_name.c_str(), msg->course_name.c_str(), msg->tentamen_cijfer);
+        RCLCPP_INFO(this->get_logger(), "Received exam: %s/%s %d", msg->student_name.c_str(), msg->course_name.c_str(), msg->tentamen_cijfer);
 
         // Check if we have enough results (simulate: 3 tentamens per course)
         if (tentamen_map_[key].size() >= 3)
@@ -62,13 +62,13 @@ private:
             request->course_name = key.course;
             request->tentamen_cijfers = tentamen_map_[key];
 
-            // Gebruik een lambda als callback voor async_send_request
+            // Use a lambda as callback for async_send_request
             auto response_callback = [this, key](rclcpp::Client<g1_interface_pkg::srv::Tentamens>::SharedFuture result_future)
             {
                 auto response = result_future.get();
 
                 RCLCPP_INFO(this->get_logger(),
-                            "Schrijf naar database: %s,%s,%zu,%d,%s",
+                            "Write to database: %s,%s,%zu,%d,%s",
                             key.student.c_str(),
                             key.course.c_str(),
                             tentamen_map_[key].size(),

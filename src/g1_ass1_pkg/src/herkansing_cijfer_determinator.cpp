@@ -143,7 +143,7 @@ private:
 
         auto result = std::make_shared<Herkanser::Result>();
         result->final_cijfer = response->final_cijfer;
-        result->message = "Nieuwe herkansing cijfer toegevoegd";
+        result->message = "New retake grade added";
         goal_handle->succeed(result);
     }
 };

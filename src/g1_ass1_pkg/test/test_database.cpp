@@ -8,9 +8,9 @@
 #include <ctime>
 
 /**
- * Unit tests voor Database operaties
+ * Unit tests for Database operaties
  * 
- * Deze tests valideren:
+ * These tests validate:
  * - Database connectiviteit
  * - CRUD operaties (Create, Read, Update, Delete)
  * - Data integriteit
@@ -23,7 +23,7 @@ class DatabaseTest : public ::testing::Test
 protected:
     void SetUp() override 
     {
-        // Test database connection strings (in volgorde van prioriteit)
+        // Test database connection strings (in order of priority)
         std::vector<std::string> connection_strings = {
             "postgresql://postgres:password@localhost:5432/student_grades",
             "host=localhost port=5432 dbname=student_grades user=postgres password=password",
@@ -43,14 +43,14 @@ protected:
                     break;
                 }
             } catch (const std::exception&) {
-                // Probeer volgende connection string
+                // Try next connection string
                 continue;
             }
         }
         
-        ASSERT_TRUE(connected) << "Kan niet verbinden met database. Zorg dat PostgreSQL draait en database bestaat.";
+        ASSERT_TRUE(connected) << "Kan niet verbinden met database. Zorg dat PostgreSQL draait en database exists.";
         
-        // Maak test table indien niet bestaat
+        // Create test table if not exists
         setup_test_table();
         
         // Clear test data
@@ -71,7 +71,7 @@ private:
         try {
             pqxx::work txn(*connection_);
             
-            // Maak test table (vergelijkbaar met production table)
+            // Create test table (comparable to production table)
             txn.exec(R"(
                 CREATE TABLE IF NOT EXISTS test_student_results (
                     id SERIAL PRIMARY KEY,
@@ -105,7 +105,7 @@ protected:
     std::unique_ptr<pqxx::connection> connection_;
     std::string connection_string_;
     
-    // Helper functie om test record in te voegen
+    // Helper function to test record in te voegen
     bool insert_test_record(const std::string& student, const std::string& course, 
                            int final_cijfer, int timestamp = 1234567890) {
         try {
@@ -122,7 +122,7 @@ protected:
         }
     }
     
-    // Helper functie om record op te halen
+    // Helper function to record op te halen
     std::tuple<std::string, std::string, int> get_test_record(const std::string& student, const std::string& course) {
         pqxx::work txn(*connection_);
         auto result = txn.exec_params(
@@ -152,7 +152,7 @@ TEST_F(DatabaseTest, TestDatabaseConnection)
     EXPECT_TRUE(connection_->is_open()) << "Database connectie zou open moeten zijn";
     EXPECT_FALSE(connection_string_.empty()) << "Connection string zou niet leeg moeten zijn";
     
-    // Test basis query
+    // Test basic query
     try {
         pqxx::work txn(*connection_);
         auto result = txn.exec("SELECT version()");
@@ -175,11 +175,11 @@ TEST_F(DatabaseTest, TestDatabaseConnection)
  */
 TEST_F(DatabaseTest, TestStudentRecordInsertion)
 {
-    // Test basis insertion
+    // Test basic insertion
     bool success = insert_test_record("Test Student 1", "Math", 85);
     EXPECT_TRUE(success) << "Student record insertion zou moeten lukken";
     
-    // Verificeer dat record is ingevoegd
+    // Verify that record was inserted
     auto [student, course, cijfer] = get_test_record("Test Student 1", "Math");
     EXPECT_EQ(student, "Test Student 1");
     EXPECT_EQ(course, "Math");
@@ -188,18 +188,18 @@ TEST_F(DatabaseTest, TestStudentRecordInsertion)
 
 /**
  * Test 3: Wessel Tip special record  
- * Test database operations specifiek voor Wessel (met unique name per test run)
+ * Test database operations specifiek for Wessel (met unique name per test run)
  */
 TEST_F(DatabaseTest, TestWesselTipRecord)
 {
-    // Use unique name om conflicts te voorkomen
+    // Use unique name to avoid conflicts
     std::string unique_name = "Wessel Tip Test " + std::to_string(std::time(nullptr));
     
     // Insert Wessel record
     bool success = insert_test_record(unique_name, "ROS2", 60);
     EXPECT_TRUE(success) << "Wessel record insertion zou moeten lukken";
     
-    // Verificeer Wessel's data
+    // Verify Wessel's data
     auto [student, course, cijfer] = get_test_record(unique_name, "ROS2");
     EXPECT_EQ(student, unique_name);
     EXPECT_EQ(course, "ROS2");
@@ -216,16 +216,16 @@ TEST_F(DatabaseTest, TestMultipleStudentRecords)
         {"Test Student A", "Math", 75},
         {"Test Student B", "Physics", 80},
         {"Test Student C", "Chemistry", 90},
-        {"Test Student A", "Physics", 85}, // Zelfde student, andere course
+        {"Test Student A", "Physics", 85}, // Same student, different course
     };
     
-    // Insert alle records
+    // Insert all records
     for (const auto& [student, course, cijfer] : test_data) {
         bool success = insert_test_record(student, course, cijfer);
         EXPECT_TRUE(success) << "Record insertion failed for " << student << "/" << course;
     }
     
-    // Verificeer alle records
+    // Verify all records
     for (const auto& [expected_student, expected_course, expected_cijfer] : test_data) {
         auto [student, course, cijfer] = get_test_record(expected_student, expected_course);
         EXPECT_EQ(student, expected_student);
@@ -248,14 +248,14 @@ TEST_F(DatabaseTest, TestUniqueConstraint)
     bool success2 = insert_test_record("Test Unique", "Math", 85);
     EXPECT_FALSE(success2) << "Duplicate record insertion zou moeten falen";
     
-    // Verificeer dat oorspronkelijke record behouden is
+    // Verify that oorspronkelijke record behouden is
     auto [student, course, cijfer] = get_test_record("Test Unique", "Math");
     EXPECT_EQ(cijfer, 75) << "Oorspronkelijke cijfer zou behouden moeten blijven";
 }
 
 /**
  * Test 6: Herkansing updates
- * Test update operations voor herkansing cijfers
+ * Test update operations for herkansing cijfers
  */
 TEST_F(DatabaseTest, TestHerkansingUpdates)
 {
@@ -272,7 +272,7 @@ TEST_F(DatabaseTest, TestHerkansingUpdates)
         );
         txn.commit();
         
-        // Verificeer update
+        // Verify update
         pqxx::work read_txn(*connection_);
         auto result = read_txn.exec_params(
             "SELECT final_cijfer, herkansing_cijfer FROM test_student_results "
@@ -327,7 +327,7 @@ TEST_F(DatabaseTest, TestConcurrentDatabaseAccess)
     std::vector<std::thread> threads;
     std::atomic<int> successful_insertions(0);
     
-    // Start meerdere threads die gelijktijdig database operaties uitvoeren
+    // Start multiple threads that perform concurrent database operations
     for (int t = 0; t < num_threads; ++t) {
         threads.emplace_back([this, t, records_per_thread, &successful_insertions]() {
             try {
@@ -355,12 +355,12 @@ TEST_F(DatabaseTest, TestConcurrentDatabaseAccess)
         });
     }
     
-    // Wacht op alle threads
+    // Wait for alle threads
     for (auto& thread : threads) {
         thread.join();
     }
     
-    // Verificeer dat meeste operaties succesvol waren
+    // Verify that most operations were successful
     EXPECT_GE(successful_insertions.load(), num_threads * records_per_thread * 0.8)
         << "Minstens 80% van concurrent operations zouden moeten slagen";
 }
@@ -389,7 +389,7 @@ TEST_F(DatabaseTest, TestTransactionRollback)
             txn.abort();
         }
         
-        // Verificeer dat record NIET is ingevoegd (door rollback)
+        // Verify that record NIET is ingevoegd (door rollback)
         pqxx::work check_txn(*connection_);
         auto result = check_txn.exec_params(
             "SELECT COUNT(*) FROM test_student_results WHERE student_name = $1",
@@ -406,7 +406,7 @@ TEST_F(DatabaseTest, TestTransactionRollback)
 
 /**
  * Test 10: Performance baseline
- * Test database performance voor batch operations
+ * Test database performance for batch operations
  */
 TEST_F(DatabaseTest, TestPerformanceBaseline)
 {
@@ -432,7 +432,7 @@ TEST_F(DatabaseTest, TestPerformanceBaseline)
         auto end_time = std::chrono::high_resolution_clock::now();
         auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
         
-        // Performance baseline: 100 insertions zou binnen 5 seconden moeten lukken
+        // Performance baseline: 100 insertions zou within 5 seconds moeten lukken
         EXPECT_LT(duration.count(), 5000) << "Batch insertion performance te langzaam: " << duration.count() << "ms";
         
         std::cout << "Performance baseline: " << batch_size << " records in " << duration.count() << "ms" << std::endl;

@@ -7,9 +7,9 @@
 #include "g1_interface_pkg/action/herkanser.hpp"
 
 /**
- * Unit tests voor de Herkansing Action Server
+ * Unit tests for de Herkansing Action Server
  * 
- * Deze tests valideren:
+ * These tests validate:
  * - Action server goal handling
  * - Feedback publishing tijdens action
  * - Result correctheid na completion
@@ -45,7 +45,7 @@ protected:
         rclcpp::shutdown();
     }
 
-    // Helper functie om action goal te versturen
+    // Helper function to action goal te versturen
     std::shared_ptr<GoalHandleHerkanser> send_goal(
         const std::string& student_name,
         const std::string& course_name)
@@ -70,7 +70,7 @@ protected:
         
         auto goal_handle_future = action_client_->async_send_goal(goal_msg, send_goal_options);
         
-        // Wacht op goal acceptance
+        // Wait for goal acceptance
         if (rclcpp::spin_until_future_complete(test_node_, goal_handle_future, std::chrono::seconds(5)) == 
             rclcpp::FutureReturnCode::SUCCESS) {
             return goal_handle_future.get();
@@ -86,7 +86,7 @@ protected:
 
 /**
  * Test 1: Basis herkansing action flow
- * Verstuur goal en wacht op succesvolle completion
+ * Send goal and wait for successful completion
  */
 TEST_F(HerkansingActionTest, TestBasicHerkansingFlow)
 {
@@ -94,7 +94,7 @@ TEST_F(HerkansingActionTest, TestBasicHerkansingFlow)
     ASSERT_NE(goal_handle, nullptr) << "Goal werd niet geaccepteerd door action server";
     ASSERT_NE(goal_handle, nullptr) << "Goal should be accepted";
     
-    // Wacht op completion (herkansing duurt normaal ~3 seconden)
+    // Wait for completion (herkansing duurt normaal ~3 seconden)
     auto result_future = action_client_->async_get_result(goal_handle);
     auto status = rclcpp::spin_until_future_complete(test_node_, result_future, std::chrono::seconds(10));
     
@@ -106,7 +106,7 @@ TEST_F(HerkansingActionTest, TestBasicHerkansingFlow)
     auto result = wrapped_result.result;
     ASSERT_NE(result, nullptr) << "Result should not be null";
     
-    // Verificeer result fields
+    // Verify result fields
     EXPECT_GE(result->final_cijfer, 10) << "Final cijfer should be at least 10";
     EXPECT_LE(result->final_cijfer, 100) << "Final cijfer should be at most 100";
     EXPECT_FALSE(result->message.empty()) << "Result message should not be empty";
@@ -114,18 +114,18 @@ TEST_F(HerkansingActionTest, TestBasicHerkansingFlow)
 
 /**
  * Test 2: Feedback tijdens action execution
- * Verificeer dat feedback wordt gepubliceerd tijdens uitvoering
+ * Verify that feedback is published during execution
  */
 TEST_F(HerkansingActionTest, TestFeedbackDuringExecution)
 {
     auto goal_handle = send_goal("Feedback Student", "Physics");
     ASSERT_NE(goal_handle, nullptr);
     
-    // Wacht op completion
+    // Wait for completion
     auto result_future = action_client_->async_get_result(goal_handle);
     rclcpp::spin_until_future_complete(test_node_, result_future, std::chrono::seconds(10));
     
-    // Verificeer dat we feedback hebben ontvangen
+    // Verify that we feedback hebben received
     EXPECT_GT(received_feedback_.size(), 0) << "Should receive feedback during action execution";
     
     // Feedback should show progress
@@ -144,7 +144,7 @@ TEST_F(HerkansingActionTest, TestFeedbackDuringExecution)
 
 /**
  * Test 3: Wessel Tip herkansing
- * Test speciale behandeling voor Wessel (met bonus)
+ * Test speciale behandeling for Wessel (met bonus)
  */
 TEST_F(HerkansingActionTest, TestWesselHerkansing)
 {
@@ -159,16 +159,16 @@ TEST_F(HerkansingActionTest, TestWesselHerkansing)
     auto wrapped_result = result_future.get();
     auto result = wrapped_result.result;
     
-    // Wessel zou een redelijk cijfer moeten krijgen (met zijn +10 bonus)
+    // Wessel zou een redelijk cijfer should receive (met zijn +10 bonus)
     EXPECT_GE(result->final_cijfer, 10) << "Wessel should get at least minimum grade";
     
     // Als originele cijfers laag waren, zou bonus verschil moeten maken
-    // (Dit hangt af van de implementatie - test aanpassen aan werkelijke logica)
+    // (Dit hangt af van de implementation - test aanpassen aan werkelijke logica)
 }
 
 /**
  * Test 4: Gelijktijdige herkansingen
- * Test meerdere studenten tegelijkertijd
+ * Test meerdere studenten simultaneously
  */
 TEST_F(HerkansingActionTest, TestConcurrentHerkansingen)
 {
@@ -177,7 +177,7 @@ TEST_F(HerkansingActionTest, TestConcurrentHerkansingen)
     std::vector<std::shared_ptr<GoalHandleHerkanser>> goal_handles;
     std::vector<std::shared_future<GoalHandleHerkanser::WrappedResult>> result_futures;
     
-    // Start meerdere herkansingen tegelijkertijd
+    // Start meerdere herkansingen simultaneously
     for (size_t i = 0; i < students.size(); ++i) {
         auto goal_handle = send_goal(students[i], courses[i]);
         ASSERT_NE(goal_handle, nullptr) << "Goal " << i << " not accepted";
@@ -186,7 +186,7 @@ TEST_F(HerkansingActionTest, TestConcurrentHerkansingen)
         result_futures.push_back(action_client_->async_get_result(goal_handle));
     }
     
-    // Wacht op alle completions
+    // Wait for alle completions
     for (size_t i = 0; i < result_futures.size(); ++i) {
         auto status = rclcpp::spin_until_future_complete(
             test_node_, result_futures[i], std::chrono::seconds(15));
@@ -213,7 +213,7 @@ TEST_F(HerkansingActionTest, TestActionCancellation)
     auto goal_handle = send_goal("Cancel Student", "Math");
     ASSERT_NE(goal_handle, nullptr);
     
-    // Wacht even tot action is gestart
+    // Wait a moment until action is started
     std::this_thread::sleep_for(std::chrono::milliseconds(500));
     
     // Cancel de action
@@ -228,7 +228,7 @@ TEST_F(HerkansingActionTest, TestActionCancellation)
     EXPECT_EQ(cancel_response->return_code, action_msgs::srv::CancelGoal::Response::ERROR_NONE)
         << "Cancel should be accepted";
     
-    // Wacht op final result (should be canceled)
+    // Wait for final result (should be canceled)
     auto result_future = action_client_->async_get_result(goal_handle);
     rclcpp::spin_until_future_complete(test_node_, result_future, std::chrono::seconds(5));
     
@@ -239,24 +239,24 @@ TEST_F(HerkansingActionTest, TestActionCancellation)
 
 /**
  * Test 6: Invalid input handling
- * Test error handling voor ongeldige input
+ * Test error handling for ongeldige input
  */
 TEST_F(HerkansingActionTest, TestInvalidInputHandling)
 {
-    // Test lege student naam
+    // Test lege student name
     auto goal_handle1 = send_goal("", "Math");
     if (goal_handle1 != nullptr) {
         auto result_future = action_client_->async_get_result(goal_handle1);
         rclcpp::spin_until_future_complete(test_node_, result_future, std::chrono::seconds(10));
         
-        // Action kan succesvol zijn of falen - beide zijn acceptable voor lege input
+        // Action can succeed or fail - both are acceptable for empty input
         auto wrapped_result = result_future.get();
         EXPECT_TRUE(wrapped_result.code == rclcpp_action::ResultCode::SUCCEEDED || 
                    wrapped_result.code == rclcpp_action::ResultCode::ABORTED)
             << "Empty student name should be handled gracefully";
     }
     
-    // Test lege course naam
+    // Test lege course name
     auto goal_handle2 = send_goal("Student", "");
     if (goal_handle2 != nullptr) {
         auto result_future = action_client_->async_get_result(goal_handle2);
@@ -275,7 +275,7 @@ TEST_F(HerkansingActionTest, TestInvalidInputHandling)
  */
 TEST_F(HerkansingActionTest, TestStressHerkansingen)
 {
-    const int stress_count = 5; // Beperkt aantal voor unit test
+    const int stress_count = 5; // Beperkt aantal for unit test
     std::vector<std::shared_future<GoalHandleHerkanser::WrappedResult>> results;
     
     for (int i = 0; i < stress_count; ++i) {
@@ -288,7 +288,7 @@ TEST_F(HerkansingActionTest, TestStressHerkansingen)
         }
     }
     
-    // Verificeer dat minstens de meeste actions succesvol zijn
+    // Verify that at least most actions are successful
     int successful_actions = 0;
     for (auto& result_future : results) {
         auto status = rclcpp::spin_until_future_complete(
@@ -302,7 +302,7 @@ TEST_F(HerkansingActionTest, TestStressHerkansingen)
         }
     }
     
-    // Verwacht dat minstens 80% van de actions succesvol is
+    // Expect at least 80% of actions to be successful
     double success_rate = static_cast<double>(successful_actions) / results.size();
     EXPECT_GE(success_rate, 0.8) << "Success rate should be at least 80% under stress";
 }

@@ -14,7 +14,7 @@ log_error() { echo -e "${RED}[ERROR]${NC} $1"; }
 
 cd "$(dirname "$0")"
 
-echo "🚀 Starting ROS2 Grade Calculator System..."
+echo "Starting ROS2 Grade Calculator System..."
 echo ""
 
 # Check PostgreSQL service

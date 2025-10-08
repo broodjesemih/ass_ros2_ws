@@ -10,9 +10,9 @@
 #include "g1_interface_pkg/action/herkanser.hpp"
 
 /**
- * Integration tests voor het complete ROS2 Grade Calculator systeem
+ * Integration tests for het complete ROS2 Grade Calculator systeem
  * 
- * Deze tests valideren:
+ * These tests validate:
  * - End-to-end workflow (tentamen → berekening → database → herkansing)
  * - Inter-node communicatie
  * - System-level requirements compliance
@@ -28,10 +28,10 @@ protected:
         rclcpp::init(0, nullptr);
         test_node_ = rclcpp::Node::make_shared("test_system_integration");
         
-        // Wacht even voor node discovery
+        // Wacht even for node discovery
         std::this_thread::sleep_for(std::chrono::seconds(2));
         
-        // Verificeer dat alle vereiste nodes draaien
+        // Verify that alle vereiste nodes draaien
         auto node_names = test_node_->get_node_names();
         
         required_nodes_ = {
@@ -62,19 +62,19 @@ protected:
         rclcpp::shutdown();
     }
 
-    // Helper functie om te wachten op system stabiliteit
+    // Helper function to te wachten op system stabiliteit
     void wait_for_system_stability(int seconds = 5)
     {
         std::this_thread::sleep_for(std::chrono::seconds(seconds));
         
-        // Spin node om berichten te verwerken
+        // Spin node om messages te process
         for (int i = 0; i < 10; ++i) {
             rclcpp::spin_some(test_node_);
             std::this_thread::sleep_for(std::chrono::milliseconds(100));
         }
     }
 
-    // Helper functie om actieve topics te controleren  
+    // Helper function to check active topics  
     std::vector<std::string> get_active_topics()
     {
         auto topic_map = test_node_->get_topic_names_and_types();
@@ -85,7 +85,7 @@ protected:
         return topics;
     }
 
-    // Helper functie om actieve services te controleren
+    // Helper function to check active services
     std::vector<std::string> get_active_services() 
     {
         auto service_map = test_node_->get_service_names_and_types();
@@ -103,7 +103,7 @@ protected:
 
 /**
  * Test 1: System startup en node availability
- * Verificeer dat alle vereiste nodes actief zijn
+ * Verificeer that all vereiste nodes actief zijn
  */
 TEST_F(SystemIntegrationTest, TestSystemStartupAndNodeAvailability)
 {
@@ -117,14 +117,14 @@ TEST_F(SystemIntegrationTest, TestSystemStartupAndNodeAvailability)
             return missing_str;
         }();
 
-    // Verificeer minimale node count
+    // Verify minimale node count
     auto node_names = test_node_->get_node_names();
     EXPECT_GE(node_names.size(), 5) << "Should have at least 5 nodes running (excluding test node)";
 }
 
 /**
  * Test 2: ROS2 Communication Infrastructure
- * Verificeer dat alle vereiste topics en services beschikbaar zijn
+ * Verificeer that all vereiste topics en services beschikbaar zijn
  */
 TEST_F(SystemIntegrationTest, TestCommunicationInfrastructure)
 {
@@ -171,13 +171,13 @@ TEST_F(SystemIntegrationTest, TestCommunicationInfrastructure)
  */
 TEST_F(SystemIntegrationTest, TestEndToEndGradeCalculation)
 {
-    // Maak service client voor cijfer calculator
+    // Maak service client for cijfer calculator
     auto cijfer_client = test_node_->create_client<g1_interface_pkg::srv::Tentamens>("calculate_final_cijfer");
     
     ASSERT_TRUE(cijfer_client->wait_for_service(std::chrono::seconds(5))) 
         << "Cijfer calculator service niet beschikbaar";
     
-    // Test normale student
+    // Test normal student
     {
         auto request = std::make_shared<g1_interface_pkg::srv::Tentamens::Request>();
         request->student_name = "Integration Test Student";
@@ -223,7 +223,7 @@ TEST_F(SystemIntegrationTest, TestHerkansingActionIntegration)
     ASSERT_TRUE(action_client->wait_for_action_server(std::chrono::seconds(10)))
         << "Herkansing action server niet beschikbaar";
     
-    // Test herkansing voor failed student
+    // Test herkansing for failed student
     auto goal_msg = g1_interface_pkg::action::Herkanser::Goal();
     goal_msg.student_name = "Integration Failed Student";
     goal_msg.course_name = "SystemTest";
@@ -240,7 +240,7 @@ TEST_F(SystemIntegrationTest, TestHerkansingActionIntegration)
     
     auto goal_handle_future = action_client->async_send_goal(goal_msg, send_goal_options);
     
-    // Wacht op goal acceptance
+    // Wait for goal acceptance
     auto goal_handle_status = rclcpp::spin_until_future_complete(
         test_node_, goal_handle_future, std::chrono::seconds(5));
     
@@ -249,7 +249,7 @@ TEST_F(SystemIntegrationTest, TestHerkansingActionIntegration)
     auto goal_handle = goal_handle_future.get();
     ASSERT_NE(goal_handle, nullptr) << "Goal was not accepted";
     
-    // Wacht op completion
+    // Wait for completion
     auto result_future = action_client->async_get_result(goal_handle);
     auto result_status = rclcpp::spin_until_future_complete(
         test_node_, result_future, std::chrono::seconds(15));
@@ -279,7 +279,7 @@ TEST_F(SystemIntegrationTest, TestSystemPerformanceUnderLoad)
     
     auto start_time = std::chrono::high_resolution_clock::now();
     
-    // Verstuur meerdere requests gelijktijdig
+    // Send multiple requests gelijktijdig
     for (int i = 0; i < concurrent_requests; ++i) {
         auto request = std::make_shared<g1_interface_pkg::srv::Tentamens::Request>();
         request->student_name = "Load Test Student " + std::to_string(i);
@@ -289,7 +289,7 @@ TEST_F(SystemIntegrationTest, TestSystemPerformanceUnderLoad)
         futures.push_back(cijfer_client->async_send_request(request).future);
     }
     
-    // Wacht op alle responses
+    // Wait for all responses
     int successful_requests = 0;
     for (auto& future : futures) {
         auto status = rclcpp::spin_until_future_complete(test_node_, future, std::chrono::seconds(10));
@@ -421,11 +421,11 @@ TEST_F(SystemIntegrationTest, TestErrorRecoveryAndResilience)
  */
 TEST_F(SystemIntegrationTest, TestSystemShutdownBehavior)
 {
-    // Deze test is meer informatief - we testen dat nodes nog steeds reageren
+    // This test is more informative - we test that nodes still respond
     auto cijfer_client = test_node_->create_client<g1_interface_pkg::srv::Tentamens>("calculate_final_cijfer");
     
     if (cijfer_client->wait_for_service(std::chrono::milliseconds(1000))) {
-        // Test dat service nog steeds werkt voordat we shutdown testen
+        // Test that service still works before we test shutdown
         auto request = std::make_shared<g1_interface_pkg::srv::Tentamens::Request>();
         request->student_name = "Shutdown Test";
         request->course_name = "Final";
