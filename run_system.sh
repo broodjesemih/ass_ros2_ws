@@ -55,21 +55,25 @@ done
 if [ "$DB_OK" = false ]; then
     log_warning "Database connection issues detected - attempting auto-fix..."
     
-    # Auto-fix attempt 1: Check if database exists and create user/password
-    log_info "Auto-fix 1/3: Setting up database and user..."
-    sudo -u postgres psql << 'EOFFIX' 2>/dev/null || log_warning "Could not access postgres user directly"
+        # Auto-fix attempt 1: Check if database exists and create user/password
+    CURRENT_USER=$(whoami)
+    log_info "Auto-fix 1/3: Setting up database and user ($CURRENT_USER)..."
+    sudo -u postgres psql << EOFFIX 2>/dev/null || log_warning "Could not access postgres user directly"
 -- Create database if it doesn't exist
 CREATE DATABASE IF NOT EXISTS student_grades;
 -- Ensure postgres user exists with correct password
 ALTER USER postgres PASSWORD 'password';
 -- Create current user as superuser
-CREATE USER nout WITH SUPERUSER;
+DO \$\$ 
+BEGIN
+    IF NOT EXISTS (SELECT FROM pg_catalog.pg_user WHERE usename = '$CURRENT_USER') THEN
+        CREATE USER "$CURRENT_USER" WITH SUPERUSER;
+    END IF;
+END \$\$;
 -- Grant privileges
 GRANT ALL PRIVILEGES ON DATABASE student_grades TO postgres;
-GRANT ALL PRIVILEGES ON DATABASE student_grades TO nout;
-EOFFIX
-
-    # Test after fix 1
+GRANT ALL PRIVILEGES ON DATABASE student_grades TO "$CURRENT_USER";
+EOFFIX    # Test after fix 1
     if PGPASSWORD=password psql -h localhost -U postgres -d student_grades -c "SELECT 1;" >/dev/null 2>&1; then
         log_success "Auto-fix 1 successful!"
         DB_OK=true

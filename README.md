@@ -2,6 +2,15 @@
 
 Een complete ROS2-gebaseerde cijfer calculator met PostgreSQL database backend.
 
+## 🌍 Universeel Compatible 
+
+Dit systeem werkt **out-of-the-box** op elke Linux machine:
+- ✅ **Auto-detecteert** je gebruikersnaam 
+- ✅ **Auto-detecteert** je Linux distributie
+- ✅ **Auto-configureert** database voor jouw systeem
+- ✅ **Geen hardcoded** gebruikersnamen of paden
+- ✅ **Clone en run** - dat is alles!
+
 ## 🚀 Quick Start (Een script doet alles!)
 
 ```bash

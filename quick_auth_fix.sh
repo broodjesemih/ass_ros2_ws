@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # =============================================================================
-# Quick PostgreSQL Auth Fix for ROS2 Grade Calculator
+# Quick PostgreSQL# Create current user  
+sudo -u postgres createuser "$CURRENT_USER" --superuser 2>/dev/null || true
+sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE student_grades TO "$CURRENT_USER";" 2>/dev/null || trueor ROS2 Grade Calculator
 # =============================================================================
 # This script specifically fixes the password authentication and socket issues
 # that cause "password authentication failed" and "socket not found" errors
@@ -102,7 +104,7 @@ fi
 log_info "Setting up database and users..."
 
 # Connect as postgres system user and set up everything
-sudo -u postgres psql << 'EOFSQL'
+sudo -u postgres psql << EOFSQL
 -- Set password for postgres user
 ALTER USER postgres PASSWORD 'password';
 
@@ -110,16 +112,16 @@ ALTER USER postgres PASSWORD 'password';
 CREATE DATABASE IF NOT EXISTS student_grades;
 
 -- Create current user if not exists
-DO $$ 
+DO \$\$ 
 BEGIN
-    IF NOT EXISTS (SELECT FROM pg_catalog.pg_user WHERE usename = 'nout') THEN
-        CREATE USER nout WITH SUPERUSER CREATEDB CREATEROLE LOGIN;
+    IF NOT EXISTS (SELECT FROM pg_catalog.pg_user WHERE usename = '$CURRENT_USER') THEN
+        CREATE USER "$CURRENT_USER" WITH SUPERUSER CREATEDB CREATEROLE LOGIN;
     END IF;
-END $$;
+END \$\$;
 
 -- Grant permissions
 GRANT ALL PRIVILEGES ON DATABASE student_grades TO postgres;
-GRANT ALL PRIVILEGES ON DATABASE student_grades TO nout;
+GRANT ALL PRIVILEGES ON DATABASE student_grades TO "$CURRENT_USER";
 
 -- Show success
 \echo 'Database setup completed!'

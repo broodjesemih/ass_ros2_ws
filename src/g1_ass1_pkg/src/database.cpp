@@ -26,14 +26,23 @@ namespace Database
             // Connect to PostgreSQL database with fallback options
             std::string connection_string;
             
+            // Get current system user for universal compatibility
+            std::string current_user = getenv("USER") ? getenv("USER") : "postgres";
+            
             // Try different connection methods in order of preference
             std::vector<std::string> connection_attempts = {
-                "postgresql://postgres:password@localhost:5432/student_grades",  // TCP with explicit port
-                "host=localhost port=5432 dbname=student_grades user=postgres password=password",  // libpq format
-                "host=/var/run/postgresql dbname=student_grades user=postgres",  // Unix socket with user
-                "host=/tmp dbname=student_grades user=postgres",  // Alternative socket location
-                "dbname=student_grades",  // Simple local connection (current user)
-                "postgresql:///student_grades"  // URI format with current user
+                "host=localhost port=5432 dbname=student_grades user=postgres password=password sslmode=disable",  // TCP with password
+                "dbname=student_grades user=" + current_user,  // Current system user
+                "host=/var/run/postgresql dbname=student_grades user=" + current_user,  // Socket with current user
+                "host=/tmp dbname=student_grades user=" + current_user,  // Alternative socket with current user  
+                "host=/run/postgresql dbname=student_grades user=" + current_user,  // Another common socket location
+                "postgresql://" + current_user + "@localhost/student_grades",  // URI with current user
+                "host=/var/run/postgresql dbname=student_grades user=postgres",  // Socket with postgres user
+                "host=/tmp dbname=student_grades user=postgres",  // Alternative socket with postgres user
+                "host=/run/postgresql dbname=student_grades user=postgres",  // Another socket with postgres user
+                "postgresql://postgres:password@localhost:5432/student_grades?sslmode=disable",  // TCP fallback
+                "dbname=student_grades",  // Simple connection (uses system default user)
+                "postgresql:///student_grades"  // Simple URI format
             };
             
             bool connected = false;
