@@ -1,167 +1,173 @@
 # ROS2 Grade Calculator System
 
-Een complete ROS2-gebaseerde cijfer calculator met PostgreSQL database backend.
+Complete ROS2-based grade calculator with PostgreSQL database backend for automated student assessme### Quick Fix:
+Most issues can be resolved by running the setup script again:
+```bash
+./complete_setup.sh
+```
+This script automatically detects and fixes common PostgreSQL authentication and ROS2 workspace issues.ake management.
 
-## 🌍 Universeel Compatible 
-
-Dit systeem werkt **out-of-the-box** op elke Linux machine:
-- ✅ **Auto-detecteert** je gebruikersnaam 
-- ✅ **Auto-detecteert** je Linux distributie
-- ✅ **Auto-configureert** database voor jouw systeem
-- ✅ **Geen hardcoded** gebruikersnamen of paden
-- ✅ **Clone en run** - dat is alles!
-
-## 🚀 Quick Start (Een script doet alles!)
+## Quick Start
 
 ```bash
-# Download het project
-git clone <repository-url>
-cd ass_ros2_ws
-
-# Run het complete setup script (werkt op alle Linux distributies)
+# Complete setup (installs everything automatically)
 ./complete_setup.sh
 
-# Start het systeem
+# Start the system
 ./run_system.sh
+
+# Test the system  
+./test.sh
+
+# Check database contents
+./check_db.sh [rows]
 ```
 
-Dat is alles! Het `complete_setup.sh` script detecteert automatisch je Linux distributie en installeert alles wat nodig is.
+## System Architecture
 
-## 📋 Wat doet het systeem?
+This system implements an automated grade calculator for students with comprehensive retake management:
 
-Dit systeem simuleert een cijfer calculator voor studenten met de volgende componenten:
+### Core Components:
+- **tentamen_result_generator**: Generates exam results for simulation
+- **cijfer_calculator**: Calculates final grades based on exam results  
+- **final_cijfer_determinator**: Determines final grades and triggers database storage
+- **herkansing_scheduler**: Schedules retakes for failed students
+- **herkansing_cijfer_determinator**: Handles retake grade calculations via ROS2 Actions
 
-- **tentamen_result_generator**: Genereert tentamen resultaten
-- **cijfer_calculator**: Berekent cijfers gebaseerd op resultaten  
-- **final_cijfer_determinator**: Bepaalt eindcijfers
-- **herkansing_scheduler**: Plant herkansingen
-- **herkansing_cijfer_determinator**: Handelt herkansing cijfers af
+### ROS2 Nodes:
+- `tentamen_result_generator` - Publishes exam results to topics
+- `cijfer_calculator` - Service for grade calculations (Wessel gets +10 bonus!)
+- `final_cijfer_determinator` - Subscribes to results and determines final grades
+- `herkansing_scheduler` - Monitors database and schedules retakes
+- `herkansing_cijfer_determinator` - Action server for retake processing
 
-## 🔧 Ondersteunde Linux Distributies
+### Database Integration:
+- PostgreSQL with `student_results` table for persistent storage
+- Automatic connection detection with multiple fallback methods
+- Real-time updates via ROS2 topic/service communication
+- Thread-safe database operations with comprehensive error handling
 
-Het setup script werkt automatisch op:
+## Dependencies
 
-- ✅ **Ubuntu** (20.04, 22.04, 24.04)
-- ✅ **Debian** (11, 12)
-- ✅ **Linux Mint**
-- ✅ **Pop!_OS**
-- ✅ **Fedora** (38, 39, 40)
-- ✅ **RHEL/CentOS/Rocky/AlmaLinux**
-- ✅ **openSUSE/SLES**
-- ✅ **Arch Linux/Manjaro**
+### System Requirements:
+- **ROS2 Jazzy** (Ubuntu 24.04, Fedora 40, or compatible)
+- **PostgreSQL** (version 12+ recommended)
+- **libpqxx-dev** (C++ PostgreSQL client library)
+- **Google Test** (for unit testing)
 
-## 🛠️ Wat wordt geïnstalleerd?
+### PostgreSQL Setup:
+The system requires a PostgreSQL database with proper authentication. The setup script handles this automatically, but manual setup requires:
 
-Het script installeert automatisch:
-
-1. **PostgreSQL** + ontwikkel libraries
-2. **libpqxx** (PostgreSQL C++ library)
-3. **ROS2 Jazzy** (als niet aanwezig)
-4. **Build tools** (cmake, gcc, etc.)
-5. **Database setup** met gebruikers en authenticatie
-
-## 📁 Project Structuur
-
-```
-ass_ros2_ws/
-├── complete_setup.sh          # 🎯 HOOFDSCRIPT - doet alles!
-├── run_system.sh              # 🚀 Start het systeem (automatisch aangemaakt)
-├── test_database.sh           # 🔍 Test database connectie (automatisch aangemaakt)
-├── src/
-│   ├── g1_ass1_pkg/           # Hoofdproject
-│   │   ├── src/               # C++ broncode
-│   │   ├── launch/            # ROS2 launch bestanden
-│   │   └── CMakeLists.txt     # Build configuratie
-│   └── g1_interface_pkg/      # Custom ROS2 interfaces
-├── install/                   # Gebouwde bestanden
-├── build/                     # Build cache
-└── log/                       # Build logs
-```
-
-## 🎮 Gebruik
-
-### Systeem starten
 ```bash
-./run_system.sh
+# Install PostgreSQL
+sudo apt install postgresql postgresql-contrib libpqxx-dev  # Ubuntu/Debian
+sudo dnf install postgresql postgresql-server libpqxx-devel  # Fedora/RHEL
+
+# Create database and user
+sudo -u postgres createdb student_grades
+sudo -u postgres psql -c "CREATE USER postgres WITH PASSWORD 'password';"
+sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE student_grades TO postgres;"
 ```
 
-### Database testen
+## Available Commands
+
 ```bash
-./test_database.sh
+./complete_setup.sh     # Complete installation with dependency management
+./run_system.sh        # Start ROS2 system with database validation
+./test.sh             # Run comprehensive unit tests  
+./check_db.sh [rows]  # Check database contents (default: 10 rows)
+./test_database.sh    # Diagnostic tool for database connectivity
 ```
 
-### Handmatig builden
+### Manual Building
 ```bash
 source /opt/ros/jazzy/setup.bash
-colcon build --packages-select g1_ass1_pkg
+colcon build --packages-select g1_ass1_pkg g1_interface_pkg
+source install/setup.bash
 ```
 
-### Handmatig starten
+### Manual System Start
 ```bash
 source install/setup.bash
 ros2 launch g1_ass1_pkg system.launch.xml
 ```
 
-## 🐛 Troubleshooting
+## Database Configuration
 
-### PostgreSQL problemen
+### Connection Details:
+- **Database**: `student_grades` 
+- **User**: `postgres`
+- **Password**: `password`
+- **Host**: `localhost:5432`
+- **Backup Methods**: Unix sockets, peer authentication
+
+### Connection Priority:
+1. TCP connection with password authentication
+2. Unix socket with current system user
+3. PostgreSQL peer authentication
+4. Simple local connection fallback
+
+## Troubleshooting
+
+### PostgreSQL Issues:
 ```bash
-# Check status
+# Check service status
 sudo systemctl status postgresql
 
-# Herstart service
+# Restart PostgreSQL service
 sudo systemctl restart postgresql
 
-# Check logs
-sudo journalctl -u postgresql
+# View PostgreSQL logs
+sudo journalctl -u postgresql -f
+
+# Test database connectivity
+./test_database.sh
 ```
 
-### ROS2 problemen
+### ROS2 Issues:
 ```bash
-# Rebuild project
-colcon build --packages-select g1_ass1_pkg
+# Check ROS2 installation
+ros2 doctor
 
-# Check ROS2 environment
-echo $ROS_DISTRO
+# Rebuild workspace
+colcon build --symlink-install
 
-# Source manually
-source /opt/ros/jazzy/setup.bash
-source install/setup.bash
+# Clear build cache if needed
+rm -rf build/ install/ log/
 ```
+## 💾 Database Info
 
-### Database connectie problemen
+- **Database**: `student_grades` 
+- **User**: `postgres`
+- **Password**: `password`
+- **Host**: `localhost:5432`
+
+## � Troubleshooting
+
+Problems? Run `./complete_setup.sh` again - het lost de meeste problemen automatisch op.
+
+## Development Guide
+
+### Building and Testing:
 ```bash
-# Test handmatig
+# Build complete workspace
+colcon build --packages-select g1_ass1_pkg g1_interface_pkg
+
+# Run comprehensive tests  
+colcon test --packages-select g1_ass1_pkg
+colcon test-result --verbose
+
+# Manual database testing
 psql -h localhost -U postgres -d student_grades
-
-# Check socket files
-ls -la /var/run/postgresql/
-ls -la /tmp/.s.PGSQL.*
 ```
 
-## 🔑 Database Details
+### Custom ROS2 Interfaces:
+The project uses custom ROS2 interfaces defined in `g1_interface_pkg`:
+- **Messages**: `Tentamen`, `Student` 
+- **Services**: `Tentamens` (grade calculation)
+- **Actions**: `Herkanser` (retake processing)
 
-- **Database**: `student_grades`
-- **Gebruiker**: `postgres`  
-- **Wachtwoord**: `password`
-- **Host**: `localhost`
-- **Port**: `5432`
-
-## 📞 Support
-
-Als je problemen hebt:
-
-1. **Run eerst**: `./complete_setup.sh` opnieuw
-2. **Check logs**: De script geeft duidelijke foutmeldingen
-3. **Test database**: `./test_database.sh`
-4. **Check services**: `sudo systemctl status postgresql`
-
-## 🎯 Voor Ontwikkelaars
-
-### Custom interfaces
-Het project gebruikt custom ROS2 interfaces gedefinieerd in `g1_interface_pkg`.
-
-### Database schema
+### Database Schema:
 ```sql
 CREATE TABLE student_results (
     id SERIAL PRIMARY KEY,
@@ -173,13 +179,13 @@ CREATE TABLE student_results (
 );
 ```
 
-### Connectie logica
-De applicatie probeert automatisch verschillende connectie methoden:
-1. TCP met wachtwoord
-2. Unix socket met huidige gebruiker  
-3. Peer authenticatie
-4. Eenvoudige lokale connectie
+### Testing Framework:
+- **Unit Tests**: Database operations, service calls, topic communication
+- **Integration Tests**: End-to-end workflow validation  
+- **System Tests**: Multi-node interaction and performance testing
+- **Coverage**: Full ROS2 ecosystem with PostgreSQL integration
 
 ---
 
-**Gemaakt voor TI Minor Cijfer Generator systeem** 🎓
+**Created for TI Minor Grade Generator System**  
+Advanced ROS2 architecture with real-time database integration and comprehensive error handling.
