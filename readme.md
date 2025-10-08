@@ -2,6 +2,8 @@
 
 Een geautomatiseerd cijfersysteem gebouwd met ROS2 dat tentamenresultaten genereert, eindcijfers berekent en herkansingen plant voor studenten.
 
+**⚠️ BELANGRIJK: Dit project gebruikt nu PostgreSQL in plaats van SQLite!**
+
 ## 📋 Inhoudsopgave
 - [🚀 Snelstart](#-snelstart)
 - [📦 Installatie voor Beginners](#-installatie-voor-beginners)
@@ -12,7 +14,7 @@ Een geautomatiseerd cijfersysteem gebouwd met ROS2 dat tentamenresultaten genere
 - [📁 Project Structuur](#-project-structuur)
 - [🧩 ROS2 Nodes Uitleg](#-ros2-nodes-uitleg)
 - [🔌 ROS2 Interfaces](#-ros2-interfaces)
-- [💾 Database](#-database)
+- [💾 Database (PostgreSQL)](#-database-postgresql)
 - [🐛 Troubleshooting](#-troubleshooting)
 
 ---
@@ -26,13 +28,19 @@ Als je al ROS2 hebt geïnstalleerd:
 git clone https://github.com/broodjesemih/ass_ros2_ws.git g1_assessment1_ros2
 cd g1_assessment1_ros2
 
-# 2. Build het project
+# 2. Setup PostgreSQL database
+./setup_postgresql.sh
+
+# 3. Build het project
 colcon build
 
-# 3. Source de workspace
+# 4. Source de workspace
 source install/setup.bash
 
-# 4. Run alles via de launchfile
+# 5. Set PostgreSQL environment variables (optional but recommended)
+source postgres_env.sh
+
+# 6. Run alles via de launchfile
 ros2 launch g1_ass1_pkg system.launch.xml
 
 # of, run het via 5 individuele terminals, waarvoor de dependancy tmux nodig is
@@ -197,7 +205,7 @@ ros2 service call /calculate_cijfer g1_interface_pkg/srv/CalculateCijfer "{stude
 ```
 g1_assessment1_ros2/
 ├── README.md
-├── database.sqlite
+├── setup_postgresql.sh         # PostgreSQL setup script
 ├── src/
 │   ├── g1_interface_pkg/
 │   │   ├── msg/
@@ -213,18 +221,48 @@ g1_assessment1_ros2/
 
 ---
 
-## 💾 Database
+## 💾 Database (PostgreSQL)
 
-### Bekijken
+### Configuratie
+Het systeem gebruikt nu PostgreSQL in plaats van SQLite voor betere performance en concurrency.
+
+**Database configuratie:**
+- Database: `student_grades`
+- User: `postgres`
+- Password: `password`
+- Host: `localhost`
+- Port: `5432` (default)
+
+### Setup
 ```bash
-# Installeer sqlite3 als je het nog niet hebt
-sudo apt install sqlite3
+# Run de setup script (alleen eerste keer)
+./setup_postgresql.sh
+```
 
-# Open de database
-sqlite3 database.sqlite
-.headers on
-.mode column
-SELECT * FROM student_results;
+### Database Bekijken
+```bash
+# Connect naar de database
+psql -h localhost -U postgres -d student_grades
+
+# In PostgreSQL console:
+\dt                              # Toon alle tabellen
+SELECT * FROM student_results;   # Bekijk data
+\q                              # Exit
+```
+
+### Database Management
+```bash
+# Start PostgreSQL service
+sudo systemctl start postgresql
+
+# Stop PostgreSQL service  
+sudo systemctl stop postgresql
+
+# Check PostgreSQL status
+sudo systemctl status postgresql
+
+# Connect als postgres user
+sudo -u postgres psql
 ```
 
 ---
@@ -256,11 +294,20 @@ colcon build --cmake-clean-cache
 ls install/g1_ass1_pkg/lib/g1_ass1_pkg/
 ```
 
-#### ❌ Database Permission Error
+#### ❌ Database Connection Error
 ```bash
-# Geef write permissions aan de database directory
-chmod 755 .
-chmod 666 database.sqlite  # Als het al bestaat
+# Check of PostgreSQL draait
+sudo systemctl status postgresql
+
+# Start PostgreSQL als het gestopt is
+sudo systemctl start postgresql
+
+# Test database connectie
+psql -h localhost -U postgres -d student_grades -c "SELECT 1;"
+
+# Reset database (als laatste redmiddel)
+sudo -u postgres dropdb student_grades
+sudo -u postgres createdb student_grades
 ```
 
 #### ❌ Nodes starten niet
@@ -330,7 +377,7 @@ ros2 node info /tentamen_result_generator
 ### Database Monitoring
 ```bash
 # Bekijk real-time database changes
-watch -n 2 'sqlite3 database.sqlite "SELECT * FROM results ORDER BY timestamp DESC LIMIT 10;"'
+watch -n 2 'psql -h localhost -U postgres -d student_grades -c "SELECT * FROM student_results ORDER BY timestamp DESC LIMIT 10;"'
 ```
 
 ---
@@ -343,7 +390,7 @@ Wanneer het systeem draait, verwacht je de volgende output:
 2. **Final Cijfer Determinator**: "Received 3 cijfers for [student], calculating final result..."
 3. **Cijfer Calculator**: "Calculated final cijfer [X] for [student] in [course]"
 4. **Herkansing Scheduler**: "Found failed student [student], scheduling herkanser..."
-5. **Database**: Nieuwe entries verschijnen in de results tabel
+5. **Database**: Nieuwe entries verschijnen in de student_results tabel
 
 
 ---

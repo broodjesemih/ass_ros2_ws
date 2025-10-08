@@ -14,9 +14,15 @@ find_package(std_msgs REQUIRED)               # gebruik maken von standaard mess
 find_package(builtin_interfaces REQUIRED)     # nodig voor Time messages
 find_package(rosidl_default_generators REQUIRED) # nodig om custom messages te gebruiken
 
+# Find PostgreSQL and libpqxx
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(PQXX REQUIRED libpqxx)
+
 # Create a library from database.cpp
 add_library(database_lib src/database.cpp)
-target_link_libraries(database_lib sqlite3)
+target_include_directories(database_lib PRIVATE ${PQXX_INCLUDE_DIRS})
+target_link_libraries(database_lib ${PQXX_LIBRARIES})
+target_compile_options(database_lib PRIVATE ${PQXX_CFLAGS_OTHER})
 
 # Executables
 add_executable(tentamen_result_generator src/tentamen_result_generator.cpp)
