@@ -13,7 +13,7 @@ echo "=========================================="
 echo ""
 
 # 1. Check PostgreSQL service
-echo "1. Checking PostgreSQL service..."
+echo "Checking PostgreSQL service..."
 if systemctl is-active --quiet postgresql; then
     echo -e "${GREEN}PostgreSQL service is running${NC}"
 else
@@ -23,7 +23,7 @@ fi
 echo ""
 
 # 2. Check socket files
-echo "2. Checking socket files..."
+echo "Checking socket files..."
 SOCKET_DIRS=("/var/run/postgresql" "/tmp" "/run/postgresql")
 SOCKET_FOUND=false
 
@@ -42,7 +42,7 @@ fi
 echo ""
 
 # 3. Check database existence
-echo "3. Checking database existence..."
+echo "Checking database existence..."
 if sudo -u postgres psql -lqt | cut -d \| -f 1 | grep -qw student_grades; then
     echo -e "${GREEN}Database 'student_grades' exists${NC}"
 else
@@ -52,13 +52,13 @@ fi
 echo ""
 
 # 4. Test connections
-echo "4. Testing database connections..."
+echo "Testing database connections..."
 
 TESTS=(
     "PGPASSWORD=password psql -h localhost -U postgres -d student_grades -c 'SELECT version();'|TCP with password"
     "psql -d student_grades -c 'SELECT version();'|Current user socket"
     "sudo -u postgres psql -d student_grades -c 'SELECT version();'|Postgres user socket"
-    "timeout 3s psql -h localhost -d student_grades -c 'SELECT version();' </dev/null|TCP without auth"
+    "psql -h localhost -d student_grades -c 'SELECT version();'|TCP without auth"
 )
 
 SUCCESS_COUNT=0
@@ -75,7 +75,7 @@ done
 echo ""
 
 # 5. Application connection test
-echo "5. Testing application connection methods..."
+echo "Testing application connection methods..."
 echo "The C++ application will try these in order:"
 echo "  1. postgresql://postgres:password@localhost:5432/student_grades"
 echo "  2. host=localhost port=5432 dbname=student_grades user=postgres password=password"  

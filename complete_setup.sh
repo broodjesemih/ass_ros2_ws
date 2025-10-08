@@ -606,7 +606,7 @@ fi
 echo ""
 log_success "Environment ready! Launching system..."
 echo ""
-echo "� Starting all nodes:"
+echo "Starting all nodes:"
 echo "  - tentamen_result_generator"
 echo "  - cijfer_calculator"
 echo "  - final_cijfer_determinator" 
@@ -738,7 +738,7 @@ chmod +x test_database.sh
 cat > fix_database_emergency.sh << 'EOF'
 #!/bin/bash
 
-echo "🚨 Emergency Database Fix Script"
+echo "Emergency Database Fix Script"
 echo "================================"
 echo ""
 
