@@ -1,0 +1,17 @@
+# Colcon test configuration voor g1_ass1_pkg
+# 
+# Deze configuratie zorgt ervoor dat standaard alleen de 
+# standalone tests worden uitgevoerd (database + topic communication)
+# 
+# Voor volledige integration tests: 
+# colcon test --packages-select g1_ass1_pkg --ctest-args ""
+#
+# Standaard uitgesloten tests:
+# - Service tests (vereisen actief ROS2 systeem)  
+# - Action tests (vereisen actief ROS2 systeem)
+# - System integration tests (vereisen actief ROS2 systeem)
+# - Linting tests (code style checks)
+
+[g1_ass1_pkg]
+# Run alleen database en topic communication tests standaard
+ctest-args = ["-R", "test_database|test_topic_communication"]
