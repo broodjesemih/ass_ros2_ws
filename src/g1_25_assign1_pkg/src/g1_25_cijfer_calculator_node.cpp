@@ -23,7 +23,7 @@
  */
 
 #include <rclcpp/rclcpp.hpp>                        // ROS2 C++ client library
-#include "g1_interface_pkg/srv/tentamens.hpp"       // Custom service definition for grade calculation
+#include "g1_25_assign1_interfaces_pkg/srv/tentamens.hpp"       // Custom service definition for grade calculation
 #include "database.cpp"                             // Database abstraction layer (header-only inclusion)
 
 // Grade Calculator Service Node Class
@@ -31,11 +31,11 @@
 class CijferCalculatorNode : public rclcpp::Node {
 public:
     // Constructor: Initialize the ROS2 node and create the grade calculation service
-    CijferCalculatorNode() : Node("cijfer_calculator_node") {
+    CijferCalculatorNode() : Node("g1_25_cijfer_calculator_node") {
         // Create the service server for grade calculation requests
         // Service name: "calculate_final_cijfer" - called by other nodes for grade computation
         // Callback: handle_request - processes incoming calculation requests
-        service_ = this->create_service<g1_interface_pkg::srv::Tentamens>(
+        service_ = this->create_service<g1_25_assign1_interfaces_pkg::srv::Tentamens>(
             "calculate_final_cijfer",
             std::bind(&CijferCalculatorNode::handle_request, this, std::placeholders::_1, std::placeholders::_2));
     }
@@ -44,8 +44,8 @@ private:
     // Service callback function: Processes grade calculation requests
     // Input: Request containing student name, course name, and array of exam scores
     // Output: Response containing calculated final grade and status message
-    void handle_request(const std::shared_ptr<g1_interface_pkg::srv::Tentamens::Request> request,
-                        std::shared_ptr<g1_interface_pkg::srv::Tentamens::Response> response) {
+    void handle_request(const std::shared_ptr<g1_25_assign1_interfaces_pkg::srv::Tentamens::Request> request,
+                        std::shared_ptr<g1_25_assign1_interfaces_pkg::srv::Tentamens::Response> response) {
         
         // STEP 1: Calculate average from all exam scores
         double sum = 0.0;
@@ -77,7 +77,7 @@ private:
     }
 
     // ROS2 service server handle for grade calculation requests
-    rclcpp::Service<g1_interface_pkg::srv::Tentamens>::SharedPtr service_;
+    rclcpp::Service<g1_25_assign1_interfaces_pkg::srv::Tentamens>::SharedPtr service_;
 };
 
 // Main function: Entry point for the Grade Calculator Service Node
@@ -86,7 +86,7 @@ int main(int argc, char **argv) {
     rclcpp::init(argc, argv);
     
     // Log node startup for system monitoring
-    RCLCPP_INFO(rclcpp::get_logger("cijfer_calculator"), "Starting Grade Calculator service node");
+    RCLCPP_INFO(rclcpp::get_logger("g1_25_cijfer_calculator_node"), "Starting Grade Calculator service node");
     
     // Create and run the grade calculator node
     // spin() keeps the node alive and processes incoming service requests

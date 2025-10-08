@@ -6,8 +6,8 @@
 #include <vector>
 #include <string>
 #include <thread>
-#include "g1_interface_pkg/srv/tentamens.hpp"
-#include "g1_interface_pkg/action/herkanser.hpp"
+#include "g1_25_assign1_interfaces_pkg/srv/tentamens.hpp"
+#include "g1_25_assign1_interfaces_pkg/action/herkanser.hpp"
 
 /**
  * Integration tests for het complete ROS2 Grade Calculator systeem
@@ -172,14 +172,14 @@ TEST_F(SystemIntegrationTest, TestCommunicationInfrastructure)
 TEST_F(SystemIntegrationTest, TestEndToEndGradeCalculation)
 {
     // Maak service client for cijfer calculator
-    auto cijfer_client = test_node_->create_client<g1_interface_pkg::srv::Tentamens>("calculate_final_cijfer");
+    auto cijfer_client = test_node_->create_client<g1_25_assign1_interfaces_pkg::srv::Tentamens>("calculate_final_cijfer");
     
     ASSERT_TRUE(cijfer_client->wait_for_service(std::chrono::seconds(5))) 
         << "Cijfer calculator service niet beschikbaar";
     
     // Test normal student
     {
-        auto request = std::make_shared<g1_interface_pkg::srv::Tentamens::Request>();
+        auto request = std::make_shared<g1_25_assign1_interfaces_pkg::srv::Tentamens::Request>();
         request->student_name = "Integration Test Student";
         request->course_name = "SystemTest";
         request->tentamen_cijfers = {75, 80, 85};
@@ -195,7 +195,7 @@ TEST_F(SystemIntegrationTest, TestEndToEndGradeCalculation)
     
     // Test Wessel bonus
     {
-        auto request = std::make_shared<g1_interface_pkg::srv::Tentamens::Request>();
+        auto request = std::make_shared<g1_25_assign1_interfaces_pkg::srv::Tentamens::Request>();
         request->student_name = "Wessel Tip";
         request->course_name = "SystemTest";
         request->tentamen_cijfers = {50, 50, 50};
@@ -217,18 +217,18 @@ TEST_F(SystemIntegrationTest, TestEndToEndGradeCalculation)
 TEST_F(SystemIntegrationTest, TestHerkansingActionIntegration)
 {
     // Maak action client
-    auto action_client = rclcpp_action::create_client<g1_interface_pkg::action::Herkanser>(
+    auto action_client = rclcpp_action::create_client<g1_25_assign1_interfaces_pkg::action::Herkanser>(
         test_node_, "herkanser");
     
     ASSERT_TRUE(action_client->wait_for_action_server(std::chrono::seconds(10)))
         << "Herkansing action server niet beschikbaar";
     
     // Test herkansing for failed student
-    auto goal_msg = g1_interface_pkg::action::Herkanser::Goal();
+    auto goal_msg = g1_25_assign1_interfaces_pkg::action::Herkanser::Goal();
     goal_msg.student_name = "Integration Failed Student";
     goal_msg.course_name = "SystemTest";
     
-    auto send_goal_options = rclcpp_action::Client<g1_interface_pkg::action::Herkanser>::SendGoalOptions();
+    auto send_goal_options = rclcpp_action::Client<g1_25_assign1_interfaces_pkg::action::Herkanser>::SendGoalOptions();
     
     bool feedback_received = false;
     send_goal_options.feedback_callback = 
@@ -271,17 +271,17 @@ TEST_F(SystemIntegrationTest, TestHerkansingActionIntegration)
  */
 TEST_F(SystemIntegrationTest, TestSystemPerformanceUnderLoad)
 {
-    auto cijfer_client = test_node_->create_client<g1_interface_pkg::srv::Tentamens>("calculate_final_cijfer");
+    auto cijfer_client = test_node_->create_client<g1_25_assign1_interfaces_pkg::srv::Tentamens>("calculate_final_cijfer");
     ASSERT_TRUE(cijfer_client->wait_for_service(std::chrono::seconds(5)));
     
     const int concurrent_requests = 10;
-    std::vector<rclcpp::Client<g1_interface_pkg::srv::Tentamens>::SharedFuture> futures;
+    std::vector<rclcpp::Client<g1_25_assign1_interfaces_pkg::srv::Tentamens>::SharedFuture> futures;
     
     auto start_time = std::chrono::high_resolution_clock::now();
     
     // Send multiple requests gelijktijdig
     for (int i = 0; i < concurrent_requests; ++i) {
-        auto request = std::make_shared<g1_interface_pkg::srv::Tentamens::Request>();
+        auto request = std::make_shared<g1_25_assign1_interfaces_pkg::srv::Tentamens::Request>();
         request->student_name = "Load Test Student " + std::to_string(i);
         request->course_name = "LoadTest";
         request->tentamen_cijfers = {70 + i, 75 + i, 80 + i};
@@ -353,9 +353,9 @@ TEST_F(SystemIntegrationTest, TestSystemRequirementsCompliance)
     EXPECT_TRUE(has_actions) << "System should use ROS2 actions";
     
     // Requirement 3: Grade calculation with Wessel bonus
-    auto cijfer_client = test_node_->create_client<g1_interface_pkg::srv::Tentamens>("calculate_final_cijfer");
+    auto cijfer_client = test_node_->create_client<g1_25_assign1_interfaces_pkg::srv::Tentamens>("calculate_final_cijfer");
     if (cijfer_client->wait_for_service(std::chrono::seconds(2))) {
-        auto request = std::make_shared<g1_interface_pkg::srv::Tentamens::Request>();
+        auto request = std::make_shared<g1_25_assign1_interfaces_pkg::srv::Tentamens::Request>();
         request->student_name = "Wessel Tip";
         request->course_name = "RequirementTest";
         request->tentamen_cijfers = {50, 50, 50};
@@ -370,7 +370,7 @@ TEST_F(SystemIntegrationTest, TestSystemRequirementsCompliance)
     }
     
     // Requirement 4: Herkansing system  
-    auto action_client = rclcpp_action::create_client<g1_interface_pkg::action::Herkanser>(
+    auto action_client = rclcpp_action::create_client<g1_25_assign1_interfaces_pkg::action::Herkanser>(
         test_node_, "herkanser");
     EXPECT_TRUE(action_client->wait_for_action_server(std::chrono::seconds(2)))
         << "Herkansing action server requirement not met";
@@ -382,12 +382,12 @@ TEST_F(SystemIntegrationTest, TestSystemRequirementsCompliance)
  */
 TEST_F(SystemIntegrationTest, TestErrorRecoveryAndResilience)
 {
-    auto cijfer_client = test_node_->create_client<g1_interface_pkg::srv::Tentamens>("calculate_final_cijfer");
+    auto cijfer_client = test_node_->create_client<g1_25_assign1_interfaces_pkg::srv::Tentamens>("calculate_final_cijfer");
     ASSERT_TRUE(cijfer_client->wait_for_service(std::chrono::seconds(5)));
     
     // Test invalid input handling
     {
-        auto request = std::make_shared<g1_interface_pkg::srv::Tentamens::Request>();
+        auto request = std::make_shared<g1_25_assign1_interfaces_pkg::srv::Tentamens::Request>();
         request->student_name = "";  // Empty name
         request->course_name = "ErrorTest";
         request->tentamen_cijfers = {75, 80, 85};
@@ -402,7 +402,7 @@ TEST_F(SystemIntegrationTest, TestErrorRecoveryAndResilience)
     
     // Test empty grade list
     {
-        auto request = std::make_shared<g1_interface_pkg::srv::Tentamens::Request>();
+        auto request = std::make_shared<g1_25_assign1_interfaces_pkg::srv::Tentamens::Request>();
         request->student_name = "ErrorTestStudent";
         request->course_name = "ErrorTest";
         request->tentamen_cijfers = {};  // Empty grades
@@ -422,11 +422,11 @@ TEST_F(SystemIntegrationTest, TestErrorRecoveryAndResilience)
 TEST_F(SystemIntegrationTest, TestSystemShutdownBehavior)
 {
     // This test is more informative - we test that nodes still respond
-    auto cijfer_client = test_node_->create_client<g1_interface_pkg::srv::Tentamens>("calculate_final_cijfer");
+    auto cijfer_client = test_node_->create_client<g1_25_assign1_interfaces_pkg::srv::Tentamens>("calculate_final_cijfer");
     
     if (cijfer_client->wait_for_service(std::chrono::milliseconds(1000))) {
         // Test that service still works before we test shutdown
-        auto request = std::make_shared<g1_interface_pkg::srv::Tentamens::Request>();
+        auto request = std::make_shared<g1_25_assign1_interfaces_pkg::srv::Tentamens::Request>();
         request->student_name = "Shutdown Test";
         request->course_name = "Final";
         request->tentamen_cijfers = {85, 90, 95};

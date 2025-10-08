@@ -1,11 +1,13 @@
 # ROS2 Grade Calculator System
 
-Complete ROS2-based grade calculator with PostgreSQL database backend for automated student assessment Quick Fix:
+Complete ROS2-based grade calculator with PostgreSQL database backend for automated student assessment and retake management.
+
+## Quick Fix:
 Most issues can be resolved by running the setup script again:
 ```bash
 ./complete_setup.sh
 ```
-This script automatically detects and fixes common PostgreSQL authentication and ROS2 workspace issues.ake management.
+This script automatically detects and fixes common PostgreSQL authentication and ROS2 workspace issues.
 
 ## Quick Start
 
@@ -27,19 +29,23 @@ This script automatically detects and fixes common PostgreSQL authentication and
 
 This system implements an automated grade calculator for students with comprehensive retake management:
 
-### Core Components:
-- **tentamen_result_generator**: Generates exam results for simulation
-- **cijfer_calculator**: Calculates final grades based on exam results  
-- **final_cijfer_determinator**: Determines final grades and triggers database storage
-- **herkansing_scheduler**: Schedules retakes for failed students
-- **herkansing_cijfer_determinator**: Handles retake grade calculations via ROS2 Actions
+### ROS2 Package Structure:
+- **g1_25_assign1_pkg**: Main package containing all grade calculation nodes
+- **g1_25_assign1_interfaces_pkg**: Custom ROS2 interfaces (messages, services, actions)
 
-### ROS2 Nodes:
-- `tentamen_result_generator` - Publishes exam results to topics
-- `cijfer_calculator` - Service for grade calculations (Wessel gets +10 bonus!)
-- `final_cijfer_determinator` - Subscribes to results and determines final grades
-- `herkansing_scheduler` - Monitors database and schedules retakes
-- `herkansing_cijfer_determinator` - Action server for retake processing
+### Core Components:
+- **g1_25_tentamen_result_generator_node**: Generates exam results for simulation
+- **g1_25_cijfer_calculator_node**: Calculates final grades based on exam results  
+- **g1_25_final_cijfer_determinator_node**: Determines final grades and triggers database storage
+- **g1_25_herkansing_scheduler_node**: Schedules retakes for failed students
+- **g1_25_herkansing_cijfer_determinator_node**: Handles retake grade calculations via ROS2 Actions
+
+### ROS2 Node Details:
+- `g1_25_tentamen_result_generator_node` - Publishes exam results with `tentamen_callback` function
+- `g1_25_cijfer_calculator_node` - Service for grade calculations with `calculation_callback` function (Wessel gets +10 bonus!)
+- `g1_25_final_cijfer_determinator_node` - Processes results with `tentamen_callback` function
+- `g1_25_herkansing_scheduler_node` - Monitors database with `check_failed_students_callback` function
+- `g1_25_herkansing_cijfer_determinator_node` - Action server with `execute_callback` function
 
 ### Database Integration:
 - PostgreSQL with `student_results` table for persistent storage
@@ -82,14 +88,14 @@ sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE student_grades TO pos
 ### Manual Building
 ```bash
 source /opt/ros/jazzy/setup.bash
-colcon build --packages-select g1_ass1_pkg g1_interface_pkg
+colcon build --packages-select g1_25_assign1_pkg g1_25_assign1_interfaces_pkg
 source install/setup.bash
 ```
 
 ### Manual System Start
 ```bash
 source install/setup.bash
-ros2 launch g1_ass1_pkg system.launch.xml
+ros2 launch g1_25_assign1_pkg system.launch.xml
 ```
 
 ## Database Configuration
@@ -151,10 +157,10 @@ Problems? Run `./complete_setup.sh` again - het lost de meeste problemen automat
 ### Building and Testing:
 ```bash
 # Build complete workspace
-colcon build --packages-select g1_ass1_pkg g1_interface_pkg
+colcon build --packages-select g1_25_assign1_pkg g1_25_assign1_interfaces_pkg
 
 # Run comprehensive tests  
-colcon test --packages-select g1_ass1_pkg
+colcon test --packages-select g1_25_assign1_pkg
 colcon test-result --verbose
 
 # Manual database testing
@@ -162,10 +168,16 @@ psql -h localhost -U postgres -d student_grades
 ```
 
 ### Custom ROS2 Interfaces:
-The project uses custom ROS2 interfaces defined in `g1_interface_pkg`:
+The project uses custom ROS2 interfaces defined in `g1_25_assign1_interfaces_pkg`:
 - **Messages**: `Tentamen`, `Student` 
 - **Services**: `Tentamens` (grade calculation)
 - **Actions**: `Herkanser` (retake processing)
+
+### ROS2 Naming Convention:
+Following the group naming standard:
+- **Package Names**: `g1_25_assign1_pkg`, `g1_25_assign1_interfaces_pkg` 
+- **Node Names**: `g1_25_<functional_name>_node`
+- **Callback Functions**: `<functional_name>_callback`
 
 ### Database Schema:
 ```sql

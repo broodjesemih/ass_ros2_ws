@@ -29,7 +29,7 @@ log_error() { echo -e "${RED}[ERROR]${NC} $1"; }
 
 # Get script directory
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_NAME="g1_ass1_pkg"
+PROJECT_NAME="g1_25_assign1_pkg"
 
 echo "======================================================================="
 echo "ROS2 Grade Calculator System - Complete Setup Script"
@@ -315,7 +315,7 @@ rosdep install --from-paths src --ignore-src -r -y
 
 # Build the project in correct dependency order
 log_info "Building interface package first..."
-colcon build --packages-select g1_interface_pkg
+colcon build --packages-select g1_25_assign1_interfaces_pkg
 
 if [ $? -ne 0 ]; then
     log_error "Interface package build failed!"
@@ -599,7 +599,7 @@ fi
 if [ -f "install/setup.bash" ]; then
     source install/setup.bash
 else
-    log_error "Workspace not built! Run: colcon build --packages-select g1_interface_pkg g1_ass1_pkg"
+    log_error "Workspace not built! Run: colcon build --packages-select g1_25_assign1_interfaces_pkg g1_25_assign1_pkg"
     exit 1
 fi
 
@@ -617,7 +617,7 @@ echo "Press Ctrl+C to stop all nodes"
 echo ""
 
 # Launch the system
-ros2 launch g1_ass1_pkg system.launch.xml
+ros2 launch g1_25_assign1_pkg system.launch.xml
 
 echo ""
 log_info "System stopped."
@@ -822,7 +822,7 @@ echo ""
 echo "If you encounter other issues:"
 echo "   - Check PostgreSQL: sudo systemctl status postgresql"
 echo "   - Check logs: sudo journalctl -u postgresql"
-echo "   - Rebuild project: colcon build --packages-select g1_interface_pkg $PROJECT_NAME"
+echo "   - Rebuild project: colcon build --packages-select g1_25_assign1_interfaces_pkg $PROJECT_NAME"
 echo "   - Re-run full setup: ./complete_setup.sh"
 echo ""
 echo "Project files:"

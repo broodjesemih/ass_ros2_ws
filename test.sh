@@ -45,7 +45,7 @@ fi
 # Check ROS2 workspace
 if [ ! -d "install" ]; then
     log_warning "ROS2 workspace not built. Building..."
-    colcon build --packages-select g1_ass1_pkg
+    colcon build --packages-select g1_25_assign1_pkg
 fi
 
 # Source ROS2 environment
@@ -54,7 +54,7 @@ source install/setup.bash 2>/dev/null || true
 
 # Run unit tests
 log_info "Running unit tests..."
-colcon test --packages-select g1_ass1_pkg
+colcon test --packages-select g1_25_assign1_pkg
 
 # Check test results
 log_info "Test results:"

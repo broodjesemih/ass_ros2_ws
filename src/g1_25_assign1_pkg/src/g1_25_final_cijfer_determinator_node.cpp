@@ -27,9 +27,9 @@
 #include <sstream>                    // String stream operations (currently unused)
 
 // CUSTOM MESSAGE AND SERVICE INTERFACES
-#include "g1_interface_pkg/msg/tentamen.hpp"    // Individual exam result message format
-#include "g1_interface_pkg/msg/student.hpp"     // Student control message format
-#include "g1_interface_pkg/srv/tentamens.hpp"   // Grade calculation service interface
+#include "g1_25_assign1_interfaces_pkg/msg/tentamen.hpp"    // Individual exam result message format
+#include "g1_25_assign1_interfaces_pkg/msg/student.hpp"     // Student control message format
+#include "g1_25_assign1_interfaces_pkg/srv/tentamens.hpp"   // Grade calculation service interface
 
 // DATABASE ABSTRACTION LAYER
 #include "database.cpp"               // PostgreSQL database operations for persistent storage
@@ -100,24 +100,24 @@ public:
      * 
      * NODE NAME: "final_cijfer_determinator" for ROS2 network identification
      */
-    FinalCijferDeterminator() : Node("final_cijfer_determinator")
+    FinalCijferDeterminator() : Node("g1_25_final_cijfer_determinator_node")
     {
-        RCLCPP_INFO(this->get_logger(), "final_cijfer_determinator started!");
+        RCLCPP_INFO(this->get_logger(), "g1_25_final_cijfer_determinator_node started!");
         
         // EXAM RESULT SUBSCRIPTION: Listen for individual exam scores
         // Topic: "tentamen_results" - receives exam data from generator nodes
         // Queue Size: 10 - buffers up to 10 messages to prevent loss during processing
-        tentamen_sub_ = this->create_subscription<g1_interface_pkg::msg::Tentamen>(
+        tentamen_sub_ = this->create_subscription<g1_25_assign1_interfaces_pkg::msg::Tentamen>(
             "tentamen_results", 10, std::bind(&FinalCijferDeterminator::tentamen_callback, this, std::placeholders::_1));
         
         // GRADE CALCULATION SERVICE CLIENT: Request final grade computations
         // Service: "calculate_final_cijfer" - communicates with cijfer_calculator node
-        cijfer_client_ = this->create_client<g1_interface_pkg::srv::Tentamens>("calculate_final_cijfer");
+        cijfer_client_ = this->create_client<g1_25_assign1_interfaces_pkg::srv::Tentamens>("calculate_final_cijfer");
         
         // EXAM CONTROL PUBLISHER: Send stop commands to exam generators
         // Topic: "student_control" - controls exam generation pipeline
         // Queue Size: 10 - ensures control commands are delivered reliably
-        student_control_pub_ = this->create_publisher<g1_interface_pkg::msg::Student>("student_control", 10);
+        student_control_pub_ = this->create_publisher<g1_25_assign1_interfaces_pkg::msg::Student>("student_control", 10);
     }
 
 private:
@@ -128,9 +128,9 @@ private:
     std::unordered_map<StudentCourseKey, std::vector<int>> tentamen_map_;
     
     // ROS2 INTERFACE HANDLES: Maintain connections to ROS2 communication channels
-    rclcpp::Subscription<g1_interface_pkg::msg::Tentamen>::SharedPtr tentamen_sub_;      // Exam result subscription
-    rclcpp::Client<g1_interface_pkg::srv::Tentamens>::SharedPtr cijfer_client_;         // Grade calculation service client
-    rclcpp::Publisher<g1_interface_pkg::msg::Student>::SharedPtr student_control_pub_;  // Exam generation control publisher
+    rclcpp::Subscription<g1_25_assign1_interfaces_pkg::msg::Tentamen>::SharedPtr tentamen_sub_;      // Exam result subscription
+    rclcpp::Client<g1_25_assign1_interfaces_pkg::srv::Tentamens>::SharedPtr cijfer_client_;         // Grade calculation service client
+    rclcpp::Publisher<g1_25_assign1_interfaces_pkg::msg::Student>::SharedPtr student_control_pub_;  // Exam generation control publisher
 
     /**
      * EXAM RESULT CALLBACK: Process incoming individual exam scores
@@ -144,7 +144,7 @@ private:
      * BUSINESS RULE: 3 exams per course required for grade finalization
      * TRIGGER CONDITION: Initiates grade calculation pipeline when exam count >= 3
      */
-    void tentamen_callback(const g1_interface_pkg::msg::Tentamen::SharedPtr msg)
+    void tentamen_callback(const g1_25_assign1_interfaces_pkg::msg::Tentamen::SharedPtr msg)
     {
         // STEP 1: Create composite key for student/course combination
         StudentCourseKey key{msg->student_name, msg->course_name};
@@ -159,7 +159,7 @@ private:
         if (tentamen_map_[key].size() >= 3)
         {
             // STEP 4A: Prepare service request for final grade calculation
-            auto request = std::make_shared<g1_interface_pkg::srv::Tentamens::Request>();
+            auto request = std::make_shared<g1_25_assign1_interfaces_pkg::srv::Tentamens::Request>();
             request->student_name = key.student;           // Student identification
             request->course_name = key.course;             // Course identification  
             request->tentamen_cijfers = tentamen_map_[key]; // All collected exam scores
@@ -167,7 +167,7 @@ private:
             // STEP 4B: Define asynchronous response handler using lambda
             // ASYNC PATTERN: Non-blocking service call to prevent node freezing
             // CAPTURE: [this, key] captures node context and student/course key for callback
-            auto response_callback = [this, key](rclcpp::Client<g1_interface_pkg::srv::Tentamens>::SharedFuture result_future)
+            auto response_callback = [this, key](rclcpp::Client<g1_25_assign1_interfaces_pkg::srv::Tentamens>::SharedFuture result_future)
             {
                 // PHASE 1: Extract calculated final grade from service response
                 auto response = result_future.get();
@@ -211,7 +211,7 @@ private:
 
                 // PHASE 6: Send stop command to halt further exam generation
                 // CONTROL FLOW: Prevents unnecessary exam creation for completed courses
-                g1_interface_pkg::msg::Student stop_msg;
+                g1_25_assign1_interfaces_pkg::msg::Student stop_msg;
                 stop_msg.stamp = this->now();              // Command timestamp
                 stop_msg.name = key.student;               // Target student
                 stop_msg.course = key.course;              // Target course  
@@ -249,8 +249,8 @@ int main(int argc, char **argv)
     rclcpp::init(argc, argv);
     
     // PHASE 2: Log node startup for system monitoring
-    RCLCPP_INFO(rclcpp::get_logger("final_cijfer_determinator"), 
-               "[!] Starting final_cijfer_determinator node");
+    RCLCPP_INFO(rclcpp::get_logger("g1_25_final_cijfer_determinator_node"), 
+               "[!] Starting g1_25_final_cijfer_determinator_node");
     
     // PHASE 3: Create node instance and enter processing loop
     // SPIN PATTERN: Handles incoming messages, service responses, and callbacks

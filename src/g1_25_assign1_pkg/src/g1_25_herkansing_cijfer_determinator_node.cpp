@@ -31,10 +31,10 @@
 #include <mutex>                      // Thread synchronization for database safety
 
 // CUSTOM MESSAGE AND SERVICE INTERFACES
-#include "g1_interface_pkg/msg/tentamen.hpp"    // Individual exam result message format
-#include "g1_interface_pkg/msg/student.hpp"     // Student control message format
-#include "g1_interface_pkg/action/herkanser.hpp" // Retake exam action interface
-#include "g1_interface_pkg/srv/tentamens.hpp"   // Grade calculation service interface
+#include "g1_25_assign1_interfaces_pkg/msg/tentamen.hpp"    // Individual exam result message format
+#include "g1_25_assign1_interfaces_pkg/msg/student.hpp"     // Student control message format
+#include "g1_25_assign1_interfaces_pkg/action/herkanser.hpp" // Retake exam action interface
+#include "g1_25_assign1_interfaces_pkg/srv/tentamens.hpp"   // Grade calculation service interface
 
 // ROS2 ACTION FRAMEWORK
 #include "rclcpp_action/rclcpp_action.hpp"      // Action server implementation support
@@ -110,7 +110,7 @@ class HerkansingCijferDeterminator : public rclcpp::Node
 {
 public:
     // TYPE ALIAS: Simplify action interface usage throughout the class
-    using Herkanser = g1_interface_pkg::action::Herkanser;
+    using Herkanser = g1_25_assign1_interfaces_pkg::action::Herkanser;
     
     /**
      * CONSTRUCTOR: Initialize retake exam processing infrastructure
@@ -122,7 +122,7 @@ public:
      * 
      * NODE NAME: "herkansing_cijfer_determinator" for ROS2 network identification
      */
-    HerkansingCijferDeterminator() : Node("herkansing_cijfer_determinator")
+    HerkansingCijferDeterminator() : Node("g1_25_herkansing_cijfer_determinator_node")
     {
         // ACTION SERVER: Handle retake exam requests with callback binding
         // Action: "herkanser" - receives retake requests from external clients
@@ -135,19 +135,19 @@ public:
             
         // GRADE CALCULATION SERVICE CLIENT: Request final grade computations
         // Service: "calculate_final_cijfer" - communicates with cijfer_calculator node
-        cijfer_client_ = this->create_client<g1_interface_pkg::srv::Tentamens>("calculate_final_cijfer");
+        cijfer_client_ = this->create_client<g1_25_assign1_interfaces_pkg::srv::Tentamens>("calculate_final_cijfer");
         
         // EXAM CONTROL PUBLISHER: Send restart commands to exam generators
         // Topic: "student_control" - reactivates exam generation for retakes
         // Queue Size: 10 - ensures control commands are delivered reliably
-        student_control_pub_ = this->create_publisher<g1_interface_pkg::msg::Student>("student_control", 10);
+        student_control_pub_ = this->create_publisher<g1_25_assign1_interfaces_pkg::msg::Student>("student_control", 10);
     }
 
 private:
     // ROS2 INTERFACE HANDLES: Maintain connections to ROS2 communication channels
     rclcpp_action::Server<Herkanser>::SharedPtr action_server_;                     // Retake action server
-    rclcpp::Client<g1_interface_pkg::srv::Tentamens>::SharedPtr cijfer_client_;     // Grade calculation service client
-    rclcpp::Publisher<g1_interface_pkg::msg::Student>::SharedPtr student_control_pub_; // Exam generation control publisher
+    rclcpp::Client<g1_25_assign1_interfaces_pkg::srv::Tentamens>::SharedPtr cijfer_client_;     // Grade calculation service client
+    rclcpp::Publisher<g1_25_assign1_interfaces_pkg::msg::Student>::SharedPtr student_control_pub_; // Exam generation control publisher
 
     /**
      * GOAL HANDLER: Process incoming retake requests
@@ -219,7 +219,7 @@ private:
 
         // PHASE 2: Reactivate exam generation pipeline for retake
         // CONTROL FLOW: Sends "again" command to restart exam generation
-        g1_interface_pkg::msg::Student start_msg;
+        g1_25_assign1_interfaces_pkg::msg::Student start_msg;
         start_msg.stamp = this->now();              // Command timestamp
         start_msg.name = key.student;               // Target student for retake
         start_msg.course = key.course;              // Target course for retake
@@ -251,7 +251,7 @@ private:
 
         // PHASE 4: Calculate updated final grade using existing service
         // SERVICE REQUEST: Prepare exam data for grade calculation
-        auto request = std::make_shared<g1_interface_pkg::srv::Tentamens::Request>();
+        auto request = std::make_shared<g1_25_assign1_interfaces_pkg::srv::Tentamens::Request>();
         request->student_name = key.student;        // Student identification
         request->course_name = key.course;          // Course identification
         request->tentamen_cijfers = cijfers;        // New retake exam scores
@@ -331,8 +331,8 @@ int main(int argc, char **argv)
     rclcpp::init(argc, argv);
     
     // PHASE 2: Log node startup for system monitoring
-    RCLCPP_INFO(rclcpp::get_logger("herkansing_cijfer_determinator"), 
-               "[!] Starting herkansing_cijfer_determinator node");
+    RCLCPP_INFO(rclcpp::get_logger("g1_25_herkansing_cijfer_determinator_node"), 
+               "[!] Starting g1_25_herkansing_cijfer_determinator_node");
     
     // PHASE 3: Create node instance and enter action serving loop
     // SPIN PATTERN: Handles incoming action requests, service responses, and callbacks

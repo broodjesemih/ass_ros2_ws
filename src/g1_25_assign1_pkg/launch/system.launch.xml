@@ -1,0 +1,28 @@
+<launch>
+
+  <!-- Tentamen result generator -->
+  <node pkg="g1_25_assign1_pkg"
+        exec="g1_25_tentamen_result_generator_node"
+        output="screen" />
+
+  <!-- Cijfer calculator -->
+  <node pkg="g1_25_assign1_pkg"
+        exec="g1_25_cijfer_calculator_node"
+        output="screen" />
+
+  <!-- Final cijfer determinator -->
+  <node pkg="g1_25_assign1_pkg"
+        exec="g1_25_final_cijfer_determinator_node"
+        output="screen" />
+
+  <!-- Herkansing scheduler -->
+  <node pkg="g1_25_assign1_pkg"
+        exec="g1_25_herkansing_scheduler_node"
+        output="screen" />
+
+  <!-- Herkansing cijfer determinator -->
+  <node pkg="g1_25_assign1_pkg"
+        exec="g1_25_herkansing_cijfer_determinator_node"
+        output="screen" />
+
+</launch>

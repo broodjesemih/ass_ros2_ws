@@ -3,7 +3,7 @@
 #include <memory>
 #include <chrono>
 #include <future>
-#include "g1_interface_pkg/srv/tentamens.hpp"
+#include "g1_25_assign1_interfaces_pkg/srv/tentamens.hpp"
 
 /**
  * Unit tests for de CijferCalculator service node
@@ -23,7 +23,7 @@ protected:
     {
         rclcpp::init(0, nullptr);
         node_ = rclcpp::Node::make_shared("test_cijfer_calculator");
-        client_ = node_->create_client<g1_interface_pkg::srv::Tentamens>("calculate_final_cijfer");
+        client_ = node_->create_client<g1_25_assign1_interfaces_pkg::srv::Tentamens>("calculate_final_cijfer");
         
         // Wait for service to become available (max 5 seconden)
         ASSERT_TRUE(client_->wait_for_service(std::chrono::seconds(5))) 
@@ -36,12 +36,12 @@ protected:
     }
 
     // Helper function to service calls uit te voeren
-    std::shared_ptr<g1_interface_pkg::srv::Tentamens::Response> call_service(
+    std::shared_ptr<g1_25_assign1_interfaces_pkg::srv::Tentamens::Response> call_service(
         const std::string& student_name, 
         const std::string& course_name, 
         const std::vector<int>& cijfers)
     {
-        auto request = std::make_shared<g1_interface_pkg::srv::Tentamens::Request>();
+        auto request = std::make_shared<g1_25_assign1_interfaces_pkg::srv::Tentamens::Request>();
         request->student_name = student_name;
         request->course_name = course_name;
         request->tentamen_cijfers = cijfers;
@@ -59,7 +59,7 @@ protected:
     }
 
     rclcpp::Node::SharedPtr node_;
-    rclcpp::Client<g1_interface_pkg::srv::Tentamens>::SharedPtr client_;
+    rclcpp::Client<g1_25_assign1_interfaces_pkg::srv::Tentamens>::SharedPtr client_;
 };
 
 /**
@@ -155,11 +155,11 @@ TEST_F(CijferCalculatorTest, TestEmptyGradesList)
 TEST_F(CijferCalculatorTest, TestMultipleStudentsConcurrency)
 {
     // Send multiple requests simultaneously
-    std::vector<rclcpp::Client<g1_interface_pkg::srv::Tentamens>::SharedFuture> futures;
+    std::vector<rclcpp::Client<g1_25_assign1_interfaces_pkg::srv::Tentamens>::SharedFuture> futures;
     
     // Normal student
     {
-        auto request = std::make_shared<g1_interface_pkg::srv::Tentamens::Request>();
+        auto request = std::make_shared<g1_25_assign1_interfaces_pkg::srv::Tentamens::Request>();
         request->student_name = "Student1";
         request->course_name = "Math";
         request->tentamen_cijfers = {80, 80, 80};
@@ -168,7 +168,7 @@ TEST_F(CijferCalculatorTest, TestMultipleStudentsConcurrency)
     
     // Wessel
     {
-        auto request = std::make_shared<g1_interface_pkg::srv::Tentamens::Request>();
+        auto request = std::make_shared<g1_25_assign1_interfaces_pkg::srv::Tentamens::Request>();
         request->student_name = "Wessel Tip";
         request->course_name = "Math";
         request->tentamen_cijfers = {50, 50, 50};
@@ -177,7 +177,7 @@ TEST_F(CijferCalculatorTest, TestMultipleStudentsConcurrency)
     
     // Other student
     {
-        auto request = std::make_shared<g1_interface_pkg::srv::Tentamens::Request>();
+        auto request = std::make_shared<g1_25_assign1_interfaces_pkg::srv::Tentamens::Request>();
         request->student_name = "Student2";
         request->course_name = "Math";
         request->tentamen_cijfers = {60, 70, 80};

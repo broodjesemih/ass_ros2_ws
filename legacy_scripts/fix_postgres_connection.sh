@@ -133,7 +133,7 @@ if PGPASSWORD=password psql -h localhost -U postgres -d student_grades -c "SELEC
     echo "You can now run:"
     echo "  ./start_system.sh"
     echo "or"
-    echo "  colcon build --packages-select g1_ass1_pkg && ros2 launch g1_ass1_pkg system.launch.xml"
+    echo "  colcon build --packages-select g1_25_assign1_pkg && ros2 launch g1_25_assign1_pkg system.launch.xml"
 else
     echo "❌ Still having connection issues."
     echo ""

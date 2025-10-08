@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(g1_interface_pkg)
+project(g1_25_assign1_interfaces_pkg)
 
 find_package(ament_cmake REQUIRED)
 find_package(rosidl_default_generators REQUIRED)

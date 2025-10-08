@@ -4,7 +4,7 @@
 #include <memory>
 #include <chrono>
 #include <future>
-#include "g1_interface_pkg/action/herkanser.hpp"
+#include "g1_25_assign1_interfaces_pkg/action/herkanser.hpp"
 
 /**
  * Unit tests for de Herkansing Action Server
@@ -20,7 +20,7 @@
 class HerkansingActionTest : public ::testing::Test 
 {
 protected:
-    using HerkanserAction = g1_interface_pkg::action::Herkanser;
+    using HerkanserAction = g1_25_assign1_interfaces_pkg::action::Herkanser;
     using GoalHandleHerkanser = rclcpp_action::ClientGoalHandle<HerkanserAction>;
 
     void SetUp() override 

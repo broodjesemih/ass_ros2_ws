@@ -33,8 +33,8 @@
 #include <unordered_set>              // STL unordered set for active combination tracking
 
 // CUSTOM MESSAGE INTERFACES
-#include "g1_interface_pkg/msg/tentamen.hpp"    // Exam result message format
-#include "g1_interface_pkg/msg/student.hpp"     // Student control message format
+#include "g1_25_assign1_interfaces_pkg/msg/tentamen.hpp"    // Exam result message format
+#include "g1_25_assign1_interfaces_pkg/msg/student.hpp"     // Student control message format
 
 // DATABASE ABSTRACTION LAYER
 #include "database.cpp"               // PostgreSQL database operations for student data loading
@@ -107,17 +107,17 @@ public:
      * NODE NAME: "tentamen_result_generator" for ROS2 network identification
      * TIMING: 2-second intervals for realistic exam result frequency
      */
-    TentamenResultGenerator() : Node("tentamen_result_generator")
+    TentamenResultGenerator() : Node("g1_25_tentamen_result_generator_node")
     {
         // EXAM RESULT PUBLISHER: Distribute generated exam scores
         // Topic: "tentamen_results" - feeds grade calculation pipeline
         // Queue Size: 10 - buffers exam results to prevent loss during processing
-        publisher_ = this->create_publisher<g1_interface_pkg::msg::Tentamen>("tentamen_results", 10);
+        publisher_ = this->create_publisher<g1_25_assign1_interfaces_pkg::msg::Tentamen>("tentamen_results", 10);
         
         // CONTROL SUBSCRIBER: Listen for generation start/stop commands
         // Topic: "student_control" - receives commands from grade processors
         // Queue Size: 10 - ensures control commands are processed reliably
-        student_control_sub_ = this->create_subscription<g1_interface_pkg::msg::Student>(
+        student_control_sub_ = this->create_subscription<g1_25_assign1_interfaces_pkg::msg::Student>(
             "student_control", 10,
             std::bind(&TentamenResultGenerator::student_control_callback, this, std::placeholders::_1));
             
@@ -141,8 +141,8 @@ private:
     std::unordered_set<StudentCourseKey> active_combinations_;
     
     // ROS2 INTERFACE HANDLES: Maintain connections to ROS2 communication channels
-    rclcpp::Publisher<g1_interface_pkg::msg::Tentamen>::SharedPtr publisher_;        // Exam result publisher
-    rclcpp::Subscription<g1_interface_pkg::msg::Student>::SharedPtr student_control_sub_; // Control command subscriber
+    rclcpp::Publisher<g1_25_assign1_interfaces_pkg::msg::Tentamen>::SharedPtr publisher_;        // Exam result publisher
+    rclcpp::Subscription<g1_25_assign1_interfaces_pkg::msg::Student>::SharedPtr student_control_sub_; // Control command subscriber
     rclcpp::TimerBase::SharedPtr timer_;                                           // Periodic generation timer
 
     /**
@@ -206,7 +206,7 @@ private:
         auto key = *it; // Selected student/course combination
 
         // EXAM MESSAGE CREATION: Prepare exam result for publication
-        g1_interface_pkg::msg::Tentamen msg;
+        g1_25_assign1_interfaces_pkg::msg::Tentamen msg;
         msg.stamp = this->now();                              // Exam timestamp
         msg.student_name = key.student;                       // Student taking exam
         msg.course_name = key.course;                         // Course for exam
@@ -233,7 +233,7 @@ private:
      * INTEGRATION: Receives commands from grade processors and retake schedulers
      * REAL-TIME: Immediate response to control commands for dynamic pipeline management
      */
-    void student_control_callback(const g1_interface_pkg::msg::Student::SharedPtr msg)
+    void student_control_callback(const g1_25_assign1_interfaces_pkg::msg::Student::SharedPtr msg)
     {
         // IDENTIFICATION: Create key for targeted student/course combination
         StudentCourseKey key{msg->name, msg->course};
@@ -280,8 +280,8 @@ int main(int argc, char **argv)
     rclcpp::init(argc, argv);
     
     // PHASE 2: Log node startup for system monitoring
-    RCLCPP_INFO(rclcpp::get_logger("tentamen_result_generator"), 
-               "[!] Starting tentamen_result_generator node");
+    RCLCPP_INFO(rclcpp::get_logger("g1_25_tentamen_result_generator_node"), 
+               "[!] Starting g1_25_tentamen_result_generator_node");
     
     // PHASE 3: Create node instance and enter generation loop
     // SPIN PATTERN: Handles timer callbacks, control messages, and publications

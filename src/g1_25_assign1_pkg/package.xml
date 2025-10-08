@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <package format="3">
-  <name>g1_ass1_pkg</name>
+  <name>g1_25_assign1_pkg</name>
   <version>0.1.0</version>
-  <description>Nodes for Tilmann's Cijfer Generator.</description>
+  <description>Nodes for G1 Group 25 Grade Calculator Assignment 1.</description>
   <maintainer email="justlikesemih04@gmail.com">broodjesemih</maintainer>
   <license>MIT</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
   <depend>rclcpp</depend>
-  <depend>g1_interface_pkg</depend>
+  <depend>g1_25_assign1_interfaces_pkg</depend>
   <depend>libpqxx-dev</depend>
 
   <test_depend>ament_lint_auto</test_depend>

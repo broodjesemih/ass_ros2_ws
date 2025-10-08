@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.8)
-project(g1_ass1_pkg)
+project(g1_25_assign1_pkg)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
 # Dependencies
-find_package(g1_interface_pkg REQUIRED)
+find_package(g1_25_assign1_interfaces_pkg REQUIRED)
 find_package(ament_cmake REQUIRED)            # cmake package
 find_package(rclcpp REQUIRED)                 # required for all nodes
 find_package(rclcpp_action REQUIRED)          # required if an action server node is created
@@ -25,50 +25,50 @@ target_link_libraries(database_lib ${PQXX_LIBRARIES})
 target_compile_options(database_lib PRIVATE ${PQXX_CFLAGS_OTHER})
 
 # Executables
-add_executable(tentamen_result_generator src/tentamen_result_generator.cpp)
-ament_target_dependencies(tentamen_result_generator rclcpp g1_interface_pkg)
-target_link_libraries(tentamen_result_generator database_lib)
+add_executable(g1_25_tentamen_result_generator_node src/g1_25_tentamen_result_generator_node.cpp)
+ament_target_dependencies(g1_25_tentamen_result_generator_node rclcpp g1_25_assign1_interfaces_pkg)
+target_link_libraries(g1_25_tentamen_result_generator_node database_lib)
 
-add_executable(final_cijfer_determinator src/final_cijfer_determinator.cpp)
-ament_target_dependencies(final_cijfer_determinator rclcpp g1_interface_pkg)
-target_link_libraries(final_cijfer_determinator database_lib)
+add_executable(g1_25_final_cijfer_determinator_node src/g1_25_final_cijfer_determinator_node.cpp)
+ament_target_dependencies(g1_25_final_cijfer_determinator_node rclcpp g1_25_assign1_interfaces_pkg)
+target_link_libraries(g1_25_final_cijfer_determinator_node database_lib)
 
-add_executable(cijfer_calculator src/cijfer_calculator.cpp)
-ament_target_dependencies(cijfer_calculator rclcpp g1_interface_pkg)
-target_link_libraries(cijfer_calculator database_lib)
+add_executable(g1_25_cijfer_calculator_node src/g1_25_cijfer_calculator_node.cpp)
+ament_target_dependencies(g1_25_cijfer_calculator_node rclcpp g1_25_assign1_interfaces_pkg)
+target_link_libraries(g1_25_cijfer_calculator_node database_lib)
 
-add_executable(herkansing_cijfer_determinator src/herkansing_cijfer_determinator.cpp)
-ament_target_dependencies(herkansing_cijfer_determinator rclcpp_action rclcpp g1_interface_pkg)
-target_link_libraries(herkansing_cijfer_determinator database_lib)
+add_executable(g1_25_herkansing_cijfer_determinator_node src/g1_25_herkansing_cijfer_determinator_node.cpp)
+ament_target_dependencies(g1_25_herkansing_cijfer_determinator_node rclcpp_action rclcpp g1_25_assign1_interfaces_pkg)
+target_link_libraries(g1_25_herkansing_cijfer_determinator_node database_lib)
 
-add_executable(herkansing_scheduler src/herkansing_scheduler.cpp)
-ament_target_dependencies(herkansing_scheduler rclcpp_action rclcpp g1_interface_pkg)
-target_link_libraries(herkansing_scheduler database_lib)
+add_executable(g1_25_herkansing_scheduler_node src/g1_25_herkansing_scheduler_node.cpp)
+ament_target_dependencies(g1_25_herkansing_scheduler_node rclcpp_action rclcpp g1_25_assign1_interfaces_pkg)
+target_link_libraries(g1_25_herkansing_scheduler_node database_lib)
 
 
 
 # # Executables
 # add_executable(tentamen_result_generator src/tentamen_result_generator.cpp)
-# ament_target_dependencies(tentamen_result_generator rclcpp g1_interface_pkg)
+# ament_target_dependencies(tentamen_result_generator rclcpp g1_25_assign1_interfaces_pkg)
 
 # add_executable(final_cijfer_determinator src/final_cijfer_determinator.cpp)
-# ament_target_dependencies(final_cijfer_determinator rclcpp g1_interface_pkg)
+# ament_target_dependencies(final_cijfer_determinator rclcpp g1_25_assign1_interfaces_pkg)
 
 # add_executable(cijfer_calculator src/cijfer_calculator.cpp)
-# ament_target_dependencies(cijfer_calculator rclcpp g1_interface_pkg)
+# ament_target_dependencies(cijfer_calculator rclcpp g1_25_assign1_interfaces_pkg)
 
 # add_executable(herkansing_cijfer_determinator src/herkansing_cijfer_determinator.cpp)
-# ament_target_dependencies(herkansing_cijfer_determinator rclcpp_action rclcpp g1_interface_pkg)
+# ament_target_dependencies(herkansing_cijfer_determinator rclcpp_action rclcpp g1_25_assign1_interfaces_pkg)
 
 # add_executable(herkansing_scheduler src/herkansing_scheduler.cpp)
-# ament_target_dependencies(herkansing_scheduler rclcpp_action rclcpp g1_interface_pkg)
+# ament_target_dependencies(herkansing_scheduler rclcpp_action rclcpp g1_25_assign1_interfaces_pkg)
 
 install(TARGETS
-  tentamen_result_generator
-  final_cijfer_determinator
-  cijfer_calculator
-  herkansing_cijfer_determinator
-  herkansing_scheduler
+  g1_25_tentamen_result_generator_node
+  g1_25_final_cijfer_determinator_node
+  g1_25_cijfer_calculator_node
+  g1_25_herkansing_cijfer_determinator_node
+  g1_25_herkansing_scheduler_node
   DESTINATION lib/${PROJECT_NAME}
 )
 
@@ -127,7 +127,7 @@ if(BUILD_TESTING)
   ament_add_gtest(test_topic_communication test/test_topic_communication.cpp)
   if(TARGET test_topic_communication)
     target_include_directories(test_topic_communication PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
-    ament_target_dependencies(test_topic_communication rclcpp g1_interface_pkg)
+    ament_target_dependencies(test_topic_communication rclcpp g1_25_assign1_interfaces_pkg)
     target_link_libraries(test_topic_communication ${GTEST_LIBRARIES})
   endif()
 
@@ -139,7 +139,7 @@ if(BUILD_TESTING)
     ament_add_gtest(test_cijfer_calculator test/test_cijfer_calculator.cpp)
     if(TARGET test_cijfer_calculator)
       target_include_directories(test_cijfer_calculator PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
-      ament_target_dependencies(test_cijfer_calculator rclcpp g1_interface_pkg)
+      ament_target_dependencies(test_cijfer_calculator rclcpp g1_25_assign1_interfaces_pkg)
       target_link_libraries(test_cijfer_calculator ${GTEST_LIBRARIES})
     endif()
 
@@ -147,7 +147,7 @@ if(BUILD_TESTING)
     ament_add_gtest(test_herkansing_action test/test_herkansing_action.cpp)
     if(TARGET test_herkansing_action)
       target_include_directories(test_herkansing_action PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
-      ament_target_dependencies(test_herkansing_action rclcpp rclcpp_action g1_interface_pkg)
+      ament_target_dependencies(test_herkansing_action rclcpp rclcpp_action g1_25_assign1_interfaces_pkg)
       target_link_libraries(test_herkansing_action ${GTEST_LIBRARIES})
     endif()
 
@@ -155,7 +155,7 @@ if(BUILD_TESTING)
     ament_add_gtest(test_system_integration test/test_system_integration.cpp)
     if(TARGET test_system_integration)
       target_include_directories(test_system_integration PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
-      ament_target_dependencies(test_system_integration rclcpp rclcpp_action g1_interface_pkg)
+      ament_target_dependencies(test_system_integration rclcpp rclcpp_action g1_25_assign1_interfaces_pkg)
       target_link_libraries(test_system_integration ${GTEST_LIBRARIES})
     endif()
   else()
