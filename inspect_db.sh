@@ -69,7 +69,7 @@ echo -e "\n${GREEN}✅ Connected to PostgreSQL database!${NC}"
 echo -e "${BLUE}📋 Database Information:${NC}"
 
 # Show database info
-$WORKING_CONNECTION << 'EOF'
+eval "$WORKING_CONNECTION" << 'EOF'
 -- Show current database and user
 SELECT current_database() as "Current Database", current_user as "Current User", version() as "PostgreSQL Version";
 
@@ -119,7 +119,7 @@ SELECT
     course,
     COUNT(*) as "Total Students",
     COUNT(*) FILTER (WHERE final_result IS NOT NULL) as "Completed",
-    ROUND(AVG(final_result), 2) as "Average Grade"
+    ROUND(AVG(final_result)::numeric, 2) as "Average Grade"
 FROM student_results 
 GROUP BY course 
 ORDER BY course;
