@@ -8,51 +8,51 @@ BLUE='\033[0;34m'
 NC='\033[0m'
 
 echo "=========================================="
-echo "🔍 Database Diagnostic Tool"
+echo "Database Diagnostic Tool"
 echo "=========================================="
 echo ""
 
 # 1. Check PostgreSQL service
-echo "1️⃣  Checking PostgreSQL service..."
+echo "1. Checking PostgreSQL service..."
 if systemctl is-active --quiet postgresql; then
-    echo -e "${GREEN}✅ PostgreSQL service is running${NC}"
+    echo -e "${GREEN}PostgreSQL service is running${NC}"
 else
-    echo -e "${RED}❌ PostgreSQL service is not running${NC}"
-    echo -e "${YELLOW}💡 Try: sudo systemctl start postgresql${NC}"
+    echo -e "${RED}PostgreSQL service is not running${NC}"
+    echo -e "${YELLOW}Try: sudo systemctl start postgresql${NC}"
 fi
 echo ""
 
 # 2. Check socket files
-echo "2️⃣  Checking socket files..."
+echo "2. Checking socket files..."
 SOCKET_DIRS=("/var/run/postgresql" "/tmp" "/run/postgresql")
 SOCKET_FOUND=false
 
 for dir in "${SOCKET_DIRS[@]}"; do
     if [ -d "$dir" ] && ls "$dir"/.s.PGSQL.* >/dev/null 2>&1; then
-        echo -e "${GREEN}✅ Found PostgreSQL socket in $dir${NC}"
+        echo -e "${GREEN}Found PostgreSQL socket in $dir${NC}"
         ls -la "$dir"/.s.PGSQL.*
         SOCKET_FOUND=true
     fi
 done
 
 if [ "$SOCKET_FOUND" = false ]; then
-    echo -e "${RED}❌ No PostgreSQL socket files found${NC}"
-    echo -e "${YELLOW}💡 Try: sudo systemctl restart postgresql${NC}"
+    echo -e "${RED}No PostgreSQL socket files found${NC}"
+    echo -e "${YELLOW}Try: sudo systemctl restart postgresql${NC}"
 fi
 echo ""
 
 # 3. Check database existence
-echo "3️⃣  Checking database existence..."
+echo "3. Checking database existence..."
 if sudo -u postgres psql -lqt | cut -d \| -f 1 | grep -qw student_grades; then
-    echo -e "${GREEN}✅ Database 'student_grades' exists${NC}"
+    echo -e "${GREEN}Database 'student_grades' exists${NC}"
 else
-    echo -e "${RED}❌ Database 'student_grades' not found${NC}"
-    echo -e "${YELLOW}💡 Try: sudo -u postgres createdb student_grades${NC}"
+    echo -e "${RED}Database 'student_grades' not found${NC}"
+    echo -e "${YELLOW}Try: sudo -u postgres createdb student_grades${NC}"
 fi
 echo ""
 
 # 4. Test connections
-echo "4️⃣  Testing database connections..."
+echo "4. Testing database connections..."
 
 TESTS=(
     "PGPASSWORD=password psql -h localhost -U postgres -d student_grades -c 'SELECT version();'|TCP with password"
@@ -66,16 +66,16 @@ for test_line in "${TESTS[@]}"; do
     IFS='|' read -r cmd desc <<< "$test_line"
     echo -n "Testing $desc: "
     if eval "$cmd" >/dev/null 2>&1; then
-        echo -e "${GREEN}✅ Success${NC}"
+        echo -e "${GREEN}Success${NC}"
         ((SUCCESS_COUNT++))
     else
-        echo -e "${RED}❌ Failed${NC}"
+        echo -e "${RED}Failed${NC}"
     fi
 done
 echo ""
 
 # 5. Application connection test
-echo "5️⃣  Testing application connection methods..."
+echo "5. Testing application connection methods..."
 echo "The C++ application will try these in order:"
 echo "  1. postgresql://postgres:password@localhost:5432/student_grades"
 echo "  2. host=localhost port=5432 dbname=student_grades user=postgres password=password"  
@@ -86,14 +86,14 @@ echo "  6. postgresql:///student_grades"
 echo ""
 
 # 6. Summary and recommendations
-echo "📋 Summary:"
+echo "Summary:"
 if [ "$SUCCESS_COUNT" -gt 0 ]; then
-    echo -e "${GREEN}✅ $SUCCESS_COUNT connection method(s) working${NC}"
-    echo -e "${GREEN}✅ The application should be able to connect to the database${NC}"
+    echo -e "${GREEN}$SUCCESS_COUNT connection method(s) working${NC}"
+    echo -e "${GREEN}The application should be able to connect to the database${NC}"
 else
-    echo -e "${RED}❌ No connection methods working${NC}"
+    echo -e "${RED}No connection methods working${NC}"
     echo ""
-    echo -e "${YELLOW}🔧 Recommended fixes:${NC}"
+    echo -e "${YELLOW}Recommended fixes:${NC}"
     echo "1. sudo systemctl restart postgresql"
     echo "2. ./complete_setup.sh"
     echo "3. Check logs: sudo journalctl -u postgresql"
