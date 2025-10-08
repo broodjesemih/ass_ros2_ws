@@ -50,42 +50,40 @@ namespace Database
             };
             
             bool connected = false;
+            std::cout << "[Database] 🔍 Searching for PostgreSQL connection..." << std::endl;
+            
             for (size_t i = 0; i < connection_attempts.size(); i++) {
                 try {
                     connection_string = connection_attempts[i];
-                    std::cout << "[Database] Attempt " << (i+1) << "/" << connection_attempts.size() 
-                              << ": " << connection_string << std::endl;
                     
                     db = std::make_unique<pqxx::connection>(connection_string);
                     
                     if (db->is_open()) {
-                        std::cout << "[Database] ✅ Connected successfully using method " << (i+1) << "!" << std::endl;
+                        std::cout << "[Database] ✅ Connected successfully!" << std::endl;
+                        std::cout << "[Database] 📡 Using: " << connection_string << std::endl;
                         connected = true;
                         break;
                     }
                 } catch (const std::exception& e) {
-                    std::cout << "[Database] ❌ Method " << (i+1) << " failed: " << e.what() << std::endl;
                     db = nullptr;
-                    
-                    // Add specific hints for common errors
-                    std::string error_msg = e.what();
-                    if (error_msg.find("No such file or directory") != std::string::npos) {
-                        std::cout << "[Database] 💡 Hint: PostgreSQL socket file not found. Is PostgreSQL running?" << std::endl;
-                    } else if (error_msg.find("Connection refused") != std::string::npos) {
-                        std::cout << "[Database] 💡 Hint: PostgreSQL server not accepting connections. Check if it's running on the correct port." << std::endl;
-                    } else if (error_msg.find("authentication failed") != std::string::npos) {
-                        std::cout << "[Database] 💡 Hint: Authentication failed. Check username/password or pg_hba.conf." << std::endl;
+                    // Only show detailed errors for first few critical attempts or if all fail
+                    if (i < 3) {
+                        std::string error_msg = e.what();
+                        if (error_msg.find("Connection refused") != std::string::npos) {
+                            std::cout << "[Database] ⚠️  Port " << (i == 0 ? "5432" : "5433") << " not available, trying alternatives..." << std::endl;
+                        } else if (error_msg.find("authentication failed") != std::string::npos) {
+                            std::cout << "[Database] ⚠️  Password auth failed on port " << (i == 0 ? "5432" : "5433") << ", trying socket connections..." << std::endl;
+                        }
                     }
                 }
             }
             
             if (!connected) {
-                std::cerr << "[Database] ❌ All connection attempts failed!" << std::endl;
-                std::cerr << "[Database] 🔧 Troubleshooting steps:" << std::endl;
-                std::cerr << "[Database]    1. Check if PostgreSQL is running: sudo systemctl status postgresql" << std::endl;
-                std::cerr << "[Database]    2. Start PostgreSQL: sudo systemctl start postgresql" << std::endl;
-                std::cerr << "[Database]    3. Run setup script: ./setup_postgresql.sh" << std::endl;
-                std::cerr << "[Database]    4. Check debug info: ./debug_postgres.sh" << std::endl;
+                std::cerr << "[Database] ❌ Could not establish database connection!" << std::endl;
+                std::cerr << "[Database] 🔧 Quick fixes:" << std::endl;
+                std::cerr << "[Database]    • Check PostgreSQL: sudo systemctl status postgresql" << std::endl;
+                std::cerr << "[Database]    • Start PostgreSQL: sudo systemctl start postgresql" << std::endl;
+                std::cerr << "[Database]    • Run auto-setup: ./complete_setup.sh" << std::endl;
                 return false;
             }
 
