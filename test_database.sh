@@ -58,7 +58,7 @@ TESTS=(
     "PGPASSWORD=password psql -h localhost -U postgres -d student_grades -c 'SELECT version();'|TCP with password"
     "psql -d student_grades -c 'SELECT version();'|Current user socket"
     "sudo -u postgres psql -d student_grades -c 'SELECT version();'|Postgres user socket"
-    "psql -h localhost -d student_grades -c 'SELECT version();'|TCP without auth"
+    "timeout 3s psql -h localhost -d student_grades -c 'SELECT version();' </dev/null|TCP without auth"
 )
 
 SUCCESS_COUNT=0
