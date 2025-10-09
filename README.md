@@ -8,6 +8,11 @@ Most issues can be resolved by running the setup script again:
 ./complete_setup.sh
 ```
 This script automatically detects and fixes common PostgreSQL authentication and ROS2 workspace issues.
+If you are getting RosDep-errors, execute the following commands:
+```bash
+sudo rosdep init
+rosdep update
+```
 
 ## Quick Start
 
