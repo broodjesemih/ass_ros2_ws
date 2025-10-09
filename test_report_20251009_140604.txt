@@ -1,0 +1,59 @@
+================================================================================
+                    TESTRAPPORT – ROS2 GRADE CALCULATOR
+================================================================================
+Aangemaakt: 2025-10-09 14:06
+Tester: broodjesemih
+
+1. DOEL & SCOPE
+--------------------------------------------------------------------------------
+Dit testrapport verifieert de kernfunctionaliteit van de volgende componenten:
+  - tentamen_result_generator (topic publisher)
+  - cijfer_calculator (service provider)
+  - final_cijfer_determinator (business logic)
+  - herkansing_scheduler (action server)
+  - herkansing_cijfer_determinator (action client)
+
+2. OMGEVING
+--------------------------------------------------------------------------------
+OS / ROS2:        Ubuntu 24.04.3 LTS / 
+Compiler/CMake:   gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0 / cmake version 3.28.3
+Database:         postgresql://postgres:***@localhost:5432/student_grades
+Pakketten:        g1_25_assign1_pkg, g1_25_assign1_interfaces_pkg
+Python:           Python 3.12.3
+Tester:           broodjesemih
+
+3. KERN TESTS
+--------------------------------------------------------------------------------
+
+Test ID  Titel                               Status     Uitkomst
+--------------------------------------------------------------------------------
+T-DB1    Database integratie                 PASS       Database verbinding en CRUD operaties succesvol
+T-SVC1   Service beschikbaarheid             PASS       calculate_final_cijfer service is actief
+T-E2E1   Eindcijfer berekening (normaal)     PASS       Cijfer 80 correct berekend uit [70,80,90]
+T-WESS1  Wessel bonus (+10 punten)           PASS       Wessel krijgt correct 90 (80+10 bonus)
+FULL-INT1 Multiple student calculations       PASS       3 verschillende studenten correct verwerkt
+L1-T1    Basic service response              PASS       Service beantwoordt correct voor [70,80,90]
+L1-T3    Wessel bonus feature                PASS       Wessel krijgt eindcijfer van 90 (retry)
+L1-T2    Input validation (lege data)        PASS       Systeem handelt lege input af zonder crash
+L2-T1    Concurrent service calls            PASS       3/3 concurrent requests succesvol
+L2-T2    Edge case: single grade             PASS       Enkelvoudige cijfer berekening correct (85)
+L2-T3    Database under load                 PASS       svc: 3/3, db: 0/3
+L2-T4    System recovery                     PASS       Systeem herstelt na invalid input (poging 1)
+L3-T1    High volume sequential              PASS       20/20 requests succesvol verwerkt
+L3-T2    Overload recovery                   PASS       Systeem herstelt na overload stress (poging 1)
+L3-T3    Security validation                 PASS       Systeem handelt malicious input correct af (score: 2/2)
+FULL-HEALTH1 Node discovery                      PASS       Alle 5 nodes vindbaar via ROS2
+FULL-HEALTH2 Database integrity                  PASS       Database bevat 0 records
+FULL-HEALTH3 Response time                       PASS       Service antwoordt in 3231ms
+FULL-HEALTH4 System stability                    PASS       Alle nodes blijven actief na stress
+
+4. SAMENVATTING
+--------------------------------------------------------------------------------
+Totaal aantal tests:     19
+Geslaagd:                19
+Gefaald:                 0
+Slagingspercentage:      100%
+
+CONCLUSIE: Alle tests geslaagd. Systeem functioneert correct.
+=================================================================================
+
