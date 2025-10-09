@@ -159,6 +159,7 @@ SHOW_HELP=false
 LIST_NODES=false
 TEST_LEVEL="basic"
 GENERATE_REPORT=false
+GTESTS_ONLY=false
 
 while [[ $# -gt 0 ]]; do
     case $1 in
@@ -190,8 +191,16 @@ while [[ $# -gt 0 ]]; do
             FULL_TEST=true
             shift
             ;;
+        --gtests-only)
+            GTESTS_ONLY=true
+            shift
+            ;;
         --report)
             GENERATE_REPORT=true
+            shift
+            ;;
+        --gtests-only)
+            GTESTS_ONLY=true
             shift
             ;;
         --help|-h)
@@ -222,12 +231,25 @@ show_help() {
     echo "  ./test.sh --level3                  - Full system stress tests (90 seconds)"
     echo "  ./test.sh --full-test               - COMPLETE FULL TEST - All tests (3-5 minutes)"
     echo ""
+    echo "Google Tests (GTests) for Random Generator:"
+    echo "  ./test.sh --gtests-only             - Run only random generator Google Tests"
+    echo "      - Overall accuracy percentage calculation"
+    echo "      - Range compliance (10-100 validation)"
+    echo "      - Statistical randomness properties"
+    echo "      - Distribution uniformity testing"
+    echo "      - Percentage-based validation"
+    echo "      - Chi-square goodness of fit test"
+    echo "      - Temporal randomness verification"
+    echo "      - Multi-student randomness testing"
+    echo ""
     echo "Available nodes:"
     for key in "${!NODE_NAMES[@]}"; do
         echo "  - $key (${NODE_NAMES[$key]})"
     done
     echo ""
     echo "Test reports are automatically saved to: test_report_YYYYMMDD_HHMMSS.txt"
+    echo ""
+    echo "NOTE: GTests are automatically included in Level 1, 2, 3, and Full tests"
 }
 
 list_nodes() {
@@ -303,6 +325,8 @@ colcon test --packages-select g1_25_assign1_pkg
 # Check test results
 log_info "Test results:"
 colcon test-result --verbose
+
+# Google Tests will be run as part of colcon test
 
 echo ""
 log_info "Running integration tests..."
@@ -546,6 +570,194 @@ test_fault_tolerance() {
     cleanup_processes "${running_pids[@]}"
 }
 
+# =============================================================================
+# GOOGLE TESTS (GTESTS) FUNCTIONS
+# =============================================================================
+
+# Global variable for accuracy
+ACCURACY_PERCENTAGE=""
+
+# Random Generator GTests Function
+run_random_generator_gtests() {
+    log_info "=== RUNNING GOOGLE TESTS FOR RANDOM GENERATOR ==="
+    
+    # Check if GTest executable exists (first in install, then in build)
+    local gtest_executable="install/lib/g1_25_assign1_pkg/test_random_generator"
+    local build_executable="build/g1_25_assign1_pkg/test_random_generator"
+    
+    if [ -f "$gtest_executable" ]; then
+        log_info "Using installed GTest executable"
+    elif [ -f "$build_executable" ]; then
+        log_info "Using build directory GTest executable"
+        gtest_executable="$build_executable"
+    else
+        log_warning "GTest executable not found. Building tests..."
+        colcon build --packages-select g1_25_assign1_pkg --cmake-args -DBUILD_TESTING=ON
+        
+        # Check again after build
+        if [ -f "$build_executable" ]; then
+            gtest_executable="$build_executable"
+        elif [ -f "$gtest_executable" ]; then
+            log_info "GTest executable created in install directory"
+        else
+            log_error "Failed to build GTest executable"
+            record_test "GT-BUILD" "GTest build" "FAIL" "test_random_generator executable not created"
+            return 1
+        fi
+    fi
+    
+    # Start the ROS2 system for generator testing
+    log_info "Starting ROS2 system for random generator tests..."
+    nohup ros2 launch g1_25_assign1_pkg system.launch.xml >/dev/null 2>&1 &
+    local launch_pid=$!
+    sleep 5
+    
+    # Wait for generator node to be ready
+    local wait_count=0
+    local generator_ready=false
+    while [ $wait_count -lt 20 ]; do
+        if ros2 node list 2>/dev/null | grep -q "g1_25_tentamen_result_generator_node"; then
+            generator_ready=true
+            log_success "Random generator node is ready"
+            break
+        fi
+        sleep 1
+        ((wait_count++))
+    done
+    
+    if [ "$generator_ready" = false ]; then
+        log_error "Generator node failed to start within 20 seconds"
+        kill $launch_pid 2>/dev/null
+        record_test "GT-SETUP" "Generator node startup" "FAIL" "Node niet beschikbaar na 20s"
+        return 1
+    fi
+    
+    # Run the actual GTests
+    log_info "Executing random generator Google Tests..."
+    local gtest_output=$(mktemp)
+    local gtest_start_time=$(date +%s)
+    
+    # Set ROS environment for the test
+    export ROS_DOMAIN_ID=${ROS_DOMAIN_ID:-0}
+    
+    # Run GTest with timeout and capture output
+    if timeout 120s "$gtest_executable" --gtest_output=xml:/tmp/gtest_results.xml > "$gtest_output" 2>&1; then
+        local gtest_result=0
+        log_success "Random generator GTests completed successfully"
+        
+        # Parse GTest results
+        local total_tests=$(grep -o "Running [0-9]\+ test" "$gtest_output" | grep -o "[0-9]\+" | head -1)
+        if [ -z "$total_tests" ]; then
+            total_tests=8  # We now have 8 tests (including accuracy test)
+        fi
+        local passed_tests=$(grep -c "\[       OK \]" "$gtest_output")
+        if [ -z "$passed_tests" ]; then
+            passed_tests=0
+        fi
+        local failed_tests=$(grep -c "\[  FAILED  \]" "$gtest_output")
+        if [ -z "$failed_tests" ]; then
+            failed_tests=0
+        fi
+        
+        # Extract accuracy percentage and store globally
+        ACCURACY_PERCENTAGE=$(grep -o "Overall Accuracy: [0-9.]\+%" "$gtest_output" | grep -o "[0-9.]\+")
+        if [ -z "$ACCURACY_PERCENTAGE" ]; then
+            ACCURACY_PERCENTAGE="N/A"
+        fi
+        local accuracy_percentage="$ACCURACY_PERCENTAGE"
+        
+        log_info "GTest Results: $passed_tests passed, $failed_tests failed (total: $total_tests)"
+        log_success "Random Generator Accuracy: $accuracy_percentage%"
+        
+        # Record individual test results
+        if [ "$failed_tests" -eq 0 ]; then
+            record_test "GT-RAND1" "Range compliance test" "PASS" "Alle cijfers binnen 10-100 range"
+            record_test "GT-RAND2" "Statistical randomness" "PASS" "Gemiddelde en spreiding binnen verwachte grenzen"
+            record_test "GT-RAND3" "Distribution uniformity" "PASS" "Verdeling over bins redelijk uniform"
+            record_test "GT-RAND4" "Percentage validation" "PASS" "Slaag-, hoog- en laagpercentages correct"
+            record_test "GT-RAND5" "Chi-square uniformity" "PASS" "Chi-square test voor uniformiteit geslaagd"
+            record_test "GT-RAND6" "Temporal randomness" "PASS" "Opeenvolgende waarden niet gecorreleerd"
+            record_test "GT-RAND7" "Multi-student randomness" "PASS" "Verschillende studenten krijgen verschillende sequences"
+            record_test "GT-RAND8" "Overall accuracy" "PASS" "Generator accuracy: $accuracy_percentage%"
+        else
+            # Parse specific failures if possible
+            local range_fail=$(grep -c "TestGradeRangeCompliance.*FAILED" "$gtest_output" || echo "0")
+            local stats_fail=$(grep -c "TestStatisticalRandomness.*FAILED" "$gtest_output" || echo "0")
+            local uniform_fail=$(grep -c "TestDistributionUniformity.*FAILED" "$gtest_output" || echo "0")
+            local percent_fail=$(grep -c "TestPercentageRangeValidation.*FAILED" "$gtest_output" || echo "0")
+            local chi_fail=$(grep -c "TestChiSquareUniformity.*FAILED" "$gtest_output" || echo "0")
+            local temporal_fail=$(grep -c "TestTemporalRandomness.*FAILED" "$gtest_output" || echo "0")
+            local multi_fail=$(grep -c "TestMultiStudentRandomness.*FAILED" "$gtest_output" || echo "0")
+            local accuracy_fail=$(grep -c "TestOverallAccuracy.*FAILED" "$gtest_output" || echo "0")
+            
+            record_test "GT-RAND1" "Range compliance test" $([ "$range_fail" -eq 0 ] && echo "PASS" || echo "FAIL") "Range test resultaat"
+            record_test "GT-RAND2" "Statistical randomness" $([ "$stats_fail" -eq 0 ] && echo "PASS" || echo "FAIL") "Statistiek test resultaat" 
+            record_test "GT-RAND3" "Distribution uniformity" $([ "$uniform_fail" -eq 0 ] && echo "PASS" || echo "FAIL") "Uniformiteit test resultaat"
+            record_test "GT-RAND4" "Percentage validation" $([ "$percent_fail" -eq 0 ] && echo "PASS" || echo "FAIL") "Percentage test resultaat"
+            record_test "GT-RAND5" "Chi-square uniformity" $([ "$chi_fail" -eq 0 ] && echo "PASS" || echo "FAIL") "Chi-square test resultaat"
+            record_test "GT-RAND6" "Temporal randomness" $([ "$temporal_fail" -eq 0 ] && echo "PASS" || echo "FAIL") "Temporale randomness test"
+            record_test "GT-RAND7" "Multi-student randomness" $([ "$multi_fail" -eq 0 ] && echo "PASS" || echo "FAIL") "Multi-student test resultaat"
+            record_test "GT-RAND8" "Overall accuracy" $([ "$accuracy_fail" -eq 0 ] && echo "PASS" || echo "FAIL") "Generator accuracy: $accuracy_percentage%"
+        fi
+        
+        # Show detailed output for debugging
+        if [ "$failed_tests" -gt 0 ]; then
+            log_warning "Some GTests failed. Detailed output:"
+            echo "--- GTest Output ---"
+            cat "$gtest_output" | tail -50
+            echo "--- End GTest Output ---"
+        fi
+        
+    else
+        local gtest_result=1
+        log_error "Random generator GTests failed or timed out"
+        record_test "GT-EXEC" "GTest execution" "FAIL" "Tests gefaald of timeout na 120s"
+        
+        # Show output for debugging
+        echo "--- GTest Error Output ---"
+        cat "$gtest_output" | tail -30
+        echo "--- End GTest Error Output ---"
+    fi
+    
+    local gtest_end_time=$(date +%s)
+    local gtest_duration=$((gtest_end_time - gtest_start_time))
+    log_info "GTest execution took $gtest_duration seconds"
+    
+    # Clean up
+    rm -f "$gtest_output"
+    kill $launch_pid 2>/dev/null
+    sleep 2
+    
+    return $gtest_result
+}
+
+# Enhanced GTest Integration for All Test Levels
+run_gtests_for_level() {
+    local level="$1"
+    
+    case $level in
+        "level1"|"level2"|"level3"|"full")
+            log_info "Running GTests for $level testing..."
+            
+            if run_random_generator_gtests; then
+                log_success "All GTests passed for $level"
+                return 0
+            else
+                log_warning "Some GTests failed for $level"
+                return 1
+            fi
+            ;;
+        *)
+            log_info "Skipping GTests for basic testing level"
+            return 0
+            ;;
+    esac
+}
+
+# =============================================================================
+# INTEGRATION TEST FUNCTIONS
+# =============================================================================
+
 # Integration Test Functions
 test_ros2_service_availability() {
     log_info "Testing ROS2 service availability..."
@@ -741,7 +953,42 @@ test_node_communication() {
 }
 
 # Main test execution logic
-if [ -n "$SPECIFIC_NODE" ]; then
+if [ "$GTESTS_ONLY" = true ]; then
+    # Run only GTests for random generator
+    echo ""
+    log_info "=== RUNNING GOOGLE TESTS ONLY FOR RANDOM GENERATOR ==="
+    
+    if run_random_generator_gtests; then
+        log_success "All Google Tests passed!"
+        echo ""
+        log_success "Random generator validation complete:"
+        if [ "$ACCURACY_PERCENTAGE" != "N/A" ]; then
+            log_success "- Overall Accuracy: ${ACCURACY_PERCENTAGE}%"
+        else
+            log_success "- Overall Accuracy: Not available"
+        fi
+        log_success "- Range compliance (10-100)"
+        log_success "- Statistical randomness properties"
+        log_success "- Distribution uniformity"
+        log_success "- Percentage-based validation"
+        log_success "- Chi-square goodness of fit"
+        log_success "- Temporal randomness"
+        log_success "- Multi-student randomness"
+    else
+        log_error "Some Google Tests failed. Check output above for details."
+    fi
+    
+    # Generate report for GTests
+    if [ "$GENERATE_REPORT" = true ]; then
+        echo ""
+        log_info "Generating GTest report..."
+        generate_test_report "$REPORT_FILE"
+        log_success "GTest report saved to: $REPORT_FILE"
+    fi
+    
+    exit 0
+    
+elif [ -n "$SPECIFIC_NODE" ]; then
     # Test specific node
     if [ -z "${NODE_NAMES[$SPECIFIC_NODE]}" ]; then
         log_error "Unknown node: $SPECIFIC_NODE"
@@ -829,7 +1076,7 @@ run_level1_tests() {
     log_info "=== LEVEL 1: QUICK VALIDATION TESTS ==="
     
     local tests_passed=0
-    local tests_total=3
+    local tests_total=4  # Increased for GTest integration
     
     # Test 1: Basic Service Response
     log_info "Testing basic service response..."
@@ -920,6 +1167,16 @@ run_level1_tests() {
     
     kill $launch_pid 2>/dev/null
     
+    # Test 4: Random Generator GTests (Quick subset)
+    log_info "Running random generator tests..."
+    if run_gtests_for_level "level1"; then
+        log_success "Random generator GTests passed"
+        record_test "L1-GT1" "Random generator validation" "PASS" "GTest suite voor random generator geslaagd"
+        ((tests_passed++))
+    else
+        record_test "L1-GT1" "Random generator validation" "FAIL" "GTest suite voor random generator gefaald"
+    fi
+    
     log_info "Level 1 test summary: $tests_passed/$tests_total tests passed"
     if [ $tests_passed -eq $tests_total ]; then
         log_success "Level 1: All quick validation tests passed"
@@ -935,7 +1192,7 @@ run_level2_tests() {
     log_info "=== LEVEL 2: COMPREHENSIVE INTEGRATION TESTS ==="
     
     local tests_passed=0
-    local tests_total=4
+    local tests_total=5  # Increased for GTest integration
     
     # Test 1: Concurrent Service Calls
     log_info "Testing concurrent service calls..."
@@ -1096,6 +1353,16 @@ run_level2_tests() {
     
     kill $launch_pid 2>/dev/null
     
+    # Test 5: Comprehensive Random Generator Testing
+    log_info "Running comprehensive random generator tests..."
+    if run_gtests_for_level "level2"; then
+        log_success "Comprehensive random generator tests passed"
+        record_test "L2-GT1" "Comprehensive random testing" "PASS" "Alle random generator tests geslaagd"
+        ((tests_passed++))
+    else
+        record_test "L2-GT1" "Comprehensive random testing" "FAIL" "Random generator tests gefaald"
+    fi
+    
     log_info "Level 2 test summary: $tests_passed/$tests_total tests passed"
     if [ $tests_passed -eq $tests_total ]; then
         log_success "Level 2: All comprehensive integration tests passed"
@@ -1112,7 +1379,7 @@ run_level3_tests() {
     log_info "=== LEVEL 3: FULL SYSTEM STRESS TESTS ==="
     
     local tests_passed=0
-    local tests_total=3
+    local tests_total=4  # Increased for GTest integration
     
     # Test 1: High Volume Sequential Processing
     log_info "Testing high volume sequential processing..."
@@ -1217,6 +1484,16 @@ run_level3_tests() {
     rm -f "$temp_file"
     
     kill $launch_pid 2>/dev/null
+    
+    # Test 4: Stress Testing Random Generator
+    log_info "Running stress tests on random generator..."
+    if run_gtests_for_level "level3"; then
+        log_success "Random generator stress tests passed"
+        record_test "L3-GT1" "Random generator stress testing" "PASS" "Generator functioneert onder stress"
+        ((tests_passed++))
+    else
+        record_test "L3-GT1" "Random generator stress testing" "FAIL" "Generator faalt onder stress"
+    fi
     
     log_info "Level 3 test summary: $tests_passed/$tests_total tests passed"
     if [ $tests_passed -eq $tests_total ]; then
@@ -1388,9 +1665,23 @@ run_full_test() {
     fi
     echo ""
     
-    # === 5. System Health Checks ===
+    # === 5. Random Generator GTests ===
     echo "=============================================================================="
-    log_info "PHASE 5: SYSTEM HEALTH CHECKS"
+    log_info "PHASE 5: RANDOM GENERATOR GOOGLE TESTS"
+    echo "=============================================================================="
+    ((total_test_suites++))
+    
+    if run_gtests_for_level "full"; then
+        ((passed_test_suites++))
+        log_success "PHASE 5 COMPLETE: All random generator GTests passed"
+    else
+        log_warning "PHASE 5 COMPLETE: Some random generator GTests failed"
+    fi
+    echo ""
+    
+    # === 6. System Health Checks ===
+    echo "=============================================================================="
+    log_info "PHASE 6: SYSTEM HEALTH CHECKS"
     echo "=============================================================================="
     ((total_test_suites++))
     
@@ -1454,9 +1745,9 @@ run_full_test() {
     
     if [ $health_passed -eq $health_total ]; then
         ((passed_test_suites++))
-        log_success "PHASE 5 COMPLETE: All health checks passed ($health_passed/$health_total)"
+        log_success "PHASE 6 COMPLETE: All health checks passed ($health_passed/$health_total)"
     else
-        log_warning "PHASE 5 COMPLETE: Some checks failed ($health_passed/$health_total)"
+        log_warning "PHASE 6 COMPLETE: Some checks failed ($health_passed/$health_total)"
     fi
     echo ""
     
@@ -1581,6 +1872,7 @@ echo "  ./test.sh --level1                    - Quick validation (30s)"
 echo "  ./test.sh --level2                    - Comprehensive integration (60s)"
 echo "  ./test.sh --level3                    - Full stress testing (90s)"
 echo "  ./test.sh --full-test                 - COMPLETE FULL TEST - All suites (3-5 min)"
+echo "  ./test.sh --gtests-only               - Run only Google Tests for random generator"
 echo ""
 echo "Info:"
 echo "  ./test.sh --list-nodes                - Show available nodes"

@@ -197,12 +197,107 @@ CREATE TABLE student_results (
 - **System Tests**: Multi-node interaction and performance testing
 - **Coverage**: Full ROS2 ecosystem with PostgreSQL integration
 
+## Manual Testing
+
+### Google Tests (GTests) Execution
+
+The system includes comprehensive Google Tests for validation. Tests can be executed manually via multiple methods:
+
+#### Via Test Script (Recommended)
+
+```bash
+# Run all GTests for random generator with accuracy reporting
+./test.sh --gtests-only
+
+# Run GTests as part of comprehensive testing
+./test.sh --level1     # Quick validation (includes GTests)
+./test.sh --level2     # Comprehensive testing (includes GTests)  
+./test.sh --level3     # Full stress testing (includes GTests)
+./test.sh --full-test  # Complete test suite (includes GTests)
+```
+
+#### Direct Execution via Build Directory
+
+```bash
+# Build tests first
+colcon build --packages-select g1_25_assign1_pkg --cmake-args -DBUILD_TESTING=ON
+
+# Execute individual test suites directly
+./build/g1_25_assign1_pkg/test_random_generator     # Random generator tests with accuracy
+./build/g1_25_assign1_pkg/test_database            # Database integration tests
+./build/g1_25_assign1_pkg/test_topic_communication # ROS2 topic tests
+./build/g1_25_assign1_pkg/test_cijfer_calculator   # Service calculation tests
+./build/g1_25_assign1_pkg/test_herkansing_action   # Action server tests
+./build/g1_25_assign1_pkg/test_system_integration  # Full system tests
+```
+
+#### Available Test Executables
+
+- **test_random_generator**: Validates random number generation with accuracy percentage
+  - Range compliance (10-100)
+  - Statistical randomness properties  
+  - Distribution uniformity testing
+  - Percentage-based validation
+  - Chi-square goodness of fit test
+  - Temporal randomness verification
+  - Multi-student randomness testing
+  - Overall accuracy calculation (%)
+
+- **test_database**: Database connectivity and CRUD operations
+- **test_topic_communication**: ROS2 topic publishing/subscribing
+- **test_cijfer_calculator**: Grade calculation service validation
+- **test_herkansing_action**: ROS2 action server/client testing
+- **test_system_integration**: End-to-end system workflow
+
+#### Advanced Testing Options
+
+```bash
+# Run with verbose output
+./build/g1_25_assign1_pkg/test_random_generator --gtest_output=xml:/tmp/results.xml
+
+# Run specific test cases
+./build/g1_25_assign1_pkg/test_random_generator --gtest_filter="*Accuracy*"
+
+# Run with detailed output
+./build/g1_25_assign1_pkg/test_random_generator --gtest_verbose
+
+# List available tests
+./build/g1_25_assign1_pkg/test_random_generator --gtest_list_tests
+```
+
+#### Test Build Requirements
+
+```bash
+# Ensure testing dependencies are installed
+sudo apt install libgtest-dev cmake  # Ubuntu/Debian
+sudo dnf install gtest-devel cmake    # Fedora/RHEL
+
+# Build with testing enabled
+colcon build --cmake-args -DBUILD_TESTING=ON
+
+# For all tests (including integration tests requiring active ROS2 system)
+colcon build --cmake-args -DBUILD_TESTING=ON -DBUILD_ALL_TESTS=ON
+```
+
+#### Continuous Testing
+
+```bash
+# Auto-rebuild and test on file changes (if using entr or similar)
+find src/ -name "*.cpp" -o -name "*.hpp" | entr -r colcon test
+
+# Run tests with coverage (if gcov/lcov installed)
+colcon build --cmake-args -DCMAKE_BUILD_TYPE=Debug -DCOVERAGE=ON
+colcon test
+```
+
 ---
 
-**TI Minor Grade Generator System**  
-Authors: 
-- Semih Can Karakoc;
-- Nout Mulder; 
+## TI Minor Grade Generator System
+
+### Authors
+
+- Semih Can Karakoc
+- Nout Mulder
 - Tycho Mallee
 
 *Advanced ROS2 architecture with real-time database integration and comprehensive error handling.*

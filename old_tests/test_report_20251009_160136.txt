@@ -1,0 +1,51 @@
+================================================================================
+                    TESTRAPPORT – ROS2 GRADE CALCULATOR
+================================================================================
+Aangemaakt: 2025-10-09 16:01
+Tester: broodjesemih
+
+1. DOEL & SCOPE
+--------------------------------------------------------------------------------
+Dit testrapport verifieert de kernfunctionaliteit van de volgende componenten:
+  - tentamen_result_generator (topic publisher)
+  - cijfer_calculator (service provider)
+  - final_cijfer_determinator (business logic)
+  - herkansing_scheduler (action server)
+  - herkansing_cijfer_determinator (action client)
+
+2. OMGEVING
+--------------------------------------------------------------------------------
+OS / ROS2:        Ubuntu 24.04.3 LTS / 
+Compiler/CMake:   gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0 / cmake version 3.28.3
+Database:         postgresql://postgres:***@localhost:5432/student_grades
+Pakketten:        g1_25_assign1_pkg, g1_25_assign1_interfaces_pkg
+Python:           Python 3.12.3
+Tester:           broodjesemih
+
+3. KERN TESTS
+--------------------------------------------------------------------------------
+
+Test ID  Titel                               Status     Uitkomst
+--------------------------------------------------------------------------------
+L1-T1    Basic service response              PASS       Service beantwoordt correct voor [70,80,90]
+L1-T3    Wessel bonus feature                PASS       Wessel krijgt eindcijfer van 90 (retry)
+L1-T2    Input validation (lege data)        PASS       Systeem handelt lege input af zonder crash
+GT-RAND1 Range compliance test               PASS       Alle cijfers binnen 10-100 range
+GT-RAND2 Statistical randomness              PASS       Gemiddelde en spreiding binnen verwachte grenzen
+GT-RAND3 Distribution uniformity             PASS       Verdeling over bins redelijk uniform
+GT-RAND4 Percentage validation               PASS       Slaag-, hoog- en laagpercentages correct
+GT-RAND5 Chi-square uniformity               PASS       Chi-square test voor uniformiteit geslaagd
+GT-RAND6 Temporal randomness                 PASS       Opeenvolgende waarden niet gecorreleerd
+GT-RAND7 Multi-student randomness            PASS       Verschillende studenten krijgen verschillende sequences
+L1-GT1   Random generator validation         PASS       GTest suite voor random generator geslaagd
+
+4. SAMENVATTING
+--------------------------------------------------------------------------------
+Totaal aantal tests:     11
+Geslaagd:                11
+Gefaald:                 0
+Slagingspercentage:      100%
+
+CONCLUSIE: Alle tests geslaagd. Systeem functioneert correct.
+=================================================================================
+

@@ -81,6 +81,9 @@ if(BUILD_TESTING)
   if(TARGET test_topic_communication)
     install(TARGETS test_topic_communication DESTINATION lib/${PROJECT_NAME})
   endif()
+  if(TARGET test_random_generator)
+    install(TARGETS test_random_generator DESTINATION lib/${PROJECT_NAME})
+  endif()
   if(TARGET test_herkansing_action)
     install(TARGETS test_herkansing_action DESTINATION lib/${PROJECT_NAME})
   endif()
@@ -131,7 +134,15 @@ if(BUILD_TESTING)
     target_link_libraries(test_topic_communication ${GTEST_LIBRARIES})
   endif()
 
-  # ⚠️ INTEGRATION TESTS (only when BUILD_ALL_TESTS=ON) - Require running ROS2 system
+  # Random Generator Tests (standalone, tests random number generation properties)
+  ament_add_gtest(test_random_generator test/test_random_generator.cpp)
+  if(TARGET test_random_generator)
+    target_include_directories(test_random_generator PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
+    ament_target_dependencies(test_random_generator rclcpp g1_25_assign1_interfaces_pkg)
+    target_link_libraries(test_random_generator ${GTEST_LIBRARIES})
+  endif()
+
+  # INTEGRATION TESTS (only when BUILD_ALL_TESTS=ON) - Require running ROS2 system
   if(BUILD_ALL_TESTS)
     message(STATUS "Building ALL tests (including integration tests)")
 
