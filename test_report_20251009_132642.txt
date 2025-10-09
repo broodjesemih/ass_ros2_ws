@@ -1,0 +1,43 @@
+================================================================================
+                    TESTRAPPORT – ROS2 GRADE CALCULATOR
+================================================================================
+Aangemaakt: 2025-10-09 13:26
+Tester: broodjesemih
+
+1. DOEL & SCOPE
+--------------------------------------------------------------------------------
+Dit testrapport verifieert de kernfunctionaliteit van de volgende componenten:
+  - tentamen_result_generator (topic publisher)
+  - cijfer_calculator (service provider)
+  - final_cijfer_determinator (business logic)
+  - herkansing_scheduler (action server)
+  - herkansing_cijfer_determinator (action client)
+
+2. OMGEVING
+--------------------------------------------------------------------------------
+OS / ROS2:        Ubuntu 24.04.3 LTS / 
+Compiler/CMake:   gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0 / cmake version 3.28.3
+Database:         postgresql://postgres:***@localhost:5432/student_grades
+Pakketten:        g1_25_assign1_pkg, g1_25_assign1_interfaces_pkg
+Python:           Python 3.12.3
+Tester:           broodjesemih
+
+3. KERN TESTS
+--------------------------------------------------------------------------------
+
+Test ID  Titel                               Status     Uitkomst
+--------------------------------------------------------------------------------
+L1-T1    Basic service response              PASS       Service beantwoordt correct voor [70,80,90]
+L1-T3    Wessel bonus feature                FAIL       Wessel eindcijfer=1 (verwacht: 90); response: [37;1m2025-10-09 13:26:57.146 [3
+L1-T2    Input validation (lege data)        PASS       Systeem handelt lege input af zonder crash
+
+4. SAMENVATTING
+--------------------------------------------------------------------------------
+Totaal aantal tests:     3
+Geslaagd:                2
+Gefaald:                 1
+Slagingspercentage:      66%
+
+CONCLUSIE: 1 test(s) gefaald. Onderzoek vereist.
+=================================================================================
+
