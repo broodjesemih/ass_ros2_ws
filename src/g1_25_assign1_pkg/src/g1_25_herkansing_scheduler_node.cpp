@@ -32,7 +32,7 @@
 #include <set>                        // STL set for duplicate tracking
 
 // CUSTOM ACTION INTERFACE
-#include "g1_interface_pkg/action/herkanser.hpp" // Retake exam action interface
+#include "g1_25_assign1_interfaces_pkg/action/herkanser.hpp" // Retake exam action interface
 
 // ROS2 ACTION FRAMEWORK
 #include "rclcpp_action/rclcpp_action.hpp"      // Action client implementation support
@@ -56,7 +56,7 @@ class HerkansingSchedulerNode : public rclcpp::Node
 {
 public:
     // TYPE ALIAS: Simplify retake action interface usage throughout the class
-    using Herkanser = g1_interface_pkg::action::Herkanser;
+    using Herkanser = g1_25_assign1_interfaces_pkg::action::Herkanser;
     
     /**
      * CONSTRUCTOR: Initialize retake exam scheduling infrastructure
@@ -68,7 +68,7 @@ public:
      * NODE NAME: "herkansing_scheduler" for ROS2 network identification
      * TIMING: 30-second intervals for balanced responsiveness and system load
      */
-    HerkansingSchedulerNode() : Node("herkansing_scheduler")
+    HerkansingSchedulerNode() : Node("g1_25_herkansing_scheduler_node")
     {
         // ACTION CLIENT: Connect to retake exam processing service
         // Action: "herkanser" - sends retake requests to processing node
@@ -195,8 +195,8 @@ int main(int argc, char **argv)
     rclcpp::init(argc, argv);
     
     // PHASE 2: Log node startup for system monitoring
-    RCLCPP_INFO(rclcpp::get_logger("herkansing_scheduler"), 
-               "[!] Starting herkansing_scheduler node");
+    RCLCPP_INFO(rclcpp::get_logger("g1_25_herkansing_scheduler_node"), 
+               "[!] Starting g1_25_herkansing_scheduler_node");
     
     // PHASE 3: Create node instance and enter monitoring loop
     // SPIN PATTERN: Handles timer callbacks and action client communications

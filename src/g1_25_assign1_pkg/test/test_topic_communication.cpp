@@ -3,8 +3,8 @@
 #include <memory>
 #include <chrono>
 #include <thread>
-#include "g1_interface_pkg/msg/tentamen.hpp"
-#include "g1_interface_pkg/msg/student.hpp"
+#include "g1_25_assign1_interfaces_pkg/msg/tentamen.hpp"
+#include "g1_25_assign1_interfaces_pkg/msg/student.hpp"
 
 /**
  * Unit tests for het Topic Communication systeem
@@ -25,23 +25,23 @@ protected:
         test_node_ = rclcpp::Node::make_shared("test_topic_communication");
         
         // Setup publisher for tentamen results
-        tentamen_pub_ = test_node_->create_publisher<g1_interface_pkg::msg::Tentamen>(
+        tentamen_pub_ = test_node_->create_publisher<g1_25_assign1_interfaces_pkg::msg::Tentamen>(
             "tentamen_results", 10);
         
         // Setup subscriber for student control
-        student_control_pub_ = test_node_->create_publisher<g1_interface_pkg::msg::Student>(
+        student_control_pub_ = test_node_->create_publisher<g1_25_assign1_interfaces_pkg::msg::Student>(
             "student_control", 10);
         
         // Setup subscribers to receive messages
-        tentamen_sub_ = test_node_->create_subscription<g1_interface_pkg::msg::Tentamen>(
+        tentamen_sub_ = test_node_->create_subscription<g1_25_assign1_interfaces_pkg::msg::Tentamen>(
             "tentamen_results", 10,
-            [this](const g1_interface_pkg::msg::Tentamen::SharedPtr msg) {
+            [this](const g1_25_assign1_interfaces_pkg::msg::Tentamen::SharedPtr msg) {
                 received_tentamen_msgs_.push_back(*msg);
             });
             
-        student_control_sub_ = test_node_->create_subscription<g1_interface_pkg::msg::Student>(
+        student_control_sub_ = test_node_->create_subscription<g1_25_assign1_interfaces_pkg::msg::Student>(
             "student_control", 10,
-            [this](const g1_interface_pkg::msg::Student::SharedPtr msg) {
+            [this](const g1_25_assign1_interfaces_pkg::msg::Student::SharedPtr msg) {
                 received_student_msgs_.push_back(*msg);
             });
         
@@ -73,13 +73,13 @@ protected:
     }
 
     rclcpp::Node::SharedPtr test_node_;
-    rclcpp::Publisher<g1_interface_pkg::msg::Tentamen>::SharedPtr tentamen_pub_;
-    rclcpp::Publisher<g1_interface_pkg::msg::Student>::SharedPtr student_control_pub_;
-    rclcpp::Subscription<g1_interface_pkg::msg::Tentamen>::SharedPtr tentamen_sub_;
-    rclcpp::Subscription<g1_interface_pkg::msg::Student>::SharedPtr student_control_sub_;
+    rclcpp::Publisher<g1_25_assign1_interfaces_pkg::msg::Tentamen>::SharedPtr tentamen_pub_;
+    rclcpp::Publisher<g1_25_assign1_interfaces_pkg::msg::Student>::SharedPtr student_control_pub_;
+    rclcpp::Subscription<g1_25_assign1_interfaces_pkg::msg::Tentamen>::SharedPtr tentamen_sub_;
+    rclcpp::Subscription<g1_25_assign1_interfaces_pkg::msg::Student>::SharedPtr student_control_sub_;
     
-    std::vector<g1_interface_pkg::msg::Tentamen> received_tentamen_msgs_;
-    std::vector<g1_interface_pkg::msg::Student> received_student_msgs_;
+    std::vector<g1_25_assign1_interfaces_pkg::msg::Tentamen> received_tentamen_msgs_;
+    std::vector<g1_25_assign1_interfaces_pkg::msg::Student> received_student_msgs_;
 };
 
 /**
@@ -89,7 +89,7 @@ protected:
 TEST_F(TopicCommunicationTest, TestTentamenMessagePublishing)
 {
     // Create a test tentamen message
-    g1_interface_pkg::msg::Tentamen test_msg;
+    g1_25_assign1_interfaces_pkg::msg::Tentamen test_msg;
     test_msg.student_name = "Test Student";
     test_msg.course_name = "Math";
     test_msg.tentamen_cijfer = 85;
@@ -116,7 +116,7 @@ TEST_F(TopicCommunicationTest, TestTentamenMessagePublishing)
  */
 TEST_F(TopicCommunicationTest, TestStudentControlMessage)
 {
-    g1_interface_pkg::msg::Student control_msg;
+    g1_25_assign1_interfaces_pkg::msg::Student control_msg;
     control_msg.name = "Wessel Tip";
     control_msg.course = "ROS2";
     control_msg.command = "again";
@@ -146,7 +146,7 @@ TEST_F(TopicCommunicationTest, TestMultipleMessagePublishing)
     
     // Publish meerdere tentamen messages
         for (size_t i = 0; i < students.size(); ++i) {
-            g1_interface_pkg::msg::Tentamen msg;
+            g1_25_assign1_interfaces_pkg::msg::Tentamen msg;
             msg.student_name = students[i];
             msg.course_name = courses[i];
             msg.tentamen_cijfer = grades[i];
@@ -181,7 +181,7 @@ TEST_F(TopicCommunicationTest, TestMultipleMessagePublishing)
 TEST_F(TopicCommunicationTest, TestMessageFieldValidation)
 {
     // Test tentamen message with all fields filled
-    g1_interface_pkg::msg::Tentamen full_msg;
+    g1_25_assign1_interfaces_pkg::msg::Tentamen full_msg;
     full_msg.student_name = "Complete Student";
     full_msg.course_name = "Complete Course";
     full_msg.tentamen_cijfer = 95;
@@ -214,7 +214,7 @@ TEST_F(TopicCommunicationTest, TestHighFrequencyPublishing)
     
     // Publish many messages in short time
         for (int i = 0; i < message_count; ++i) {
-            g1_interface_pkg::msg::Tentamen msg;
+            g1_25_assign1_interfaces_pkg::msg::Tentamen msg;
             msg.student_name = "Student_" + std::to_string(i);
             msg.course_name = "Course_" + std::to_string(i % 5);
             msg.tentamen_cijfer = 50 + (i % 50);
@@ -244,7 +244,7 @@ TEST_F(TopicCommunicationTest, TestEdgeCaseMessages)
     };
     
         for (size_t i = 0; i < edge_cases.size(); ++i) {
-            g1_interface_pkg::msg::Tentamen msg;
+            g1_25_assign1_interfaces_pkg::msg::Tentamen msg;
             msg.student_name = edge_cases[i].first;
             msg.course_name = edge_cases[i].second;
             msg.tentamen_cijfer = 75;

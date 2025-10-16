@@ -9,7 +9,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 echo "Workspace directory: $SCRIPT_DIR"
 
 # Check if we're in the right directory
-if [ ! -f "$SCRIPT_DIR/src/g1_ass1_pkg/launch/system.launch.xml" ]; then
+if [ ! -f "$SCRIPT_DIR/src/g1_25_assign1_pkg/launch/system.launch.xml" ]; then
     echo "Error: system.launch.xml not found in expected location"
     echo "Make sure you're running this script from the workspace root"
     exit 1
@@ -19,7 +19,7 @@ fi
 if [ ! -d "$SCRIPT_DIR/install" ]; then
     echo "Error: Install directory not found. Building project first..."
     cd "$SCRIPT_DIR"
-    colcon build --packages-select g1_ass1_pkg
+    colcon build --packages-select g1_25_assign1_pkg
     if [ $? -ne 0 ]; then
         echo "Build failed!"
         exit 1
@@ -67,7 +67,7 @@ echo "Press Ctrl+C to stop all nodes"
 echo ""
 
 # Launch the system
-ros2 launch g1_ass1_pkg system.launch.xml
+ros2 launch g1_25_assign1_pkg system.launch.xml
 
 echo ""
 echo "System stopped."

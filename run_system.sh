@@ -73,7 +73,7 @@ fi
 if [ -f "install/setup.bash" ]; then
     source install/setup.bash
 else
-    log_error "Workspace not built! Run: colcon build --packages-select g1_interface_pkg g1_ass1_pkg"
+    log_error "Workspace not built! Run: colcon build --packages-select g1_25_assign1_interfaces_pkg g1_25_assign1_pkg"
     exit 1
 fi
 
@@ -91,7 +91,7 @@ echo "Press Ctrl+C to stop all nodes"
 echo ""
 
 # Launch the system
-ros2 launch g1_ass1_pkg system.launch.xml
+ros2 launch g1_25_assign1_pkg system.launch.xml
 
 echo ""
 log_info "System stopped."

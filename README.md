@@ -1,11 +1,18 @@
 # ROS2 Grade Calculator System
 
-Complete ROS2-based grade calculator with PostgreSQL database backend for automated student assessment Quick Fix:
+Complete ROS2-based grade calculator with PostgreSQL database backend for automated student assessment and retake management.
+
+## Quick Fix:
 Most issues can be resolved by running the setup script again:
 ```bash
 ./complete_setup.sh
 ```
-This script automatically detects and fixes common PostgreSQL authentication and ROS2 workspace issues.ake management.
+This script automatically detects and fixes common PostgreSQL authentication and ROS2 workspace issues.
+If you are getting RosDep-errors, execute the following commands:
+```bash
+sudo rosdep init
+rosdep update
+```
 
 ## Quick Start
 
@@ -27,19 +34,23 @@ This script automatically detects and fixes common PostgreSQL authentication and
 
 This system implements an automated grade calculator for students with comprehensive retake management:
 
-### Core Components:
-- **tentamen_result_generator**: Generates exam results for simulation
-- **cijfer_calculator**: Calculates final grades based on exam results  
-- **final_cijfer_determinator**: Determines final grades and triggers database storage
-- **herkansing_scheduler**: Schedules retakes for failed students
-- **herkansing_cijfer_determinator**: Handles retake grade calculations via ROS2 Actions
+### ROS2 Package Structure:
+- **g1_25_assign1_pkg**: Main package containing all grade calculation nodes
+- **g1_25_assign1_interfaces_pkg**: Custom ROS2 interfaces (messages, services, actions)
 
-### ROS2 Nodes:
-- `tentamen_result_generator` - Publishes exam results to topics
-- `cijfer_calculator` - Service for grade calculations (Wessel gets +10 bonus!)
-- `final_cijfer_determinator` - Subscribes to results and determines final grades
-- `herkansing_scheduler` - Monitors database and schedules retakes
-- `herkansing_cijfer_determinator` - Action server for retake processing
+### Core Components:
+- **g1_25_tentamen_result_generator_node**: Generates exam results for simulation
+- **g1_25_cijfer_calculator_node**: Calculates final grades based on exam results  
+- **g1_25_final_cijfer_determinator_node**: Determines final grades and triggers database storage
+- **g1_25_herkansing_scheduler_node**: Schedules retakes for failed students
+- **g1_25_herkansing_cijfer_determinator_node**: Handles retake grade calculations via ROS2 Actions
+
+### ROS2 Node Details:
+- `g1_25_tentamen_result_generator_node` - Publishes exam results with `tentamen_callback` function
+- `g1_25_cijfer_calculator_node` - Service for grade calculations with `calculation_callback` function (Wessel gets +10 bonus!)
+- `g1_25_final_cijfer_determinator_node` - Processes results with `tentamen_callback` function
+- `g1_25_herkansing_scheduler_node` - Monitors database with `check_failed_students_callback` function
+- `g1_25_herkansing_cijfer_determinator_node` - Action server with `execute_callback` function
 
 ### Database Integration:
 - PostgreSQL with `student_results` table for persistent storage
@@ -82,14 +93,14 @@ sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE student_grades TO pos
 ### Manual Building
 ```bash
 source /opt/ros/jazzy/setup.bash
-colcon build --packages-select g1_ass1_pkg g1_interface_pkg
+colcon build --packages-select g1_25_assign1_pkg g1_25_assign1_interfaces_pkg
 source install/setup.bash
 ```
 
 ### Manual System Start
 ```bash
 source install/setup.bash
-ros2 launch g1_ass1_pkg system.launch.xml
+ros2 launch g1_25_assign1_pkg system.launch.xml
 ```
 
 ## Database Configuration
@@ -151,10 +162,10 @@ Problems? Run `./complete_setup.sh` again - het lost de meeste problemen automat
 ### Building and Testing:
 ```bash
 # Build complete workspace
-colcon build --packages-select g1_ass1_pkg g1_interface_pkg
+colcon build --packages-select g1_25_assign1_pkg g1_25_assign1_interfaces_pkg
 
 # Run comprehensive tests  
-colcon test --packages-select g1_ass1_pkg
+colcon test --packages-select g1_25_assign1_pkg
 colcon test-result --verbose
 
 # Manual database testing
@@ -162,10 +173,16 @@ psql -h localhost -U postgres -d student_grades
 ```
 
 ### Custom ROS2 Interfaces:
-The project uses custom ROS2 interfaces defined in `g1_interface_pkg`:
+The project uses custom ROS2 interfaces defined in `g1_25_assign1_interfaces_pkg`:
 - **Messages**: `Tentamen`, `Student` 
 - **Services**: `Tentamens` (grade calculation)
 - **Actions**: `Herkanser` (retake processing)
+
+### ROS2 Naming Convention:
+Following the group naming standard:
+- **Package Names**: `g1_25_assign1_pkg`, `g1_25_assign1_interfaces_pkg` 
+- **Node Names**: `g1_25_<functional_name>_node`
+- **Callback Functions**: `<functional_name>_callback`
 
 ### Database Schema:
 ```sql
@@ -185,12 +202,107 @@ CREATE TABLE student_results (
 - **System Tests**: Multi-node interaction and performance testing
 - **Coverage**: Full ROS2 ecosystem with PostgreSQL integration
 
+## Manual Testing
+
+### Google Tests (GTests) Execution
+
+The system includes comprehensive Google Tests for validation. Tests can be executed manually via multiple methods:
+
+#### Via Test Script (Recommended)
+
+```bash
+# Run all GTests for random generator with accuracy reporting
+./test.sh --gtests-only
+
+# Run GTests as part of comprehensive testing
+./test.sh --level1     # Quick validation (includes GTests)
+./test.sh --level2     # Comprehensive testing (includes GTests)  
+./test.sh --level3     # Full stress testing (includes GTests)
+./test.sh --full-test  # Complete test suite (includes GTests)
+```
+
+#### Direct Execution via Build Directory
+
+```bash
+# Build tests first
+colcon build --packages-select g1_25_assign1_pkg --cmake-args -DBUILD_TESTING=ON
+
+# Execute individual test suites directly
+./build/g1_25_assign1_pkg/test_random_generator     # Random generator tests with accuracy
+./build/g1_25_assign1_pkg/test_database            # Database integration tests
+./build/g1_25_assign1_pkg/test_topic_communication # ROS2 topic tests
+./build/g1_25_assign1_pkg/test_cijfer_calculator   # Service calculation tests
+./build/g1_25_assign1_pkg/test_herkansing_action   # Action server tests
+./build/g1_25_assign1_pkg/test_system_integration  # Full system tests
+```
+
+#### Available Test Executables
+
+- **test_random_generator**: Validates random number generation with accuracy percentage
+  - Range compliance (10-100)
+  - Statistical randomness properties  
+  - Distribution uniformity testing
+  - Percentage-based validation
+  - Chi-square goodness of fit test
+  - Temporal randomness verification
+  - Multi-student randomness testing
+  - Overall accuracy calculation (%)
+
+- **test_database**: Database connectivity and CRUD operations
+- **test_topic_communication**: ROS2 topic publishing/subscribing
+- **test_cijfer_calculator**: Grade calculation service validation
+- **test_herkansing_action**: ROS2 action server/client testing
+- **test_system_integration**: End-to-end system workflow
+
+#### Advanced Testing Options
+
+```bash
+# Run with verbose output
+./build/g1_25_assign1_pkg/test_random_generator --gtest_output=xml:/tmp/results.xml
+
+# Run specific test cases
+./build/g1_25_assign1_pkg/test_random_generator --gtest_filter="*Accuracy*"
+
+# Run with detailed output
+./build/g1_25_assign1_pkg/test_random_generator --gtest_verbose
+
+# List available tests
+./build/g1_25_assign1_pkg/test_random_generator --gtest_list_tests
+```
+
+#### Test Build Requirements
+
+```bash
+# Ensure testing dependencies are installed
+sudo apt install libgtest-dev cmake  # Ubuntu/Debian
+sudo dnf install gtest-devel cmake    # Fedora/RHEL
+
+# Build with testing enabled
+colcon build --cmake-args -DBUILD_TESTING=ON
+
+# For all tests (including integration tests requiring active ROS2 system)
+colcon build --cmake-args -DBUILD_TESTING=ON -DBUILD_ALL_TESTS=ON
+```
+
+#### Continuous Testing
+
+```bash
+# Auto-rebuild and test on file changes (if using entr or similar)
+find src/ -name "*.cpp" -o -name "*.hpp" | entr -r colcon test
+
+# Run tests with coverage (if gcov/lcov installed)
+colcon build --cmake-args -DCMAKE_BUILD_TYPE=Debug -DCOVERAGE=ON
+colcon test
+```
+
 ---
 
-**TI Minor Grade Generator System**  
-Authors: 
-- Semih Can Karakoc;
-- Nout Mulder; 
+## TI Minor Grade Generator System
+
+### Authors
+
+- Semih Can Karakoc
+- Nout Mulder
 - Tycho Mallee
 
 *Advanced ROS2 architecture with real-time database integration and comprehensive error handling.*
